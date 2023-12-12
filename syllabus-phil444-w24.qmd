@@ -7,34 +7,36 @@ execute:
   message: false
   cache: true
 format:
+    html:
+      toc: false
+      mainfont: SF Pro Rounded
     pdf: 
       format: scrreprt
       keep-tex: true
-      geometry: "1in"
+#      geometry: 1in"
       mainfont: Scala Pro
       sansfont: Scala Sans Pro
       mainfontoptions: Scale = MatchLowercase
       fontsize: 12pt
       linkcolor: black
       link-citations: true
-    html:
-      toc: false
-      mainfont: SF Pro Rounded
+
 ---
 
 
 
 
 ```{r load-packages}
-#| include: false
 #| results: hide
-require(tidyverse)
-require(fontawesome)
+#| output: false
+#| echo: false
+library(tidyverse)
+library(fontawesome)
 ```
 
 ```{r dates_bib}
-#| include: false
-mon <- as.Date("2023-01-08") # Monday of the First Week
+#| echo: false
+mon <- as.Date("2024-01-08") # Monday of the First Week
 tue <- mon + 1
 wed <- tue + 1
 thu <- wed + 1
@@ -65,7 +67,7 @@ This course has four units.
 Group Attitudes
 :    We'll look at how groups act, whether groups have beliefs, and what it takes for those beliefs to be reasonable, and how to combine individual attitudes into a group attitude.
 
-Voting Systems
+Voting
 :    We'll look at voting systems that are used around the world, and some theoretical results about the limits of voting systems.
 
 Games and Coordination
@@ -142,377 +144,231 @@ Topic
 :   Group Action
 
 Reading
-:   
-
-No class, classes start on Wednesday
-
-\columnbreak
-
-### `r advdate(thu, 1)`
-
-Topic
-:   Introduction
-
-Reading
-:   Bonanno, Chapter 1
-
-:::
-
-## Week 2: What are Games
-
-::: {.multicols data-latex="{2}"}
-### `r advdate(tue, 2)`
-
-Topic
- :   Games, Payouts and Utilities
-
-Reading
- :   Bonanno, Sections 2.1 and 2.2.
-
+:   Margaret Gilbert, [Walking Together: A Paradigmatic Social Phenomenon](https://philpapers.org/rec/GILWTA)
 
 ### `r advdate(thu, 2)`
 
 Topic
- :   Dominant Strategies and Equilibria
+:   Group Action
 
 Reading
- :   Bonanno, Sections 2.5 and 2.6.
+:    Michael Bratman, [Shared Intention](https://philpapers.org/rec/BRASI)
+:    Michael Bratman, [Shared Cooperative Activity](https://philpapers.org/rec/BRASCA)
 
-:::
-
--   Weekly assignment 1 due on `r advdate(fri, 2)` at 5pm.
-
-## Week 3: Games and Time
-
-::: {.multicols data-latex="{2}"}
 ### `r advdate(tue, 3)`
 
 Topic
-:   Dynamic Games
+:   Group Belief
 
 Reading
-:   Bonanno, Sections 3.1-3.3.
-
+:    Jennifer Lackey, [What is Justified Group Belief?](https://philpapers.org/rec/LACWIJ) (NB: This is very long, and I'll try to choose sections from it for the reading.)
 
 ### `r advdate(thu, 3)`
 
-Topic
-:   Backward Induction
+No class; I'm away at a conference
 
-Reading
-:   Bonanno, Sections 3.4 and 3.5.
-
-:::
-
--   Weekly assignment 2 due on `r advdate(fri, 3)` at 5pm.
-
-\newpage
-
-## Unit 4: Information and Utility
-
-::: {.multicols data-latex="{2}"}
 ### `r advdate(tue, 4)`
 
 Topic
-:   Games with Imperfect Information
+:   Group Justification
 
 Reading
-:   Bonanno, Sections 4.1-4.4.
-
+:    Jessica Brown, [Group belief and direction of fit](https://philpapers.org/rec/BROGBA-3)
 
 ### `r advdate(thu, 4)`
 
-No class - Professor away at conference
-
-:::
-
-### `r advdate(tue, 5)`
 Topic
-:   Utility
+:    Merging Probabilities
 
 Reading
-:   Bonanno, Sections 5.1-5.3.
+:    Jeffrey Sanford Russell, John Hawthorne and Lara Buchak, [Groupthink](https://philpapers.org/rec/RUSG)
 
+## Voting
 
-
--   Weekly assignment 3 due on `r advdate(fri, 5)` at 5pm.
-
-## Unit 5: Games with Cardinal Payoffs
-
-::: {.multicols data-latex="{2}"}
-### `r advdate(thu, 5)`
+### `r advdate(tue, 5)` and `r advdate(thu, 5)`
 
 Topic
-:   Nash Equilibria
+:    Voting systems
 
 Reading
-:   Bonanno, Sections 6.1-6.3
+:    Simon Hix, Ron Johnston, and Iain McLean [Choosing an Electoral System](https://www.thebritishacademy.ac.uk/publications/choosing-electoral-system/)
 
-
-### `r advdate(tue, 6)`
+### `r advdate(tue, 6)` and `r advdate(thu, 6)`
 
 Topic
-:   Rationalizable Strategies
+:    Arrow's Theorem
 
 Reading
-:   Bonanno, Section 6.4.
+:    Michael Morreau, [Arrow's Theorem](https://plato.stanford.edu/entries/arrows-theorem/)
 
-:::
+Recommended Reading
+:    John Geanakoplos, [Three Brief Proofs of Arrow's Impossibility Theorem](https://www.jstor.org/stable/25055941)
 
-## Unit 6: Probability
-
-### `r advdate(thu, 6)`
+### `r advdate(tue, 7)` and `r advdate(thu, 7)`
 
 Topic
-:   Probability
+:    Sen on Social Choice
 
 Reading
-:   No new reading
+:    Amartya Sen, [The Impossibility of a Paretian Liberal](https://www.jstor.org/stable/1829633)
+:    Amartya Sen, [The Possibility of Social Choice](https://www.jstor.org/stable/117024)
 
+Recommended Reading
+:    Christian List, [Social Choice Theory](https://plato.stanford.edu/entries/social-choice/)
 
--   Weekly assignment 4 due on `r advdate(fri, 6)` at 5pm.
+### `r advdate(tue, 8)` and `r advdate(thu, 8)`
 
+Winter Break
 
-## Week 7: Games with Time and Uncertainty
+## Games and Coordination
 
-::: {.multicols data-latex="{2}"}
-### `r advdate(tue, 7)`
+Note that in this unit, and this unit **only** it would be better to do the reading **after** we discuss the material in class.
+
+### `r advdate(tue, 9)` and `r advdate(thu, 9)`
 
 Topic
-:   Extensive Form Games
+:    Prisoner's Dilemma
 
 Reading
-:   Bonanno, Chapter 7
+:    Bonanno, §2.1 and 2.2
+:    Robert Axelrod, [More Effective Choice in the Prisoner's Dilemma](https://www.jstor.org/stable/173638)
 
-### `r advdate(thu, 7)`
+Recommended
+:    Robert Axelrod, [Effective Choice in the Prisoner's Dilemma](https://www.jstor.org/stable/173932)
+:    Robert Axelrod and William Hamilton, [The Evolution of Cooperation](https://www.jstor.org/stable/1685895) (possibly the most cited humanities/social science article ever written)
+:    Robert Axelrod, [The Emergence of Cooperation among Egoists](https://www.jstor.org/stable/1961366)
+:    Steven Kuhn, [Prisoner's Dilemma](https://plato.stanford.edu/entries/prisoner-dilemma/)
 
-Topic
-:   Signaling Games
+Interaction
+:    From this time on we'll be making heavy use of the experimental setups on [Veconlab](https://veconlab.econ.virginia.edu/), and it is very important that you have your account set up by then.
 
-Reading
-:   Bonanno and Spence papers below.
-
-:::
-
--   Weekly assignment 5 due on `r advdate(fri, 7)` at 5pm.
--   Giacomo Bonanno, Spence's model of Signaling in the job market (available on Canvas)
--   Michael Spence, [Job Market Signaling](https://www.jstor.org/stable/1882010?seq=1)
-
-\newpage
-
-## Week 8: Famous Cooperation Games
-
-::: {.multicols data-latex="{2}"}
-### `r advdate(tue, 8)`
-
-Topic
-:   Prisoners Dilemma
-
-Reading
-:   Axelrod and Hamilton paper below
-
-
-### `r advdate(thu, 8)`
-
-Topic
-:   Stag Hunt
-
-Reading
-:   Skyrms paper below
-
-:::
-
--   Weekly assignment 6 due on `r advdate(fri, 8)` at 5pm.
--   Robert Axelrod and William Hamilton, [The Evolution of Cooperation](http://www-personal.umich.edu/~axe/research/Axelrod%20and%20Hamilton%20EC%201981.pdf)
--   Brian Skyrms, [The Stag Hunt](https://www.jstor.org/stable/3218711)
-
-```{r reset_dates_bib, include=FALSE}
-# Redo dates to allow for a spring break
-knitr::opts_chunk$set(cache = FALSE, dev = 'pdf')
-mon <- as.Date("2023-01-09") # Monday of the Second Week - second because there was a break
-tue <- mon + 1
-wed <- tue + 1
-thu <- wed + 1
-fri <- thu + 1
-# fri <- as.Date("2016-01-08")
-
-advdate <- function(obj, adv) {
- theday <- obj + 7*(adv - 1)
- ttheday <- format(theday, format = "%A, %B %d")
- return(ttheday)
-}
-
-#library(RefManageR)
-## library(knitcitations)
-## library(rcrossref)
-#bib <- ReadBib("411bib.bib")
-#myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
-
-```
-
-## Week 9: Games with Types
-
-::: {.multicols data-latex="{2}"}
-### `r advdate(tue, 9)`
-
-Topic
-:   Gender and Coordination
-
-Reading
-:   O'Connor, Intro and Chapter 1
-
-
-### `r advdate(thu, 9)`
-
-Topic
-:   Equilibria Involving Types
-
-Reading
-:   O'Connor, Chapters 2 and 3
-
-:::
-
-## Week 10: The Evolution of Gender
-
-::: {.multicols data-latex="{2}"}
 ### `r advdate(tue, 10)`
 
 Topic
-:   Gender and Convention
+:    Iterated Deletion
 
 Reading
-:   O'Connor, Chapter 4
-
+:    Bonanno, §2.5 and 2.6
 
 ### `r advdate(thu, 10)`
 
 Topic
-:   Convention and Power
+:    Backward Induction
 
 Reading
-:   O'Connor, Chapter 5
+:    Bonanno, §3.1 and 3.2
 
-:::
-
-## Week 11: The Evolution of Gender
-
-::: {.multicols data-latex="{2}"}
 ### `r advdate(tue, 11)`
 
 Topic
-:   First Mover Advantage and Disadvantage
+:    Stag Hunt
 
 Reading
-:   O'Connor, Chapter 6
-
+:    Brian Skyrms, [Stag Hunt](https://www.jstor.org/stable/3218711)
 
 ### `r advdate(thu, 11)`
 
 Topic
-:   Discrimination
+:    Coordination and Risk
 
 Reading
-:   O'Connor, Chapters 7-10
+:    Kaushik Basu, [The Traveler's Dilemma: Paradoxes of Rationality in Game Theory](https://www.jstor.org/stable/2117865)
 
-:::
-
-\newpage
-
-## Week 12: Group Intention
-
-::: {.multicols data-latex="{2}"}
 ### `r advdate(tue, 12)`
 
 Topic
-:   Gilbert's Theory
+:    Focal Points
 
 Reading
-:   Gilbert Paper and First Bratman paper
-
+:     Judith Mehta, Chris Starmerand Robert Sugden, [The Nature of Salience: An Experimental Investigation of Pure Coordination Games](https://www.jstor.org/stable/2118074)
 
 ### `r advdate(thu, 12)`
 
 Topic
-:   Bratman's Theory
+:   Limits to Induction
 
 Reading
-:   Second Bratman paper
+:    Rosemarie Nagel, [Unraveling in Guessing Games: An Experimental Study](https://www.jstor.org/stable/2950991)
 
-:::
+## Information Networks
 
--   Margaret Gilbert, [Walking Together: A Paradigmatic Social Phenomenon](https://philpapers.org/rec/GILWTA)
--   Michael Bratman, [Shared Intention](https://philpapers.org/rec/BRASI)
--   Michael Bratman, [Shared Cooperative Activity](https://philpapers.org/rec/BRASCA)
-
-## Week 13: Group Knowledge
-
-::: {.multicols data-latex="{2}"}
 ### `r advdate(tue, 13)`
 
 Topic
-:   Group Knowledge and Individual Knowledge
+:    Introducing Signaling Games
 
 Reading
-:   Lackey paper and Bird paper
-
+:    In-Koo Cho and David Kreps, [Signaling Games and Stable Equilibria](https://www.jstor.org/stable/1885060), §2
 
 ### `r advdate(thu, 13)`
 
 Topic
-:   Public Virtue and Private Vice
+:    The Market for Lemons
 
 Reading
-:   Levy and Alfano paper
+:    George Akerlof, [The Market for "Lemons": Quality Uncertainty and the Market Mechanism](https://www.jstor.org/stable/1879431)
 
-:::
-
--   Jennifer Lackey, [Socially Extended Knowledge](https://philpapers.org/rec/LACSEK)
--   Alexander Bird, [Social knowing: The social sense of 'scientific knowledge'](https://philpapers.org/rec/BIRSKT)
--   Neil Levy and Mark Alfano, [Knowledge From Vice: Deeply Social Epistemology](https://philpapers.org/rec/LEVKFV)
-
-## Week 14: Group Belief
-
-::: {.multicols data-latex="{2}"}
 ### `r advdate(tue, 14)`
 
 Topic
-:   Group probability aggregation
+:    Job Market Signaling
 
 Reading
-:   Russell et al paper
-
+:    Michael Spence, [Job Market Signaling](https://www.jstor.org/stable/1882010), §§1-4
 
 ### `r advdate(thu, 14)`
 
 Topic
-:   Social Wisdom
+:    Information Cascades
+
+Reading (read **after** class)
+:    Lisa Anderson and Charles Holt, [Information Cascades in the Laboratory](https://www.jstor.org/stable/2951328)
+
+
+### `r advdate(tue, 15)`
+
+Topic
+:    Epistemic Networks
 
 Reading
-:   Sullivan et al paper
+:    Cailin O'Connor and Sanford Goldberg, [Social Epistemology](https://plato.stanford.edu/entries/epistemology-social/#NetwEpisMode), §4.3
 
-:::
+### `r advdate(thu, 15)`
 
--   Jeffrey Sanford Russell, John Hawthorne and Lara Buchak, [Groupthink](https://philpapers.org/rec/RUSG)
--   Emily Sullivan et al, [Can Real Social Epistemic Networks Deliver the Wisdom of Crowds?](https://philarchive.org/archive/SULCRS)
+Topic
+:    Misleading with Truth
 
-## Week 15: Revision
-
-No new material - we'll just discuss anything that people felt went by too quickly, or that they would like to revise for essays.
-
+Reading
+:    James Owen Weatherall, Cailin O'Connor, and Justin Bruner, [How to Beat Science and Influence People: Policymakers and Propaganda in Epistemic Networks](https://www.journals.uchicago.edu/doi/abs/10.1093/bjps/axy062)
 
 \newpage
 
 ## Full List of Papers
 
--   Robert Axelrod and William Hamilton, [The Evolution of Cooperation](http://www-personal.umich.edu/~axe/research/Axelrod%20and%20Hamilton%20EC%201981.pdf)
--   Alexander Bird, [Social knowing: The social sense of 'scientific knowledge'](https://philpapers.org/rec/BIRSKT)
--   Michael Bratman, [Shared Intention](https://philpapers.org/rec/BRASI)
--   Michael Bratman, [Shared Cooperative Activity](https://philpapers.org/rec/BRASCA)
--   Giacomo Bonanno, [Spence's model of Signaling in the job market](http://canvas.umich.edu/)
--   Margaret Gilbert, [Walking Together: A Paradigmatic Social Phenomenon](https://philpapers.org/rec/GILWTA)
--   Jennifer Lackey, [Socially Extended Knowledge](https://philpapers.org/rec/LACSEK)
--   Neil Levy and Mark Alfano, [Knowledge From Vice: Deeply Social Epistemology](https://philpapers.org/rec/LEVKFV)
--   Jeffrey Sanford Russell, John Hawthorne and Lara Buchak, [Groupthink](https://philpapers.org/rec/RUSG)
--   Brian Skyrms, [The Stag Hunt](https://www.jstor.org/stable/3218711)
--   Michael Spence, [Job Market Signaling](https://www.jstor.org/stable/1882010?seq=1)
--   Emily Sullivan et al, [Can Real Social Epistemic Networks Deliver the Wisdom of Crowds?](https://philarchive.org/archive/SULCRS)
+- George Akerlof, [The Market for "Lemons": Quality Uncertainty and the Market Mechanism](https://www.jstor.org/stable/1879431)
+- Lisa Anderson and Charles Holt, [Information Cascades in the Laboratory](https://www.jstor.org/stable/2951328)
+- Robert Axelrod, [More Effective Choice in the Prisoner's Dilemma](https://www.jstor.org/stable/173638)
+- Robert Axelrod, [Effective Choice in the Prisoner's Dilemma](https://www.jstor.org/stable/173932)
+- Robert Axelrod and William Hamilton, [The Evolution of Cooperation](https://www.jstor.org/stable/1685895) 
+- Robert Axelrod, [The Emergence of Cooperation among Egoists](https://www.jstor.org/stable/1961366)
+- Kaushik Basu, [The Traveler's Dilemma: Paradoxes of Rationality in Game Theory](https://www.jstor.org/stable/2117865)
+- Michael Bratman, [Shared Intention](https://philpapers.org/rec/BRASI)
+- Michael Bratman, [Shared Cooperative Activity](https://philpapers.org/rec/BRASCA)
+- Jessica Brown, [Group belief and direction of fit](https://philpapers.org/rec/BROGBA-3)
+- John Geanakoplos, [Three Brief Proofs of Arrow's Impossibility Theorem](https://www.jstor.org/stable/25055941)
+- Margaret Gilbert, [Walking Together: A Paradigmatic Social Phenomenon](https://philpapers.org/rec/GILWTA)
+- In-Koo Cho and David Kreps, [Signaling Games and Stable Equilibria](https://www.jstor.org/stable/1885060)
+- Simon Hix, Ron Johnston, and Iain McLean [Choosing an Electoral System](https://www.thebritishacademy.ac.uk/publications/choosing-electoral-system/)
+- Steven Kuhn, [Prisoner's Dilemma](https://plato.stanford.edu/entries/prisoner-dilemma/)
+- Jennifer Lackey, [What is Justified Group Belief?](https://philpapers.org/rec/LACWIJ)
+- Christian List, [Social Choice Theory](https://plato.stanford.edu/entries/social-choice/)
+- Judith Mehta, Chris Starmerand Robert Sugden, [The Nature of Salience: An Experimental Investigation of Pure Coordination Games](https://www.jstor.org/stable/2118074)
+- Michael Morreau, [Arrow's Theorem](https://plato.stanford.edu/entries/arrows-theorem/)
+- Rosemarie Nagel, [Unraveling in Guessing Games: An Experimental Study](https://www.jstor.org/stable/2950991)
+- Cailin O'Connor and Sanford Goldberg, [Social Epistemology](https://plato.stanford.edu/entries/epistemology-social/#NetwEpisMode)
+- Jeffrey Sanford Russell, John Hawthorne and Lara Buchak, [Groupthink](https://philpapers.org/rec/RUSG)
+- Amartya Sen, [The Impossibility of a Paretian Liberal](https://www.jstor.org/stable/1829633)
+- Amartya Sen, [The Possibility of Social Choice](https://www.jstor.org/stable/117024)
+- Brian Skyrms, [Stag Hunt](https://www.jstor.org/stable/3218711)
+- Michael Spence, [Job Market Signaling](https://www.jstor.org/stable/1882010)
+- James Owen Weatherall, Cailin O'Connor, and Justin Bruner, [How to Beat Science and Influence People: Policymakers and Propaganda in Epistemic Networks](https://www.journals.uchicago.edu/doi/abs/10.1093/bjps/axy062)

@@ -1,0 +1,713 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+  \setmainfont[Scale = MatchLowercase]{Scala Pro}
+  \setsansfont[]{Scala Sans Pro}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={PHIL 444: Groups and Choices},
+  pdfauthor={Brian Weatherson},
+  colorlinks=true,
+  linkcolor={black},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{PHIL 444: Groups and Choices}
+\author{Brian Weatherson}
+\date{2024-01-01}
+
+\begin{document}
+\maketitle
+
+\textbf{Lead Instructor}: Brian Weatherson\\
+\includegraphics[width=1em,height=1em]{syllabus-phil444-w24_files/figure-pdf/fa-icon-a7ff419e70980f9f1a65816048d94526.pdf}
+weath@umich.edu\\
+\includegraphics[width=1.25em,height=1em]{syllabus-phil444-w24_files/figure-pdf/fa-icon-69b5e588a8cebb8cb21405167a7066e5.pdf}
+canvas.umich.edu\\
+\strut \\
+\textbf{Office Hours}: TBC\\
+\strut \\
+\textbf{Discussion Section Leades}: TBC\\
+\includegraphics[width=1em,height=1em]{syllabus-phil444-w24_files/figure-pdf/fa-icon-a7ff419e70980f9f1a65816048d94526.pdf}
+TBC
+
+\section{Course Description}\label{course-description}
+
+This course has four units.
+
+\begin{description}
+\tightlist
+\item[Group Attitudes]
+We'll look at how groups act, whether groups have beliefs, and what it
+takes for those beliefs to be reasonable, and how to combine individual
+attitudes into a group attitude.
+\item[Voting]
+We'll look at voting systems that are used around the world, and some
+theoretical results about the limits of voting systems.
+\item[Games and Coordination]
+We'll introduce the basics of game theory, with a focus on (a)
+coordination games, and (b) how well empirical evidence matches up to
+the theoretical predictions that game theory makes.
+\item[Information Networks]
+We'll look at some famous games involving transmission or suppression of
+information, and link this to contemporary work on optimal information
+networks.
+\end{description}
+
+\section{Canvas}\label{canvas}
+
+There is a Canvas site for this course, which can be accessed from
+\url{https://canvas.umich.edu}. Course documents (syllabus, lecture
+notes, assignments) will be available from this site. Please make sure
+that you can access this site. Consult the site regularly for
+announcements, including changes to the course schedule. And there are
+many tools on the site to communicate with each other, and with me.
+
+\section{Required Materials}\label{required-materials}
+
+There is a textbook for the course, which is available for free online.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Game Theory} by Giacomo Bonanno, available at
+  \url{http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html}.
+\end{itemize}
+
+The other readings will all be available through the university library,
+and will be linked on Canvas.
+
+\section{Course Requirements}\label{course-requirements}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Do the readings! Nothing I say in class will be more important than
+  the reading.
+\item
+  Come to lectures, and engage. This class will use \textbf{iClicker},
+  and you have to get a working iClicker early in term. Later in term,
+  we will be doing several games in class to test how well theoretical
+  predictions match up with behavior. Even though it's a big lecture
+  hall, you are \textbf{encouraged} to ask questions during lecture. I
+  do not want to be lecturing for 80 minutes.
+\item
+  Participate in the discussion sections. It is really important that
+  you interact with the discussion section leader. Some of this material
+  is hard, and you can only grasp it by talking it through in small
+  groups. Some of the material doesn't look hard, but like learning a
+  foreign language, you only figure out what you're missing when you try
+  to put it into practice.
+\item
+  Write short papers (about 4 pages, or about 1200 words) on each of the
+  first two units of the course.
+\item
+  Complete 5 of the 6 weekly assignments from parts 3 and 4 of the
+  course. (You should complete all six, but only the best five will
+  count for credit - this is to allow you to drop one if there is some
+  emergency one week. If the future resembles the recent past.)
+\item
+  Do the final exam, which will be fairly short, and held in the exam
+  period.
+\end{enumerate}
+
+Both of the papers may be co-written with one other student in the
+class. But you may not co-author both papers with the same other
+student.
+
+\section{Summary of Grading System}\label{summary-of-grading-system}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Two papers - 20\% each, 40\% total.
+\item
+  Weekly assignments - 6\% each, 5 assignments (that count), 30\% total
+\item
+  Participation in lecture (including performance in games) - 10\%
+\item
+  Final Exam - 20\%
+\end{enumerate}
+
+\section{Plagiarism}\label{plagiarism}
+
+Although team-work, and even co-authorship, is encouraged, plagiarism is
+strictly prohibited. You are responsible for making sure that none of
+your work is plagiarized. Be sure to cite work that you use, both direct
+quotations and paraphrased ideas. Any citation method that is tolerably
+clear is permitted, but if you'd like a good description of a citation
+scheme that works well in philosophy, look at
+\url{https://www.mendeley.com/guides/apa-citation-guide/}.
+
+You are encouraged to discuss the course material, including
+assignments, with your classmates, but all written work that you hand in
+under your own name must be your own. If work is handed is as the work
+of two people, you are affirming that each person did a fair share of
+the work. (Note that when you're submitting work on Canvas, you have to
+each submit the paper, even if it is co-authored. That way Canvas knows
+that everyone has turned in work.)
+
+You should also be familiar with the academic integrity policies of the
+College of Literature, Science \& the Arts at the University of
+Michigan, which are available here:
+\url{https://lsa.umich.edu/lsa/academics/academic-integrity.html}.
+Violations of these policies will be reported to the Office of the
+Assistant Dean for Student Academic Affairs, and sanctioned with a
+course grade of F.
+
+\section{Disability}\label{disability}
+
+The University of Michigan abides by the Americans with Disabilities Act
+of 1990, Section 504 of the Rehabilitation Act of 1973, and other
+applicable federal and state laws that prohibit discrimination on the
+basis of disability, which mandate that reasonable accommodations be
+provided for qualified students with disabilities.
+
+If you have a disability, and may require some type of instructional
+and/or examination accommodation, please contact me early in the
+semester. If you have not already done so, you will also need to
+register with the Office of Services for Students with Disabilities. The
+office is located at G664 Haven Hall.
+
+For more information on disability services at the University of
+Michigan, go to \url{http://ssd.umich.edu}.
+
+\section{Class Schedule}\label{class-schedule}
+
+\subsection{Group Attitudes}\label{group-attitudes}
+
+\subsubsection{Thursday, January 11}\label{thursday-january-11}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Introduction
+\item[Reading]
+No New Reading
+\end{description}
+
+\subsubsection{Tuesday, January 16}\label{tuesday-january-16}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Group Action
+\item[Reading]
+Margaret Gilbert, \href{https://philpapers.org/rec/GILWTA}{Walking
+Together: A Paradigmatic Social Phenomenon}
+\end{description}
+
+\subsubsection{Thursday, January 18}\label{thursday-january-18}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Group Action
+\item[Reading]
+Michael Bratman, \href{https://philpapers.org/rec/BRASI}{Shared
+Intention}
+
+Michael Bratman, \href{https://philpapers.org/rec/BRASCA}{Shared
+Cooperative Activity}
+\end{description}
+
+\subsubsection{Tuesday, January 23}\label{tuesday-january-23}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Group Belief
+\item[Reading]
+Jennifer Lackey, \href{https://philpapers.org/rec/LACWIJ}{What is
+Justified Group Belief?} (NB: This is very long, and I'll try to choose
+sections from it for the reading.)
+\end{description}
+
+\subsubsection{Thursday, January 25}\label{thursday-january-25}
+
+No class; I'm away at a conference
+
+\subsubsection{Tuesday, January 30}\label{tuesday-january-30}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Group Justification
+\item[Reading]
+Jessica Brown, \href{https://philpapers.org/rec/BROGBA-3}{Group belief
+and direction of fit}
+\end{description}
+
+\subsubsection{Thursday, February 01}\label{thursday-february-01}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Merging Probabilities
+\item[Reading]
+Jeffrey Sanford Russell, John Hawthorne and Lara Buchak,
+\href{https://philpapers.org/rec/RUSG}{Groupthink}
+\end{description}
+
+\subsection{Voting}\label{voting}
+
+\subsubsection{Tuesday, February 06 and Thursday, February
+08}\label{tuesday-february-06-and-thursday-february-08}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Voting systems
+\item[Reading]
+Simon Hix, Ron Johnston FBA and Iain McLean
+\href{https://www.thebritishacademy.ac.uk/publications/choosing-electoral-system/}{Choosing
+an Electoral System}
+\end{description}
+
+\subsubsection{Tuesday, February 13 and Thursday, February
+15}\label{tuesday-february-13-and-thursday-february-15}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Arrow's Theorem
+\item[Reading]
+Michael Morreau,
+\href{https://plato.stanford.edu/entries/arrows-theorem/}{Arrow's
+Theorem}
+\item[Recommended Reading]
+John Geanakoplos, \href{https://www.jstor.org/stable/25055941}{Three
+Brief Proofs of Arrow's Impossibility Theorem}
+\end{description}
+
+\subsubsection{Tuesday, February 20 and Thursday, February
+22}\label{tuesday-february-20-and-thursday-february-22}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Sen on Social Choice
+\item[Reading]
+Amartya Sen, \href{https://www.jstor.org/stable/1829633}{The
+Impossibility of a Paretian Liberal}
+
+Amartya Sen, \href{https://www.jstor.org/stable/117024}{The Possibility
+of Social Choice}
+\item[Recommended Reading]
+Christian List,
+\href{https://plato.stanford.edu/entries/social-choice/}{Social Choice
+Theory}
+\end{description}
+
+\subsubsection{Tuesday, February 27 and Thursday, February
+29}\label{tuesday-february-27-and-thursday-february-29}
+
+Winter Break
+
+\subsection{Games and Coordination}\label{games-and-coordination}
+
+Note that in this unit, and this unit \textbf{only} it would be better
+to do the reading \textbf{after} we discuss the material in class.
+
+\subsubsection{Tuesday, March 05 and Thursday, March
+07}\label{tuesday-march-05-and-thursday-march-07}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Prisoner's Dilemma
+\item[Reading]
+Bonanno, §2.1 and 2.2
+
+Robert Axelrod, \href{https://www.jstor.org/stable/173638}{More
+Effective Choice in the Prisoner's Dilemma}
+\item[Recommended]
+Robert Axelrod, \href{https://www.jstor.org/stable/173932}{Effective
+Choice in the Prisoner's Dilemma}
+
+Robert Axelrod and William Hamilton,
+\href{https://www.jstor.org/stable/1685895}{The Evolution of
+Cooperation} (possibly the most cited humanities/social science article
+ever written)
+
+Robert Axelrod, \href{https://www.jstor.org/stable/1961366}{The
+Emergence of Cooperation among Egoists}
+
+Steven Kuhn,
+\href{https://plato.stanford.edu/entries/prisoner-dilemma/}{Prisoner's
+Dilemma}
+\item[Interaction]
+From this time on we'll be making heavy use of the experimental setups
+on \href{https://veconlab.econ.virginia.edu/}{Veconlab}, and it is very
+important that you have your account set up by then.
+\end{description}
+
+\subsubsection{Tuesday, March 12}\label{tuesday-march-12}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Iterated Deletion
+\item[Reading]
+Bonanno, §2.5 and 2.6
+\end{description}
+
+\subsubsection{Thursday, March 14}\label{thursday-march-14}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Backward Induction
+\item[Reading]
+Bonanno, §3.1 and 3.2
+\end{description}
+
+\subsubsection{Tuesday, March 19}\label{tuesday-march-19}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Stag Hunt
+\item[Reading]
+Brian Skyrms, \href{https://www.jstor.org/stable/3218711}{Stag Hunt}
+\end{description}
+
+\subsubsection{Thursday, March 21}\label{thursday-march-21}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Coordination and Risk
+\item[Reading]
+Kaushik Basu, \href{https://www.jstor.org/stable/2117865}{The Traveler's
+Dilemma: Paradoxes of Rationality in Game Theory}
+\end{description}
+
+\subsubsection{Tuesday, March 26}\label{tuesday-march-26}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Focal Points
+\item[Reading]
+Judith Mehta, Chris Starmerand Robert Sugden,
+\href{https://www.jstor.org/stable/2118074}{The Nature of Salience: An
+Experimental Investigation of Pure Coordination Games}
+\end{description}
+
+\subsubsection{Thursday, March 28}\label{thursday-march-28}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Limits to Induction
+\item[Reading]
+Rosemarie Nagel, \href{https://www.jstor.org/stable/2950991}{Unraveling
+in Guessing Games: An Experimental Study}
+\end{description}
+
+\subsection{Information Networks}\label{information-networks}
+
+\subsubsection{Tuesday, April 02}\label{tuesday-april-02}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Introducing Signaling Games
+\item[Reading]
+In-Koo Cho and David Kreps,
+\href{https://www.jstor.org/stable/1885060}{Signaling Games and Stable
+Equilibria}, §2
+\end{description}
+
+\subsubsection{Thursday, April 04}\label{thursday-april-04}
+
+\begin{description}
+\tightlist
+\item[Topic]
+The Market for Lemons
+\item[Reading]
+George Akerlof, \href{https://www.jstor.org/stable/1879431}{The Market
+for ``Lemons'': Quality Uncertainty and the Market Mechanism}
+\end{description}
+
+\subsubsection{Tuesday, April 09}\label{tuesday-april-09}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Job Market Signaling
+\item[Reading]
+Michael Spence, \href{https://www.jstor.org/stable/1882010}{Job Market
+Signaling}, §§1-4
+\end{description}
+
+\subsubsection{Thursday, April 11}\label{thursday-april-11}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Information Cascades
+\item[Reading (read \textbf{after} class)]
+Lisa Anderson and Charles Holt,
+\href{https://www.jstor.org/stable/2951328}{Information Cascades in the
+Laboratory}
+\end{description}
+
+\subsubsection{Tuesday, April 16}\label{tuesday-april-16}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Epistemic Networks
+\item[Reading]
+Cailin O'Connor and Sanford Goldberg,
+\href{https://plato.stanford.edu/entries/epistemology-social/\#NetwEpisMode}{Social
+Epistemology}, §4.3
+\end{description}
+
+\subsubsection{Thursday, April 18}\label{thursday-april-18}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Misleading with Truth
+\item[Reading]
+James Owen Weatherall, Cailin O'Connor, and Justin Bruner,
+\href{https://www.journals.uchicago.edu/doi/abs/10.1093/bjps/axy062}{How
+to Beat Science and Influence People: Policymakers and Propaganda in
+Epistemic Networks}
+\end{description}
+
+\newpage
+
+\subsection{Full List of Papers}\label{full-list-of-papers}
+
+\begin{itemize}
+\tightlist
+\item
+  George Akerlof, \href{https://www.jstor.org/stable/1879431}{The Market
+  for ``Lemons'': Quality Uncertainty and the Market Mechanism}
+\item
+  Lisa Anderson and Charles Holt,
+  \href{https://www.jstor.org/stable/2951328}{Information Cascades in
+  the Laboratory}
+\item
+  Robert Axelrod, \href{https://www.jstor.org/stable/173638}{More
+  Effective Choice in the Prisoner's Dilemma}
+\item
+  Robert Axelrod, \href{https://www.jstor.org/stable/173932}{Effective
+  Choice in the Prisoner's Dilemma}
+\item
+  Robert Axelrod and William Hamilton,
+  \href{https://www.jstor.org/stable/1685895}{The Evolution of
+  Cooperation}
+\item
+  Robert Axelrod, \href{https://www.jstor.org/stable/1961366}{The
+  Emergence of Cooperation among Egoists}
+\item
+  Kaushik Basu, \href{https://www.jstor.org/stable/2117865}{The
+  Traveler's Dilemma: Paradoxes of Rationality in Game Theory}
+\item
+  Michael Bratman, \href{https://philpapers.org/rec/BRASI}{Shared
+  Intention}
+\item
+  Michael Bratman, \href{https://philpapers.org/rec/BRASCA}{Shared
+  Cooperative Activity}
+\item
+  Jessica Brown, \href{https://philpapers.org/rec/BROGBA-3}{Group belief
+  and direction of fit}
+\item
+  John Geanakoplos, \href{https://www.jstor.org/stable/25055941}{Three
+  Brief Proofs of Arrow's Impossibility Theorem}
+\item
+  Margaret Gilbert, \href{https://philpapers.org/rec/GILWTA}{Walking
+  Together: A Paradigmatic Social Phenomenon}
+\item
+  In-Koo Cho and David Kreps,
+  \href{https://www.jstor.org/stable/1885060}{Signaling Games and Stable
+  Equilibria}
+\item
+  Simon Hix, Ron Johnston FBA and Iain McLean
+  \href{https://www.thebritishacademy.ac.uk/publications/choosing-electoral-system/}{Choosing
+  an Electoral System}
+\item
+  Steven Kuhn,
+  \href{https://plato.stanford.edu/entries/prisoner-dilemma/}{Prisoner's
+  Dilemma}
+\item
+  Jennifer Lackey, \href{https://philpapers.org/rec/LACWIJ}{What is
+  Justified Group Belief?}
+\item
+  Christian List,
+  \href{https://plato.stanford.edu/entries/social-choice/}{Social Choice
+  Theory}
+\item
+  Judith Mehta, Chris Starmerand Robert Sugden,
+  \href{https://www.jstor.org/stable/2118074}{The Nature of Salience: An
+  Experimental Investigation of Pure Coordination Games}
+\item
+  Michael Morreau,
+  \href{https://plato.stanford.edu/entries/arrows-theorem/}{Arrow's
+  Theorem}
+\item
+  Rosemarie Nagel,
+  \href{https://www.jstor.org/stable/2950991}{Unraveling in Guessing
+  Games: An Experimental Study}
+\item
+  Cailin O'Connor and Sanford Goldberg,
+  \href{https://plato.stanford.edu/entries/epistemology-social/\#NetwEpisMode}{Social
+  Epistemology}
+\item
+  Jeffrey Sanford Russell, John Hawthorne and Lara Buchak,
+  \href{https://philpapers.org/rec/RUSG}{Groupthink}
+\item
+  Amartya Sen, \href{https://www.jstor.org/stable/1829633}{The
+  Impossibility of a Paretian Liberal}
+\item
+  Amartya Sen, \href{https://www.jstor.org/stable/117024}{The
+  Possibility of Social Choice}
+\item
+  Brian Skyrms, \href{https://www.jstor.org/stable/3218711}{Stag Hunt}
+\item
+  Michael Spence, \href{https://www.jstor.org/stable/1882010}{Job Market
+  Signaling}
+\item
+  James Owen Weatherall, Cailin O'Connor, and Justin Bruner,
+  \href{https://www.journals.uchicago.edu/doi/abs/10.1093/bjps/axy062}{How
+  to Beat Science and Influence People: Policymakers and Propaganda in
+  Epistemic Networks}
+\end{itemize}
+
+
+
+\end{document}
