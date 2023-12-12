@@ -1,0 +1,518 @@
+---
+title: 'PHIL 444: Groups and Choices'
+author: "Brian Weatherson"
+date: "Winter 2024"
+execute:
+  warning: false
+  message: false
+  cache: true
+format:
+    pdf: 
+      format: scrreprt
+      keep-tex: true
+      geometry: "1in"
+      mainfont: Scala Pro
+      sansfont: Scala Sans Pro
+      mainfontoptions: Scale = MatchLowercase
+      fontsize: 12pt
+      linkcolor: black
+      link-citations: true
+    html:
+      toc: false
+      mainfont: SF Pro Rounded
+---
+
+
+
+
+```{r load-packages}
+#| include: false
+#| results: hide
+require(tidyverse)
+require(fontawesome)
+```
+
+```{r dates_bib}
+#| include: false
+mon <- as.Date("2023-01-08") # Monday of the First Week
+tue <- mon + 1
+wed <- tue + 1
+thu <- wed + 1
+fri <- thu + 1
+
+advdate <- function(obj, adv) {
+ theday <- obj + 7*(adv - 1)
+ ttheday <- format(theday, format = "%A, %B %d")
+ return(ttheday)
+}
+
+
+```
+
+| **Lead Instructor**: Brian Weatherson
+| `r fa("far fa-envelope")` weath@umich.edu
+| `r fa("fas fa-wifi")` canvas.umich.edu
+| 
+| **Office Hours**: TBC
+| 
+| **Discussion Section Leades**: TBC
+| `r fa("far fa-envelope")` TBC
+
+# Course Description
+
+This course has four units.
+
+Group Attitudes
+:    We'll look at how groups act, whether groups have beliefs, and what it takes for those beliefs to be reasonable, and how to combine individual attitudes into a group attitude.
+
+Voting Systems
+:    We'll look at voting systems that are used around the world, and some theoretical results about the limits of voting systems.
+
+Games and Coordination
+:    We'll introduce the basics of game theory, with a focus on (a) coordination games, and (b) how well empirical evidence matches up to the theoretical predictions that game theory makes.
+
+Information Networks
+:    We'll look at some famous games involving transmission or suppression of information, and link this to contemporary work on optimal information networks.
+
+# Canvas
+
+There is a Canvas site for this course, which can be accessed from <https://canvas.umich.edu>. Course documents (syllabus, lecture notes, assignments) will be available from this site. Please make sure that you can access this site. Consult the site regularly for announcements, including changes to the course schedule. And there are many tools on the site to communicate with each other, and with me.
+
+# Required Materials
+
+There is a textbook for the course, which is available for free online. 
+
+-   *Game Theory* by Giacomo Bonanno, available at <http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html>.
+
+
+The other readings will all be available through the university library, and will be linked on Canvas.
+
+# Course Requirements
+
+1. Do the readings! Nothing I say in class will be more important than the reading.
+2. Come to lectures, and engage. This class will use **iClicker**, and you have to get a working iClicker early in term. Later in term, we will be doing several games in class to test how well theoretical predictions match up with behavior. Even though it's a big lecture hall, you are **encouraged** to ask questions during lecture. I do not want to be lecturing for 80 minutes.
+3. Participate in the discussion sections. It is really important that you interact with the discussion section leader. Some of this material is hard, and you can only grasp it by talking it through in small groups. Some of the material doesn't look hard, but like learning a foreign language, you only figure out what you're missing when you try to put it into practice.
+4. Write short papers (about 4 pages, or about 1200 words) on each of the first two units of the course.
+5. Complete 5 of the 6 weekly assignments from parts 3 and 4 of the course. (You should complete all six, but only the best five will count for credit - this is to allow you to drop one if there is some emergency one week. If the future resembles the recent past.)
+6. Do the final exam, which will be fairly short, and held in the exam period.
+
+Both of the papers may be co-written with one other student in the class. But you may not co-author both papers with the same other student.
+
+# Summary of Grading System
+
+1.  Two papers - 20% each, 40% total.
+2.  Weekly assignments - 6% each, 5 assignments (that count), 30% total
+3.  Participation in lecture (including performance in games) - 10%
+4.  Final Exam - 20%
+
+
+# Plagiarism
+
+Although team-work, and even co-authorship, is encouraged, plagiarism is strictly prohibited. You are responsible for making sure that none of your work is plagiarized. Be sure to cite work that you use, both direct quotations and paraphrased ideas. Any citation method that is tolerably clear is permitted, but if you'd like a good description of a citation scheme that works well in philosophy, look at <https://www.mendeley.com/guides/apa-citation-guide/>.
+
+You are encouraged to discuss the course material, including assignments, with your classmates, but all written work that you hand in under your own name must be your own. If work is handed is as the work of two people, you are affirming that each person did a fair share of the work. (Note that when you're submitting work on Canvas, you have to each submit the paper, even if it is co-authored. That way Canvas knows that everyone has turned in work.)
+
+You should also be familiar with the academic integrity policies of the College of Literature, Science & the Arts at the University of Michigan, which are available here: <https://lsa.umich.edu/lsa/academics/academic-integrity.html>. Violations of these policies will be reported to the Office of the Assistant Dean for Student Academic Affairs, and sanctioned with a course grade of F.
+
+
+# Disability
+
+The University of Michigan abides by the Americans with Disabilities Act of 1990, Section 504 of the Rehabilitation Act of 1973, and other applicable federal and state laws that prohibit discrimination on the basis of disability, which mandate that reasonable accommodations be provided for qualified students with disabilities.
+
+If you have a disability, and may require some type of instructional and/or examination accommodation, please contact me early in the semester. If you have not already done so, you will also need to register with the Office of Services for Students with Disabilities. The office is located at G664 Haven Hall.
+
+For more information on disability services at the University of Michigan, go to <http://ssd.umich.edu>.
+
+
+# Class Schedule
+
+## Group Attitudes
+
+### `r advdate(thu, 1)`
+
+Topic
+:    Introduction
+
+Reading
+:    No New Reading
+
+### `r advdate(tue, 2)`
+
+Topic
+:   Group Action
+
+Reading
+:   
+
+No class, classes start on Wednesday
+
+\columnbreak
+
+### `r advdate(thu, 1)`
+
+Topic
+:   Introduction
+
+Reading
+:   Bonanno, Chapter 1
+
+:::
+
+## Week 2: What are Games
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 2)`
+
+Topic
+ :   Games, Payouts and Utilities
+
+Reading
+ :   Bonanno, Sections 2.1 and 2.2.
+
+
+### `r advdate(thu, 2)`
+
+Topic
+ :   Dominant Strategies and Equilibria
+
+Reading
+ :   Bonanno, Sections 2.5 and 2.6.
+
+:::
+
+-   Weekly assignment 1 due on `r advdate(fri, 2)` at 5pm.
+
+## Week 3: Games and Time
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 3)`
+
+Topic
+:   Dynamic Games
+
+Reading
+:   Bonanno, Sections 3.1-3.3.
+
+
+### `r advdate(thu, 3)`
+
+Topic
+:   Backward Induction
+
+Reading
+:   Bonanno, Sections 3.4 and 3.5.
+
+:::
+
+-   Weekly assignment 2 due on `r advdate(fri, 3)` at 5pm.
+
+\newpage
+
+## Unit 4: Information and Utility
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 4)`
+
+Topic
+:   Games with Imperfect Information
+
+Reading
+:   Bonanno, Sections 4.1-4.4.
+
+
+### `r advdate(thu, 4)`
+
+No class - Professor away at conference
+
+:::
+
+### `r advdate(tue, 5)`
+Topic
+:   Utility
+
+Reading
+:   Bonanno, Sections 5.1-5.3.
+
+
+
+-   Weekly assignment 3 due on `r advdate(fri, 5)` at 5pm.
+
+## Unit 5: Games with Cardinal Payoffs
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(thu, 5)`
+
+Topic
+:   Nash Equilibria
+
+Reading
+:   Bonanno, Sections 6.1-6.3
+
+
+### `r advdate(tue, 6)`
+
+Topic
+:   Rationalizable Strategies
+
+Reading
+:   Bonanno, Section 6.4.
+
+:::
+
+## Unit 6: Probability
+
+### `r advdate(thu, 6)`
+
+Topic
+:   Probability
+
+Reading
+:   No new reading
+
+
+-   Weekly assignment 4 due on `r advdate(fri, 6)` at 5pm.
+
+
+## Week 7: Games with Time and Uncertainty
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 7)`
+
+Topic
+:   Extensive Form Games
+
+Reading
+:   Bonanno, Chapter 7
+
+### `r advdate(thu, 7)`
+
+Topic
+:   Signaling Games
+
+Reading
+:   Bonanno and Spence papers below.
+
+:::
+
+-   Weekly assignment 5 due on `r advdate(fri, 7)` at 5pm.
+-   Giacomo Bonanno, Spence's model of Signaling in the job market (available on Canvas)
+-   Michael Spence, [Job Market Signaling](https://www.jstor.org/stable/1882010?seq=1)
+
+\newpage
+
+## Week 8: Famous Cooperation Games
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 8)`
+
+Topic
+:   Prisoners Dilemma
+
+Reading
+:   Axelrod and Hamilton paper below
+
+
+### `r advdate(thu, 8)`
+
+Topic
+:   Stag Hunt
+
+Reading
+:   Skyrms paper below
+
+:::
+
+-   Weekly assignment 6 due on `r advdate(fri, 8)` at 5pm.
+-   Robert Axelrod and William Hamilton, [The Evolution of Cooperation](http://www-personal.umich.edu/~axe/research/Axelrod%20and%20Hamilton%20EC%201981.pdf)
+-   Brian Skyrms, [The Stag Hunt](https://www.jstor.org/stable/3218711)
+
+```{r reset_dates_bib, include=FALSE}
+# Redo dates to allow for a spring break
+knitr::opts_chunk$set(cache = FALSE, dev = 'pdf')
+mon <- as.Date("2023-01-09") # Monday of the Second Week - second because there was a break
+tue <- mon + 1
+wed <- tue + 1
+thu <- wed + 1
+fri <- thu + 1
+# fri <- as.Date("2016-01-08")
+
+advdate <- function(obj, adv) {
+ theday <- obj + 7*(adv - 1)
+ ttheday <- format(theday, format = "%A, %B %d")
+ return(ttheday)
+}
+
+#library(RefManageR)
+## library(knitcitations)
+## library(rcrossref)
+#bib <- ReadBib("411bib.bib")
+#myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
+
+```
+
+## Week 9: Games with Types
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 9)`
+
+Topic
+:   Gender and Coordination
+
+Reading
+:   O'Connor, Intro and Chapter 1
+
+
+### `r advdate(thu, 9)`
+
+Topic
+:   Equilibria Involving Types
+
+Reading
+:   O'Connor, Chapters 2 and 3
+
+:::
+
+## Week 10: The Evolution of Gender
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 10)`
+
+Topic
+:   Gender and Convention
+
+Reading
+:   O'Connor, Chapter 4
+
+
+### `r advdate(thu, 10)`
+
+Topic
+:   Convention and Power
+
+Reading
+:   O'Connor, Chapter 5
+
+:::
+
+## Week 11: The Evolution of Gender
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 11)`
+
+Topic
+:   First Mover Advantage and Disadvantage
+
+Reading
+:   O'Connor, Chapter 6
+
+
+### `r advdate(thu, 11)`
+
+Topic
+:   Discrimination
+
+Reading
+:   O'Connor, Chapters 7-10
+
+:::
+
+\newpage
+
+## Week 12: Group Intention
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 12)`
+
+Topic
+:   Gilbert's Theory
+
+Reading
+:   Gilbert Paper and First Bratman paper
+
+
+### `r advdate(thu, 12)`
+
+Topic
+:   Bratman's Theory
+
+Reading
+:   Second Bratman paper
+
+:::
+
+-   Margaret Gilbert, [Walking Together: A Paradigmatic Social Phenomenon](https://philpapers.org/rec/GILWTA)
+-   Michael Bratman, [Shared Intention](https://philpapers.org/rec/BRASI)
+-   Michael Bratman, [Shared Cooperative Activity](https://philpapers.org/rec/BRASCA)
+
+## Week 13: Group Knowledge
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 13)`
+
+Topic
+:   Group Knowledge and Individual Knowledge
+
+Reading
+:   Lackey paper and Bird paper
+
+
+### `r advdate(thu, 13)`
+
+Topic
+:   Public Virtue and Private Vice
+
+Reading
+:   Levy and Alfano paper
+
+:::
+
+-   Jennifer Lackey, [Socially Extended Knowledge](https://philpapers.org/rec/LACSEK)
+-   Alexander Bird, [Social knowing: The social sense of 'scientific knowledge'](https://philpapers.org/rec/BIRSKT)
+-   Neil Levy and Mark Alfano, [Knowledge From Vice: Deeply Social Epistemology](https://philpapers.org/rec/LEVKFV)
+
+## Week 14: Group Belief
+
+::: {.multicols data-latex="{2}"}
+### `r advdate(tue, 14)`
+
+Topic
+:   Group probability aggregation
+
+Reading
+:   Russell et al paper
+
+
+### `r advdate(thu, 14)`
+
+Topic
+:   Social Wisdom
+
+Reading
+:   Sullivan et al paper
+
+:::
+
+-   Jeffrey Sanford Russell, John Hawthorne and Lara Buchak, [Groupthink](https://philpapers.org/rec/RUSG)
+-   Emily Sullivan et al, [Can Real Social Epistemic Networks Deliver the Wisdom of Crowds?](https://philarchive.org/archive/SULCRS)
+
+## Week 15: Revision
+
+No new material - we'll just discuss anything that people felt went by too quickly, or that they would like to revise for essays.
+
+
+\newpage
+
+## Full List of Papers
+
+-   Robert Axelrod and William Hamilton, [The Evolution of Cooperation](http://www-personal.umich.edu/~axe/research/Axelrod%20and%20Hamilton%20EC%201981.pdf)
+-   Alexander Bird, [Social knowing: The social sense of 'scientific knowledge'](https://philpapers.org/rec/BIRSKT)
+-   Michael Bratman, [Shared Intention](https://philpapers.org/rec/BRASI)
+-   Michael Bratman, [Shared Cooperative Activity](https://philpapers.org/rec/BRASCA)
+-   Giacomo Bonanno, [Spence's model of Signaling in the job market](http://canvas.umich.edu/)
+-   Margaret Gilbert, [Walking Together: A Paradigmatic Social Phenomenon](https://philpapers.org/rec/GILWTA)
+-   Jennifer Lackey, [Socially Extended Knowledge](https://philpapers.org/rec/LACSEK)
+-   Neil Levy and Mark Alfano, [Knowledge From Vice: Deeply Social Epistemology](https://philpapers.org/rec/LEVKFV)
+-   Jeffrey Sanford Russell, John Hawthorne and Lara Buchak, [Groupthink](https://philpapers.org/rec/RUSG)
+-   Brian Skyrms, [The Stag Hunt](https://www.jstor.org/stable/3218711)
+-   Michael Spence, [Job Market Signaling](https://www.jstor.org/stable/1882010?seq=1)
+-   Emily Sullivan et al, [Can Real Social Epistemic Networks Deliver the Wisdom of Crowds?](https://philarchive.org/archive/SULCRS)
