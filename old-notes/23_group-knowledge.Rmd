@@ -1,0 +1,58 @@
+---
+title: "Group Knowledge"
+author: "Philosophy 444"
+date: "4 April, 2023"
+format: pdf
+geometry: margin=1in
+mainfont: SF Pro Text Light
+mainfontoptions: 
+ - BoldFont = SF Pro Text Semibold
+ - Scale = MatchLowercase
+---
+
+In each of the following examples, I want you to think about whether the group in question has knowledge. One answer might be, "It depends on details you haven't filled in", but maybe sometimes the answer is clearly yes or no.
+
+# Example One
+
+The Ruritanian President is a French spy. The CIA agent tasked with understanding Ruritania figured this out, and told her superiors. They incorporated this into their plans, but kept the information super-secret. So most CIA agents, those who don't have to deal with Ruritania, have the orthodox view that the Ruritanian President is in fact a German spy.
+
+Does the CIA know that the Ruritanian President is a French spy?
+
+# Example Two
+
+Fred and George, the twins, are going on a train trip. Fred has looked at a timetable, and through that formed the belief that the next train leaves at 12.07. George doesn't know when the trains are, but knows that Fred is looking at an old timetable. He also knows that the new timetable only changes the times of evening trains - trains during the day have not changed.
+
+- Does Fred know when the next train leaves?
+- Does George know when the next train leaves?
+- Do the twins know when the next train leaves?
+
+# Example Three
+
+Fred and George, the twins, got worried that there is a ghost in their house. Their house just has an upstairs and a downstairs, so they divided it up and started looking. After a search, Fred knows that there is no ghost upstairs. George knows that there is no ghost downstairs. They haven't yet had a chance to communicate with each other.
+
+- Does Fred know there is no ghost in the house?
+- Does George know there is no ghost in the house?
+- Do the twins know there is no ghost in the house.
+
+\newpage
+
+# Example Four
+
+Building a car is hard, and requires a lot of knowledge. The Ford Motor Company has people who specialise in each of the steps required, and managers who know how to get these specialists to work together. But none of the specialists could do the jobs of the others, and none of the managers could do any of the specialist jobs. Still, the company manages to output a lot of cars.
+
+- Does the Ford Motor Company know how to build cars?
+- Does any person in the Ford Motor Company know how to build cars?
+
+# Example Five
+
+The historical records say that in 1896, the mayor of Ann Arbor was Warren E. Walker. He's a largely forgotten figure - he doesn't even have a wikipedia page. In the world of the story (not this world!) he's even more forgotten than this. There is not a person alive who could tell you, without looking it up, who was the mayor of Ann Arbor in 1896. But there are many people who could look it up - it's right there on Wikipedia for one.
+
+- Which groups, if any, know that in 1896, the mayor of Ann Arbor was Warren E. Walker?
+
+# Lackey's Argument
+
+I'll talk through this much more in class (perhaps much much more), but it's useful to have a very brief sketch of the argument on paper.
+
+1. If someone, or some group, knows that $p$, then that group can rationally take it for granted that $p$ in choosing an action.
+2. In at least example five, and maybe others, the groups cannot take the allegedly known things for granted in rationally choosing an action.
+3. So in at least example five, and maybe others, the groups do not have knowledge.

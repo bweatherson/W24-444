@@ -1,0 +1,261 @@
+---
+title: "444 Lecture 21"
+subtitle: "Gilbert on Group Action"
+author: "Brian Weatherson"
+date: "28 March 2023"
+---
+
+# Group Action
+
+## Very Big Picture
+
+We talk all the time about groups as if they are agents.
+
+> -   They have doxastic states: beliefs, suspicions, knowledge.
+> -   They have desire-like states: hopes, plans, intentions.
+> -   They do things.
+
+## Three Big Questions
+
+1.  Are these claims literally true, or are they just figures of speech?
+2.  If they are true, when are they true? If they are not, when are they appropriate?
+3.  What turns on the answers to 1 and 2?
+
+## A Toy Theory
+
+> 1.  Group mental states are defined by the same kinds of things as individual mental states.
+> 2.  Group moral responsibility is related to group mental states the same way that individual moral responsibility is related to individual mental states.
+> 3.  Therefore, group moral responsibility is parallel to individual moral responsibility.
+
+## Two Important, but Distinct, Questions
+
+> 1.  When is a group morally responsible for its actions/the actions of its members?
+> 2.  When is an individual in a group responsible for the actions of the group?
+
+## What are Attitudes?
+
+We're going to be interested, at least in part, in all of the following
+
+- Group Beliefs
+- Group Probabilities
+- Group Desires
+- Group Intentions
+
+We're not going to talk about things that seem like they have an affective component, like group fears, but those could be interesting too.
+
+## Kinds of Groups
+
+- Small groups, e.g., like walking together, group discussions in class!
+- Hierarchical groups - militaries, and intelligence agencies, are paradigms here.
+- Groups with structure but no (or less) hierarchy - scientific communities are the paradigm here.
+- Large groups with no structure at all, e.g., mobs.
+
+## Lots of Options
+
+For every combination of attitude type (belief/intention/etc) and group type (small/hierarchical/etc), you can ask:
+
+- Can a group of that type have that attitude?; and
+- What would it take for that group to have that attitude?
+
+Don't expect these answers to all be the same!
+
+# Gilbert
+
+## Gilbert on Group Action
+
+-   Start with a picture of a very simple group - two people walking together.
+-   Leverage that into a picture of what it is for groups to act.
+-   The picture will eventually include groups having other states - the group will be an agent.
+-   But that's not quite how Gilbert builds things up.
+
+## Two Big Questions about Gilbert
+
+1.  Does Gilbert have the right analysis of "walking together", or other small group activities?
+2.  Is it the right model for larger group activities?
+
+## A Traditional Way of Thinking About Problem
+
+1.  What makes some people a *group*, as opposed to merely some people?
+2.  What makes it the case that that group is engaged in a group action, shares a group intention, and so on?
+
+Gilbert's view is that this is the wrong way to look at things. Rather, these two questions should be answered simultaneously.
+
+# Shared Plans
+
+## Two Theories of Group Action
+
+#### Weak Shared Plan
+
+All the people in the group have the same plan.
+
+#### Strong Shared Plan
+
+All the people in the group have the same plan, and this is common knowledge.
+
+## Argument Against Weak Shared Plan
+
+1.  If each person is trying to do X, and thinks they are the only one trying to do X, then there is no group action of trying to do X.
+2.  If **Weak Shared Plan** is true, then in such a situation there is a group action of trying to do X.
+3.  So **Weak Shared Plan** is false.
+
+## Argument Against Strong Shared Plan
+
+1.  If **Strong Shared Plan** is true, then the members of the group have no obligation to the others to continue with the plan if they lose interest in it.
+2.  In cases of group action, members of the group do have an obligation to the others to continue with the plan even if they lose interest in it.
+3.  So **Strong Shared Plan** is false.
+
+Both parts of this are controversial. Gilbert spends time on each, first defending 1, then clarifying 2.
+
+## Trust and Reliance
+
+-   Gilbert's objection is that **Strong Shared Plan** gives you mutual reliance, but it doesn't give you trust.
+-   The distinction between reliance and trust is hard to state precisely, but there are very intuitive examples of reliance without trust.
+-   Note in particular that how you can criticise someone who betrays your trust is very different to how you can criticise someone who you mistakenly relied on.
+
+## Gilbert on Obligation
+
+1.  If **Strong Shared Plan** was true, then members of a group could properly rely on each other to continue the group's operation, but they couldn't properly trust each other to continue the group's operation.
+2.  When someone abandons a group project, the criticisms we can make of them are more like the criticisms of people who betray a trust than people who let us down even though we relied on them.
+3.  So, **Strong Shared Plan** is false.
+
+## A Note
+
+This seems like a very strong premise.
+
+- When someone abandons a group project, the criticisms we can make of them are more like the criticisms of people who betray a trust than people who let us down even though we relied on them.
+
+I'm not sure that it is in general true, especially for large groups.
+
+# Obligation
+
+## What is the Obligation to Continue?
+
+It's not a moral obligation. Here is Gilbert's argument.
+
+1.  You can have shared plan between people with no concept of moral obligation.
+2.  If the obligation is moral obligation, that's impossible.
+3.  So the obligation is not moral obligation. \pause
+
+This is, I think, a bad argument. 1 is only true for psychopaths, and not clear they can engage in group action.
+
+## What is the Obligation to Continue?
+
+Here is a better argument for the same conclusion.
+
+1.  You can have a shared plan to do an immoral thing.
+2.  You don't have moral obligations to do immoral things.
+3.  So the obligation is not a moral obligation.
+
+## What is the Obligation to Continue?
+
+-   It's also not a prudential obligation.
+-   This should be clear, but Gilbert spends a bit of time on it. \pause
+
+So what kind of weird sui generis obligation is it? This is a big question for Gilbert to answer.
+
+# Groups as Subjects
+
+## Gilbert's Positive View
+
+-   That there is a group action when (and only when) the people form a plural subject.
+-   So, what is a plural subject.
+
+## First Person Plural
+
+One account is that we have a plural subject when the plurality can literally be the subject of a sentence.
+
+-   This can't be right.
+-   "We are about to start killing each other for food" is a well-formed English sentence, but the 'we' there does not pick out a Gilbert-style group.
+
+## Distributive/Collective
+
+There is an important distinction between distributive and collective readings of plural sentences. The distinction turns on whether this inference is valid.
+
+1.  Group G is F.
+2.  a is in group G.
+3.  Therefore, a is F.
+
+## Distributive Reading
+
+1.  Our class has an exam tomorrow.
+2.  I am in the class.
+3.  Therefore, I have an exam tomorrow.
+
+This is the distributive reading; the group has the property because everyone has the property.
+
+## Collective Reading
+
+1.  Our class is surrounding the building.
+2.  I am in the class.
+3.  Therefore, I am surrounding the building.
+
+This is the collective reading; the group does not surround the building in virtue of each individual surrounding the building.
+
+## Plural Subjects
+
+A better version of Gilbert's view on pronouns is that a group is a plural subject when they can be referred to by a first person plural pronoun understood collectively, not distributively.
+
+-   This rules out really bad cases - that we have an exam tomorrow doesn't make us a group.
+-   But it doesn't do enough - the example I gave earlier is collective not distributive.
+
+## Authority and Doing
+
+-   I think at the heart of Gilbert's view is a really fascinating phenomena about the emergence of authority.
+-   In some cases, the fact that a person is giving instructions and other people are following them gives that person a kind of authority.
+-   By that I don't just mean the descriptive claim that their instructions will be followed.
+-   I mean that some others should (in some sense) follow these instructions; they are doing the wrong thing if they don't.
+
+## Authority and Gilbert Groups
+
+-   If a person has this kind of authority, then some others should follow.
+-   And that sort of sufficies for the people involved to form a group in Gilbert's sense.
+
+## Duos and Gilbert Groups
+
+But there is something very special about the two person groups Gilbert considers.
+
+-   No one can leave without the group dissolving.
+
+## Many Person Groups
+
+Imagine that you're in a group, and that you have (somehow) the followiing obligations.
+
+1.  To not do something that would constitute the dissolution of the group.
+2.  To follow the rules of the group conditional on being in the group.
+
+In a two person group, these will entail an obligation to continue following the group rules. But not in larger groups.
+
+## Puzzle Cases
+
+1.  Large groups
+2.  Immoral group activities
+3.  Explicit disavowal of long term commitment
+
+## Large Groups
+
+-   If I'm in a large group (e.g., a protest rally), how much obligation do I have to continue from the fact that I've joined?
+-   Intuitively, not much.
+-   And maybe the fact that I wouldn't dissolve the group by leaving matters here.
+
+## Immoral Groups
+
+-   Gilbert knows this, but it's a challenge for her to say what the obligation is in cases where the group is, say, robbing a bank.
+-   To be fair, this is kind of a problem for everyone.
+
+## Immoral Groups
+
+-   If I join a bank robbing group, and promise to do my part in a plan, then just bail when the plan is in operation, there is a sense in which I've done something wrong.
+-   This sense can persist even if it would be all things considered worse to continue in the group.
+-   Perhaps Gilbert can offer resources to explain what's going on here.
+
+## Explicit Disavowal
+
+Sometimes a person can join a group and explicitly say they have no long term commitment to it.
+
+-   We're watching football in a common area, and someone we know comes by.
+-   We invite them to join us, and they say "Sure, but I might have to go if I get a call."
+-   They are in the group, even though they do nothing at all wrong if the call comes and they leave.
+
+## For Next Time
+
+Bratman's very different picture of group action.

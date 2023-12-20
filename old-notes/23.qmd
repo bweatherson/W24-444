@@ -1,0 +1,86 @@
+---
+title: "444 Lecture 23"
+subtitle: "Lackey on Group Knowledge"
+author: "Brian Weatherson"
+date: "4 April, 2023"
+
+---
+
+# Knowledge, Action and Groups
+
+## Plan
+
+- For today I mostly want to discuss the five examples that I posted on Canvas.
+- So this is just a very short set of slides on an argument by Jennifer Lackey.
+
+## Emergent Group Knowledge
+
+Can a group know that $A$ without any member of the group knowing that $A$? \pause
+
+- How does the structure of the group relate to whether this is possible?
+
+## Case One: Compound Knowledge
+
+- The expert on $p$ knows that $p$.
+- The expert on $q$ knows that $q$.
+- No one has asked whether $p \wedge q$ is true.
+- But maybe the group knows it.
+
+## Structure
+
+- This maybe feels like it will only work for structured groups.
+- In an unstructured group, it won't be so clear that there is an expert on the relevant topics.
+
+## Case Two: Stored Knowledge
+
+- The expert on $p$ learns that $p$.
+- This information is stored in the right kind of way.
+- Then the expert loses that knowledge. (Perhaps by dying.)
+- Does the group retain the knowledge that p?
+
+## Structure
+
+- This one feels like structure shouldn't matter.
+- An unstructured groups can have storage mechanisms.
+
+## Lackey's Argument
+
+1. If someone, or some group, knows that $A$, then that group can rationally take it for granted that $A$ in choosing an action.
+2. If no one in the group knows that $A$, the group cannot take the allegedly known things for granted in rationally choosing an action.
+3. So in at least example five, and maybe others, the groups do not have knowledge.
+
+## Knowledge and Action
+
+- Lackey's premise 1 is a version of an important principle connecting knowledge and action.
+- The premise is really super controversial.
+
+## Knowledge and Action
+
+- Lots of people think that you cannot always take for granted things that you know.
+- For example, they think that you can simultaneously know that you turned the oven off, and not be able to take this for granted when deciding to check whether the oven is off.
+- But I think this principle is pretty plausible.
+
+## Knowledge and Action
+
+- But premise 2 seems more dubious to me.
+- Imagine that in the past I was told that in 1896 the mayor of Ann Arbor was Warren Walker.
+- And now I can't quite recall his name.
+- I can't simply take that fact for granted in action.
+- But maybe I did know it all along.
+
+## Knowledge and Action
+
+- Being able to take something for granted arguably requires not just knowledge, but access, and that's a stronger condition.
+- And it's true that the group in Bird's case doesn't have access to the knowledge.
+
+## Emergence
+
+- Note that the possibility of group knowledge without individual knowledge doesn't entail that there is anything like a group mind above and beyond the individual mind.
+- These cases are still compatible with thorough going reductionism.
+- It's just that we can't reduce group knowledge to individual knowledge.
+
+## Emergence
+
+- The same pattern occurs in a lot of other topics.
+- You can often have reduction without reduction on this very question.
+- For instance, the same thing is arguably true about causation.

@@ -1,0 +1,93 @@
+---
+title: "444 Lecture 12.2 - Bratman on Group Action"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+        - toc.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Strategy
+
+- Like Gilbert, Bratman starts with a simple case, and builds up.
+- But for Bratman, the building isn't an impressionistic picture; it's a set of conditions.
+- Of course, these conditions don't quite work in puzzle cases, so we add complications.
+- The history of philosophy suggests this path does not have a great record of success.
+
+## Three Conditions
+
+1. Mutual Responsiveness
+2. Commitment to joint activity; i.e., we both intend to do this very activity, under something like this description.
+3. Commitment to mutual support; i.e., we both intend to help the other should they falter, and not claim all the glory.
+
+The last condition is a strengthening of the idea that cooperative activity is not side-by-side activity.
+
+## Many Person Groups
+
+- Like with Gilbert, you might worry about the generalisation of these to many person groups.
+- In a large group, I can intend that this group activity happen without having any commitment to being part of it.
+- That can't happen in a two person group; if I leave, the group ceases to exist.
+- So there is this tricky question about what kind of commitment is needed on the part of each individual for a large group activity to persist.
+- Thinking about two person cases is unlikely to help clarify that.
+
+## Extra-Personal Intentions
+
+- One of the central moves Bratman makes is that each person individually intends that the group does something.
+- You might think this is odd; I can only intend that I do things. \pause
+- But really there are lots of cases where I intend something not entirely in my control.
+- I can intend to spend a sunny day at the beach, without intending the sunshine. \pause
+- I can even, I think, do it without being 100% sure of the sunshine. \pause
+- Another example: I can intend to holiday in Paris, although I can't control all the aspects of my getting to Paris.
+
+## Mesh
+
+- Bratman's idea that plans should mesh is, I think, a really nice way of splitting the difference between the views that our plans must match, and that there is no constraint on mutual plans.
+- Matching plans is too strong; I don't need to have views about what you do.
+- No constraints is too weak; it isn't a joint activity if I don't have some kinds of vetos.
+- Mesh is a nice attempt to get something between these.
+
+## Problems for Mesh
+
+- But as stated it feels too strong.
+- Imagine that your job is to get the paint. 
+- I have views about where to get the paint from (as in Bratman's example), but also how to drive there. 
+- This feels like it shouldn't matter; it's your job to get the paint.
+
+## Mesh and Counterfactuals
+
+From the other direction, it's fascinating to think through cases that turn on how counterfactually resilient mesh must be.
+
+- Some level of resiliency is needed. If we are working side by side on different projects, the fact that they happen to mesh doesn't make them joint projects.
+- But total counterfactual resiliency isn't needed either. I can be in a group with you, but be disposed to leave if you insist on singing arias while we work.
+- I suspect there will be some vague cases in the middle here.
+
+## Coercion
+
+- Assuming that everyone plans to stay in the group, and to be cooperative, it feels we should give each other some flexibility in how they do their jobs.
+- There is something vaguely coercive about even having views about how you should get to the store to buy the paint.
+- Of course, it's fine to be helpful, and there isn't really anything wrong with having views about what is better and worse.
+- I don't really know to balance these considerations.
+
+## What Counts as Support
+
+- The single possible kind of support feels really weak.
+- What if there is a kind of thing I can't stand seeing anyone suffer through?
+- Feels like we need a generic here not an existential.
+
+## Are Competitive Games SCAs, or Group Actions
+
+- Last case, because this is both a problem for Bratman and an interesting puzzle that tells us something about the stakes of these questions.
+- Is playing chess with a friend a shared cooperative activity?
+- It doesn't satisfy mesh, or support. I want to upset your plans.
+- But in some ways it is; a chess game involves a fair amount of coordination and cooperation. \pause
+- What turns on calling it a shared activity or not?

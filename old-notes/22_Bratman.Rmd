@@ -1,0 +1,72 @@
+---
+title: "Bratman on Group Action"
+author: "Philosophy 444"
+date: "30 March, 2023"
+format: pdf
+geometry: margin=1.1in
+fontsize: 11pt
+mainfont: SF Pro Text Light
+mainfontoptions: 
+ - BoldFont = SF Pro Text Semibold
+ - Scale = MatchLowercase
+---
+
+# Two Initial Points
+
+1. Gilbert on authority. How much real-life authority comes from being the person who has been making the decisions and has others going along with them?
+2. Bratman's picture. Start with a simple theory, and add complications to deal with puzzle cases. The history of philosophy is that this doesn't end well. Work through the details, but be cautious.
+
+# Three Conditions
+
+* Mutual Responsiveness
+* Commitment to joint activity; i.e., we both intend to do this very activity, under something like this description.
+* Commitment to mutual support; i.e., we both intend to help the other should they falter, and not claim all the glory.
+
+The last condition is a strengthening of the idea that cooperative activity is not side-by-side activity.
+
+# Can I intend that we F?
+
+* Sure - I can intend to spend a sunny day at the beach, without intending the sunshine
+* I can even, I think, do it without being 100% sure of the sunshine
+* Don't need complete control
+* Another example: I can intend to holiday in Paris, although I can't control all the aspects of my getting to Paris.
+
+# Mesh
+
+* As stated this feels too strong.
+* Imagine that your job is to get the paint. I have views about where to get the paint from (as in Bratman's example), but also how to drive there. This feels like it shouldn't matter; it's your job to get the paint.
+* How much counterfactual resiliency of mesh is interesting here. Bratman's pun about 'beyond the pale' drives an interesting point.
+* In practice, it can feel almost coercive to include a strong restriction on sub-plans.
+
+# Reflexivity
+
+* Long tradition of thinking about the point of intention is that action is brought about as a result of this very intention.
+* Bratman is extending this to a group setting.
+
+# What exactly counts as coercion?
+
+If I dictate all the terms, that's coercive. But where we draw the line between power imbalance and coercion is tricky. (Famously!)
+
+# What Counts as Support
+
+* The single possible kind of support feels really weak.
+* What if there is a kind of thing I can't stand seeing anyone suffer through.
+* Feels like we need a generic here not an existential
+
+# Explicit disavowal of commitment
+
+* Discuss these for a bit
+* Do they defeat shared intention; shared cooperative activity?
+* Do they 
+
+# Can we get commitment from elsewhere
+ 
+* Typical case - assurances and responsibility to live up to assurances
+* Big picture - let people know what game they are playing
+* Let people rule out options
+* This is a good thing to do
+
+# Are Competitive Games SCAs, or Group Actions
+
+* I mean sort of yes, sort of no.
+* What turns on this question?
