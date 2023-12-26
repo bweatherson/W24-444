@@ -1,0 +1,6 @@
+---
+title: "444 Lecture 2"
+subtitle: "Gilbert on Group Action"
+author: "Brian Weatherson"
+date: "Something something January 2024"
+---

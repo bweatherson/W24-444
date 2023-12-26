@@ -1,0 +1,257 @@
+---
+title: "444 Lecture 3"
+subtitle: "Bratman on Shared Cooperative Activity"
+author: "Brian Weatherson"
+date: "A bit later, January 2024"
+---
+
+# Bratman's Theory
+
+## Strategy
+
+- Like Gilbert, Bratman starts with a simple case, and builds up.
+- But for Bratman, the building isn't an impressionistic picture; it's a set of conditions.
+- Of course, these conditions don't quite work in puzzle cases, so we add complications.
+- The history of philosophy suggests this path does not have a great record of success.
+
+## Three Conditions
+
+:::{.incremental}
+1. Mutual Responsiveness
+2. Commitment to joint activity; i.e., we both intend to do this very activity, under something like this description.
+3. Commitment to mutual support; i.e., we both intend to help the other should they falter, and not claim all the glory.
+:::
+
+The last condition is a strengthening of the idea that cooperative activity is not side-by-side activity.
+
+## Many Person Groups
+
+- Like with Gilbert, you might worry about the generalisation of these to many person groups.
+- In a large group, I can intend that this group activity happen without having any commitment to being part of it.
+- That can't happen in a two person group; if I leave, the group ceases to exist.
+
+## Many Person Groups
+
+- So there is this tricky question about what kind of commitment is needed on the part of each individual for a large group activity to persist.
+- Thinking about two person cases is unlikely to help clarify that.
+
+## Target
+
+The focus of Bratman's paper is the notion of a Shared Cooperative Activity (SCA).
+
+- It isn't clear how much this is a pre-theoretic notion, and how much it is something he is trying to introduce by theorising about it.
+- One question is how closely this is related to the notion of a **shared intention**.
+
+## Shared Intention
+
+Shared intentions are fairly easy to understand.
+
+- If **we** intend to move the piano, that's a shared intention.
+- It's also a shared cooperative activity.
+- And just thinking about that simple case, or the other cases he discusses like singing a duet or painting a house, might make you think these are the same notion.
+
+## Shared Intention and SCAs
+
+But as we see at the end of the paper, it's a bit trickier than that.
+
+- If **we** intend to play chess, that's a shared intention.
+- Is it a Shared Cooperative Activity?
+
+## Games and Cooperative Action
+
+Games are these really tricky things.
+
+- If Alice and Bob are playing chess, they each want to win, and hence each want to thwart the other's play.
+- But they also are cooperating in collectively playing chess.
+- Alice doesn't want to simply set the pieces up so her pieces are checkmating Bob's.
+- She wants to win a game of chess, and Bob is partially cooperating with that, by playing, and partially not cooperating, by playing well.
+
+## Games and Cooperative Action
+
+Note though that Bob in a sense can't be maximally cooperative.
+
+- If he made it easy for Alice to win, that wouldn't give Alice a *game of chess*. It would be more like a shared activity of setting up a checkmate board, which is boring.
+- Maximally altruistic Bob, who wants to help Alice get what she wants, has a tricky task here.
+- And that in turn complicates what it is for a game to be a cooperative activity.
+
+# We-Intentions
+
+## Background
+
+Bratman is most famous in philosophy for his work on **intention**, like intending to quit smoking, or intending to go to New York this summer.
+
+- Prior to his 1980s work, a lot of philosophers thought that intentions were somehow reducible to beliefs and desires.
+- E.g., intending to go to New York is some combination of wanting to go and believing I will go.
+- Bratman persuaded a lot of people that that's wrong, and intentions are something above beliefs and desires
+
+## Intentions
+
+If you're coming from PPE or Cog Sci, or anywhere that does formal modeling of rational action, this should give you some pause.
+
+- Our standard formal model of agents gives them a probability function, a nice formalisation of beliefs, and a utility function, a nice formalisation of desires.
+- If that model leaves out something as big as intentions, what does that tell us about the model.
+- Maybe we'll come back to this when we do our own formal modeling in the game theory part of the course.
+
+## Extra-Personal Intentions
+
+- One of the central moves Bratman makes in *this paper* is that each person individually intends that the group does something.
+- You might think this is odd; I can only intend that I do things.
+
+## Extra-Personal Intentions
+
+- But really there are lots of cases where I intend something not entirely in my control.
+- I can intend to spend a sunny day at the beach, without intending the sunshine. \pause
+- I can even, I think, do it without being 100% sure of the sunshine.
+
+## Extra-Personal Intentions
+
+- Another example: I can intend to holiday in Paris, although I can't control all the aspects of my getting to Paris. \pause
+- Maybe (when thinking about my family) I can intend that we holiday in Paris.
+- And that's all Bratman needs.
+- So it's a bit weird, but seems maybe ok.
+
+## Big Question
+
+What are the limits on intention? Two dimensions you might care about.
+
+- Power dimension: how much is it in my power to make it happen.
+- Epistemic dimension: is it compatible with knowing it won't happen/not knowing it will happen?
+
+# Mesh
+
+## Mesh
+
+- Bratman's idea that plans should mesh is, I think, a really nice way of splitting the difference between the views that our plans must match, and that there is no constraint on mutual plans.
+- Matching plans is too strong; I don't need to have views about what you do.
+- No constraints is too weak; it isn't a joint activity if I don't have some kinds of vetos.
+- Mesh is a nice attempt to get something between these.
+
+## Problems for Mesh
+
+- But as stated it feels too strong.
+- Imagine that your job is to get the paint. 
+- I have views about where to get the paint from (as in Bratman's example), but also how to drive there. 
+- This feels like it shouldn't matter; it's your job to get the paint.
+
+## Structured Groups
+
+- This is really evident in structured groups.
+- If it quite literally your job to do X, and my job to do Y, we could be in a group even if I disapprove of how you do your job.
+- Imagine applying mesh to a group the size of the United States Armed Forces.
+
+## Mesh and Counterfactuals
+
+From the other direction, it's fascinating to think through cases that turn on how counterfactually resilient mesh must be.
+
+- Some level of resiliency is needed. If we are working side by side on different projects, the fact that they happen to mesh doesn't make them joint projects.
+- But total counterfactual resiliency isn't needed either. I can be in a group with you, but be disposed to leave if you insist on singing arias while we work.
+- I suspect there will be some vague cases in the middle here.
+
+# Coercion
+
+## Coercion
+
+- Assuming that everyone plans to stay in the group, and to be cooperative, it feels we should give each other some flexibility in how they do their jobs.
+- There is something vaguely coercive about even having views about how you should get to the store to buy the paint.
+- Of course, it's fine to be helpful, and there isn't really anything wrong with having views about what is better and worse.
+- I don't really know to balance these considerations.
+
+## Power and Coercion
+
+It's famously hard to draw a line between a power imbalance and a coercive situation.
+
+- Coercion doesn't literally mean that I give you no options at all. I can coerce you while you have agency.
+- But not every unwanted pressure is coercive.
+
+## Groups and Coercion
+
+Thinking about groups helps with a really hard puzzle case for coercion.
+
+- A1 has illegitimate power over C1, and A2 has illegitimate power over C2.
+- C2 enters into a deal with A1 that is mutually beneficial, but which they would not enter into but for A2's illegitimate power over them.
+- C1 enters into a deal with A2 that is mutually beneficial, but which they would not enter into but for A1's illegitimate power over them.
+
+## Groups and Coercion
+
+This seems kind of bad at some level, but it is possible that the 'deals' are still in some sense cooperative ventures.
+
+- But if A1 and A2 are exercising their illegitimate power as part of a group, in some strong sense of group, then the deals are coercive.
+- This matters if, e.g., C2 doesn't keep up their part of the deal - does A1 have a legitimate complaint?
+- Perhaps it depends on how closely they are working with A2.
+
+## Coercion
+
+Note that coercion cases are why Bratman says there is a difference between a **shared intention** and a **shared cooperative activity**.
+
+- Even coercive agreements might produce shared intentions. 
+- That happens if the point of the coercion is to steer your agency, not to bypass it.
+- But they can't produce shared cooperation.
+
+## Back to the Target
+
+This relates back what I was saying earlier about the point of the paper.
+
+- Do we have some pre-theoretical understanding of what a Shared Cooperative Activity is?
+- What turns on whether we count chess games as SCAs or not? 
+
+# Support
+
+## What Counts as Support
+
+Bratman runs himself into some hard problems here. (Of course, it is good that he shwos that the problems exist!)
+
+On the one hand, SCA requires support; it's not just that we are doing stuff alongside one another.
+
+On the other hand, SCA does not require anything goes; we could be doing an SCA but I might not help if you stupidly get yourself stuck in water and I can't swim.
+
+## Bratman's View
+
+All it takes is that in *some* counterfatual possibility, I would support you in a way that helped the SCA.
+
+This seems much too weak.
+
+Imagine that we are doing something that is intuitively not SCA, it's more like doing stuff alongside one another.
+
+But if I'm suffering in a certain way you'd help, because you'd help *anyone* suffering in that way.
+
+## Generics and Existentials
+
+Here are three strengths of claims we might make:
+
+1. Universal - All Xs are Ys
+2. Generic - Xs are Ys
+3. Existential - Some Xs are Ys
+
+## Generics and Existentials
+
+The last is clearly weaker than the others.
+
+1. All cows eat chocolate.
+2. Cows eat chocolate
+3. Some cows eat chocolate
+
+I'm sure 1 and 2 are false, but 3 is probably true - someone out there feeds their cows chocolate.
+
+## Universals and Generics
+
+But the generic can be true without the universal.
+
+1. All cows eat grass
+2. Cows eat grass
+3. Some cows eat grass
+
+2 and 3 are true, but I don't think 1 is, since some cows are grain-fed, and some have allergies.
+
+## Back to Support
+
+I think what Bratman needs here is the middle claim.
+
+1. In an SCA, the parties support each other in all difficult situations.
+2. In an SCA, the parties support each other in difficult situations.
+3. In an SCA, the parties support each other in some difficult situations.
+
+# For Next Time
+
+## For Next Time
+
+We'll go over Jennifer Lackey's work on joint (rational) belief.
