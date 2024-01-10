@@ -152,8 +152,10 @@ Topic
 :   Group Action
 
 Reading
-:    Michael Bratman, [Shared Intention](https://philpapers.org/rec/BRASI)
 :    Michael Bratman, [Shared Cooperative Activity](https://philpapers.org/rec/BRASCA)
+
+Recommended Reading
+:    Michael Bratman, [Shared Intention](https://philpapers.org/rec/BRASI)
 
 ### `r advdate(tue, 3)`
 
@@ -161,7 +163,7 @@ Topic
 :   Group Belief
 
 Reading
-:    Jennifer Lackey, [What is Justified Group Belief?](https://philpapers.org/rec/LACWIJ) (NB: This is very long, and I'll try to choose sections from it for the reading.)
+:    Jennifer Lackey, [What is Justified Group Belief?](https://philpapers.org/rec/LACWIJ) (The important sections to read are 1, 4-7, and 9. The paper is very long, and reading those sections should be plenty.)
 
 ### `r advdate(thu, 3)`
 

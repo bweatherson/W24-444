@@ -1,0 +1,292 @@
+---
+title: "444 Lecture 4"
+subtitle: "Lackey on Justified Group Belief"
+author: "Brian Weatherson"
+date: "A bit later, January 2024"
+---
+
+# Group Attitudes
+
+## Do Groups Have Attitudes?
+
+Some sentences that sound like they could be true:
+
+1. The CIA **knows** where Ukraine intends to attack next.
+2. The UM administration **believes** that climbing walls are an important part of student recruitment.
+3. The Ukrainian military **plans** to attack across the Dnipro River.
+4. The Detroit Tigers **hope** to sign another starting pitcher.
+
+But this is funny, since at first glance these are the wrong kinds of things to know, believe, plan, or hope anything.
+
+## Do Groups Have Attitudes?
+
+Some philosophical options.
+
+1. These sentences are all literally false, and unhelpful.
+2. These sentences are all literally false, but they are useful shorthand for something true.
+3. These sentences are all literally true, and they are made true by the attitudes of the members of the group.
+4. These sentences are all literally true, and they are not just claims about the attitudes of members of the group.
+
+## Group Attitudes
+
+To simplify things, I'm going to assume 1 and 2 are false.
+
+They actually might be true, and if you want to discuss them in section, you totally should.
+
+But for now we'll assume that claims about what attitudes the CIA, or the UM administration, or the Detroit Tigers, etc., have could be literally true.
+
+## Group Attitudes
+
+But we won't assume these are particularly deep claims.
+
+It might be that claims about what the group believes are just claims about what the majority of the group believe, or something equally reductive.
+
+# Justified Group Belief
+
+## Lackey's Target
+
+Lackey isn't just interested in when groups believe things, but in when these beliefs are **justified**.
+
+Now, this is a bit of a term of art in philosophy.
+
+In ordinary life we'd more commonly talk of beliefs being reasonable, or rational.
+
+The only time outside philosophy I've seen people talk about beliefs being justified is in the context of excusing/defending defensive violence.
+
+## Two Big Questions
+
+1. Should we first ask what it is for groups to have beliefs, and then ask within those which are justified, or should we think that justified belief is sort of an atomic concept?
+2. Should we assume that justified beliefs play the same role for groups as for individuals, or that they play different roles?
+
+## Two Big Questions
+
+On the first, Lackey doesn't really take a firm stand. It's sort of possible to read her as taking either option.
+
+But on the second, she's very much committed to saying **yes**, justification for groups is just like justification for individuals.
+
+## Justification for Individuals
+
+There is a lot we could say about justification for individuals, that is, about what it is for individual beliefs to be justified, but what's important for this paper are two things.
+
+1. Input conditions
+2. Output conditions 
+
+Let's talk a bit about each of these.
+
+## Input Conditions
+
+Justified beliefs are based on good reasons; they aren't lucky guesses, or wishful thinking, or delusional, or fallacious.
+
+A simple theory (that I think is plausible) is that the reasons are all **evidence**. 
+
+To have good reason to believe something just is to have evidence that it is true.
+
+## Input Conditions
+
+So that gives us one constraint that Lackey puts on her theory:
+
+- A group belief is justified only if it is **based** on evidence the group **has**.
+
+Two rather hard questions:
+
+1. What is it for a group belief to be based on something?
+2. What is it for a group to have evidence?
+
+## Output Conditions
+
+Justified beliefs justify actions.
+
+For example, if A has a justified belief that B is about to kill C, unless A tackles B to the ground, then A is justified in tackling B to the ground.  
+
+If A doesn't believe this (or anything like it), or this belief is delusional, or wishful thinking, then A isn't justified.
+
+---
+
+This ends up being one of Lackey's big objections to rival theories. She often uses the following argument form:
+
+1. Theory T says that group G is justified in belief B.
+2. If group G is justified in belief B, then action A (e.g., selling more cigarettes, or launching a war) is justified.
+3. Action A is not justified.
+4. So, group G is not justified in belief B.
+5. So, theory T is false.
+
+## Individuals and Groups
+
+One way you could object to this argument is by denying that beliefs have the same role in groups as in individuals.
+
+Maybe the input conditions are different - e.g., they don't need to be based on evidence.
+
+Or maybe the output conditions are different - e.g., they don't justify actions.
+
+But Lackey's move here seems plausible enough.
+
+# A Simple Theory
+
+## A Simple Theory
+
+A group G is justified in believing p just in case the majority of the group justifiably believes p.
+
+## A Simple Objection
+
+Think back to the CIA and Ukraine.
+
+- I assume the CIA has a Ukraine desk, or at least Ukraine specialists.
+- If they know things about Ukraine, that's enough for the CIA to know it.
+- It really doesn't matter whether other people in the CIA, e.g., spies working in Argentina, know anything about the plans.
+
+## A Simple Fix
+
+A group G is justified in believing p just in case the majority of the **operative members** of the group justifiably believes p.
+
+- The operative members (with respect to p) are the people whose job it is to know whether p is true.
+- This might be different for different propositions.
+
+## Plan
+
+1. This leads to incoherence - the doctrinal paradox.
+2. This might make it too hard to have justified group belief - jury case, and philosophy department case.
+3. This might make it too easy to have justified group belief - nurses case, and (final) security guards case.
+
+# Doctrinal Paradox
+
+## Doctrinal Paradox
+
+Even if every member of a group has coherent views, the majority opinion might be incoherent.
+
+This can happen in really simple cases.
+
+Imagine a house has been broken into, and the police suspect that Sherlock Holmes, or his sidekick John Watson, is responsible.
+
+## Some Propositions
+
+- 1 = Exactly one person broke into the house.
+- S = Sherlock broke into the house.
+- W = Watson broke into the house.
+
+## Three Police Officers
+
+A believes it was Sherlock acting alone, so believes 1 and S.
+
+B believes it was Watson acting alone, so believes 1 and W.
+
+C believes it was both Sherlock and Watson acting together, so believes S and W.
+
+## Majority View
+
+What does the majority believe?
+
+- Two out of three believe 1, so they believe it.
+- Two out of three believe S, so they believe it.
+- Two out of three believe W, so they believe it.
+- So they believe Sherlock broke it, and Watson broke in, and exactly one person broke in. Oops!
+
+## Probability
+
+You might think that the problem here is using on/off beliefs, when we should be using probabilities.
+
+Hold that thought - we'll come back to it on Tuesday.
+
+# Too Hard
+
+## Two Cases
+
+1. The jury justifiably believes the person is innocent because there was no admissible evidence of their guilt, but no juror believes this (because of hearsay evidence).
+2. The group justifiably believes that a candidate is qualified, but each individual member does not believe this because they have a different risk profile.
+
+## Risk Profiles
+
+The core idea here is that thinkers have some flexibility in when they start believing something.
+
+Some people might be very cautious, and only believe after a lot of evidence.
+
+And others might be willing to believe when the evidence is strong but far from overwhelming.
+
+And, this is the key part, both of these things might be rational.
+
+## Possibility
+
+What if there was a group that by design was at the very permissive end of this spectrum, though all of its members were restrictive. Could that group reasonably believe p even though none of the members do?
+
+I don't know, this sounds like an interesting possibility.
+
+# Too Easy
+
+## Nurses Case
+
+This one is from Lackey, and the theoretical questions it raises are very complicated.
+
+- Each nurse neglects their duty, but what they are doing is redundant.
+- They also neglect to check in with the others.
+- So while they reasonably believe that the patient is safe, they wouldn't if they pooled their evidence.
+
+## Evidence Collection
+
+The fact that this case involves a group is a complication, so let's start with the individual case first.
+
+Let's say Holmes has excellent evidence that Moriarty planted the bomb.
+
+There is defeating evidence for this inside an envelope he has just been given.
+
+But he's so excited at proving Moriarty is guilty that he goes off to celebrate, and doesn't open the envelope.
+
+## Philosophical Questions
+
+1. Does Holmes have a justified (rational) belief that Moriarty planted the bomb?
+2. Would it be different Holmes was not a private detective, but an official detective, i.e., a police officer?
+3. Would it be different if it wasn't Holmes, but a group, like the London police, charged with investigating crimes?
+
+## Evidence Checking
+
+These are really hard problems, that go to the heart of what rational *belief* is. 
+
+Is it about rationally responding to the evidence the world gives you, or is it about rationally engaging with the world in the right way that you get as good a picture of the world as possible? 
+
+Or somewhere in between?
+
+Anyway, Lackey is really committed to evidence collection mattering.
+
+## Guards Case
+
+This one is really fascinating, and gets to a surprising big picture problem.
+
+Start with a background point about evidence.
+
+Sometimes evidence isn't for or against a proposition directly, but is against the significance of other evidence.
+
+Evidence that a machine is broken is evidence that the evidence it provides is worthless.
+
+## Guards Case
+
+Each guard has two pieces of evidence.
+
+1. Direct evidence for p that's on its own rather good.
+2. Evidence that some other guard's evidence is misleading.
+
+Lackey: Each guard justifiably believes that p, but the group does not.
+
+## Evidence Pooling
+
+I think the picture behind Lackey's view here is something like the following.
+
+1. Evidence pooling is good.
+2. If we have a justified belief, it should persist by doing this good thing, namely pooling our evidence.
+
+## Evidence Pooling
+
+I decided not to include this in the course, but there's some interesting recent work suggesting this isn't always right.
+
+If everyone pools their evidence, then if anyone gets misleading evidence, we all get it.
+
+There are occasions where groups are more likely to eventually get to the truth by having a little friction in the information channels.
+
+## Guards
+
+Does this matter to Lackey's case?
+
+Maybe; if you think a little friction in the information channels is a good thing, then it isn't clear why the fact that the belief wouldn't survive information pooling matters.
+
+# For Next Time
+
+## Lackey and Alternatives
+
+We'll look at Lackey's positive view, and also look at an alternative.

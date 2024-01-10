@@ -1,0 +1,152 @@
+---
+title: "444 Lecture 5"
+subtitle: "Brown on Justified Group Belief"
+author: "Brian Weatherson"
+date: "A bit later, January 2024"
+---
+
+# Lackey's Positive View
+
+## Lackey's View
+
+Last time we set everything up, but we didn't get to Lackey's positive view.
+
+It turns out it is like the simple version we started with, but with one extra complication.
+
+## Simple View
+
+The group is justified in believing p just in case enough people in the group are justified in believing p.
+
+## Problem for Simple View
+
+A group might have experts, whose job it is to know about this thing. As long as they have beliefs, that's enough.
+
+## Operative Members View
+
+The group is justified in believing p just in case enough of the operative members of the group are justified in believing p.
+
+## Lackey's Objection
+
+Cases where everyone has a justified belief, but this justification would not survive evidence pooling.
+
+1. Nurses case
+2. Guards case
+
+## Lackey's View
+
+The group is justified in believing p just in case 
+
+1. Enough of the operative members of the group are justified in believing p; and
+2. The reasons each of them have are not, collectively, too incoherent.
+
+Roughly, the beliefs would survive pooling.
+
+## Pooling
+
+I mentioned last time that this all turns on the idea that pooling is good, and you might suspect that isn't true.
+
+Set that aside; today we'll look at more technical challenges for Lackey's view.
+
+# Input Conditions
+
+## Belief and Evidence
+
+For individuals, justified beliefs are based on evidence that they have.
+
+The same should be true for groups.
+
+But what is it for groups to have evidence.
+
+## Three Options
+
+The group G has evidence E just in case
+
+1. All the operative members have E.
+2. Most of the operative members have E.
+3. Some of the operative members have E. 
+ 
+All of these have problems.
+
+## All the Members
+
+If the groups only possesses evidence that is universally shared, they will very rarely have enough evidence to justify belief.
+
+Imagine that E1, E2, and E3 are all excellent pieces of evidence that p is true, and they reinforce each other. So having any two of them makes p really likely.
+
+## All The Members
+
+Now imagine a three person group, A, B and C, as follows:
+
+- A has E1 and E2, and so justifiably believes p.
+- B has E1 and E3, and so justifiably believes p.
+- C has E2 and E3, and so justifiably believes p.
+
+There is **no** evidence they all have, so on this view they don't have enough evidence. That seems bad, because they are all really justified in believing that p, for non-conflicting reasons.
+
+## Most of the Members
+
+The point of Brown's really complicated train example is to undermine this option.
+
+The example makes a bit more sense if you're familiar with the train system in south-eastern Scotland, which I assume means it was easy enough for somewhere between 0 and 2 people in this class to follow.
+
+Let's do a simpler case.
+
+## Evidence that Clicks Together
+
+There has been a crime, a poisoning of a foreign spy, and there is no reason to suspect Moriarty. Everyone assumes that he has neither the means, nor the motive, nor the opportunity, to commit the crime.
+
+Moriarty is a super criminal, so if he had the means (i.e., access to the poison), motive (i.e., reason to poison the spy), and opportunity (i.e., access to the spy), he likely did it. But most people think he had none of the three, so he's probably innocent (of this crime).
+
+There are three detectives, A, B, and C, assigned to the case.
+
+## Most of the Members
+
+- A has evidence that Moriarty has means and motive, but thinks (like everyone outside the group) that he didn't have the opportunity.
+- B has evidence that Moriarty has means and opportunity, but thinks (like everyone outside the group) that he didn't have the motive.
+- C has evidence that Moriarty has motive and opportunity, but thinks (like everyone outside the group) that he didn't have the motive.
+- What does the group think?
+
+--
+
+Brown argues that the 'most of the members' view has the following bad consequence.
+
+1. Since for each of means, motive, and opportunity, it's part of the majority's evidence that Moriarty has it, the group's evidence is that Moriarty is likely guilty.
+2. But the group doesn't believe this, since *no one* in the group believes it.
+3. Indeed, they believe Moriarty is innocent.
+4. So the group is irrational, believing something that goes against their evidence.
+5. But the group doesn't seem irrational!
+
+## Some of the Members
+
+So what about option 3. This is what Brown's example of Professor X is supposed to rule out.
+
+Again, the case uses some terminology that makes more sense in Scotland than America, so let's go with a simpler one.
+
+## Criminal Investigation
+
+In this case imagine that most of the investigators are convinced, on reasonable grounds, that Moriarty carried out the crime.
+
+But one investigator gets conclusive proof (maybe CCTV footage or something similar) that it was someone else, and so Moriarty didn't do it. (At least, didn't do it in person.
+
+--
+
+Brown argues that the 'some of the members' view has the following bad consequence.
+
+1. Since this one investigator has conclusive proof that someone else did it, that is part of the group's evidence.
+2. But the group believes that Moriarty did it; that's what the vast majority think.
+3. So, the group is being irrational; they are not following their evidence.
+4. That seems wrong, since everyone in the group is rational.
+
+## Summary
+
+Brown argues this is bad news for reductive, or what she calls **summative** accounts of group evidence.
+
+There's no easy way to relate what the evidence of each member is to what evidence the group has.
+
+# Brown's Objection to Lackey
+
+## Brown's Objection to Lackey
+
+After all that, the actual objection to Lackey's view is fairly simple.
+
+- The right view of justified group belief will say that groups are justified when they are reacting to their 
