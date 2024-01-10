@@ -1,7 +1,7 @@
 ---
 title: 'PHIL 444: Groups and Choices'
+subtitle: "Winter 2024"
 author: "Brian Weatherson"
-date: "Winter 2024"
 execute:
   warning: false
   message: false
@@ -30,6 +30,7 @@ format:
 #| results: hide
 #| output: false
 #| echo: false
+#| cache: false
 library(tidyverse)
 library(fontawesome)
 ```
@@ -47,8 +48,6 @@ advdate <- function(obj, adv) {
  ttheday <- format(theday, format = "%A, %B %d")
  return(ttheday)
 }
-
-
 ```
 
 | **Lead Instructor**: Brian Weatherson
@@ -57,8 +56,9 @@ advdate <- function(obj, adv) {
 | 
 | **Office Hours**: TBC
 | 
-| **Discussion Section Leades**: TBC
-| `r fa("far fa-envelope")` TBC
+| **Discussion Section Leades**: 
+| - Walla Mohamedali
+| - Brandon Swinney
 
 # Course Description
 

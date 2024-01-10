@@ -140,8 +140,15 @@
   pdfcreator={LaTeX via pandoc}}
 
 \title{PHIL 444: Groups and Choices}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Winter 2024}
 \author{Brian Weatherson}
-\date{2024-01-01}
+\date{}
 
 \begin{document}
 \maketitle
@@ -154,9 +161,9 @@ canvas.umich.edu\\
 \strut \\
 \textbf{Office Hours}: TBC\\
 \strut \\
-\textbf{Discussion Section Leades}: TBC\\
-\includegraphics[width=1em,height=1em]{syllabus-phil444-w24_files/figure-pdf/fa-icon-a7ff419e70980f9f1a65816048d94526.pdf}
-TBC
+\textbf{Discussion Section Leades}:\\
+- Walla Mohamedali\\
+- Brandon Swinney
 
 \section{Course Description}\label{course-description}
 
@@ -333,11 +340,11 @@ Together: A Paradigmatic Social Phenomenon}
 \item[Topic]
 Group Action
 \item[Reading]
-Michael Bratman, \href{https://philpapers.org/rec/BRASI}{Shared
-Intention}
-
 Michael Bratman, \href{https://philpapers.org/rec/BRASCA}{Shared
 Cooperative Activity}
+\item[Recommended Reading]
+Michael Bratman, \href{https://philpapers.org/rec/BRASI}{Shared
+Intention}
 \end{description}
 
 \subsubsection{Tuesday, January 23}\label{tuesday-january-23}
@@ -348,8 +355,8 @@ Cooperative Activity}
 Group Belief
 \item[Reading]
 Jennifer Lackey, \href{https://philpapers.org/rec/LACWIJ}{What is
-Justified Group Belief?} (NB: This is very long, and I'll try to choose
-sections from it for the reading.)
+Justified Group Belief?} (The important sections to read are 1, 4-7, and
+9. The paper is very long, and reading those sections should be plenty.)
 \end{description}
 
 \subsubsection{Thursday, January 25}\label{thursday-january-25}
@@ -388,7 +395,7 @@ Jeffrey Sanford Russell, John Hawthorne and Lara Buchak,
 \item[Topic]
 Voting systems
 \item[Reading]
-Simon Hix, Ron Johnston FBA and Iain McLean
+Simon Hix, Ron Johnston, and Iain McLean
 \href{https://www.thebritishacademy.ac.uk/publications/choosing-electoral-system/}{Choosing
 an Electoral System}
 \end{description}
@@ -657,7 +664,7 @@ Epistemic Networks}
   \href{https://www.jstor.org/stable/1885060}{Signaling Games and Stable
   Equilibria}
 \item
-  Simon Hix, Ron Johnston FBA and Iain McLean
+  Simon Hix, Ron Johnston, and Iain McLean
   \href{https://www.thebritishacademy.ac.uk/publications/choosing-electoral-system/}{Choosing
   an Electoral System}
 \item
