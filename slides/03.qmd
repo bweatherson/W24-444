@@ -1,8 +1,23 @@
 ---
-title: "444 Lecture 3"
-subtitle: "Bratman on Shared Cooperative Activity"
+subtitle: "444 Lecture 3"
+title: "Bratman on Shared Cooperative Activity"
 author: "Brian Weatherson"
-date: "A bit later, January 2024"
+date: "January 18 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+#include-in-header:
+#  file: border.html
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
 ---
 
 # Bratman's Theory
@@ -21,6 +36,8 @@ date: "A bit later, January 2024"
 2. Commitment to joint activity; i.e., we both intend to do this very activity, under something like this description.
 3. Commitment to mutual support; i.e., we both intend to help the other should they falter, and not claim all the glory.
 :::
+
+. . .
 
 The last condition is a strengthening of the idea that cooperative activity is not side-by-side activity.
 
@@ -57,7 +74,7 @@ But as we see at the end of the paper, it's a bit trickier than that.
 - If **we** intend to play chess, that's a shared intention.
 - Is it a Shared Cooperative Activity?
 
-## Games and Cooperative Action
+## Games and Cooperation
 
 Games are these really tricky things.
 
@@ -66,7 +83,7 @@ Games are these really tricky things.
 - Alice doesn't want to simply set the pieces up so her pieces are checkmating Bob's.
 - She wants to win a game of chess, and Bob is partially cooperating with that, by playing, and partially not cooperating, by playing well.
 
-## Games and Cooperative Action
+## Games and Cooperation
 
 Note though that Bob in a sense can't be maximally cooperative.
 
@@ -82,7 +99,7 @@ Bratman is most famous in philosophy for his work on **intention**, like intendi
 
 - Prior to his 1980s work, a lot of philosophers thought that intentions were somehow reducible to beliefs and desires.
 - E.g., intending to go to New York is some combination of wanting to go and believing I will go.
-- Bratman persuaded a lot of people that that's wrong, and intentions are something above beliefs and desires
+- Bratman persuaded a lot of people that that's wrong, and intentions are something above beliefs and desires.
 
 ## Intentions
 
@@ -139,7 +156,7 @@ What are the limits on intention? Two dimensions you might care about.
 - If it quite literally your job to do X, and my job to do Y, we could be in a group even if I disapprove of how you do your job.
 - Imagine applying mesh to a group the size of the United States Armed Forces.
 
-## Mesh and Counterfactuals
+## Mesh Counterfactuals
 
 From the other direction, it's fascinating to think through cases that turn on how counterfactually resilient mesh must be.
 
@@ -198,7 +215,7 @@ This relates back what I was saying earlier about the point of the paper.
 
 ## What Counts as Support
 
-Bratman runs himself into some hard problems here. (Of course, it is good that he shwos that the problems exist!)
+Bratman runs himself into some hard problems here. (Of course, it is good that he shows that the problems exist!)
 
 On the one hand, SCA requires support; it's not just that we are doing stuff alongside one another.
 

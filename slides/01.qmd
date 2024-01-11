@@ -10,9 +10,10 @@ format:
       - robot-lung.scss
     margin: 0.15
     center: false
+    self-contained: true
 include-in-header:
   file: border.html
-keep-md: true
+keep-md: false
 tbl-cap-location: bottom
 code-block-background: true
 ---

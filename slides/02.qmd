@@ -1,8 +1,23 @@
 ---
-title: "444 Lecture 2"
-subtitle: "Gilbert on Group Action"
+subtitle: "444 Lecture 2"
+title: "Gilbert on Group Action"
 author: "Brian Weatherson"
-date: "Something something January 2024"
+date: "January 16 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+#include-in-header:
+#  file: border.html
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
 ---
 
 # Group Action
@@ -89,6 +104,8 @@ Don't expect these answers to all be the same!
 2.  What makes it the case that that group is engaged in a group action, shares a group intention, and so on?
 :::
 
+. . .
+
 Gilbert's view is that this is the wrong way to look at things. Rather, these two questions should be answered simultaneously.
 
 # Shared Plans
@@ -107,7 +124,7 @@ Strong Shared Plan
 2.  If **Weak Shared Plan** is true, then in such a situation there is a group action of trying to do X.
 3.  So **Weak Shared Plan** is false.
 
-## Argument Against Strong Shared Plan
+## Argument Against SSP
 
 1.  If **Strong Shared Plan** is true, then the members of the group have no obligation to the others to continue with the plan if they lose interest in it.
 2.  In cases of group action, members of the group do have an obligation to the others to continue with the plan even if they lose interest in it.
@@ -161,6 +178,8 @@ Here is a better argument for the same conclusion.
 -   It's also not a prudential obligation.
 -   This should be clear, but Gilbert spends a bit of time on it.
 :::
+
+. . .
 
 So what kind of weird sui generis obligation is it? This is a big question for Gilbert to answer.
 
