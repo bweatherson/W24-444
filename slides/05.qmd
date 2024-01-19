@@ -149,4 +149,111 @@ There's no easy way to relate what the evidence of each member is to what eviden
 
 After all that, the actual objection to Lackey's view is fairly simple.
 
-- The right view of justified group belief will say that groups are justified when they are reacting to their 
+1. The right view of justified group belief will say that groups are justified only when they are reacting to their evidence.
+2. There is no model of evidence that combines with Lackey's view to imply that groups are justified only when they are reacting to their evidence.
+3. Therefore, Lackey's view is wrong.
+
+## Premise 2
+
+The point of the last section was really to defend premise 2.
+
+- Whether you take group evidence to be evidence all the group has, or most of the group has, or some of the group has, you don't get the right result.
+- I won't go over all those cases again, but if you were sceptical of any one of those cases, Brown's argument isn't working.
+
+## Premise 1
+
+1. The right view of justified group belief will say that groups are justified only when they are reacting to their evidence.
+
+What Brown is saying here is that justified group beliefs should have the same input conditions as justified individual beliefs.
+
+And she's also assuming (I think plausibly!) that the input condition for individual justified belief is that it is evidence based.
+
+## Asymmetry Responses
+
+One thing Lackey could say here is that it she doesn't care about group beliefs being just like individual beliefs.
+
+Maybe individual beliefs should be evidence-responsive, but group beliefs need not be.
+
+Given how much weight Lackey puts on individual beliefs and group beliefs having the same output conditions, this doesn't seem great.
+
+## Input Conditions
+
+Let's step back a bit and think about individual beliefs. There are two things you might care about in input conditions.
+
+1. Evidence-responsiveness
+2. Truth-conduciveness
+
+These aren't quite the same thing.
+
+## Two Conditions
+
+A belief forming process is evidence-responsive if it involves taking in evidence, and responding in the right kind of way to that evidence, for some natural understanding of 'evidence'.
+
+A belief forming process is truth-conducive if it reliably generates truths.
+
+These aren't the same thing in theory, even if we think for ordinary humans they are the same thing in practice.
+
+## Two Conditions
+
+If you think that trusting religious authorities (a) is not a form of evidence-responsiveness, and (b) is truth-conducive, you'll think it's true that a method can be truth-conducive without being evidence-responsive.
+
+I don't really think either of those things, but plenty of religious traditions do, and they don't seem incoherent.
+
+And that's enough to say the two notions, truth-conduciveness and evidence-responsiveness, are logically distinct.
+
+## Brown's Paper
+
+One thing I found confusing about Brown's paper is that I normally understand 'direction of fit' talk as being about whether belief forming practices are truth-conducive, but she's using it to talk about evidence-responsiveness.
+
+This is a terminological issue that was notable to me and *maybe* to a handful of other people here, and while I'm more than happy to take questions on it, I'm just going to set it aside.
+
+## Truth and Evidence
+
+OK, here's a view that's broadly in the spirit of Lackey's that you could have.
+
+1. For ordinary individual humans, the only reliable way to get to the truth is to follow the evidence. That is, it is to follow the evidence *that one has*.
+2. But for groups, there is another way. It is to be composed of rational, evidence-seeking, evidence-following, individuals, and to compose their beliefs into a group-belief in the right kind of way.
+
+## Truth and Evidence
+
+There are lots of ways you could criticise this view; I'm certainly not meaning to endorse it.
+
+For one thing, it sort of requires thinking of evidence-responsiveness as a means to the end, where the end is true beliefs, rather than something valuable in itself. And I'm not sure I like that way of thinking about evidence. But it's a view.
+
+# Brown's View
+
+## Brown's Positive View
+
+We don't get as much detail in this paper on Brown's positive view; there's more in the longer book, but I don't want to get into those details.
+
+What Brown gives you is more of a recipe than a full theory.
+
+## Plural Subject
+
+The simplest way to think of Brown's view is as being in the same family as Gilbert's.
+
+The group that has beliefs is a kind of plural subject.
+
+What does it mean to say that group has evidence?
+
+It means the group has some content that plays the same role for it as evidence typically plays for other (i.e., individual) subjects.
+
+## Very Big Picture
+
+The more expansive one's metaphysics of groups, the more symmetries you can have between groups and individuals.
+
+Brown lets group evidence and group belief float free of the evidence and beliefs of the members of the group. That's what she means by rejecting "summative" and "neo-summative" accounts.
+
+That makes groups weird, kind of spooky, things.
+
+But what she gets from that is a much closer symmetry between groups and individuals.
+
+# For Next Time
+
+## For Next Time
+
+We'll go from talking about beliefs to talking about probabilities.
+
+This might seem like it will make some of the problems easier.
+
+But instead there will be whole new problems!
