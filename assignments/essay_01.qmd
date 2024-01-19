@@ -1,0 +1,34 @@
+---
+title: "Essay One Questions"
+author: "Philosophy 444 - Winter 2024"
+date: "February 9, 2024"
+format:
+    html:
+      toc: false
+      mainfont: SF Pro Rounded
+    pdf: 
+      format: scrreprt
+      keep-tex: true
+#      geometry: 1in"
+      mainfont: Scala Pro
+      sansfont: Scala Sans Pro
+      mainfontoptions: Scale = MatchLowercase
+      fontsize: 12pt
+      linkcolor: black
+      link-citations: true
+
+---
+
+Answer **one** of the following questions in an essay of about 1200 words. The paper should engage with the relevant readings, and all references to works of other authors should be properly cited. In particular, whenver you say that an author says something, you should say **which page** they say this on. If you prefer all citations in footnotes you can do that, but it's also fine to do citations in-text, e.g., just write (109) at the end of the sentence to indicate that you're talking about page 109 of the same paper that you've been talking about for a while.
+
+## Question One {-}
+
+Abraham Roth (in the Stanford Encyclopedia of Philosophy article on Shared Agency) says that on Margaret Gilbert’s view of shared action, “participants in shared activity are obligated to do their part in it.” What is meant by this claim about obligation? Why does Gilbert defend it? Why does Michael Bratman think it is false, at least as a claim about what is essential to shared action?
+
+## Question Two {-}
+
+Jessica Brown describes Jennifer Lackey's theory of group belief as a 'neo-summative' (3168), and goes on to argue against it. Describe Lackey's theory, and (at least one of) Brown's objections to it. How might Lackey reply to Brown?
+
+## Question Three {-}
+
+In "Groupthink", Russell, Hawthorne and Buchak argue against using arithmetic averaging to come up with group probabilities. Describe their arguments, and say what a defender of arithmetic averaging might say in response.
