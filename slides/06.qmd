@@ -2,7 +2,7 @@
 subtitle: "444 Lecture 6"
 title: "Combining Probabilities"
 author: "Brian Weatherson"
-date: "February 2 2024"
+date: "February 1 2024"
 format:
   revealjs:
     theme:

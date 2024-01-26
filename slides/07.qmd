@@ -1,0 +1,66 @@
+---
+subtitle: "444 Lecture 7"
+title: "Voting Systems"
+author: "Brian Weatherson"
+date: "February 6 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+#include-in-header:
+#  file: border.html
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+# How Many To Elect
+
+## A Big Choice Point
+
+I'm going to primarily discuss here systems for electing a **legislature**.
+
+I'll note some applications to other tasks.
+
+These might be political (e.g., electing a President), or something more local (e.g., deciding as a group which movie to watch).
+
+But because of its importance, we'll start with legislatures.
+
+## Background Question
+
+In most countries, electing the legislature is doubly important because it goes on to elect the executive. I'll briefly talk about the consequences of this, but since the United States is one of the few exceptions to this setup, I won't spend too much time on it.
+
+## Choice Point
+
+Do you elect one legislator at a time, or multiple at a time?
+
+- Extra choice point: do you have multiple cycles for the same district, or just elect people for one cycle?
+- The 'just one cycle' approach is very standard, but the United States Senate is a very notable exception, and this carries across to a lot of State Senates.
+
+## Choice Point
+
+But ignore the Senate complication for now - the big question is this.
+
+- At an election, when you make a vote, is the election you're voting in (at that moment) going to elect one person, or many people?
+- In the most important elections in the US, the answer is 1.
+- There are some exceptions at local level (e.g., Ann Arbor school board), but for the most important things, the answer is 1.
+
+## Two Kinds of Systems
+
+1. Single Member Constituencies
+2. Multi Member Constituencies
+
+The difference is how you answer the question on the previous slide.
+
+The United States Senate is a Single Member system, although there are two Senators from each state. (Electoral systems are a mess.)
+
+## Plan For Week
+
+- Single member systems today.
+- Multi member systems on Thursday.  

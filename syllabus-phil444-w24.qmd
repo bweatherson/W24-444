@@ -237,7 +237,9 @@ Topic
 :    Voting systems
 
 Reading
-:    Simon Hix, Ron Johnston, and Iain McLean [Choosing an Electoral System](https://www.thebritishacademy.ac.uk/publications/choosing-electoral-system/)
+:    Simon Hix, Ron Johnston, and Iain McLean [Choosing an Electoral System](https://www.thebritishacademy.ac.uk/publications/choosing-electoral-system/). We will primarily cover chapter 4 on Tuesday and chapter 5 on Thursday, though the other parts are useful background.
+
+
 
 ### `r advdate(tue, 6)` and `r advdate(thu, 6)`
 
