@@ -20,34 +20,133 @@ tbl-cap-location: bottom
 code-block-background: true
 ---
 
-# Lackey's Positive View
+# A Simple Theory
 
-## Lackey's View
+## A Simple Theory
 
-Last time we set everything up, but we didn't get to Lackey's positive view.
+A group G is justified in believing p just in case the majority of the **operative members** of the group justifiably believes p.
 
-It turns out it is like the simple version we started with, but with one extra complication.
+## Plan
 
-## Simple View
+1. Go over doctrinal paradox again
+2. This might make it too easy to have justified group belief - nurses case, and (final) security guards case.
 
-The group is justified in believing p just in case enough people in the group are justified in believing p.
+# Doctrinal Paradox
 
-## Problem for Simple View
+## Doctrinal Paradox
 
-A group might have experts, whose job it is to know about this thing. As long as they have beliefs, that's enough.
+Even if every member of a group has coherent views, the majority opinion might be incoherent.
 
-## Operative Members View
+This can happen in really simple cases.
 
-The group is justified in believing p just in case enough of the operative members of the group are justified in believing p.
+Imagine a house has been broken into, and the police suspect that Sherlock Holmes, or his sidekick John Watson, is responsible.
 
-## Lackey's Objection
+## Some Propositions
 
-Cases where everyone has a justified belief, but this justification would not survive evidence pooling.
+- 1 = Exactly one person broke into the house.
+- S = Sherlock broke into the house.
+- W = Watson broke into the house.
 
-1. Nurses case
-2. Guards case
+## Three Police Officers
 
-## Lackey's View
+A believes it was Sherlock acting alone, so believes 1 and S.
+
+B believes it was Watson acting alone, so believes 1 and W.
+
+C believes it was both Sherlock and Watson acting together, so believes S and W.
+
+## Majority View
+
+What does the majority believe?
+
+- Two out of three believe 1, so they believe it.
+- Two out of three believe S, so they believe it.
+- Two out of three believe W, so they believe it.
+- So they believe Sherlock broke it, and Watson broke in, and exactly one person broke in. Oops!
+
+## Probability
+
+You might think that the problem here is using on/off beliefs, when we should be using probabilities.
+
+Hold that thought - we'll come back to it on Thursday.
+
+# Too Easy
+
+## Nurses Case
+
+This one is from Lackey, and the theoretical questions it raises are very complicated.
+
+- Each nurse neglects their duty, but what they are doing is redundant.
+- They also neglect to check in with the others.
+- So while they reasonably believe that the patient is safe, they wouldn't if they pooled their evidence.
+
+## Evidence Collection
+
+The fact that this case involves a group is a complication, so let's start with the individual case first.
+
+Let's say Holmes has excellent evidence that Moriarty planted the bomb.
+
+There is defeating evidence for this inside an envelope he has just been given.
+
+But he's so excited at proving Moriarty is guilty that he goes off to celebrate, and doesn't open the envelope.
+
+## Philosophical Questions
+
+1. Does Holmes have a justified (rational) belief that Moriarty planted the bomb?
+2. Would it be different Holmes was not a private detective, but an official detective, i.e., a police officer?
+3. Would it be different if it wasn't Holmes, but a group, like the London police, charged with investigating crimes?
+
+## Evidence Checking
+
+These are really hard problems, that go to the heart of what rational *belief* is. 
+
+Is it about rationally responding to the evidence the world gives you, or is it about rationally engaging with the world in the right way that you get as good a picture of the world as possible? 
+
+Or somewhere in between?
+
+Anyway, Lackey is really committed to evidence collection mattering.
+
+## Guards Case
+
+This one is really fascinating, and gets to a surprising big picture problem.
+
+Start with a background point about evidence.
+
+Sometimes evidence isn't for or against a proposition directly, but is against the significance of other evidence.
+
+Evidence that a machine is broken is evidence that the evidence it provides is worthless.
+
+## Guards Case
+
+Each guard has two pieces of evidence.
+
+1. Direct evidence for p that's on its own rather good.
+2. Evidence that some other guard's evidence is misleading.
+
+Lackey: Each guard justifiably believes that p, but the group does not.
+
+## Evidence Pooling
+
+I think the picture behind Lackey's view here is something like the following.
+
+1. Evidence pooling is good.
+2. If we have a justified belief, it should persist by doing this good thing, namely pooling our evidence.
+
+## Evidence Pooling
+
+I decided not to include this in the course, but there's some interesting recent work suggesting this isn't always right.
+
+If everyone pools their evidence, then if anyone gets misleading evidence, we all get it.
+
+There are occasions where groups are more likely to eventually get to the truth by having a little friction in the information channels.
+
+## Guards
+
+Does this matter to Lackey's case?
+
+Maybe; if you think a little friction in the information channels is a good thing, then it isn't clear why the fact that the belief wouldn't survive information pooling matters.
+
+## Lackey's Positive View
 
 The group is justified in believing p just in case 
 
@@ -55,12 +154,6 @@ The group is justified in believing p just in case
 2. The reasons each of them have are not, collectively, too incoherent.
 
 Roughly, the beliefs would survive pooling.
-
-## Pooling
-
-I mentioned last time that this all turns on the idea that pooling is good, and you might suspect that isn't true.
-
-Set that aside; today we'll look at more technical challenges for Lackey's view.
 
 # Input Conditions
 
@@ -70,7 +163,9 @@ For individuals, justified beliefs are based on evidence that they have.
 
 The same should be true for groups.
 
-But what is it for groups to have evidence.
+But what is it for groups to have evidence?
+
+This is where Brown's objections start.
 
 ## Three Options
 
