@@ -1,0 +1,290 @@
+---
+subtitle: "444 Lecture 6"
+title: "Combining Probabilities"
+author: "Brian Weatherson"
+date: "February 1 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+#include-in-header:
+#  file: border.html
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+```{r load-packages}
+#| results: hide
+#| output: false
+#| echo: false
+#| cache: false
+library(tidyverse)
+library(fontawesome)
+```
+
+# Discursive Dilemma
+
+## A Puzzle
+
+|       |         p          |  q  | p & q |
+|:-----:|:-----:|:-----:|:-----:|
+|   **A**   |  [{{< fa check >}}]{style="color:green;"}  |  [{{< fa check >}}]{style="color:green;"}    |   [{{< fa check >}}]{style="color:green;"}     |
+|   **B**   |      [{{< fa check >}}]{style="color:green;"}               |   [{{< fa xmark >}}]{style="color:red;"}   |   [{{< fa xmark >}}]{style="color:red;"}    |
+|   **C**   |        [{{< fa xmark >}}]{style="color:red;"}            |  [{{< fa check >}}]{style="color:green;"}    |    [{{< fa xmark >}}]{style="color:red;"}   |
+| Group |  [{{< fa check >}}]{style="color:green;"}                  |   [{{< fa check >}}]{style="color:green;"}   |   [{{< fa xmark >}}]{style="color:red;"}    |
+
+## An Important Example
+
+- A, B and C are judges.
+- In the case in front of them, the plaintiff wins if, and only if, both p and q are true.
+- And the ticks and crosses in the columns under p and q are the individual judge's views on whether each of these parts of the case are satisfied.
+
+## An Important Example
+
+Here are two methods the judges could use to resolve the case:
+
+1. Vote on p, vote on q, and if a majority says yes in each case, the plaintiff wins.
+2. Vote on p&q, and if a majority says yes, the plaintiff wins.
+
+Method 1 delivers a win to the plaintiff, method 2 delivers a win to the defendant.
+
+# Probability to the Rescue
+
+## Not a Puzzle
+
+|       |  p    |  q    | p & q |
+|:-----:|:-----:|:-----:|:-----:|
+|   **A**   |   1   |   1   |   1   |
+|   **B**   |   1   |   0   |   0   |
+|   **C**   |   0   |   1   |   0   |
+| **Group** |  2/3  |  2/3  |  1/3  |
+
+## General Principle
+
+The average of some probabilities is a probability.
+
+If everyone in the group has consistent probabilities, the group will have consistent probabilities.
+
+## Natural Rule
+
+The group probability is just the average of the probabilities of the members of the group.
+
+By 'average' here, we're talking about the **arithmetic mean**: add the probabilities up and divide by how many judges there are.
+
+## Advantages
+
+1. Simple
+2. Intuitive
+3. Consistent
+
+## Another Advantage - Equal Between Voters
+
+One way to spell this out: no reference to people in the definition.
+
+Another way - if two people switch views entirely, end up with same result.
+
+## Another Advantage - Equal Between Options
+
+One way to spell this out: no reference to options in the definition. (Compare views that say don't make a change unless super-majority approves.)
+
+Another way - if everyone switches their views between two options, the position of those two options in the group probability switches.
+
+## Yet Another Advantage - Atomic
+
+To know the group view about the probability of p, you just need to know what each member thinks about p, and not about anything else.
+
+## Comparison to Paper
+
+The last three slides have described the features they call
+
+1. Anonymity
+2. Neutrality
+3. Irrelevant Alternatives
+
+## Advantages
+
+I don't want to undersell these advantages.
+
+Until not that long ago, I thought the problem of how to get a group probability out of individual probabilities was a simple problem with a simple solution ... this one.
+
+But in this area we really aren't allowed to have nice things.
+
+# Independence
+
+## Definition
+
+According to probability function Pr, two propositions p and q are independent if any of the following, equivalent, conditions are met. (Caveat: weird things happen if probability of p or q is 0; set that case aside for now.)
+
+$$
+\begin{align*}
+Pr(p | q) &= Pr(p) \\
+\frac{Pr(p \wedge q)}{Pr(q)} &= Pr(p) \\
+Pr(p \wedge q) &= Pr(p)Pr(q)
+\end{align*}
+$$
+
+## A Puzzle
+
+|       |  p    |  q    | p & q |
+|:-----:|:-----:|:-----:|:-----:|
+|   **A**   |   0.9 |  0.9  | 0.81  |
+|   **B**   |   0.1 |  0.1  | 0.01  |
+| **Group** |  0.5  |  0.5  |  0.42 |
+
+The two propositions are independent according to each member of the group, but not according to the group as a whole.
+
+## A Puzzle about Deference
+
+Imagine that you know nothing about p, q, but you know that A and B are experts, and think you should defer to them.
+
+How do you defer to both of them?
+
+Natural way - by setting your probability to the average of theirs.
+
+Problem: You'll end up thinking something both of your experts reject, namely that p and q are not independent.
+
+## A Principle about Deference
+
+I'm going to use this heuristic a bit, and I just want to flag it because while I think it's useful, you might think it's where I go wrong.
+
+- The group probability just is the probability you'll end up with if you defer to the members of the group collectively.
+
+# Learning
+
+## Conditionalisation
+
+When we are thinking about personal probabilities, we normally assume that learning goes by conditionalisation.
+
+What that means is that the probability of a hypothesis H after learning evidence E is Pr(H | E). Or in symbols, where Pr~E~ is the probability after learning E:
+
+$$
+Pr_E(H) = Pr(H | E) = \frac{Pr(H \wedge E)}{Pr(E)}
+$$
+
+## Group Learning
+
+A version of the case we've already seen shows that the following two claims are inconsistent:
+
+1. The group probability is the arithmetic mean of the individual probabilities.
+2. Group learning goes by conditionalisation.
+
+## A Puzzle about Learning
+
+Imagine that we've just learned that q is true.
+
+This doesn't affect A and B, because they think p and q are independent.
+
+So the average of their probabilities is 0.5, and that's arguably the group probability.
+
+But ...
+
+## A Puzzle About Learning
+
+Imagine that we'd:
+
+1. Asked A and B their opinions yesterday.
+2. Used the arithmetic mean to form a group probability.
+3. Updated that group probability by conditionalisation. So when (as it turns out) we learn q, the new Pr(p) is the old Pr(p|q).
+
+That looks like it should give the same verdict, but it doesn't.
+
+## A Big Disadvantage of the View
+
+The principle that Russell et al call Conditionalisation basically says the following two things should give the same verdict, at least if A and B have learned the same things since yesterday.
+
+1. Asking A and B their opinions today, and merging their opinions.
+2. Asking A and B what their opinions were yesterday, merging their opinions, asking them what they've learned since, and updating.
+
+## Geometric Mean
+
+They note that there is one interesting rule that does satisfy this constraint.
+
+It's moderately tricky to state in full generality, and I'm just going to state a rough version of it, and leave it to more math-centric classes to get the details fully right.
+
+(I'm not sure the paper gets the details fully right, in cases where A and B have opinions over the distribution of a continuous variable. The math here is actually rather tricky.)
+
+## Geometric Mean
+
+If *x* and *y* are non-negative numbers, their geometric mean is:
+
+$$
+\sqrt{xy}
+$$
+
+In general the geometric mean of some non-negative numbers x~1~, x~2~, ..., x~n~ is
+
+$$
+\sqrt[n]{x_1 x_2 \dots x_n}
+$$
+
+## Geometric Pooling
+
+1. Work out the geometric means of the probabilities of each 'world', i.e., maximally specific possibility.
+2. Sum these to get a total *t*.
+3. Multiply each of the sums by 1/*t* to get the probability of each world.
+4. For each proposition that's true in multiple worlds, sum the probability of the worlds to get its probability.
+
+# A Different Puzzle
+
+## Three Detectives
+
+I don't think trying to go through the math of that in detail is worth it; if you didn't get it straight away, nothing I say in 5-10 minutes will help. And the details don't matter for what we'll do next.
+
+Instead I want to leave you with a puzzle.
+
+## Three Detectives
+
+Three excellent detectives, A, B, and C, are investigating a crime
+
+They've each seen all the evidence, but you know they have very different approaches to thinking about crimes and cases like this.
+
+You also know they are much better at crime solving than you are.
+
+They are also each incredibly self-confident; once they've formed a view, knowing what the others think won't change their view.
+
+## Three Detectives
+
+You ask each of them what they think, and they each say it's 90% likely that the butler did it.
+
+Question: How confident should you be that the butler did it?
+
+## Option 1
+
+This is easy - 90%.
+
+After all, they agree about this, and they're smarter/better informed/better at crime solving than you are.
+
+## Option 2
+
+More than 90%. Here's why.
+
+After hearing A say 90%, it would be natural to be 90% confident that the butler did it.
+
+But then hearing B and C each say that is further evidence that the butler did it.
+
+And when you get evidence like that, your probability should go up.
+
+## Which is Right?
+
+I have no idea - I think it's a hard puzzle!
+
+It's not strictly speaking a math puzzle. Given some mathematical models of combining probabilities we can do some algebra to work out which model agrees with which answer.
+
+As it turns out, arithmetic mean agrees with the first, geometric mean with the second, and there are plenty of other views out there that take one or other side.
+
+But the question here is what we want our models to do, not I think one that we should leave to be answered by the models.
+
+# For Next Time
+
+## For Next Time
+
+We'll move from pooling probabilities to pooling preferences.
+
+That is, we're going to start talking about voting systems.

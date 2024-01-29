@@ -1,0 +1,39 @@
+---
+title: "Essay Two Questions"
+author: "Philosophy 444 - Winter 2024"
+date: "March 4, 2024"
+format:
+    html:
+      toc: false
+      mainfont: SF Pro Rounded
+    pdf: 
+      format: scrreprt
+      keep-tex: true
+#      geometry: 1in"
+      mainfont: Scala Pro
+      sansfont: Scala Sans Pro
+      mainfontoptions: Scale = MatchLowercase
+      fontsize: 12pt
+      linkcolor: black
+      link-citations: true
+---
+
+Answer **one** of the following questions in an essay of about 1200 words. The paper should engage with the relevant readings, and all references to works of other authors should be properly cited. In particular, whenver you say that an author says something, you should say **which page** they say this on. If you prefer all citations in footnotes you can do that, but it's also fine to do citations in-text, e.g., just write (109) at the end of the sentence to indicate that you're talking about page 109 of the same paper that you've been talking about for a while.
+
+## Question One {-}
+
+Which voting system do you think should be used for elections to the United States House of Representatives? How would it be an improvement on the status quo? Or, if you think the status quo is what should be used, how is it better than the best alternative? What is one objection to the system you're advocating, and how do you respond to it?
+
+## Question Two {-}
+
+Describe a voting system that does **not** violate Arrow's Independence of Irrelevant Alternatives principle. Make it as good as possible for use in voting for candidates for public office. Which of the other principles does it violate? What advantages and disadvantages would it have if used as a voting system?
+
+## Question Three {-}
+
+Describe a situation where the preferences of each individual in a group conflict with rights that individuals intuitively have. The situation should be described in some detail. You should not use abstracta (like A prefers X to Y), but instead fill in the details. And the situation should be different from the examples described in the readings (such as Sen's example involving Lady Chatterley's Lover), though it can be similar to them.
+
+In such a situation, what is the best outcome? Should the preferences of everyone in the group (including the person whose rights are potentially violated) be respected, or should the rights of the individual be respected? 
+
+## Due Date {-}
+
+Essays are due Monday, March 4 at 6pm.

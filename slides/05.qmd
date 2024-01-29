@@ -1,8 +1,23 @@
 ---
-title: "444 Lecture 5"
-subtitle: "Brown on Justified Group Belief"
+subtitle: "444 Lecture 5"
+title: "Brown on Justified Group Belief"
 author: "Brian Weatherson"
-date: "A bit later, January 2024"
+date: "January 30 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+#include-in-header:
+#  file: border.html
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
 ---
 
 # Lackey's Positive View
