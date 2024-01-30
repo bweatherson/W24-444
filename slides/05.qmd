@@ -187,13 +187,13 @@ The example makes a bit more sense if you're familiar with the train system in s
 
 Let's do a simpler case.
 
-## Evidence that Clicks Together
+## Evidence that Clicks
 
 There has been a crime, a poisoning of a foreign spy, and there is no reason to suspect Moriarty. Everyone assumes that he has neither the means, nor the motive, nor the opportunity, to commit the crime.
 
 Moriarty is a super criminal, so if he had the means (i.e., access to the poison), motive (i.e., reason to poison the spy), and opportunity (i.e., access to the spy), he likely did it. But most people think he had none of the three, so he's probably innocent (of this crime).
 
-There are three detectives, A, B, and C, assigned to the case.
+Three detectives, A, B, and C, are assigned to the case.
 
 ## Most of the Members
 
@@ -202,7 +202,7 @@ There are three detectives, A, B, and C, assigned to the case.
 - C has evidence that Moriarty has motive and opportunity, but thinks (like everyone outside the group) that he didn't have the motive.
 - What does the group think?
 
---
+---
 
 Brown argues that the 'most of the members' view has the following bad consequence.
 
@@ -241,7 +241,7 @@ There's no easy way to relate what the evidence of each member is to what eviden
 
 # Brown's Objection to Lackey
 
-## Brown's Objection to Lackey
+## Brown's Objection
 
 After all that, the actual objection to Lackey's view is fairly simple.
 
