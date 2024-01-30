@@ -132,20 +132,6 @@ I think the picture behind Lackey's view here is something like the following.
 1. Evidence pooling is good.
 2. If we have a justified belief, it should persist by doing this good thing, namely pooling our evidence.
 
-## Evidence Pooling
-
-I decided not to include this in the course, but there's some interesting recent work suggesting this isn't always right.
-
-If everyone pools their evidence, then if anyone gets misleading evidence, we all get it.
-
-There are occasions where groups are more likely to eventually get to the truth by having a little friction in the information channels.
-
-## Guards
-
-Does this matter to Lackey's case?
-
-Maybe; if you think a little friction in the information channels is a good thing, then it isn't clear why the fact that the belief wouldn't survive information pooling matters.
-
 ## Lackey's Positive View
 
 The group is justified in believing p just in case 
