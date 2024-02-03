@@ -29,6 +29,23 @@ library(tidyverse)
 library(fontawesome)
 ```
 
+## iClicker
+
+::: {.columns}
+
+:::: {.column width="55%"}
+- Go to https://join.iclicker.com/GLZZ
+- If you have an existing iClicker account, use it.
+- If not, sign up for a **free** UM account, and join this course.
+::::
+
+:::: {.column width="40%"}
+![QR code for https://join.iclicker.com/GLZZ](iclicker_444_qr.png)
+
+::::
+
+:::
+
 # Discursive Dilemma
 
 ## A Puzzle
