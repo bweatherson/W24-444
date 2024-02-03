@@ -62,5 +62,220 @@ The United States Senate is a Single Member system, although there are two Senat
 
 ## Plan For Week
 
-- Single member systems today.
-- Multi member systems on Thursday.  
+- Commonly used single member systems today.
+- Rarely used single member systems on Thursday.
+- And then multi member systems on the rest of Thursday.
+ 
+# Why Not Single Member
+
+## Boundary Shenanigans
+
+Single member systems make the boundaries of those districts really important, which encourages mucking about with those boundaries.
+
+This is commonly called gerrymandering.
+
+It's actually not a big deal in 95% of the world. But we live in the other 5%.
+
+## Ignoring Large Areas
+
+Campaigns for parliaments elected with single-member districts routinely ignore large chunks of the country.
+
+In my home state (Victoria, Australia), I believe the conservatives haven't won a single district on the western side of the main city in my lifetime. And they've been in government half that time. They can (and do) simply ignore a huge chunk of the population.
+
+## Ignoring Large Areas
+
+And of course we see the same in the United States.
+
+- Joe Biden's re-election campaign will not spend a lot of time in Tennessee or Missouri, or in California or New York.
+- The Senate election will concentrate on about 5 states.
+
+## Overpower Swing Voters
+
+This is the flip side of ignoring many people.
+
+The ones you don't ignore get super-powered.
+
+In a lot of places (including several US states) these tend to be fairly well-off suburban areas. In Michigan in 2022 this wasn't quite the case - the real center of attention was Downriver.
+
+## Upside of Single-Member Districts
+
+We'll come back to this on Thursday, but the big upside is in transparency and responsiveness.
+
+# Plurality
+ 
+## The Simplest Possible Voting System
+
+- The candidates are listed on a ballot paper (or a machine).
+- Each voter puts a mark beside one candidate. Call this a vote.
+- The candidate with the most votes wins.
+
+## United States
+
+In some sense this is the system we primarily use in the United States, with three (really) big qualifications.
+
+- Qualification One: For President, this goes via the Electoral College.
+- Qualification Two: Being listed on the ballot is non-trivial.
+- Qualification Three: There are primaries.
+
+## Strengths of This System
+
+Really incredibly simple. This means:
+
+1. It's simple to understand how votes and wins are related.
+2. It's simple to work out on election night who won.
+
+It does not mean that it's simple for the voter to figure out what to do. We'll come back to this.
+
+## Strengths of This System
+
+Like any other single-member voting system, it tends to elect strong governments, i.e., governments with a majority of the House.
+
+It's very easy for a large party to win a majority of the seats in a nationwide election under this system. This is practically guaranteed in a two-party country like the US, but it also happens in the UK where there are usually 8-10 parties in parliament.
+
+## Disadvantages
+
+1. Disproportional - minority parties end up with majority.
+2. Disordered - parties with fewer votes end up with more seats.
+3. Hard decisions - we'll talk about this in a bit.
+4. Lack of communication across time - also come back to this.
+
+## Vote for a Song
+
+A.  “Kill Bill” by SZA
+B.  “Flowers” by Miley Cyrus
+C.  “Ella Baila Sola” by Eslabon Armado, Peso Pluma
+D.  “Boy’s a liar Pt. 2” by PinkPantheress, Ice Spice
+E.  “Cruel Summer” by Taylor Swift
+
+## A Challenge for Voters
+
+Imagine a voter with the following characteristics.
+
+- They care about the election result.
+- They have a preferred candidate.
+- They don't think that candidate will win.
+- Between the candidates that are likely to win, they have a clear preference.
+
+What should they do?
+
+## Another Challenge
+
+Imagine a voter in the following election.
+
+- There are three candidates, A, B and C.
+- The voter really dislikes A, and is indifferent between B and C.
+- They think that if everyone voted for their favorite candidate, it would be 40% A; 30% B; 30% C.
+
+What should they do?
+
+## Communication
+
+In a two party system, several voters have to compromise.
+
+1. Some of these are voters whose views are more extreme than the major parties.
+2. Others are voters who are cross-pressured, who agree with one of the parties on some things, and the other party on others.
+
+Australia in the last 25 years has seen big movements towards parties in both these dimensions.
+
+## Communication
+
+I think there's some reason to think that some voters have the following combination of views.
+
+- They fit into one of the two categories on the previous slide.
+- They wouldn't really act on this unless they thought that a lot of other people had similar views to theirs.
+
+If everyone compromises in their votes, these voters don't learn that there are other voters like them.
+
+# Runoff Systems
+
+## Basic Idea
+
+Vote in two stages.
+
+1. Every candidate is on the ballot, everyone votes.
+2. A second round of voting between the top two vote getters, most votes wins.
+
+## Two Variants
+
+If a candidate gets a majority of the vote in the first round, do you even have the second round?
+
+- In France, where this system is widely used, they do not.
+- In California, where in effect this system is used (though not quite under this name), they do.
+
+I'm going to ignore this complication.
+
+## Downside
+
+Two elections - twice the expense both for states and for voters.
+
+## Downside
+
+Non-monotonic. Getting less votes can make you a winner.
+
+This is a bit complicated, so I'll work though it on next slide.
+
+---
+
+Three candidates: A (40%), B (31%), C (29%).
+
+B's voters are split between A and C for their second choice.
+
+C's voters all prefer B to C.
+
+Question: Who will win a run-off election (if everyone votes sincerely)?
+
+---
+
+Due to a minor scandal, 3% of A's voters switch to C.
+
+Now it's A (37%), B (31%), C (32%),
+
+Question: Who will win?
+
+## Upsides
+
+Removes some of the problems with plurality.
+
+- Less of a challenge for voters; though maybe not zero challenge in cases like the previous two slides.
+- Possible for minor party voters to communicate.
+
+## Another Song Vote
+
+I'll do another vote for the top two from the song voting.
+
+But first a question: Would anyone have voted differently if they knew it was a runoff?
+
+# Instant Runoff
+
+## How to Vote
+
+Voters don't just mark a single candidate.
+
+- Rather, they list their preferences between candidates. In effect, they rank order the candidates.
+- Some potential variations here.
+- Some systems only allow a first and second choice.
+- Some require a full preference ranking.
+- Others allow the voter to rank as many as they like.
+
+## How to Count
+
+1. Add up all the first-preference votes.
+2. If someone has over 50%, they win.
+3. If not, eliminate the candidate with the fewest votes.
+4. For each ballot paper, move it to the highest ranked remaining candidate.
+5. Recount all the votes, with these moved votes included.
+6. Go to step 2.
+
+## Downsides
+
+- The non-monotonicity problem remains.
+- Can be slow to count, especially if you're doing 30 elections at a time like in US.
+- Voters don't really have preferences between all N candidates.
+- Between 1 and 3 percent of voters routinely mislabel their ballots, disenfranchising themselves. Sometimes this is intentional, but not always.
+- Some people think (though I don't) that it's a kind of double voting to have your vote be counted many times over.
+
+## Upsides
+
+Voters don't have to make quite as many strategic choices (unless the non-monotonicity problem comes up).
+
+Allows for finer divisions of parties; Australia now has something like a five-party system, with two left, two right, and one centrist. (This is an *incredibly* rough description.)
