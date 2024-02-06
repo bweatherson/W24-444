@@ -1,0 +1,268 @@
+---
+subtitle: "444 Lecture 8"
+title: "Voting Systems"
+author: "Brian Weatherson"
+date: "February 8 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+#include-in-header:
+#  file: border.html
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+## Plan for Today
+
+1. Go over some other single election voting systems that are nowadays **not** used for elections.
+2. Talk briefly about electing multiple people at a time.
+
+# Range Voting
+
+## Range Voting
+
+This is an unfamiliar name for a simple system.
+
+Every voter gives as many candidates as they like a score in a range, typically 0-10, or 1-5.
+
+The candidate with the highest average wins.
+
+## Question 1
+
+Today will have lots of chance for discussion with people sitting nearby. (You may want to move to somewhere you can talk to more people.)
+
+Real world uses
+:    What real world systems use range voting?
+
+## Answers
+
+(To be added after class)
+
+## Question 2
+
+Political Impact
+:    What do you think would happen if we used range voting to elect the governor of Michigan?
+
+## Answers
+
+(To be added after class)
+
+## iClicker
+
+Would using range voting be better or worse than the status quo (i.e., plurality voting)? Why or why not?
+
+A.  Yes
+B.  No
+
+The final vote was ___ Yes and ___ No.
+
+# Approval Voting
+
+## Approval Voting
+
+This (again) is an unfamiliar name for a simple system.
+
+Every voter votes for as many candidates as they like. 
+
+Intuitively they vote for every candidate they approve of, but this is just an intuition, it isn't part of the rules in any way.
+
+The candidate with the most votes wins.
+
+## Question 1
+
+Real world uses
+:    What real world systems use approval voting?
+
+## Answers
+
+(To be added after class)
+
+## Question 2
+
+Political Impact
+:    What do you think would happen if we used approval voting to elect the governor of Michigan?
+
+## Answers
+
+(To be added after class)
+
+## iClicker
+
+Would using approval voting be better or worse than the status quo (i.e., plurality voting)? Why or why not?
+
+A.  Yes
+B.  No
+
+The final vote was ___ Yes and ___ No.
+
+# Up-Down Voting
+
+## Up-Down Voting
+
+I don't know of a standard name for this system, but it's again one you're familiar with I think.
+
+For each candidate, each voter can vote yes, or no, or leave blank.
+
+The candidate with the most surplus of yes votes over no votes wins.
+
+## Question 1
+
+Real world uses
+:    What real world systems use up-down voting?
+
+## Answers
+
+(To be added after class)
+
+## Question 2
+
+Political Impact
+:    What do you think would happen if we used up-down voting to elect the governor of Michigan?
+
+## Answers
+
+(To be added after class)
+
+## iClicker
+
+Would using up-down voting be better or worse than the status quo (i.e., plurality voting)? Why or why not?
+
+A.  Yes
+B.  No
+
+The final vote was ___ Yes and ___ No.
+
+# Borda Score
+
+## Technical Point
+
+The previous three systems took more than the **preferences** of the voters into account.
+
+Even if voters vote sincerely (which I suspect you'll have decided was unlikely) just knowing the ranking each voter has of the candidates will not tell you how they vote.
+
+Partially for historical reasons, and partially for technical reasons, there has been a lot of attention paid to systems that do just take preferences, i.e., rankings, as inputs.
+
+## Borda Score
+
+Each voter ranks the N candidates from 1 to N.
+
+For each voter, the candidate who is ranked first gets N-1 points, the next gets N-2 points, the next N-3 points, and so on down to last who gets 0 points.
+
+The candidate with the most points wins.
+
+## Question 1
+
+Real world uses
+:    What real world systems use the Borda score system (or anything like it)?
+
+## Answers
+
+(To be added after class)
+
+## Question 2
+
+Political Impact
+:    What do you think would happen if we used the Borda Score system to elect the governor of Michigan?
+
+## Answers
+
+(To be added after class)
+
+## iClicker
+
+Would using the Borda Score system be better or worse than the status quo (i.e., plurality voting)? Why or why not?
+
+A.  Yes
+B.  No
+
+The final vote was ___ Yes and ___ No.
+
+## Condorcet Systems
+
+I won't go over these in detail, but I wanted to make sure you knew about another class of systems, which are called Condorcet Systems, or Condorecet Methods.
+
+## Condorcet and Borda {.nostretch}
+
+::: {.columns}
+
+:::: {.column width="50%"}
+![Jean-Charles de Borda (1733-1799)](Jean_Charles_Borda.jpg){width="70%"}
+::::
+
+:::: {.column width="50%"}
+![Marquis de Condorcet (1743-1794)](Nicolas_de_Condorcet.PNG){width="76%"}
+::::
+
+:::
+
+## Condorcet Constraint
+
+If there is a candidate such that a majority of voters prefers that candidate to all other candidates, that candidate shall win.
+
+## Example
+
+Four candidates, ABCD, 300 votes.
+
+- 100 prefer ADBC
+- 100 prefer CDAB
+- 100 prefer BDCA
+
+Since 200 prefer D to A, 200 prefer D to B, 200 prefer D to C - D wins.
+
+## Condorcet Methods
+
+The systems that extend this constraint to a full system, one that issues in verdicts even when there is no Condorcet winner, are more complicated than what we've been using so far.
+
+# Elect Many People
+
+## Big Idea
+
+Everyone votes for a party - more or less directly.
+
+Each party gets a percentage of the seats matching their percentage of the vote.
+
+If the chamber elects a government, a government is formed by a coalition of parties.
+
+## Upsides
+
+1. Very representative!
+2. Encourages sincere voting.
+3. Avoids gerrymanders.
+
+## Downsides
+
+1. Leads to weak, or even non-existent, governments.
+2. Hard for voters to know who to vote for to express dissatisfaction with government. (This is also a problem in very divided systems like the US.)
+
+## Other Effects
+
+I'll leave these for you to say whether they are upsides or downsides.
+
+1. Extreme groups are represented, and can become powerful if two coalitions are near a majority.
+2. Superpowers parties as opposed to individual representatives.
+3. Can leave areas without local representatives.
+
+## Variations
+
+We could spend all day on any one of these.
+
+1. Single district or many districts?
+2. Only proportional, or also have single-member districts.
+3. If you have single-member districts, are the proportional seats additional, or top-up?
+4. Is there a threshold?
+5. Do voters get a choice between candidates, or just parties?
+6. Do voters just make a single vote, or express a preference?
+
+# For Next Time
+
+## For Next Time
+
+We'll go over Kenneth Arow's famous proof that no system can do everything one wants in an electoral system.

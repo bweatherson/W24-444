@@ -139,6 +139,16 @@ It's very easy for a large party to win a majority of the seats in a nationwide 
 3. Hard decisions - we'll talk about this in a bit.
 4. Lack of communication across time - also come back to this.
 
+You've probably thought about the last two.
+
+## Examples
+
+If we make the examples too realistic, we run into a risk (well, I run into a risk) of violating UM policies on what people up on stage can legally say in class.
+
+It's a good thing there aren't ballot measures on voting systems up this year, or I probably couldn't teach this unit.
+
+Instead I want to give us a toy example that we'll come back to.
+
 ## Vote for a Song
 
 A.  “Kill Bill” by SZA
@@ -167,6 +177,17 @@ Imagine a voter in the following election.
 - They think that if everyone voted for their favorite candidate, it would be 40% A; 30% B; 30% C.
 
 What should they do?
+
+## Extending the Challenge
+
+If you are a politician in B or C in the previous example, what do you do?
+
+Do you spend more of your time arguing
+
+1. That you are better than the other of B/C?
+2. That you are more popular, and hence more likely to win, than the other in B/C?
+
+In practice in the UK, it's often option 2.
 
 ## Communication
 
@@ -214,7 +235,7 @@ Non-monotonic. Getting less votes can make you a winner.
 
 This is a bit complicated, so I'll work though it on next slide.
 
----
+## Non-Monotonic
 
 Three candidates: A (40%), B (31%), C (29%).
 
@@ -224,7 +245,7 @@ C's voters all prefer B to C.
 
 Question: Who will win a run-off election (if everyone votes sincerely)?
 
----
+## Non-Monotonic
 
 Due to a minor scandal, 3% of A's voters switch to C.
 
@@ -266,11 +287,29 @@ Voters don't just mark a single candidate.
 5. Recount all the votes, with these moved votes included.
 6. Go to step 2.
 
+## Example
+
+::: {.columns}
+
+:::: {.column width="55%"}
+I made a [Google Sheet](https://docs.google.com/spreadsheets/d/1UOrlwLRyo-4PoS8pUawQ8ZwJi-oQR99_jFxlKsKwkX8/edit?usp=sharing) with some worked examples of this to show how it works.
+
+If we have time (we probably won't), I'll walk through some of them.
+::::
+
+:::: {.column width="40%"}
+![Link to a Google Sheet](irv_qr_code.png)
+
+::::
+
+:::
+
+
 ## Downsides
 
 - The non-monotonicity problem remains.
 - Can be slow to count, especially if you're doing 30 elections at a time like in US.
-- Voters don't really have preferences between all N candidates.
+- Voters don't have preferences over all N candidates.
 - Between 1 and 3 percent of voters routinely mislabel their ballots, disenfranchising themselves. Sometimes this is intentional, but not always.
 - Some people think (though I don't) that it's a kind of double voting to have your vote be counted many times over.
 
