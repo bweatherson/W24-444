@@ -1,8 +1,8 @@
 ---
-subtitle: "444 Lecture 7"
-title: "Arrow's Theorem"
+subtitle: "444 Lecture 8"
+title: "Voting Systems"
 author: "Brian Weatherson"
-date: "February 11 2024"
+date: "February 8 2024"
 format:
   revealjs:
     theme:
@@ -13,306 +13,256 @@ format:
     self-contained: true
     slide-number: c/t
     show-slide-number: all
+#include-in-header:
+#  file: border.html
 keep-md: false
 tbl-cap-location: bottom
 code-block-background: true
 ---
 
-# Background
+## Plan for Today
 
-## Kenneth Arrow
+1. Go over some other single election voting systems that are nowadays **not** used for elections.
+2. Talk briefly about electing multiple people at a time.
 
-::: {.columns}
+# Range Voting
 
-:::: {.column width="55%"}
-- Prominent economist.
-- Worked on both theoretical questions (especially general equilibrium) and practical questions (health economics, economic growth).
-- Interacted a lot with philosophy.
-::::
+## Range Voting
 
-:::: {.column width="55%"}
-![Kenneth Arrow (1921-2017)](Arrow.jpg){width="70%"}
-::::
+This is an unfamiliar name for a simple system.
 
-:::
+Every voter gives as many candidates as they like a score in a range, typically 0-10, or 1-5.
 
-## Combining Wants
+The candidate with the highest average wins.
 
-Intuitively our problem here is to decide what the group wants given what the individuals in the group want.
+## Question 1
 
-- This is particularly important in democratic decision making.
-- But it has other implications as well.
+Today will have lots of chance for discussion with people sitting nearby. (You may want to move to somewhere you can talk to more people.)
 
-## Mid-20th Century Theory
+Real world uses
+:    What real world systems use range voting?
 
-The notion of a _want_ was not particularly fashionable in mid-20th century academic work.
+## Answers
 
-- Lots of writers either implicitly or explicitly endorsed _behaviorism_, and hence thought that we should replace mental state attributions with references to behavior.
-- And a want, like wanting world peace, doesn't have an immediate behavioral pair.
+(To be added after class)
 
-## Choice
+## Question 2
 
-Instead of looking at spooky things like wants, theorists then wanted to look at concrete things.
+Political Impact
+:    What do you think would happen if we used range voting to elect the governor of Michigan?
 
-- A standard move was to focus not on wants, but on _choices_.
-- What I want is hard to tell, and maybe meaningless.
-- But what I choose from a group of options can be observed, and that seems like a scientific notion.
+## Answers
 
-## Preference
+(To be added after class)
 
-With some assumptions, we can get something stronger than choice.
+## iClicker
 
-- If I choose A, when my options include B, that is a sign that I prefer A to B.
-- Strictly speaking, it only shows that I either prefer A to B, or I'm indifferent between them.
-- You also need some other assumptions about my consistency, and the issues here get complicated.
-
-## Preference
-
-But this line of reasoning was why it was common to start with preferences in mid-century work.
-
-- And Arrow's work is definitely mid-century.
-- The theorem was first publicly stated in his 1951 book _Social Choice and Individual Values_, though it came out of his earlier PhD work.
-
-## Inter-Personal Value
-
-One part of the tradition Arrow is working in here is the view that what are called _inter-personal value comparisons_ are impossible. Here's what that means for a case with two people (A, B), and two options (X, Y)
-
-1. A likes X a lot more than Y; B likes Y a little more than X.
-2. A likes X a little more than Y; B likes Y a lot more than X.
-
-The view is that these two situations are, for political economy purposes, the same. One person prefers one option, the other the other option.
-
-# The Task
-
-## Generate a Function
-
-Inputs
-:    Individual preference rankings over options.
-
-Output
-:    A group preference ranking over options.
-
-## Preference Ranking
-
-For any two options either
-
-1. X is (strictly) better than Y; or
-2. Y is (strictly) better than X; or
-3. X and Y are equally good.
-
-## Transitivity
-
-All three of these things are meant to be transitive.
-
-- If X is better than Y, and Y is better than Z, then X is better than Z.
-- If X is as good as Y, and Y is as good as Z, then X is as good as Z.
-
-## Social Choice
-
-There is something a bit funny about this as an output constraint.
-
-- Intuitively we want to make a _social choice_.
-- That just requires saying which option is best, it doesn't require saying what the social rankings are over all the options.
-- We will come back to this.
-
-## The Project
-
-1. Find some constraints on this function.
-2. Find a function that meets the constraints.
-
-## Sample Constraints
-
-Unanimity
-:    If everyone prefers X to Y, then the group prefers X to Y.
-
-Non-Dictatorship
-:    For any person, and any pair X, Y, it is possible that they prefer X to Y, but the group does not.
-
-## Stronger Constraints
-
-Option Invariance
-:    The output does not have any built-in difference between the options; it just matters how they are ranked.
-
-Voter Invariance
-:    The output does not have any built-in difference between the voters; it just matters which preferences are held, not who holds them.
-
-These are both strengthenings of the constraints on the previous slide.
-
-## Arrow's Theorem
-
-There is no function that meets five natural constraints.
-
-1. Unanimity
-2. Non-Dictatorship
-3. Unrestricted Domain
-4. Social Ordering
-5. Independence of Irrelevant Alternatives
-
-We've touched on the first two.
-
-## Unrestricted Domain
-
-Whatever preferences the voters have, the function will produce an output.
-
-- Intuitively, it will never say "Oh, if that's what you think, good luck, you're on your own."
-- This is very important in a voting system for example.
-
-## Social Ordering
-
-The output is **complete**, and **transitive**. That is
-
-1. For any two options, X and Y, the output says either X is better, or Y is better, or they are equally good.
-2. In the output, better than is transitive.
-3. In the output, equally good is transitive.
-
-## Social Ordering
-
-This rules out a possibility that you might want to take seriously.
-
-- I'll introduce it via an example.
-
-## Orderings over Holidays
-
-Imagine that you have a bunch of money for summer vacation, and you can choose one of two very nice options. (These will be expensive, but you can afford it, in the hypothetical.)
-
-1. You can spend time on some islands in the Carribean, lying on the beach, surfing, snorkeling, etc.
-2. You can go to some European cities, visit museums, see incredible art, eat at fancy restaurants, etc.
-
-For some of you, one of these will be clearly preferable. But imagine you think they are both pretty good options.
-
-## Orderings over Holidays
-
-Is the following possible for a rational choosder?
-
-1. Someone thinks that each holiday would be good; they don't prefer one over the other.
-2. If the price of one of them fell by $50, they would still think each was good, and wouldn't prefer one over the other.
+Would using range voting be better or worse than the status quo (i.e., plurality voting)? Why or why not?
 
 A.  Yes
 B.  No
 
-## Completeness and Transitivity
+The final vote was ___ Yes and ___ No.
 
-If you think Yes (and I kind of think Yes), then you have to give up one of the conditions on social ordering, either completeness or transitivity. (That is, you have to give up their analogues for individual preference.)
+# Approval Voting
 
-1. For any two options, X and Y, either X is better, or Y is better, or they are equally good.
-2. Better than is transitive.
-3. Equally good is transitive.
+## Approval Voting
 
-## Completeness and Transitivity
+This (again) is an unfamiliar name for a simple system.
 
-Let C be the Carribean vacation, E the European vacation, and C+ the cheaper Carribean vacation after prices fall by $50.
+Every voter votes for as many candidates as they like. 
 
-- Since having $50 is better than not having it, C+ is better than C.
-- If preferences are complete, and neither C nor C+ is better than or worse than E, then C+ is as good as E, and C is as good as E.
-- If as good as is transitive, C+ is as good as C. Contradiction!
+Intuitively they vote for every candidate they approve of, but this is just an intuition, it isn't part of the rules in any way.
 
-## Sweetenings
+The candidate with the most votes wins.
 
-What these constraints mean in practice is that if neither option is better than another, then any 'sweetening' of one option by making it better (e.g., by a fall in airfares) will make it the better option.
+## Question 1
 
-- If neither is better than the other, they are tied, and any improvement breaks a tie.
-- If you think that options can be still impossible to choose between after sweetening, one of these constraints is off.
+Real world uses
+:    What real world systems use approval voting?
 
-## Independence
+## Answers
 
-This is the big constraint, and I'm going to spend a bit of time explaining it.
+(To be added after class)
 
-The short version is that the social ordering of two options X and Y is solely a function of the individual orderings of X and Y.
+## Question 2
 
-That is, a change in individual rankings can only change the social ranking of X and Y if it changes at least one person's ranking of X and Y.
+Political Impact
+:    What do you think would happen if we used approval voting to elect the governor of Michigan?
 
-## Independence
+## Answers
 
-But it's hard to get an intuitive grip on that, and even Arrow himself got it wrong when trying to state it intuitively.
+(To be added after class)
 
-I find it easiest to see what's happening with some illustrations.
+## iClicker
 
-## Independence and Plurality
+Would using approval voting be better or worse than the status quo (i.e., plurality voting)? Why or why not?
 
-Here's a simple social choice function.
+A.  Yes
+B.  No
 
-1. For each voter who likes X more than all the other options, give X 1 point.
-2. If a voter has N options tied for best, give each of them 1/N points.
-3. Order the options by the number of points they have.
+The final vote was ___ Yes and ___ No.
 
-## Independence and Plurality
+# Up-Down Voting
 
-Imagine there are five voters, and three options: X, Y and Z.
+## Up-Down Voting
 
-- Three voters have Y > X > Z; so from them Y gets 3 points.
-- Two voters have Z > X > Y; so from them, Z gets 2 points.
+I don't know of a standard name for this system, but it's again one you're familiar with I think.
 
-So the social ordering is Y > Z > X, because Y has 3 points, Z has 2 points, X has 0 points.
+For each candidate, each voter can vote yes, or no, or leave blank.
 
-## Independence and Plurality
+The candidate with the most surplus of yes votes over no votes wins.
 
-Imagine the first three change their order if 
+## Question 1
 
-- Three voters have Y > Z > X; so from them Y gets 3 points.
-- Two voters have X > Z > Y; so from them, X gets 2 points.
+Real world uses
+:    What real world systems use up-down voting?
 
-So the social ordering is Y > X > Z, because Y has 3 points, X has 2 points, Z has 0 points.
+## Answers
 
-## Independence and Plurality
+(To be added after class)
 
-Now imagine the three voters change their mind about Y and Z, so we hvae:
+## Question 2
 
-- Three voters have Z > Y > X; so from them Z gets 3 points.
-- Two voters have X > Z > Y; so from them, X gets 2 points.
+Political Impact
+:    What do you think would happen if we used up-down voting to elect the governor of Michigan?
 
-So the social ordering is Z > X > Y, because Z has 3 points, X has 2 points, Y has 0 points.
+## Answers
 
-## Independence and Plurality
+(To be added after class)
 
-Between the last two slides, two things happened:
+## iClicker
 
-1. The social ranking of X and Y flipped. Originally Y > X, now X > Y.
-2. No voter changed their ranking of X and Y. It's just that three voters were sure X was worst, flipped their view on which of the other two options was better.
+Would using up-down voting be better or worse than the status quo (i.e., plurality voting)? Why or why not?
 
-## Independence
+A.  Yes
+B.  No
 
-That's what Arrow's Independence condition rules out.
+The final vote was ___ Yes and ___ No.
 
-- It's only the individual ranking of X and Y that matter to the group ranking.
+# Borda Score
 
-## Independence and Condorcet
+## Technical Point
 
-There's a similar point here to Condorcet's view about the importance of pairwise majorities.
+The previous three systems took more than the **preferences** of the voters into account.
 
-It's easy to have the intuition that in an election with two big parties, all that should matter is the voter preference between those two.
+Even if voters vote sincerely (which I suspect you'll have decided was unlikely) just knowing the ranking each voter has of the candidates will not tell you how they vote.
 
-And that's what motivates various runoff voting systems.
+Partially for historical reasons, and partially for technical reasons, there has been a lot of attention paid to systems that do just take preferences, i.e., rankings, as inputs.
 
-But this is a *really* strong constraint.
+## Borda Score
 
-## The Theorem
+Each voter ranks the N candidates from 1 to N.
 
-There is no function that meets five natural constraints.
+For each voter, the candidate who is ranked first gets N-1 points, the next gets N-2 points, the next N-3 points, and so on down to last who gets 0 points.
 
-1. Unanimity
-2. Non-Dictatorship
-3. Unrestricted Domain
-4. Social Ordering
-5. Independence of Irrelevant Alternatives
+The candidate with the most points wins.
 
-## Proofs
+## Question 1
 
-I'm really not going to go over the proofs, of which there are several.
+Real world uses
+:    What real world systems use the Borda score system (or anything like it)?
 
-The ones I find most intuitive involve showing that if you meet the other four conditions, you can prove there must be a dictator.
+## Answers
 
-## One Proof Sketch
+(To be added after class)
 
-- First, show that if the conditions are met, then if everyone has an extreme view of X (i.e., has it either first or last), the group must have an extreme view (i.e., have it first or last).
-- If everyone has it first, the group must have it first, and if everyone has it last, the group must have it last.
-- Now imagine starting with everyone having it first, and changing the votes one voter at a time to make it last.
-- At some point it flips, and the person who causes the flip must be a dictator.
+## Question 2
+
+Political Impact
+:    What do you think would happen if we used the Borda Score system to elect the governor of Michigan?
+
+## Answers
+
+(To be added after class)
+
+## iClicker
+
+Would using the Borda Score system be better or worse than the status quo (i.e., plurality voting)? Why or why not?
+
+A.  Yes
+B.  No
+
+The final vote was ___ Yes and ___ No.
+
+## Condorcet Systems
+
+I won't go over these in detail, but I wanted to make sure you knew about another class of systems, which are called Condorcet Systems, or Condorecet Methods.
+
+## Condorcet and Borda {.nostretch}
+
+::: {.columns}
+
+:::: {.column width="50%"}
+![Jean-Charles de Borda (1733-1799)](Jean_Charles_Borda.jpg){width="70%"}
+::::
+
+:::: {.column width="50%"}
+![Marquis de Condorcet (1743-1794)](Nicolas_de_Condorcet.PNG){width="76%"}
+::::
+
+:::
+
+## Condorcet Constraint
+
+If there is a candidate such that a majority of voters prefers that candidate to all other candidates, that candidate shall win.
+
+## Example
+
+Four candidates, ABCD, 300 votes.
+
+- 100 prefer ADBC
+- 100 prefer CDAB
+- 100 prefer BDCA
+
+Since 200 prefer D to A, 200 prefer D to B, 200 prefer D to C - D wins.
+
+## Condorcet Methods
+
+The systems that extend this constraint to a full system, one that issues in verdicts even when there is no Condorcet winner, are more complicated than what we've been using so far.
+
+# Elect Many People
+
+## Big Idea
+
+Everyone votes for a party - more or less directly.
+
+Each party gets a percentage of the seats matching their percentage of the vote.
+
+If the chamber elects a government, a government is formed by a coalition of parties.
+
+## Upsides
+
+1. Very representative!
+2. Encourages sincere voting.
+3. Avoids gerrymanders.
+
+## Downsides
+
+1. Leads to weak, or even non-existent, governments.
+2. Hard for voters to know who to vote for to express dissatisfaction with government. (This is also a problem in very divided systems like the US.)
+
+## Other Effects
+
+I'll leave these for you to say whether they are upsides or downsides.
+
+1. Extreme groups are represented, and can become powerful if two coalitions are near a majority.
+2. Superpowers parties as opposed to individual representatives.
+3. Can leave areas without local representatives.
+
+## Variations
+
+We could spend all day on any one of these.
+
+1. Single district or many districts?
+2. Only proportional, or also have single-member districts.
+3. If you have single-member districts, are the proportional seats additional, or top-up?
+4. Is there a threshold?
+5. Do voters get a choice between candidates, or just parties?
+6. Do voters just make a single vote, or express a preference?
 
 # For Next Time
 
-## Big Topics
+## For Next Time
 
-1. Which conditions do real world voting systems end up violating? (It's basically always independence.)
-2. What weakenings of the constraints lead to interesting views. (Completeness will be important here.)
-3. How can we use Arrow's Theorem to think about other kinds of aggregation. (Hint: Think of GPA as a way of aggregating your various professor's views about your work.)
-
+We'll go over Kenneth Arow's famous proof that no system can do everything one wants in an electoral system.
