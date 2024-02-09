@@ -1,0 +1,33 @@
+---
+subtitle: "444 Lecture 10"
+title: "Arrow's Theorem"
+author: "Brian Weatherson"
+date: "February 13 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+# Arrow and Voting Systems
+
+
+
+# Gibbard
+
+# Single-Peaked
+
+# Other Combinations
+
+- GPA/Course evaluation
+- Multi-attribute choosing
+- Moral tradeoffs

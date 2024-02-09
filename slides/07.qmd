@@ -241,7 +241,7 @@ Three candidates: A (40%), B (31%), C (29%).
 
 B's voters are split between A and C for their second choice.
 
-C's voters all prefer B to C.
+C's voters all prefer B to A.
 
 Question: Who will win a run-off election (if everyone votes sincerely)?
 
