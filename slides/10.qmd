@@ -168,12 +168,169 @@ Range and Functionality
 
 The next few slides are about two ways to weaken the Arrow constraints to find a system that works.
 
+We're going to start with a model that drops one of the transitivity principles.
 
+## Oligarchy
+
+Designate some people, more than 1, as **oligarchs**.
+
+The social order ranks X above Y if and only if every oligarch ranks X above Y.
+
+That's the end of the theory.
+
+## Arrow Criteria
+
+1.  Unanimity
+2.  Non-Dictatorship
+3.  Unrestricted Domain
+4.  Social Ordering
+5.  Independence of Irrelevant Alternatives
+
+It meets every one except **4**.
+
+## Transitivity
+
+Even on 4, it gets 2/3 of the way there.
+
+If you add that if not X > Y, and not Y > X, then X = Y, it is complete.
+
+And > is transitive.
+
+But = is not transitive.
+
+## Example
+
+There are two oligarchs, A and B, and three options, X, Y, Z.
+
+- A ranks X > Z > Y.
+- B ranks Y > X > Z
+- Social ordering has X = Y, Y = Z, and X > Z.
+
+## Oligarchy
+
+Note that you could have a version of this where **everyone** is an oligarch, so the view doesn't have to be inegalitarian.
+
+And we had an argument last time that if = is defined this way, you should not expect it to be transitive.
+
+## Gibbard
+
+The idea for this comes in part from Allan Gibbard, who until his recent retirement was in the philosophy department here at UM.
+
+He and a colleague proved that it was the only system that met these slightly relaxed constraints. 
 
 # Single-Peaked
 
+## Basic Model
+
+Assume the options vary along one dimension.
+
+And also assume that each voter has a 'bliss-point' on that dimension, and they prefer any change that moves towards the bliss-point.
+
+Then say X > Y if and only if a majority of voters prefer X to Y.
+
+Given these assumptions, that will work - it will produce a social order.
+
+## Constraints
+
+1.  Unanimity
+2.  Non-Dictatorship
+3.  Unrestricted Domain
+4.  Social Ordering
+5.  Independence of Irrelevant Alternatives
+
+It meets every one except **3**. I'm assuming this doesn't actually issue an output if the voters do not meet this characteristic.
+
+## Single-Peaked
+
+![Three examples of single peaked preferences, from Wikipedia](Singlepeaked1.jpg){height=70%}
+
+## Single-Peaked
+
+Note that we don't require the close to the bliss point the better.
+
+- It could be that moving away in one direction is *much worse* than moving away in another direction.
+- It's just that moving towards the bliss point is always better. 
+
+## Politics
+
+This may be politically important. If...
+
+1. Everyone agrees on the left-to-right arrangement of the candidates; and
+2. Everyone has a 'bliss-point' on this spectrum; and
+3. Everyone prefers X to Y if X is between Y and the 'bliss-point'
+
+Then majority preferences will lead to a consistent outcome.
+
+Is this realistic? Not in general, but maybe it's close. 
+
 # Other Combinations
 
+## Applications
+
+One use of Arrow's Theorem is to put constraints on when we can sensibly talk about the general will, or what the people (collectively) want.
+
+But it has become a very big deal across a bunch of disciplines because the basic model can apply to many things beyond voting.
+
+## Multi-Dimensionality
+
+Say a good is **multi-dimensional** if it has different attributes, and the goodness of the whole is a function of how good the different parts are.
+
+Put this broadly, most goods are multi-dimensional.
+
+E.g., in a movie we might care about the script, the acting, the cinematography, and any number of other things.
+
+## Multi-Dimensionality
+
+We often talk about which of two multi-dimensional goods is better.
+
+This could be because we are giving out awards, like the Oscars.
+
+Or it could be because we are trying to choose which one to select, under a budget constraint.
+
+## Multi-Dimensionality
+
+In these circumstances, we might care about the following question:
+
+- What is the relationship between quality along each dimension, and overall quality.
+
+Arrow's Theorem applies here.
+
+- Consider each dimension a voter, and the overall quality the winning candidate.
+- There is no way to merge attributes that satisfies Arrow's five constraints.
+
+## Better Movies
+
+In practice we make these comparisons all the time. We choose to go to one movie rather than another, or we vote for one movie rather than another in end-of-year awards.
+
+How do we do it?
+
+## Better Movies
+
+Three options jump out from what we've discussed so far.
+
+1. We don't just have comparisons along each dimension, but numerical measures of quality.
+2. We assume that there are enough constraints on the voters/attributes to use majoritarian voting.
+3. We allow for incomparability, and use oligarchical voting.  
+
+## Better Movies
+
+Oligarchy doesn't seem plausible.
+
+- Saying A is better than B doesn't mean A is better than B alone *every* dimension we care about.
+- One can say that Oppenheimer is better than the latest Marvel movie even if (a) the Marvel movie had better special effects, and (b) special effects are important.
+
+## Better Movies
+
+And single-peakedness is definitely out.
+
+- The whole point of having multiple attributes is that they are different; no reason to think they will all agree on some left-to-right ordering.
+
+## Range Voting
+
+
+
+
 -   GPA/Course evaluation
+- 
 -   Multi-attribute choosing
 -   Moral tradeoffs
