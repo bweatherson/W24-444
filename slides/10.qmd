@@ -18,16 +18,162 @@ tbl-cap-location: bottom
 code-block-background: true
 ---
 
+## Aim
+
+Find a function that takes individual (voter) preferences as input, and returns a group preference as output.
+
+## Theorem
+
+There is no function that meets five natural constraints.
+
+1.  Unanimity
+2.  Non-Dictatorship
+3.  Unrestricted Domain
+4.  Social Ordering
+5.  Independence of Irrelevant Alternatives
+
+## Unanimity
+
+If everyone prefers X to Y, the social order prefers X to Y.
+
+## Non-Dictatorship
+
+For any person, there is some set of preferences the other people might have such that the group ordering and that person's ordering might disagree.
+
+## Unrestricted Domain
+
+The function can take *any* individual preferences as input.
+
+## Social Ordering
+
+-   For any X, Y, the output says either X \> Y, or Y \> X, or X = Y.
+-   If in the output, X \> Y, and Y \> Z, then X \> Z.
+-   If in the output, X = Y, and Y = Z, then X = Z.
+
+## Independence of Irrelevant Alternatives
+
+For any two possible inputs which don't involve any change of any voters ranking of X and Y, the group ranking of X and Y is the same.
+
 # Arrow and Voting Systems
 
+## Independence
+
+Basically every real world voting system violates Independence of Irrelevant Alternatives.
+
+## Independence Failures
+
+Find two inputs, I1 and I2 such that:
+
+1.  Each voter has the same view about X and Y in I1 and I2. That is, if they have X \> Y in I1, they do in I2 as well. And same for Y \> X, and for X = Y.
+2.  The social ranking of X and Y is different in the two outputs (O1 and O2).
+
+## Plurality
+
+::: {#tbl-panel layout-ncol="2"}
+| Voters | Ranking |
+|:------:|:-------:|
+|   3    |   XYZ   |
+|   2    |   ZXY   |
+
+: Input I1 {#tbl-first}
+
+| Voters | Ranking |
+|:------:|:-------:|
+|   3    |   YXZ   |
+|   2    |   ZXY   |
+
+: Input I2 {#tbl-second}
+
+Plurality and Independence Violation
+:::
+
+-   On the left, the ranking is X \> Z \> Y.
+
+-   On the right, the ranking is Y \> Z \> X.
+
+-   Y and Z flip, but no voter flipped them.
+
+## Runoff
+
+If we had these preferences and used either runoff system, we'd get the same result.
+
+## Borda
+
+::: {#tbl-panel  layout-ncol="2"}
+| Voters | Ranking |
+|:------:|:-------:|
+|   3    |   XYZ   |
+|   2    |   ZXY   |
+
+: Input I1 {#tbl-first}
+
+| Voters | Ranking |
+|:------:|:-------:|
+|   3    |   YXZ   |
+|   2    |   ZXY   |
+
+: Input I2 {#tbl-second}
+
+Borda and Independence Violation
+:::
+
+-   Use 2 points for first, 1 for second.
+-   On left, X(8) \> Z(4) \> Y(3).
+-   On right, Y(6) \> X(5) \> Z(4).
+-   Y and Z flip, but no voter flipped them.
+
+## Range
+
+Range voting is not a function.
+
+We can see this in just a two voter, two option case.
+
+## Range
+
+::: {#tbl-panel layout-ncol="2"}
+| Voter |  X  |  Y  |
+|:-----:|:---:|:---:|
+|   A   | 10  |  0  |
+|   B   |  5  |  6  |
+
+: Input I1 {#tbl-first}
+
+| Voter |  X  |  Y  |
+|:-----:|:---:|:---:|
+|   A   |  6  |  5  |
+|   B   |  0  | 10  |
+
+: Input I2 {#tbl-second}
+
+Range and Functionality
+:::
+
+-   On both sides, A has X \> Y, B has Y \> X.
+
+-   On the left, X wins 15-6.
+
+-   On the right, Y wins 15-6.
+
+## Range
+
+-   This shows that range voting does not merely take the preferences of voters as inputs.
+
+-   The way Independence is normally stated, it's also an independence violation.
+
+-   After all, no voter flipped their preference between left side and right side.
+
+# Oligarchy
+
+## Weakening the Constraints
+
+The next few slides are about two ways to weaken the Arrow constraints to find a system that works.
 
 
-# Gibbard
 
 # Single-Peaked
 
 # Other Combinations
 
-- GPA/Course evaluation
-- Multi-attribute choosing
-- Moral tradeoffs
+-   GPA/Course evaluation
+-   Multi-attribute choosing
+-   Moral tradeoffs

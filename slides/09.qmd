@@ -30,7 +30,7 @@ code-block-background: true
 - Interacted a lot with philosophy.
 ::::
 
-:::: {.column width="55%"}
+:::: {.column width="40%"}
 ![Kenneth Arrow (1921-2017)](Arrow.jpg){width="70%"}
 ::::
 
@@ -171,7 +171,7 @@ This rules out a possibility that you might want to take seriously.
 
 - I'll introduce it via an example.
 
-## Orderings over Holidays
+## Holiday Ranking
 
 Imagine that you have a bunch of money for summer vacation, and you can choose one of two very nice options. (These will be expensive, but you can afford it, in the hypothetical.)
 
@@ -180,7 +180,7 @@ Imagine that you have a bunch of money for summer vacation, and you can choose o
 
 For some of you, one of these will be clearly preferable. But imagine you think they are both pretty good options.
 
-## Orderings over Holidays
+## Holiday Ranking
 
 Is the following possible for a rational choosder?
 
