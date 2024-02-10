@@ -327,7 +327,62 @@ And single-peakedness is definitely out.
 
 ## Range Voting
 
+But we can do multi-dimensional comparisons if we
 
+1. Can give each dimension a numerical grade; and
+2. The value of the whole is in some sense the sum of these grades.
+
+For movies 2 is a little absurd - but let's set that aside. I want to briefly end with some comments about 1.
+
+## Comparisons
+
+The thing about giving numerical grades to the acting, the script, the cinematography etc is we need some kind of fixed scale between the different dimensions.
+
+We need to be able to say what being 1 point better is along each of these dimensions, and it needs in some sense to be the same amount for each dimension.
+
+## Comparisons
+
+Perhaps needless to say, this is really hard to do, and arguably doesn't make sense.
+
+This is why comparing goods with multiple attributes like this is very hard.
+
+But it's also something we have to do every day, assuming we want to buy some things and have a budget constraint.
+
+## Moral Choices
+
+(I don't expect we'll get to this, but it's interesting enough to put on a note.)
+
+Some moral theories say that there are many different things we should compare about morally.
+
+A simple theory like this says we should both care about making the world a better place, and about whether we are respecting people's rights.
+
+## Moral Choices
+
+I think such theories are intuitively very plausible, but they face a big challenge.
+
+If we care about multiple things morally, how do we ever come up with a decision about what to do.
+
+How do we 'trade-off' a gain on one dimension against a loss on another.
+
+## Moral Choices
+
+In this context it would be really good if we could just say "Well, here is the ordinal ranking of actions according to values V1, V2, ..., Vn, and here's a way to merge those rankings into an overall moral ranking."
+
+But what Arrow's Theorem seems to show is that that won't work.
+
+We need something like numerical values.
+
+I don't have any solutions here; this is just a very hard problem.
+
+# Next Week
+
+## For Next Time
+
+Next week the focus is on the economist-philosopher Amartya Sen.
+
+Sen's work across a range of topics is fantastic, and he's well worth reading.
+
+We're going to start with his very surprising argument that sometimes we should socially prefer X to Y even though *every person* prefers Y to X. 
 
 
 -   GPA/Course evaluation
