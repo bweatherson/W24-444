@@ -252,11 +252,6 @@ I'll leave these for you to say whether they are upsides or downsides.
 
 ## Variations
 
-<<<<<<< HEAD
-We could spend all day on any one of these.
-
-=======
->>>>>>> 6d97656131270eea756b2bc3fc63343b04469578
 1. Single district or many districts?
 2. Only proportional, or also have single-member districts.
 3. If you have single-member districts, are the proportional seats additional, or top-up?
@@ -268,8 +263,4 @@ We could spend all day on any one of these.
 
 ## For Next Time
 
-<<<<<<< HEAD
-We'll go over Kenneth Arow's famous proof that no system can do everything one wants in an electoral system.
-=======
 We'll go over Kenneth Arrow's famous proof that no system can do everything one wants in an electoral system.
->>>>>>> 6d97656131270eea756b2bc3fc63343b04469578
