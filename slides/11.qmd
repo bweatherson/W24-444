@@ -1,0 +1,274 @@
+---
+subtitle: "444 Lecture 11"
+title: "Sen's Paradox"
+author: "Brian Weatherson"
+date: "February 20 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+# Amartya Sen
+
+## Amartya Sen
+
+::: {.columns}
+
+:::: {.column width="55%"}
+- From India (broadly construed)
+- Has worked at Harvard, Cambridge, and many other places.
+- 1998 Nobel Prize winner
+- Often cross-appointed with philosophy and or political science.
+::::
+
+:::: {.column width="40%"}
+![Amartya Sen (1933-)](Sen.jpg){height="70%"}
+::::
+
+:::
+
+## Amartya Sen
+
+Two most famous contributions:
+
+1. Capability approach to welfare.
+2. Theory that famines are a political phenomena - "There has never been a famine in a functioning democracy."
+
+## Theory of Choice
+
+One of the most influential books on his studies was Arrow's 1951 book _Social Choice and Individual Values_.
+
+The work we're looking at today comes out of thinking that even the most natural of the Arrow conditions, Unanimity, might be wrong.
+
+# Paretian Liberal
+
+## Vilfredo Pareto
+
+::: {.columns}
+
+:::: {.column width="55%"}
+- Italian economist.
+- Relevance here is that when we say an economic distribution is **Pareto-optimal**, we mean there is no alternative distribution where *everyone* is better off.
+::::
+
+:::: {.column width="40%"}
+![Vilfredo Pareto (1848-1923)](Pareto.jpg){height="70%"}
+::::
+
+:::
+
+## Unanimity
+
+Arguably, Arrow's Unanimity constraint is that any outcome must be Pareto optimal.
+
+- If everyone thinks X > Y, but the social order chooses Y over X, then there is a solution that makes everyone better off: namely X.
+
+## Welfare and Preference
+
+The last slide had a little slip in the middle of it.
+
+- Premise: Everyone prefers X to Y.
+- Conclusion: Everyone is better off with X rather than Y.
+- How might we justify that?
+
+## Welfare and Preference
+
+Two possibilities:
+
+1. Welfare (i.e., being better off) just is a matter of having one's preferences satisfied.
+2. Preferences are a perfect guide to welfare, even if welfare is something else.
+
+Part of the background to this is that Sen thinks that both are wrong.
+
+We have preferences about how other people live, but these don't typically affect our *welfare*.
+
+## Benjamin Constant
+
+::: {.columns}
+
+:::: {.column width="55%"}
+- Swiss-French libral political theorist.
+- Critcised Jacobins and Napoleon from (roughly speaking) the right, and criticised the post-revolutionary monarchy from the left.
+::::
+
+:::: {.column width="40%"}
+![Benjamin Constant (1767-1830)](Constant.jpg){height="70%"}
+::::
+
+:::
+
+## Two Types of Liberty
+
+Constant is most famous in philosophy for his distinction between two types of freedom.
+
+Liberty of the Ancients
+:    Freedom to be part of the government.
+
+Liberty of the Moderns
+:    Freedom from the government.
+
+## Liberty of the Moderns
+
+Overarching idea is that life should not be all political.
+
+- He thinks it is important that we can read books, listen to music, have friendships, without thinking about their political aspects or implications.
+- So he criticises both revolutionaries, like Robespierre, and total war proponents, like Napoleon, for taking over all aspects of life.
+- And he criticises conservatives like the restored monarchs for not giving people freedoms to live their life as they see fit.
+
+## Pareto and Liberalism
+
+- There is a tricky historical question about just how liberal Pareto was.
+- His work was enthusiastically appropriated by the very illiberal Mussolini regime.
+- But this might be unfair; he often sounds more like a small-government liberal.
+
+## Pareto and Liberalism
+
+Still, it seems that Pareto-optimality should fit well with broadly liberal principles.
+
+- Indeed, the argument that free market systems are Pareto-optimal (due in its most careful form to Kenneth Arrow), and hence that they are good, seems to link the idea of small government and the importance of Pareto.
+
+# Sen's Paradox
+
+## Not Paradoxical Case
+
+Assume we have some basic right. 
+
+Following Sen, we'll use the right to paint our bedrooms any color we like. 
+
+That it is basic means that each individual, and they alone, get to decide the color.
+
+## Not Paradoxical Case
+
+Imagine that I prefer my bedroom to be painted purple.
+
+- Everyone else in society prefers that no bedrooms are ever painted purple.
+- Hence everyone **else** prefers that my bedroom be white rather than purple.
+- Still, since I'm part of the society, it isn't a **unanimous** preference for my bedroom to be white rather than purple.
+
+## An Actual Paradox
+
+Suzy and Billy each have the following utility function.
+
+- They get 1 util if their own bedroom is red rather than blue.
+- They get 3 utils if the other person's bedroom is blue rather than red.
+- That is, they both prefer having a red bedroom, they both prefer the other has a blue bedroom, and the other-directed preference is stronger.
+
+## Sen's Paradox
+
+- X = Both bedrooms are blue
+- Y = Both bedrooms are red
+- If there is a right to paint your own bedroom, the liberal social choice function will end up choosing Y over X.
+- But everyone, i.e., both Billy and Suzy, prefers X to Y.
+
+## Background Assumption
+
+Assigning people rights *is* a kind of social choice function.
+
+By analogy, a market is a means for deciding who will get what resources.
+
+A system for making decisions need not be something complicated or bureaucratic.
+
+It might just be a decision to defer each part of the decision to individuals.
+
+That is the system we typically use for working out who will eat what for lunch.
+
+## Generalisation
+
+Sen argues that any such system that defers choices to individuals will end up violating Pareto-optimality if people have strong enough other-directed preferences.
+
+But liberalism requires that we use a deferential system some of the time.
+
+So liberalism and Pareto are in tension.
+
+# Two Responses
+
+## More Liberalism or Less
+
+I'm going to end by going over two responses on behalf of the liberal.
+
+- The first response involves qualifying liberalism. It says liberal practices, like letting people choose their own bedroom colours, are only appropriate for liberal cultures. And the first task of liberalism should be to inculcate liberal values.
+- The second response says that the problem is that Sen's model isn't liberal enough. The problem he raises go away if you include another important liberal right: the right to trade.
+
+## Liberal Culture
+
+The problem in the Suzy and Billy case starts from the fact that they really really care what colour the other person's bedroom is.
+
+- This is already a problem.
+- People shouldn't be so obsessed with other people's business.
+- Maybe our first plan should be to stop that obsession.
+
+## Liberal Culture
+
+So here's the view.
+
+1. Ideally, people wouldn't care about each other's private matters.
+2. If they do care, it's more important to respect unanimity than liberal freedoms.
+3. But even then, we should work to create a society where people do adopt a live and let live attitude.
+
+On this view liberalism is a view about education and culture as much as it is about system design.
+
+## Free Trade
+
+A different critcism of Sen says that he isn't being liberal enough.
+
+- Liberalism requires a bundle of rights, not just one right as in Sen's model.
+- And one of those rights is the right to trade.
+
+## Free Trade
+
+So a liberal society wouldn't just give people the right to pain their bedroom any colour.
+
+- It would both give people that right, **and** give them to right to trade it.
+- In our example, Suzy and Billy would make a voluntary trade - each agreeing to paint their rooms blue if the other also agrees.
+
+## Free Trade
+
+So in this model, we'd end up at X.
+
+- This wouldn't be because big government would come in and enforce the Pareto optimal outcome.
+- It's because free trade would get us there.
+- And there are reasons for thinking that this will always happen in the cases Sen worries about.
+
+## Free Trade
+
+It's definitely true that freedom to trade is an important part of the liberal tradition.
+
+- Indeed, one of the motivations of the liberals that Constant was politically aligned with throughout his life was to remove the restraints on trade that the monarchy imposed.
+- So this looks like a liberal view.
+
+## Trade and Rights
+
+But there is something to the idea that certain rights are inalienable.
+
+- That means that they can't be traded away.
+- We see this in practice with non-compete agreements.
+- It's really not obvious whether allowing or banning non-competes is more respectful of rights.
+
+## Trade and Rights
+
+And if any rights are inalienable, then Sen's paradox can recur.
+
+- Still, it is true that Sen doesn't allow trade in his simple examples, and this does suggest a plausible response to these particular cases.
+
+## iClicker
+
+Which best captures your view (after one paper reading and one lecture)?
+
+A.  We should give up Pareto because of Sen's argument.
+B.  We should give up the idea of basic rights because of Sen's argument.
+C.  We should try to create a society where the paradox doesn't arise by having a more liberal culture.
+D.  We should allow enough trading rights that the paradox couldn't arise; the parties would get to the Pareto-optimal position by trade.
+
+## For Next Time
+
+We'll look at Sen's broader outlook on individual choice and social choice.

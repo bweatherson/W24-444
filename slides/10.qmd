@@ -2,7 +2,7 @@
 subtitle: "444 Lecture 10"
 title: "Arrow's Theorem"
 author: "Brian Weatherson"
-date: "February 13 2024"
+date: "February 15 2024"
 format:
   revealjs:
     theme:
@@ -383,9 +383,3 @@ Next week the focus is on the economist-philosopher Amartya Sen.
 Sen's work across a range of topics is fantastic, and he's well worth reading.
 
 We're going to start with his very surprising argument that sometimes we should socially prefer X to Y even though *every person* prefers Y to X. 
-
-
--   GPA/Course evaluation
-- 
--   Multi-attribute choosing
--   Moral tradeoffs
