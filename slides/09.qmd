@@ -244,30 +244,22 @@ Imagine there are five voters, and three options: X, Y and Z.
 
 So the social ordering is Y > Z > X, because Y has 3 points, Z has 2 points, X has 0 points.
 
-## Independence and Plurality
-
-Imagine the first three change their order if 
-
-- Three voters have Y > Z > X; so from them Y gets 3 points.
-- Two voters have X > Z > Y; so from them, X gets 2 points.
-
-So the social ordering is Y > X > Z, because Y has 3 points, X has 2 points, Z has 0 points.
 
 ## Independence and Plurality
 
-Now imagine the three voters change their mind about Y and Z, so we hvae:
+Now imagine the three voters change their mind about X and Y, so we hvae:
 
-- Three voters have Z > Y > X; so from them Z gets 3 points.
-- Two voters have X > Z > Y; so from them, X gets 2 points.
+- Three voters have X > Y > Z; so from them Z gets 3 points.
+- Two voters have Z > X > Y; so from them, Z gets 2 points.
 
-So the social ordering is Z > X > Y, because Z has 3 points, X has 2 points, Y has 0 points.
+So the social ordering is Y > Z > X, because X has 3 points, Z has 2 points, Y has 0 points.
 
 ## Independence and Plurality
 
 Between the last two slides, two things happened:
 
-1. The social ranking of X and Y flipped. Originally Y > X, now X > Y.
-2. No voter changed their ranking of X and Y. It's just that three voters were sure X was worst, flipped their view on which of the other two options was better.
+1. The social ranking of X and Z flipped. Originally Z > X, now X > Z.
+2. No voter changed their ranking of X and Z. It's just that three voters were sure Z was worst, flipped their view on which of the other two options was better.
 
 ## Independence
 
