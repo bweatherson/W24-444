@@ -1,0 +1,292 @@
+---
+subtitle: "444 Lecture 12"
+title: "Social Choice"
+author: "Brian Weatherson"
+date: "February 22 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+## Plan
+
+1. Logistics for how we'll be doing game theory after break.
+2. Using Sen's 1998 Nobel lecture as a basis for a quick summary of the last two weeks.
+
+# Games
+
+## Registration Instructions
+
+![Go to https://veconlab.econ.virginia.edu/login.html](veconlab_intro.png){height="70%"}
+
+## Session Name - pbw7
+
+![Enter the session name **pbw7**. (This will change day-by-day)](veconlab_sessionname.png){height="70%"}
+
+## Register Real Name
+
+![Enter your real name (for credit purposes)](veconlab_name.png){height="70%"}
+
+## Wait
+
+![Wait for enough people to join](veconlab_wait.png){height="70%"}
+
+## Over Break
+
+The experiment listed under pbw7 is set up to run over break.
+
+It's a multi move game, you'll be randomly paired with someone.
+
+If the moves don't get completed by end of break, maybe we'll spend a few minutes in class to finish off the games.
+
+But it's only 10 moves, so maybe they'll get done.
+
+And if it's a tech fail, we'll learn that now rather than in class!
+
+# Social Choice
+
+## Plan
+
+I'm not going to talk about Sen explicitly for a bit.
+
+Instead I'm going to set up the backstory, and see where Sen fits in.
+
+Once you have the picture clearly in your head, his place in it becomes easier to see.
+
+Some of this I've said before, but probably a bit quickly.
+
+## Simple Social Choice
+
+For each option-person pair, there is a numerical value v(o,p).
+
+The best social choice maximises the sum of these values.
+
+This is the broadly utilitarian picture.
+
+## Problem 1
+
+If there's one option for which v(o, Brian) is massive, it might be the best social choice even if v(o, you) is small for all of you.
+
+That is, the simple theory doesn't care about **distribution**.
+
+## Distribution
+
+In practice this is less of a problem than in theory.
+
+In practice our best estimates are that more equal distributions are better by the simple measure.
+
+That's because the marginal utility of money (how much each dollar is worth to you) is decreasing.
+
+In the 19th century, many leading economists supported some or other form of socialism largely because of this consideration.
+
+## Problem 2
+
+As Sen notes, that wasn't why the simple theory got rejected by 19th/20th century economists.
+
+Instead they rejected it because they thought that v didn't exist.
+
+And they thought that because they thought it couldn't be given a behaviorist (positivist) interpretation.
+
+## Two Questions
+
+Let o1 and o2 be options, and Travis and Taylor be people.
+
+Question 1 - Absolute Comparisons
+:    Does v(o1, Travis) > v(o1, Taylor) make sense?
+
+. . .
+
+Question 2 - Marginal Comparisons
+:    Does v(o1, Travis) -  v(o2, Travis) > v(o2, Taylor) - v(o1, Taylor) make sense?
+
+## Absolute Comparisons
+
+Question 1 - Absolute Comparisons
+:    Does v(o1, Travis) > v(o1, Taylor) make sense?
+
+In words, does it make sense to say that if we take option o1, Travis will be better off than Taylor?
+
+## Marginal Comparisons
+
+Question 2 - Marginal Comparisons
+:    Does v(o1, Travis) -  v(o2, Travis) > v(o2, Taylor) - v(o1, Taylor) make sense?
+
+Assume both sides are positive, so Travis is better off in o1, and Taylor is better off in o2.
+
+Then the question is, does the difference between the two options matter more to Travis, or to Taylor?
+
+## IIUC
+
+That's **I**mpossibility of **I**nterpersonal **U**tility **C**omparisons.
+
+And it says the answer to both questions is **No**.
+
+These questions don't even make sense.
+
+## IIUC
+
+The only things that make sense are comparisons within one person.
+
+So it does make sense to ask whether v(o1, Travis) > v(o2, Travis).
+
+But it does not make sense to do any comparisons where two different people are in the second argument place.
+
+## Epistemological Argument
+
+1. We can only tell what people choose, not absolute questions about how absolutely well off they are, or how their situation compares with others.
+2. What’s scientifically true is a function of what we can tell.
+3. So there are no facts about how absolutely well off people are, or how their situation compares with others.
+
+Premise 2 here is a fairly crude kind of positivism, and not really plausible.
+
+## Metaphysical Argument
+
+1. How well off someone is just is a matter of what preferences they have satisfied.
+2. But preferences are always *comparative* and *intra-personal*.
+3. So there is no fact of the matter about someone's *absolute* welfare, because preferences are comparative, or *inter-personal* comparative welfare, because choices are intra-personal.
+
+Premise 1 is a preference-satisfaction theory of welfare.
+
+## Third Argument
+
+1. How well off someone is just is a matter of how they feel.
+2. There is no way to compare feelings across people, or to measure absolutely how someone feels.
+3. So there is no absolute or inter-personal, measure of how well off people are.
+
+Premise 1 is a hedonistic theory of welfare.
+
+Both premises are pretty implausible.
+
+## Two Claims
+
+The IIUC as I've described it has two parts.
+
+1. There are no facts of the matter about how well off anyone is on any kind of absolute scale.
+2. There are no facts about how one person's improvement in welfare between two states compares to someone else's improvement in welfare.
+
+By breaking these up, we can get some interesting theories.
+
+## Wants and Needs
+
+Very toy welfare theory.
+
+1. Assume everyone has the same needs.
+2. Say the welfare for a person is a pair (n, w), where n is a number between 0 and 1 saying what proportion of their needs are satisfied, and w is a number reflecting how well their wants are satisfied.
+3. If one person has a higher n-value than another, they are better off.
+4. If they have the same n-value, then there is no fact of the matter about who is better off.
+
+## Wants and Needs
+
+This strictly speaking rejects the IIUC, since it says comparisons are possible if one person has all their needs satisfied and another does not.
+
+But it would mean the IIUC is true in practice in rich places where everyone has all their needs satisfied.
+
+More generally, and this is something Sen has stressed a lot, the simple formalism of value functions tends to suppress the want/need distinction, and that might be bad.
+
+## Arrow and IIUC
+
+Here's an argument for scepticism about social welfare.
+
+1. IIUP is true, so any social welfare function can only use intra-personal comparisons (i.e., preference orderings.)
+2. There is no good way to combine intra-personal comparisons into a social ordering (thanks to Arrow's theorem).
+3. So there is no such thing as social welfare.
+
+## Arrow and Welfare
+
+Looked at this way, Arrow's result is not just an annoyance for people designing voting systems.
+
+It's a challenge for anyone who wants to say anything systematic about social welfare in general.
+
+Sen's work has involved pushing back on this scepticism on basically every possible front.
+
+## Weakening the Constraints
+
+Sen argues that the impossibility theorem isn't as much a dead end as we thought. 
+
+Ideally, what we'd have is a set of axiomatic constraints on a rule for combining preferences that are collectively satisfied by precisely one combination rule. 
+
+Arrow shows that we can build some plausible rules that are satisfied by precisely zero combination rules. 
+
+## Weakening the Constraints
+
+That's not great, but one is really close to zero. Maybe we're close! 
+
+So Sen thinks that looking at rules that satisfy four of the constraints is a really valuable activity.
+
+Maybe a very slight weakening of the Arrow conditions can get us from zero back to one. 
+
+To be fair, while this is a good idea in theory, it hasn't really worked in practice. 
+
+## Adaptive Preferences
+
+The best argument for the IIUC starts with the idea that how well off you are is a function of how many of your preferences are satisfied.
+
+This is called the preference-satisfaction theory of welfare.
+
+And it has a problem with a phenomena Sen played a role in identifying: **adaptive preferences**.
+
+## Adaptive Prefernces
+
+People adjust their aims to what is available. 
+
+This might be good for their mental health, but it makes using preference satisfaction a measure of welfare problematic. 
+
+People who have low expectations because of oppressive situations aren't super well off when those low expectations are met.
+
+## Measuring Welfare
+
+If we had a simple way to measure how well off people are, we could bring back the simple rule.
+
+And Sen thinks economists in the 20th century were too quick to close off that option.
+
+## Measuring Welfare
+
+I noted one toy version of this earlier: measuring what proportion of a person's needs are met.
+
+This is rough - presumably if it is less than 1 they will die soon or something.
+
+But it doesn't seem too far-fetched.
+
+## Measuring Welfare
+
+Sen thinks we can do better than this because he thinks welfare is a matter of what **capacities** you have.
+
+Most fundamentally, someone who has their needs met has the capacity to stay alive. 
+
+But other capacities might increase our welfare beyond that.
+
+## Capacities
+
+The capacities approach is controversial. 
+
+Imagine that I have the capacity to wiggle my ears. But I don't like wiggling my ears, so I never do this. 
+
+Then one day, as a side-effect of a virus, I lose this capacity. 
+
+Does this really make my welfare go down? It isn't obvious that it does.
+
+## Welfare
+
+The big picture point he wants to make is that questions about  **social** welfare are not distinct from questions about **individual** welfare. 
+
+Even once we have said something about individual welfare, there are still further interesting social questions. 
+
+For example, we might still worry about the lack of distributional considerations in the simple rule. (Sen does worry about this.)
+
+But the two are going to be tied together.
+
+# For Next Time
+
+## Have a Good Break
+
+![Go to https://veconlab.econ.virginia.edu/login.html, and register for pbw7.](veconlab_intro.png){height="70%"}
