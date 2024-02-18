@@ -107,7 +107,6 @@ Both of the papers may be co-written with one other student in the class. But yo
 3.  Participation in lecture (including performance in games) - 10%
 4.  Final Exam - 20%
 
-
 # Plagiarism
 
 Although team-work, and even co-authorship, is encouraged, plagiarism is strictly prohibited. You are responsible for making sure that none of your work is plagiarized. Be sure to cite work that you use, both direct quotations and paraphrased ideas. Any citation method that is tolerably clear is permitted, but if you'd like a good description of a citation scheme that works well in philosophy, look at <https://www.mendeley.com/guides/apa-citation-guide/>.
@@ -238,8 +237,6 @@ Topic
 
 Reading
 :    Simon Hix, Ron Johnston, and Iain McLean [Choosing an Electoral System](https://www.thebritishacademy.ac.uk/publications/choosing-electoral-system/). We will primarily cover chapter 4 on Tuesday and chapter 5 on Thursday, though the other parts are useful background.
-
-
 
 ### `r advdate(tue, 6)` and `r advdate(thu, 6)`
 
