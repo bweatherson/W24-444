@@ -18,6 +18,11 @@ tbl-cap-location: bottom
 code-block-background: true
 ---
 
+## Two Logistical Notes
+
+1. Weekly assignments will start after break - actually the second week after break because there is an essay due the first week. They will go on your *discussion section* Canvas page.
+2. It's really important to write things as clearly, and as *simply* as possible. Using longer words for the sake of using longer words is bad. If you want a model for writing, the Electoral System pamphlet we read on Feb 6 and 8 is probably the best one from this course - it does a very good job of explaining complex ideas in fairly simple language.
+
 # Amartya Sen
 
 ## Amartya Sen
@@ -172,13 +177,9 @@ Suzy and Billy each have the following utility function.
 
 ## Background Assumption
 
-Assigning people rights *is* a kind of social choice function.
+Assigning people rights *is* a kind of social choice function, just like a market is.
 
-By analogy, a market is a means for deciding who will get what resources.
-
-A system for making decisions need not be something complicated or bureaucratic.
-
-It might just be a decision to defer each part of the decision to individuals.
+A system for making decisions need not be something complicated or bureaucratic. It might just be a decision to defer each part of the decision to individuals.
 
 That is the system we typically use for working out who will eat what for lunch.
 
