@@ -41,6 +41,13 @@ code-block-background: true
 
 ![Wait for enough people to join](veconlab_wait.png){height="70%"}
 
+## iClicker
+
+Were you able to register:
+
+A.  Yes
+B.  No
+
 ## Over Break
 
 The experiment listed under pbw7 is set up to run over break.
@@ -67,7 +74,7 @@ Some of this I've said before, but probably a bit quickly.
 
 ## Simple Social Choice
 
-For each option-person pair, there is a numerical value v(o,p).
+For each option-person pair, there is a numerical value **v**(o,p).
 
 The best social choice maximises the sum of these values.
 
@@ -75,7 +82,7 @@ This is the broadly utilitarian picture.
 
 ## Problem 1
 
-If there's one option for which v(o, Brian) is massive, it might be the best social choice even if v(o, you) is small for all of you.
+If there's one option for which **v**(o, Brian) is massive, it might be the best social choice even if **v**(o, you) is small for all of you.
 
 That is, the simple theory doesn't care about **distribution**.
 
@@ -93,7 +100,7 @@ In the 19th century, many leading economists supported some or other form of soc
 
 As Sen notes, that wasn't why the simple theory got rejected by 19th/20th century economists.
 
-Instead they rejected it because they thought that v didn't exist.
+Instead they rejected it because they thought that **v** didn't exist.
 
 And they thought that because they thought it couldn't be given a behaviorist (positivist) interpretation.
 
@@ -102,26 +109,32 @@ And they thought that because they thought it couldn't be given a behaviorist (p
 Let o1 and o2 be options, and Travis and Taylor be people.
 
 Question 1 - Absolute Comparisons
-:    Does v(o1, Travis) > v(o1, Taylor) make sense?
+:    Does **v**(o1, Travis) > **v**(o1, Taylor) make sense?
 
 . . .
 
 Question 2 - Marginal Comparisons
-:    Does v(o1, Travis) -  v(o2, Travis) > v(o2, Taylor) - v(o1, Taylor) make sense?
+:    Does it make sense to ask which is bigger?
+
+- **v**(o1, Travis) - **v**(o2, Travis); or
+- **v**(o2, Taylor) - **v**(o1, Taylor)
 
 ## Absolute Comparisons
 
 Question 1 - Absolute Comparisons
-:    Does v(o1, Travis) > v(o1, Taylor) make sense?
+:    Does **v**(o1, Travis) > **v**(o1, Taylor) make sense?
 
 In words, does it make sense to say that if we take option o1, Travis will be better off than Taylor?
 
 ## Marginal Comparisons
 
 Question 2 - Marginal Comparisons
-:    Does v(o1, Travis) -  v(o2, Travis) > v(o2, Taylor) - v(o1, Taylor) make sense?
+:    Does it make sense to ask which is bigger?
 
-Assume both sides are positive, so Travis is better off in o1, and Taylor is better off in o2.
+- **v**(o1, Travis) - **v**(o2, Travis); or
+- **v**(o2, Taylor) - **v**(o1, Taylor)
+
+Assume both are positive, so Travis is better off in o1, and Taylor is better off in o2.
 
 Then the question is, does the difference between the two options matter more to Travis, or to Taylor?
 
@@ -137,15 +150,24 @@ These questions don't even make sense.
 
 The only things that make sense are comparisons within one person.
 
-So it does make sense to ask whether v(o1, Travis) > v(o2, Travis).
+It makes sense to ask whether **v**(o1, Travis) > **v**(o2, Travis).
+
+It even makes sense to ask which of these is bigger:
+
+- **v**(o1, Travis) - **v**(o2, Travis); or
+- **v**(o2, Travis) - **v**(o3, Travis)
 
 But it does not make sense to do any comparisons where two different people are in the second argument place.
 
 ## Epistemological Argument
 
 1. We can only tell what people choose, not absolute questions about how absolutely well off they are, or how their situation compares with others.
-2. What’s scientifically true is a function of what we can tell.
+2. What’s scientifically true is just what we can tell is true.
 3. So there are no facts about how absolutely well off people are, or how their situation compares with others.
+
+## Epistemological Argument
+
+2. What’s scientifically true is just what we can tell is true.
 
 Premise 2 here is a fairly crude kind of positivism, and not really plausible.
 
@@ -213,9 +235,9 @@ Sen's work has involved pushing back on this scepticism on basically every possi
 
 Sen argues that the impossibility theorem isn't as much a dead end as we thought. 
 
-Ideally, what we'd have is a set of axiomatic constraints on a rule for combining preferences that are collectively satisfied by precisely one combination rule. 
+Ideally, we'd have some plausible constraints, and there would be exactly one method for combining preferences that satisfied them. Then we could conclude that method is correct.
 
-Arrow shows that we can build some plausible rules that are satisfied by precisely zero combination rules. 
+Arrow shows that for some plausible looking set of constraints, there are exactly zero methods that satisfy them. 
 
 ## Weakening the Constraints
 
