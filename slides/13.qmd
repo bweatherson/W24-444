@@ -1,0 +1,252 @@
+---
+subtitle: "444 Lecture 13"
+title: "Games"
+author: "Brian Weatherson"
+date: "March 5 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+# Games
+
+## Games
+
+> - A **game** is any situation where the the outcome is determined by the actions of the players, plus perhaps some impact from the outside world.
+> - If this seems really general, it is!
+
+## Formal games
+
+In a formal representation of a game we specify:
+
+- How many players there are.
+- How many moves they each have.
+- What order those moves get made in.
+- How many options they have at each move.
+- What the payoff is for each player for each possible combination of moves by the players and 'moves' by nature.
+
+## Two Main Types
+
+- Each player makes 1 move, and these are made simultaneously.
+- Players take turns making moves, and every move is revealed to all players when they are made.
+
+---
+
+![An example of a turn taking game](images/chess_board.jpg){height=65% width=65%}
+
+---
+
+![An example of a one move game](images/chess_computer.jpg){height=65% width=65%}
+
+---
+
+![A more familiar one move game](images/rps.png){height=65% width=65%}
+
+## Other Types
+
+> - Nature gets involved.
+> - Nature gets involved and their move is only revealed to one of the players.
+> - A move made by a player is not revealed to the other player(s) straight away.
+> - Multiple sequential moves.
+
+---
+
+![How nature can get involved in a public way.](images/dice.jpg){height=65% width=65%}
+
+---
+
+![How nature can get involved in a private way.](images/cards.jpg){height=65% width=65%}
+
+---
+
+![Moves that are not revealed](images/sealed_envelope.jpg){height=65% width=65%}
+
+---
+
+![Multiple simultaneous moves](images/diplomacy.gif){height=65% width=65%}
+
+## Positive Sum Game
+
+- These instances are a bit non-representative in one crucial respect.
+- They are all **zero-sum**.
+- That is, someone doing well means someone else must be doing worse.
+- This is not the general case.
+
+## Positive Sum Game
+
+Most of the games we're going to look at have the following characteristic.
+
+- There is a pair of possible outcomes such that every player is better off in the first outcome than the second.
+- That is, is a pair of possible outcomes such that every player **gets more utility** in the first outcome than the second.
+
+# Utility
+
+## Game Outcomes
+
+There are two natural ways to specify the outcome of a game.
+
+> 1.  Describe the physical situation that results.
+> 2.  Describe how much **utility** each player gets from that result.
+
+## Utility
+
+-   We are usually going to be focused on the second.
+-   That's because we want to know what makes sense from the players' perspectives.
+-   And just knowing the physical outcomes doesn't tell us that.
+
+## What is Utility
+
+-   It's not score.
+-   The players are aiming to maximise their own number, not maximise the difference between the numbers.
+
+------------------------------------------------------------------------
+
+![A memorable scoreboard](images/raith.jpg){height="65%" width="65%"}
+
+## What is Utility
+
+-   The players would prefer a 3-4 result (i.e., 3 for them, 4 for other player) to a 2-1 result.
+-   So this is very much unlike soccer, even though the numbers will often feel a lot like soccer scores.
+
+## What is Utility
+
+-   It's not money, for two distinct reasons.
+-   First, the players might care how much money the other players get.
+-   Second, the value of an extra dollar is different to different people. Typically, it has less value the richer one is.
+
+## What is Utility
+
+It is, more or less, desirability.
+
+-   Outcome $O_1$ has more utility for player $X$ than outcome $O_2$ iff $X$ prefers to be in $O_1$ than $O_2$.
+
+# 2 by 2 Games
+
+## Three Famous Games
+
+1. Prisoners' Dilemma
+2. Stag Hunt
+3. Hawk-Dove
+
+## Prisoners' Dilemma
+
+|          |    **C**    |   **D**  |
+|:--------:|:-----------:|:--------:|
+|   **C**  |    3,3      |    0,5   |
+|   **D**  |    5,0      |    1,1   |
+
+
+----
+
+|          |    **C**    |   **D**  |
+|:--------:|:-----------:|:--------:|
+|   **C**  |    3,3      |    0,5   |
+|   **D**  |    5,0      |    1,1   |
+
+
+- Each player can choose **C** or **D**.
+- If both choose **C**, both get 3.
+- If both choose **D**, both get 1.
+- If they make different choices, the one who chose **D** gets 5, and the other gets 0.
+
+## Prisoners' Dilemma
+
+The big tension:
+
+- Both doing **C** makes both better off than both doing **D**.
+- Whatever the other person does, each person is better off doing **D** than **C**.
+
+## Question
+
+What real life situations might be like this? I.e., which real life situations have these features:
+
+- There is an option that leaves everyone fairly well off if everyone does it.
+- There is another option that leaves everyone badly off if everyone does it.
+- No matter what everyone else does, each person is better off doing the second thing.
+
+## Registration Instructions
+
+![Go to https://veconlab.econ.virginia.edu/login.html](veconlab_intro.png){height="70%"}
+
+## Session Name - pbw9
+
+![Enter the session name **pbw9**. (This will change day-by-day)](veconlab_sessionname.png){height="70%"}
+
+## Register Real Name
+
+![Enter your real name (for credit purposes)](veconlab_name.png){height="70%"}
+
+## iClicker
+
+Were you able to register:
+
+A.  Yes
+B.  No
+
+I'll change the numbers to allow the game to start.
+
+## Instructions
+
+You'll be randomly paired with someone else in the room, and you'll play Prisoners' Dilemma 5 times. After each play, you'll see what the other person did the previous round.
+
+Your aim is to get as many points (or 'dollars') as possible over the five rounds.
+
+## Instructions
+
+You'll be randomly assigned Row or Column; the game is symmetric so this doesn't make a different to strategy.
+
+## Feedback
+
+- How did it go?
+- What strategies did you use?
+
+## Stag Hunt
+
+|          |    **C**    |   **D**  |
+|:--------:|:-----------:|:--------:|
+|   **C**  |    20,20    |    0,20  |
+|   **D**  |    15,0     |   15,15  |
+
+- Two **equilibria**.
+- Both play C is more beneficial. D no longer **dominates**.
+- But D is **safer**.
+
+## Instructions
+
+Go back into veconlab, and you should be set up with a different person from the PD rounds to play a **single** round of Stag Hunt.
+
+## Feedback
+
+- How did it go?
+- Why did you play what you did?
+
+## Hawk-Dove
+
+|          |    **C**    |   **D**    |
+|:--------:|:-----------:|:----------:|
+|   **C**  |    0,0      |    0,1     |
+|   **D**  |    1,0      |   -20,-20  |
+
+- No (pure strategy) **equilibrium**.
+- If the other plays C, a small gain to playing D.
+- But if you both play D, watch out.
+
+## Instructions
+
+Go back into veconlab, and you should be set up with a different person again from the last two rounds to play a 5 rounds of Hawk-Dove.
+
+## For Next Time
+
+Lessons from Iterated Prisoners' Dilemma
+
+
