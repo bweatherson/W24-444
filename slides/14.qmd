@@ -22,10 +22,24 @@ code-block-background: true
 
 ## Prisoners' Dilemma
 
+|          |    **C**    |   **D**  |
+|:--------:|:-----------:|:--------:|
+|   **C**  |    3,3      |    0,5   |
+|   **D**  |    5,0      |    1,1   |
+
+
 Basic Challenge:
 
 - Each player is better off defecting;
 - The players are collectively better off if both cooperate.
+
+## Take Two on In Person
+
+- If it works - this is a 5-round Prisoners' Dilemma
+- Go to https://veconlab.econ.virginia.edu
+- Login as participant
+- Session name: **pbw1**
+- If this doesn't work, we'll go back to other things.
 
 ## Tragedy of the Commons
 
@@ -39,25 +53,40 @@ Basic Challenge:
 - And in the standard story, private property was the solution to the tragedy.
 - For the real story, see the work Eleanor Ostrom won the Nobel Prize for a few years back.
 
+--
+
+Imagine the following game is being played on iClicker for class credit between 46 people. (We'll rescale if not 46 people here.)
+
+Your score (out of 100) is given by summing the following two lines.
+
+- If you press A you get 0; if you press B you get 10 points.
+- Plus, you get 2 points for everyone else who presses A.
+
+A.  Press A.
+B.  Press B.
+
+
 ## Social Challenge
 
-- How do we get to cooperation?
-- First question is whether in this case we should want to get to cooperation.
-- Second question is whether this really is PD.
-- Let's assume that the answer in each case is _yes_, what do we do.
+- In a PD, how do we get to cooperation?
+- First question is whether in this case we should want to get to cooperation. (Compare price fixing.)
+- Second question is whether we really are in a PD. (Compare walking on the right.)
+- Let's assume that the answer in each case is _yes_, what do we do?
+
 
 ## Change the Payouts
 
 One possible social response is to change the payouts.
 
 - _Snitches get stiches_ is kind of a version of this response.
+- Hobbes's Leviathan who will kill you if you are anti-social is another.
 
 ## Change the Options
 
 Another is to make it just impossible for everyone to do the defecting move.
 
 - Enclosures are sort of like this.
-- Just like with signaling games, the difference between making something expensive and making it impossible is a little vague, but it's useful conceptually to think of them as separate options.
+- The difference between making something expensive and making it impossible is a little vague, but it's useful conceptually to think of them as separate options.
 
 ## Iterate the Game
 
@@ -84,7 +113,7 @@ Another is to make it just impossible for everyone to do the defecting move.
 
 ## The One Shot Game
 
-Axelrod worked with this version of Prisoners' Dilemma (PD).
+Axelrod worked with this version of Prisoners' Dilemma (PD) (which you've seen before).
 
 |          |    **C**    |   **D**  |
 |:--------:|:-----------:|:--------:|
@@ -100,10 +129,19 @@ In the fancier version of the game, he didn't tell people how long the game woul
 - Instead he just said there was a probability of it ending after each round; if I recall 0.005.
 - This was used to avoid backwards induction reasoning, but it was unnecessary.
 
+## Backwards Induction
+
+Some of you might have come across this problem in the 5 round game.
+
+- A big benefit of cooperating is triggering future cooperation.
+- But in round 5 there's no future, so why cooperate then?
+- If everyone knows that reasoning works, why cooperate in round 4? Etc back to never cooperating.
+- This reasoning doesn't work in practice, and it's a fascinating question whether it works in theory.
+
 ## The Tournament
 
 - There are *n* strategies submitted.
-- Strategies are not quite full strategies in our sense; they just say what to do given what the other player did. (They don't account for possible errors in their own performance.)
+- The strategies are computer programs, which say what to do at each stage given the history of the game.
 - Each will play *k* rounds of PD with each of the other *n*-1 strategies.
 - Their payouts will add up over the $k(n-1)$ rounds and the one with the highest total will win.
 
@@ -118,6 +156,12 @@ In the fancier version of the game, he didn't tell people how long the game woul
 - Axelrod advertised the first round of his tournament, and called for submissions.
 - This was far from trivial in pre-internet days, and he only got 13 submissions.
 - In the first tournament he said that $k$ would be 100, but no one actually exploited that fact.
+
+## Question
+
+What kind of strategy would you endorse?
+
+Would the programming language make a difference?
 
 ## The Winner
 
@@ -165,10 +209,8 @@ The clearest distinction in the tournament was between strategies that were Nice
 
 Here is one nice strategy, one Axelrod calls Grim Trigger.
 
-::::: {.nonincremental}
 1. Cooperate on move 1.
 2. If the other player ever defects, defect on every subsequent move.
-:::::
 
 This strategy did really badly; it was the worst Nice strategy in round 2. But still many Nasty strategies did worse.
 
@@ -202,10 +244,9 @@ This strategy did really badly; it was the worst Nice strategy in round 2. But s
 
 ## Not Envious To a Fault
 
-- Note that TFT doesn't always do that well in evolutionary games.
+- Note that TFT doesn't always do that well in **evolutionary games**. (If we get time we'll come back to what I mean by this.)
 - This is because it might take this a bit too far.
 - It doesn't look to exploit weaknesses in opponents.
-
 
 ## Simple
 
@@ -225,3 +266,49 @@ This strategy did really badly; it was the worst Nice strategy in round 2. But s
 
 - In this kind of game you need to be a bit more forgiving.
 - But also you can try to get away with a bit more; if the other person will treat a defection as random, you can plan a few.
+
+## What Difference Does it Make
+
+- Same game as before - a 5-round Prisoners' Dilemma
+- Go to https://veconlab.econ.virginia.edu
+- Login as participant
+- Session name: **pbw2**
+- If this doesn't work, we'll go back to other things.
+
+## Three Kinds of Game Theory
+
+1. Rational Choice
+2. Evolutionary
+3. Experimental  
+
+## Rational Choice
+
+Assume common knowledge of rationality, see what you can figure out about how the game will go.
+
+This is **primarily** what Bonanno's book is about.
+
+There is no standard name for this, it's often just called 'game theory'. Like with Apple product naming, it's very unhelpful to have one variant have a null modifier, so I use expressions like 'rational choice game theory'.
+
+## Evolutionary
+
+Assume strategies are hard-wired and interactions are random.
+
+Also assume that populations of each kind (i.e., each strategy) in generation (n+1) are proportional to
+
+1. Population of that kind in generation n;
+2. Average score of that kind in generation n. 
+
+In this game, you might have 100 generations where each generation is 100 rounds of PD.
+
+## Experimental
+
+Put people (and as always by people here we usually mean undergrads at fancy universities) in labs and see what happens.
+
+PD is interesting to all three kinds.
+
+## For Next Time
+
+Next week we'll go over two central notions of rational choice game theory:
+
+- Iterated deletion
+- Backwards induction
