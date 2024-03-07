@@ -18,8 +18,6 @@ tbl-cap-location: bottom
 code-block-background: true
 ---
 
-# The Basic Game
-
 ## Prisoners' Dilemma
 
 |          |    **C**    |   **D**  |
@@ -97,7 +95,7 @@ Another is to make it just impossible for everyone to do the defecting move.
 
 ----
 
-![Robert Axelrod](images/Axelrod.jpg){height=80%}
+![Robert Axelrod](images/Axelrod.jpg){width=40%}
 
 ----
 
