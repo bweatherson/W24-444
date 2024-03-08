@@ -1,0 +1,418 @@
+---
+subtitle: "444 Lecture 15"
+title: "Iterated Deletion"
+author: "Brian Weatherson"
+date: "March 12 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+# Dominance Arguments
+
+## A Simple Game
+
+::: columns
+::: {.column width="40%"}
+|          | Left | Right |
+|:--------:|:----:|:-----:|
+|  **Up**  | 4,1  |  2,0  |
+| **Down** | 3,0  |  1,1  |
+:::
+
+::: {.column width="55%"}
+1.  Two players, call them Row and Column.
+2.  Row chooses the row, Column chooses the column - between them they choose a cell.
+3.  Each cell has two numbers - the first is Row's payout, the second is Column's payout.
+:::
+:::
+
+## Strong Dominance
+
+::: columns
+::: {.column width="40%"}
+|          | Left | Right |
+|:--------:|:----:|:-----:|
+|  **Up**  | 4,1  |  2,0  |
+| **Down** | 3,0  |  1,1  |
+:::
+
+::: {.column width="55%"}
+-   Whatever Column does, Row is better off playing Up rather than Down.
+-   We say that Up **strongly dominates** Down.
+:::
+:::
+
+## Strong Dominance {.fragile}
+
+::: columns
+::: {.column width="40%"}
+|            | Left | Right |
+|:----------:|:----:|:-----:|
+|   **Up**   | 4,1  |  2,0  |
+| **Middle** | 5,0  |  0,0  |
+|  **Down**  | 3,0  |  1,1  |
+:::
+
+::: {.column width="55%"}
+-   Adding options doesn't change things.
+-   Up still dominates Down, even if it isn't always best.
+:::
+:::
+
+## Strong Dominance {.fragile}
+
+::: columns
+::: {.column width="40%"}
+|            | Left | Right |
+|:----------:|:----:|:-----:|
+|   **Up**   | 3,1  |  0,0  |
+| **Middle** | 2,0  |  2,0  |
+|  **Down**  | 0,0  |  3,1  |
+:::
+
+::: {.column width="55%"}
+-   This is **not** a case of dominance.
+-   Even though Middle is never the highest value, it isn't dominated by any one option.
+:::
+:::
+
+## Strong Dominance
+
+Strategy $S_1$ strongly dominates strategy $S_2$ if for any strategy $S$ by the other player(s), if $S$ is played, then $S_1$ returns a higher payoff than $S_2$.
+
+## Weak Dominance
+
+Strategy $S_1$ weakly dominates strategy $S_2$ if for any strategy $S$ by the other player(s), if $S$ is played, then $S_1$ returns a payoff that is at least as high $S_2$, and for some strategy by the other player(s), $S_1$ returns a higher payoff than $S_2$.
+
+-   The difference is that weak dominance allows for **ties**.
+
+## Two Dominance Notions
+
+Strong Dominance
+
+-   Always better.
+
+Weak Dominance
+
+-   Never worse.
+-   Sometimes better.
+
+## Weak Dominance {.fragile}
+
+::: columns
+::: {.column width="40%"}
+|          | Left |  Right  |
+|:--------:|:----:|:-------:|
+|  **Up**  | 4,1  |   2,0   |
+| **Down** | 3,0  | **2**,1 |
+:::
+
+::: {.column width="55%"}
+-   I've changed the payoffs in the bottom right cell.
+-   Now Up does not strongly dominate Down.
+-   But it does weakly dominate Down.
+:::
+:::
+
+# Iterative Deletion
+
+## Initial Idea
+
+-   If an option is strongly dominated, it shouldn't be chosen.
+-   In the simple case, if all options but one are strongly dominated, that one should be chosen.
+-   But we can say more than this.
+
+## Initial Idea
+
+-   If a strategy only makes sense if the other player plays a dominated strategy, then it doesn't make sense.
+-   Let's work through some examples to see how this works in practice.
+
+## Easy Example
+
+::: columns
+::: {.column width="40%"}
+|          | Left | Right |
+|:--------:|:----:|:-----:|
+|  **Up**  | 4,1  |  2,2  |
+| **Down** | 3,3  |  1,4  |
+:::
+
+::: {.column width="55%"}
+We can solve this using just domination.
+:::
+:::
+
+## Easy Example
+
+::: columns
+::: {.column width="40%"}
+|          | Left | Right |
+|:--------:|:----:|:-----:|
+|  **Up**  | 4,1  |  2,2  |
+| **Down** | 3,3  |  1,4  |
+:::
+
+::: {.column width="55%"}
+-   Up dominates Down, so Row should play Up.
+-   Right dominates Left, so Column should play Right.
+-   So the solution is Up/Right.
+:::
+:::
+
+## Slightly Harder Example
+
+::: columns
+::: {.column width="40%"}
+|          | Left | Right |
+|:--------:|:----:|:-----:|
+|  **Up**  | 4,0  |  2,1  |
+| **Down** | 3,1  |  1,0  |
+:::
+
+::: {.column width="55%"}
+Now Column doesn't have a dominating option, but that doesn't stop us.
+:::
+:::
+
+## Slightly Harder Example
+
+::: columns
+::: {.column width="40%"}
+|          | Left | Right |
+|:--------:|:----:|:-----:|
+|  **Up**  | 4,0  |  2,1  |
+| **Down** | 3,1  |  1,0  |
+:::
+
+::: {.column width="55%"}
+-   Up dominates Down, so Row should play Up.
+-   If Row is playing Up, Right is better than Left (1 beats 0).
+-   So since Row is playing Up, Column should play Right.
+-   So the solution (again) is Up/Right.
+:::
+:::
+
+## Iterated Dominance
+
+|            | Left | Center | Right |
+|:----------:|:----:|:------:|:-----:|
+|   **Up**   | 4,2  |  3,1   |  0,0  |
+| **Middle** | 3,0  |  2,2   |  1,1  |
+|  **Down**  | 2,0  |  1,0   |  0,3  |
+
+We can't immediately solve this with dominance, but we can in a few steps.
+
+## Iterated Dominance
+
+|            | Left | Center | Right |
+|:----------:|:----:|:------:|:-----:|
+|   **Up**   | 4,2  |  3,1   |  0,0  |
+| **Middle** | 3,0  |  2,2   |  1,1  |
+|  **Down**  | 2,0  |  1,0   |  0,3  |
+
+-   Note first that Middle dominates Down.
+-   So Down should not be played.
+
+## Iterated Dominance
+
+|            | Left | Center | Right |
+|:----------:|:----:|:------:|:-----:|
+|   **Up**   | 4,2  |  3,1   |  0,0  |
+| **Middle** | 3,0  |  2,2   |  1,1  |
+
+-   Here is what happens if we **delete** the dominated option Down.
+-   In fact, we might even act as if it is not there.
+
+## Iterated Dominance
+
+|            | Left | Center | Right |
+|:----------:|:----:|:------:|:-----:|
+|   **Up**   | 4,2  |  3,1   |  0,0  |
+| **Middle** | 3,0  |  2,2   |  1,1  |
+
+-   Now Center dominates Right.
+-   It did not a minute ago - Right is a better response to Down than Center is - but Down is deleted.
+-   So Right is out, and we will delete it too.
+
+## Iterated Dominance
+
+|            | Left | Center |
+|:----------:|:----:|:------:|
+|   **Up**   | 4,2  |  3,1   |
+| **Middle** | 3,0  |  2,2   |
+
+-   In this game, Up dominates Middle.
+-   So Middle has to go.
+
+## Iterated Dominance
+
+|        | Left | Center |
+|:------:|:----:|:------:|
+| **Up** | 4,2  |  3,1   |
+
+-   And in this game, Left dominates Center.
+-   So the solution to the game is Up/Left.
+
+## General Strategy
+
+-   Start deleting dominated strategies.
+-   Then see if some strategies are dominated in the new version of the game.
+-   If you're lucky, the result will be that just one option for each player is left.
+-   If so, we'll call that the solution of the game.
+
+# Ice-Cream Example
+
+## Example
+
+Two trucks have to choose where they will sell ice-cream on a particular beach. There are 7 locations to choose from, which we’ll number 0, 1, ..., 5, 6. Spot 0 is at the left end of the beach, Spot 6 is at the right end of the beach, and the other spots are equally spaced in between. There are 10 people at each location. Each of them will buy ice-cream. If one truck is closer, they will buy ice-cream from that truck. If two trucks are equally close, then 5 of them will buy ice-cream from one truck, and 5 from the other. Each truck aims to maximise the amount of ice-cream it sells. Where should the trucks end up?
+
+|     | 0     | 1     | 2     | 3     | 4     | 5     | 6     |
+|-----|-------|-------|-------|-------|-------|-------|-------|
+| 0   | 35,35 | 10,60 | 15,55 | 20,50 | 25,45 | 30,40 | 35,35 |
+| 1   | 60,10 | 35,35 | 20,50 |       |       |       |       |
+| 2   |       |       |       |       |       |       |       |
+| 3   |       |       |       |       |       |       |       |
+| 4   |       |       |       |       |       |       |       |
+| 5   |       |       |       |       |       |       |       |
+| 6   |       |       |       |       |       |       |       |
+
+```{r}
+game0 <- tribble(
+  ~Moves,     ~`0`,     ~`1`,     ~`2`,     ~`3`,     ~`4`,     ~`5`,     ~`6`,
+  "0",    "35, 35", "10, 60", "15, 55", "20, 50", "25, 45", "30, 40", "35, 35",
+  "1",    "60, 10", "35, 35", "20, 50", "25, 45", "30, 40", "35, 35", "40, 30",
+  "2",    "55, 15", "50, 20", "35, 35", "30, 40", "35, 35", "40, 30", "45, 25",
+  "3",    "50, 20", "45, 25", "40, 30", "35, 35", "40, 30", "45, 25", "50, 20",
+  "4",    "45, 25", "40, 30", "35, 35", "30, 40", "35, 35", "50, 20", "55, 15",
+  "5",    "40, 30", "35, 35", "30, 40", "25, 55", "20, 50", "35, 35", "60, 10",
+  "6",    "35, 35", "30, 40", "25, 45", "20, 50", "15, 55", "10, 60", "35, 35"
+  )
+gameformat(game0)
+```
+
+Think about why each of these payoffs is correct.
+
+##  {.plain}
+
+```{r}
+game0c <- tribble(
+  ~Moves,     ~`0`,     ~`1`,     ~`2`,     ~`3`,     ~`4`,     ~`5`,     ~`6`,
+  "0",    "\\textcolor{red}{35}, 35", "\\textcolor{red}{10}, 60", "\\textcolor{red}{15}, 55", "\\textcolor{red}{20}, 50", "\\textcolor{red}{25}, 45", "\\textcolor{red}{30}, 40", "\\textcolor{red}{35}, 35",
+  "1",    "\\textcolor{darkgreen}{60}, 10", "\\textcolor{darkgreen}{35}, 35", "\\textcolor{darkgreen}{20}, 50", "\\textcolor{darkgreen}{25}, 45", "\\textcolor{darkgreen}{30}, 40", "\\textcolor{darkgreen}{35}, 35", "\\textcolor{darkgreen}{40}, 30",
+  "2",    "55, 15", "50, 20", "35, 35", "30, 40", "35, 35", "40, 30", "45, 25",
+  "3",    "50, 20", "45, 25", "40, 30", "35, 35", "40, 30", "45, 25", "50, 20",
+  "4",    "45, 25", "40, 30", "35, 35", "30, 40", "35, 35", "50, 20", "55, 15",
+  "5",    "40, 30", "35, 35", "30, 40", "25, 55", "20, 50", "35, 35", "60, 10",
+  "6",    "35, 35", "30, 40", "25, 45", "20, 50", "15, 55", "10, 60", "35, 35"
+  )
+gameformat(game0c)
+```
+
+The highlighted values show that 1 strongly dominates 0.
+
+##  {.plain}
+
+```{r}
+gameformat(game0)
+```
+
+But 2 doesn't dominate 1, because 1 is a better response to 0.
+
+##  {.plain}
+
+```{r}
+gameformat(game0)
+```
+
+The game is symmetric around 3, so 5 also dominates 6 (and is not dominated by 4).
+
+##  {.plain}
+
+```{r}
+gameformat(game0)
+```
+
+-   And the game is symmetric for Row/Column, so 0 and 6 are dominated for Column too.
+
+##  {.plain}
+
+```{r}
+game1 <- game0 %>%
+  slice(2:6) %>%
+  select(1, 3:7)
+gameformat(game1)
+```
+
+Here's what it looks like after those dominated strategies are removed.
+
+##  {.plain}
+
+```{r}
+gameformat(game1)
+```
+
+Note now that 2 dominates 1 - since 0 is removed, and 4 dominates 5. And this holds for both Row and Column.
+
+##  {.plain}
+
+```{r}
+game2 <- game1 %>%
+  slice(2:4) %>%
+  select(1, 3:5)
+gameformat(game2)
+```
+
+And in this game, 3 is the strictly dominant option for each player.
+
+##  {.plain}
+
+```{r}
+gameformat(game1)
+```
+
+-   I started with 7 because that's literally what would fit on the screen, but the same form of reasoning would work for any (odd) number of slots on the beach, as long as the people are evenly distributed.
+
+## Hotelling
+
+::: {.columns align="center"}
+::: column
+![Harold Hotelling](images/hotelling.jpg){height="60%"}
+:::
+
+::: column
+The game I've described here is a version of a model originally described by Harold Hotelling (1895-1973)
+:::
+:::
+
+## Feature Space
+
+-   Hotelling was less interested in physical location than location in feature space.
+-   He wanted an explanation of why the products of competing firms tended to be like one another.
+
+## Political Versions
+
+-   Games like this have become favorite tools of political scientists, arguing why political parties tended (at least in the 20th century!) to move towards the median.
+-   You have to be careful about the payoffs here; political parties don't want to maximise votes, they want to maximise win probability and policy outcomes.
+-   It turns out under a lot of assumptions you still get something like Hotelling's result, though it is sensitive to a lot of factors.
+
+## Rationality Assumptions
+
+-   Finally, I want to briefly flag the rationality assumptions this argument needs.
+-   As long as the players are rational, they won't play 0/6.
+-   As long as they know the other player is rational, they won't play 1/5.
+
+## Rationality Assumptions
+
+-   But to rule out 2/4, we need something stronger. We need that they each know that the other knows that each is rational.
+-   For longer beaches, we need even stronger assumptions. And those assumptions may be implausible. --\>
