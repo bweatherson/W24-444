@@ -170,7 +170,7 @@ We can solve this using just domination.
 :::
 :::
 
-## Slightly Harder Example
+## Another Example
 
 ::: columns
 ::: {.column width="40%"}
@@ -185,7 +185,7 @@ Now Column doesn't have a dominating option, but that doesn't stop us.
 :::
 :::
 
-## Slightly Harder Example
+## Another Example
 
 ::: columns
 ::: {.column width="40%"}
@@ -273,113 +273,124 @@ We can't immediately solve this with dominance, but we can in a few steps.
 
 # Ice-Cream Example
 
-## Example
+## Ice-Cream Example
 
-Two trucks have to choose where they will sell ice-cream on a particular beach. There are 7 locations to choose from, which we’ll number 0, 1, ..., 5, 6. Spot 0 is at the left end of the beach, Spot 6 is at the right end of the beach, and the other spots are equally spaced in between. There are 10 people at each location. Each of them will buy ice-cream. If one truck is closer, they will buy ice-cream from that truck. If two trucks are equally close, then 5 of them will buy ice-cream from one truck, and 5 from the other. Each truck aims to maximise the amount of ice-cream it sells. Where should the trucks end up?
+- Two trucks have to choose where they will sell ice-cream on a particular beach. 
+- There are 7 locations to choose from, which we’ll number 0, 1, ..., 5, 6. 
+- Spot 0 is at the left end of the beach, Spot 6 is at the right end of the beach, and the other spots are equally spaced in between. 
+
+## Ice-Cream Example
+- There are 10 people at each location. 
+- Each of them will buy ice-cream. 
+- If one truck is closer, they will buy ice-cream from that truck. 
+- If two trucks are equally close, then 5 of them will buy ice-cream from one truck, and 5 from the other. 
+- Each truck aims to maximise the amount of ice-cream it sells. 
+
+**Where should the trucks end up?**
+
+---
 
 |     | 0     | 1     | 2     | 3     | 4     | 5     | 6     |
 |-----|-------|-------|-------|-------|-------|-------|-------|
-| 0   | 35,35 | 10,60 | 15,55 | 20,50 | 25,45 | 30,40 | 35,35 |
-| 1   | 60,10 | 35,35 | 20,50 |       |       |       |       |
-| 2   |       |       |       |       |       |       |       |
-| 3   |       |       |       |       |       |       |       |
-| 4   |       |       |       |       |       |       |       |
-| 5   |       |       |       |       |       |       |       |
-| 6   |       |       |       |       |       |       |       |
-
-```{r}
-game0 <- tribble(
-  ~Moves,     ~`0`,     ~`1`,     ~`2`,     ~`3`,     ~`4`,     ~`5`,     ~`6`,
-  "0",    "35, 35", "10, 60", "15, 55", "20, 50", "25, 45", "30, 40", "35, 35",
-  "1",    "60, 10", "35, 35", "20, 50", "25, 45", "30, 40", "35, 35", "40, 30",
-  "2",    "55, 15", "50, 20", "35, 35", "30, 40", "35, 35", "40, 30", "45, 25",
-  "3",    "50, 20", "45, 25", "40, 30", "35, 35", "40, 30", "45, 25", "50, 20",
-  "4",    "45, 25", "40, 30", "35, 35", "30, 40", "35, 35", "50, 20", "55, 15",
-  "5",    "40, 30", "35, 35", "30, 40", "25, 55", "20, 50", "35, 35", "60, 10",
-  "6",    "35, 35", "30, 40", "25, 45", "20, 50", "15, 55", "10, 60", "35, 35"
-  )
-gameformat(game0)
-```
+| **0**   | 35,35 | 10,60 | 15,55 | 20,50 | 25,45 | 30,40 | 35,35 |
+| **1**   | 60,10 | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 | 40,30 |
+| **2**   | 55,15 | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 | 45,25 |
+| **3**   | 50,20 | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 | 50,20 |
+| **4**   | 45,25 | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
+| **5**   | 40,30 | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 | 60,10 |
+| **6**   | 35,35 | 30,40 | 25,45 | 20,50 | 15,55 | 10,60 | 35,35 |
 
 Think about why each of these payoffs is correct.
 
-##  {.plain}
+---
 
-```{r}
-game0c <- tribble(
-  ~Moves,     ~`0`,     ~`1`,     ~`2`,     ~`3`,     ~`4`,     ~`5`,     ~`6`,
-  "0",    "\\textcolor{red}{35}, 35", "\\textcolor{red}{10}, 60", "\\textcolor{red}{15}, 55", "\\textcolor{red}{20}, 50", "\\textcolor{red}{25}, 45", "\\textcolor{red}{30}, 40", "\\textcolor{red}{35}, 35",
-  "1",    "\\textcolor{darkgreen}{60}, 10", "\\textcolor{darkgreen}{35}, 35", "\\textcolor{darkgreen}{20}, 50", "\\textcolor{darkgreen}{25}, 45", "\\textcolor{darkgreen}{30}, 40", "\\textcolor{darkgreen}{35}, 35", "\\textcolor{darkgreen}{40}, 30",
-  "2",    "55, 15", "50, 20", "35, 35", "30, 40", "35, 35", "40, 30", "45, 25",
-  "3",    "50, 20", "45, 25", "40, 30", "35, 35", "40, 30", "45, 25", "50, 20",
-  "4",    "45, 25", "40, 30", "35, 35", "30, 40", "35, 35", "50, 20", "55, 15",
-  "5",    "40, 30", "35, 35", "30, 40", "25, 55", "20, 50", "35, 35", "60, 10",
-  "6",    "35, 35", "30, 40", "25, 45", "20, 50", "15, 55", "10, 60", "35, 35"
-  )
-gameformat(game0c)
-```
+|     | 0     | 1     | 2     | 3     | 4     | 5     | 6     |
+|-----|-------|-------|-------|-------|-------|-------|-------|
+| **0**   | [35]{style="color:red;"},35 | [10]{style="color:red;"},60 | [15]{style="color:red;"},55 | [20]{style="color:red;"},50 | [25]{style="color:red;"},45 | [30]{style="color:red;"},40 | [35]{style="color:red;"},35 |
+| **1**   | [60]{style="color:darkgreen;"},10 | [35]{style="color:darkgreen;"},35 | [20]{style="color:darkgreen;"},50 | [25]{style="color:darkgreen;"},45 | [30]{style="color:darkgreen;"},40 | [35]{style="color:darkgreen;"},35 | [40]{style="color:darkgreen;"},30 |
+| **2**   | 55,15 | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 | 45,25 |
+| **3**   | 50,20 | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 | 50,20 |
+| **4**   | 45,25 | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
+| **5**   | 40,30 | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 | 60,10 |
+| **6**   | 35,35 | 30,40 | 25,45 | 20,50 | 15,55 | 10,60 | 35,35 |
 
 The highlighted values show that 1 strongly dominates 0.
 
-##  {.plain}
+---
 
-```{r}
-gameformat(game0)
-```
+|     | 0     | 1     | 2     | 3     | 4     | 5     | 6     |
+|-----|-------|-------|-------|-------|-------|-------|-------|
+| **0**   | 35,35 | 10,60 | 15,55 | 20,50 | 25,45 | 30,40 | 35,35 |
+| **1**   | [60]{style="color:darkgreen;"},10 | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 | 40,30 |
+| **2**   | [55]{style="color:red;"},15 | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 | 45,25 |
+| **3**   | 50,20 | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 | 50,20 |
+| **4**   | 45,25 | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
+| **5**   | 40,30 | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 | 60,10 |
+| **6**   | 35,35 | 30,40 | 25,45 | 20,50 | 15,55 | 10,60 | 35,35 |
 
 But 2 doesn't dominate 1, because 1 is a better response to 0.
 
-##  {.plain}
+---
 
-```{r}
-gameformat(game0)
-```
+|     | 0     | 1     | 2     | 3     | 4     | 5     | 6     |
+|-----|-------|-------|-------|-------|-------|-------|-------|
+| **0**   | 35,35 | 10,60 | 15,55 | 20,50 | 25,45 | 30,40 | 35,35 |
+| **1**   | 60,10 | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 | 40,30 |
+| **2**   | 55,15 | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 | 45,25 |
+| **3**   | 50,20 | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 | 50,20 |
+| **4**   | 45,25 | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
+| **5**   | 40,30 | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 | 60,10 |
+| **6**   | 35,35 | 30,40 | 25,45 | 20,50 | 15,55 | 10,60 | 35,35 |
 
 The game is symmetric around 3, so 5 also dominates 6 (and is not dominated by 4).
 
-##  {.plain}
+---
 
-```{r}
-gameformat(game0)
-```
+|     | 0     | 1     | 2     | 3     | 4     | 5     | 6     |
+|-----|-------|-------|-------|-------|-------|-------|-------|
+| **0**   | 35,35 | 10,60 | 15,55 | 20,50 | 25,45 | 30,40 | 35,35 |
+| **1**   | 60,10 | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 | 40,30 |
+| **2**   | 55,15 | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 | 45,25 |
+| **3**   | 50,20 | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 | 50,20 |
+| **4**   | 45,25 | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
+| **5**   | 40,30 | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 | 60,10 |
+| **6**   | 35,35 | 30,40 | 25,45 | 20,50 | 15,55 | 10,60 | 35,35 |
 
--   And the game is symmetric for Row/Column, so 0 and 6 are dominated for Column too.
+The game is symmetric for Row/Column, so 0 and 6 are dominated for Column too.
 
-##  {.plain}
+---
 
-```{r}
-game1 <- game0 %>%
-  slice(2:6) %>%
-  select(1, 3:7)
-gameformat(game1)
-```
+|         | 1     | 2     | 3     | 4     | 5     |
+|---------|-------|-------|-------|-------|-------|
+| **1**   | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 |
+| **2**   | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 |
+| **3**   | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 |
+| **4**   | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 |
+| **5**   | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 |
 
 Here's what it looks like after those dominated strategies are removed.
 
-##  {.plain}
+---
 
-```{r}
-gameformat(game1)
-```
+|         | 1     | 2     | 3     | 4     | 5     |
+|---------|-------|-------|-------|-------|-------|
+| **1**   | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 |
+| **2**   | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 |
+| **3**   | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 |
+| **4**   | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 |
+| **5**   | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 |
 
 Note now that 2 dominates 1 - since 0 is removed, and 4 dominates 5. And this holds for both Row and Column.
 
-##  {.plain}
+---
 
-```{r}
-game2 <- game1 %>%
-  slice(2:4) %>%
-  select(1, 3:5)
-gameformat(game2)
-```
+|         | 2     | 3     | 4     |
+|---------|-------|-------|-------|
+| **2**   | 35,35 | 30,40 | 35,35 |
+| **3**   | 40,30 | 35,35 | 40,30 |
+| **4**   | 35,35 | 30,40 | 35,35 |
 
 And in this game, 3 is the strictly dominant option for each player.
-
-##  {.plain}
-
-```{r}
-gameformat(game1)
-```
 
 -   I started with 7 because that's literally what would fit on the screen, but the same form of reasoning would work for any (odd) number of slots on the beach, as long as the people are evenly distributed.
 
@@ -415,4 +426,27 @@ The game I've described here is a version of a model originally described by Har
 ## Rationality Assumptions
 
 -   But to rule out 2/4, we need something stronger. We need that they each know that the other knows that each is rational.
--   For longer beaches, we need even stronger assumptions. And those assumptions may be implausible. --\>
+-   For longer beaches, we need even stronger assumptions. And those assumptions may be implausible.
+
+# Experiment Game
+
+- This is a five player game, which I'll explain on the next slide.
+- Go to https://veconlab.econ.virginia.edu
+- Login as participant
+- Session name: **pbw3**
+
+## Rules
+
+- Everyone puts in a 'bid' between $0.80 and $2.
+- The lowest bid gets the amount they put in plus $0.10.
+- Everyone else gets the lowest bid minus $0.10.
+- We'll repeat this with different players, so there's no opportunity to signal. (I hope this part works.)
+
+## Results
+
+- Let's see what happens!
+- I really don't know how this one will play out.
+
+## For Next Time
+
+Games that take place over time.

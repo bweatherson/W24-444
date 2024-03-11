@@ -1,0 +1,636 @@
+---
+subtitle: "444 Lecture 16"
+title: "Backward Induction"
+author: "Brian Weatherson"
+date: "March 14 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+# Trees
+
+## Time
+
+- The tables we discussed last week represent games where each player moves once, and those moves are simultaneous.
+- But few games are like that.
+- We need a way to represent games that take time.
+
+## Trees
+
+- We do that with trees.
+- A tree represents all the ways that a game that takes place over time could go.
+
+## Nodes
+
+> - Trees have nodes.
+> - Some nodes are **terminal nodes**; they represent that the game has ended.
+> - Each terminal node has a payout for each of the players.
+> - At any other node, either a player moves, or Nature 'moves'.
+> - One of the non-terminal nodes is special: it is the node where the game starts.
+
+## Branches
+
+- Each non-terminal node has branches, leading to other nodes.
+- A move at a node is always a choice of branches.
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="45%"}
+![Example from Bonanno](images/3_1a.png){height=80%}
+::::
+
+:::: {.column width="50%"}
+- There are two players, 1 and 2.
+- Each player moves once.
+- First 1 moves, then 2 moves, then the game ends.
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="45%"}
+![Example from Bonanno](images/3_1a.png){height=80%}
+::::
+
+:::: {.column width="50%"}
+- Some books use a special notation for the initial node, such as having an open circle rather than a closed circle.
+- Bonanno doesn't, but it's clear in context what the initial node is.
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="45%"}
+![Example from Bonanno](images/3_1a.png){height=80%}
+::::
+
+:::: {.column width="50%"}
+
+- As he goes on to note, this isn't really a tree yet.
+- It describes the physical outcomes of the game at each terminal node, but not the **payoffs**.
+
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="45%"}
+![Example from Bonanno](images/3_1a.png){height=80%}
+::::
+
+:::: {.column width="50%"}
+There is a natural function from outcomes to payoffs - more money equals more utility - but it is not a compulsory interpretation.
+::::
+
+:::
+
+## Future Additions
+
+> - Moves by Nature
+> - Moves under uncertainty
+
+# Backward Induction
+
+## Class of Games We're Discussing
+
+> - Two-player
+> - Turn-taking
+> - Finite
+> - No hidden facts
+> - No randomness
+> - We'll start with zero-sum games, though drop this later.
+
+## Five
+
+- There are two players, who we'll call A and B.
+- First A moves, then B, then finally A moves again. 
+- Each move involves announcing a number, 1 or 2. 
+- A wins if after the three moves, the numbers announced sum to 5. 
+- B wins otherwise. 
+
+## Five
+
+Question: How should you play this game?
+
+## Game Tree for Five {.fragile}
+```{r engine="tikz"}
+#| fig-format: png
+#| echo: false
+
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}
+  \tikzset{
+    % Three node styles for game trees: solid and hollow and square
+      solid node/.style={circle,draw,inner sep=1.5,fill=black},
+      hollow node/.style={circle,draw,inner sep=1.5},
+      square node/.style={rectangle,draw, inner sep = 1, fill = black}
+      }
+
+  % Specify spacing for each level of the tree
+  \tikzstyle{level 1}=[level distance=15mm,sibling distance=40mm]
+  \tikzstyle{level 2}=[level distance=15mm,sibling distance=20mm]
+  \tikzstyle{level 3}=[level distance=15mm,sibling distance=10mm]
+
+  \node[hollow node,label=above:{A}]{}
+    child { node [solid node,label=left:{B}] {}
+      child { node [solid node,label=left:{A}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$L$}
+            edge from parent
+            node[right]{2}}
+        edge from parent
+            node[left]{1}
+        }
+      child { node [solid node,label=right:{A}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$W$}
+            edge from parent
+            node[right]{2}}
+        edge from parent
+            node[right]{2}
+        }        
+      edge from parent
+        node[left]{1}
+    }
+    child { node [solid node,label=right:{B}] {}
+      child { node [solid node,label=left:{A}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$W$}
+            edge from parent
+            node[right]{2}}
+        edge from parent
+            node[left]{1}
+        }
+      child { node [solid node,label=right:{A}] {}
+        child { node [] {$W$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$L$}
+            edge from parent
+            node[right]{2}}
+        edge from parent
+            node[right]{2}
+        }        
+      edge from parent
+        node[right]{2}
+    }
+    
+    ;
+    \end{tikzpicture}
+```
+
+
+$W$ means that A wins, and $L$ means that B wins.
+
+## Solving These Games
+
+- Work backwards.
+- First, find points where a player has a choice between two terminal nodes.
+- Assume that they will make the higher value for them choice.
+- Mark that choice, e.g., by doubling the line (as the textbook does).
+- If there are ties, mark both of the lines. (This gets more complicated once we leave zero-sum games.)
+
+## Solving These Games
+
+- Assign the value they choose to the choice node.
+- So just the game assigns values to terminal nodes, we'll now assign value to choice nodes.
+- In **Five**, we'll assign the value $W$ to the bottom right node.
+
+## Five (after one step)
+
+```{r engine="tikz"}
+#| fig-format: png
+#| echo: false
+
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}
+  \tikzset{
+    % Three node styles for game trees: solid and hollow and square
+      solid node/.style={circle,draw,inner sep=1.5,fill=black},
+      hollow node/.style={circle,draw,inner sep=1.5},
+      square node/.style={rectangle,draw, inner sep = 1, fill = black}
+      }
+
+  % Specify spacing for each level of the tree
+  \tikzstyle{level 1}=[level distance=15mm,sibling distance=40mm]
+  \tikzstyle{level 2}=[level distance=15mm,sibling distance=20mm]
+  \tikzstyle{level 3}=[level distance=15mm,sibling distance=10mm]
+
+  \node[hollow node,label=above:{A}]{}
+    child { node [solid node,label=left:{B}] {}
+      child { node [solid node,label=left:{A}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$L$}
+            edge from parent
+            node[right]{2}}
+        edge from parent
+            node[left]{1}
+        }
+      child { node [solid node,label=right:{A}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$W$}
+            edge from parent
+            node[right]{2}}
+        edge from parent
+            node[right]{2}
+        }        
+      edge from parent
+        node[left]{1}
+    }
+    child { node [solid node,label=right:{B}] {}
+      child { node [solid node,label=left:{A}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$W$}
+            edge from parent
+            node[right]{2}}
+        edge from parent
+            node[left]{1}
+        }
+      child { node [solid node,label=right:{$W$}] {}
+        child { node [] {$W$}
+            edge from parent [double]
+            node[left]{1}}
+        child { node [] {$L$}
+            edge from parent
+            node[right]{2}}
+        edge from parent
+            node[right]{2}
+        }        
+      edge from parent
+        node[right]{2}
+    }
+    
+    ;
+    \end{tikzpicture}
+```
+## Five (after first level) {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+\pictext{175}{0}{A}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{1}
+\pictext{215}{20}{2}
+\pictext{105}{32}{B}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{1}
+\pictext{130}{55}{2}
+\pictext{245}{32}{B}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\pictext{220}{55}{1}
+\pictext{270}{55}{2}
+\pictext{70}{66}{$L$}
+\put(70, 82){\circle*{4}}
+\thicklines
+\put(70, 81){\line(-1, 2){20}}
+\put(70, 82){\line(-1, 2){20}}
+\pictext{50}{125}{$L$}
+\put(70, 81){\line(1, 2){20}}
+\put(70, 82){\line(1, 2){20}}
+\thinlines
+\pictext{90}{125}{$L$}
+\pictext{55}{95}{1}
+\pictext{85}{95}{2}
+\pictext{140}{66}{$W$}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+\pictext{120}{125}{$L$}
+\thicklines
+\put(140, 81){\line(1, 2){20}}
+\put(140, 82){\line(1, 2){20}}
+\thinlines
+\pictext{160}{125}{$W$}
+\pictext{115}{95}{1}
+\pictext{155}{95}{2}
+\pictext{210}{66}{$W$}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+\pictext{190}{125}{$L$}
+\thicklines
+\put(210, 81){\line(1, 2){20}}
+\put(210, 82){\line(1, 2){20}}
+\thinlines
+\pictext{230}{125}{$W$}
+\pictext{195}{95}{1}
+\pictext{225}{95}{2}
+\pictext{280}{66}{$W$}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 81){\line(-1, 2){20}}
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+\pictext{260}{125}{$W$}
+\put(280, 82){\line(1, 2){20}}
+\pictext{300}{125}{$L$}
+\pictext{265}{95}{1}
+\pictext{295}{95}{2}
+\end{picture}
+
+## Next Steps Back
+
+> - Now we do the same thing for B.
+> - We act as if B is choosing between terminal nodes.
+> - It is as if A doesn't have a choice - they will just make the choice that is best for them (i.e., worst for B).
+> - So B knows what the outcome of each choice will be.
+
+## Five (After Two Rounds) {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+\pictext{175}{0}{A}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{1}
+\pictext{215}{20}{2}
+\pictext{105}{32}{$L$}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 48){\line(-1, 1){35}}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{1}
+\pictext{130}{55}{2}
+\pictext{245}{32}{$W$}
+\put(245, 47){\circle*{4}}
+\thicklines
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 48){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\put(245, 48){\line(1, 1){35}}
+\thinlines
+\pictext{220}{55}{1}
+\pictext{270}{55}{2}
+\pictext{70}{66}{$L$}
+\put(70, 82){\circle*{4}}
+\thicklines
+\put(70, 81){\line(-1, 2){20}}
+\put(70, 82){\line(-1, 2){20}}
+\pictext{50}{125}{$L$}
+\put(70, 81){\line(1, 2){20}}
+\put(70, 82){\line(1, 2){20}}
+\thinlines
+\pictext{90}{125}{$L$}
+\pictext{55}{95}{1}
+\pictext{85}{95}{2}
+\pictext{140}{66}{$W$}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+\pictext{120}{125}{$L$}
+\thicklines
+\put(140, 81){\line(1, 2){20}}
+\put(140, 82){\line(1, 2){20}}
+\thinlines
+\pictext{160}{125}{$W$}
+\pictext{115}{95}{1}
+\pictext{155}{95}{2}
+\pictext{210}{66}{$W$}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+\pictext{190}{125}{$L$}
+\thicklines
+\put(210, 81){\line(1, 2){20}}
+\put(210, 82){\line(1, 2){20}}
+\thinlines
+\pictext{230}{125}{$W$}
+\pictext{195}{95}{1}
+\pictext{225}{95}{2}
+\pictext{280}{66}{$W$}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 81){\line(-1, 2){20}}
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+\pictext{260}{125}{$W$}
+\put(280, 82){\line(1, 2){20}}
+\pictext{300}{125}{$L$}
+\pictext{265}{95}{1}
+\pictext{295}{95}{2}
+\end{picture}
+
+
+## Five (After Two Rounds)
+
+- So we act as if getting to the left hand node means B wins, and getting to the right hand node means A wins.
+- And now we just have to make the choice for the initial node, using this fact.
+
+## Five (Full Graph) {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+\pictext{175}{0}{$W$}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\thicklines
+\put(177, 12){\line(2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\thinlines
+\pictext{135}{20}{1}
+\pictext{215}{20}{2}
+\pictext{105}{32}{$L$}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 48){\line(-1, 1){35}}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{1}
+\pictext{130}{55}{2}
+\pictext{245}{32}{$W$}
+\put(245, 47){\circle*{4}}
+\thicklines
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\put(245, 48){\line(-1, 1){35}}
+\put(245, 48){\line(1, 1){35}}
+\thinlines
+\pictext{220}{55}{1}
+\pictext{270}{55}{2}
+\pictext{70}{66}{$L$}
+\put(70, 82){\circle*{4}}
+\thicklines
+\put(70, 82){\line(-1, 2){20}}
+\put(70, 81){\line(-1, 2){20}}
+\pictext{50}{125}{$L$}
+\put(70, 82){\line(1, 2){20}}
+\put(70, 81){\line(1, 2){20}}
+\thinlines
+\pictext{90}{125}{$L$}
+\pictext{55}{95}{1}
+\pictext{85}{95}{2}
+\pictext{140}{66}{$W$}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+\pictext{120}{125}{$L$}
+\thicklines
+\put(140, 82){\line(1, 2){20}}
+\put(140, 81){\line(1, 2){20}}
+\thinlines
+\pictext{160}{125}{$W$}
+\pictext{115}{95}{1}
+\pictext{155}{95}{2}
+\pictext{210}{66}{$W$}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+\pictext{190}{125}{$L$}
+\thicklines
+\put(210, 82){\line(1, 2){20}}
+\put(210, 81){\line(1, 2){20}}
+\thinlines
+\pictext{230}{125}{$W$}
+\pictext{195}{95}{1}
+\pictext{225}{95}{2}
+\pictext{280}{66}{$W$}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 82){\line(-1, 2){20}}
+\put(280, 81){\line(-1, 2){20}}
+\thinlines
+\pictext{260}{125}{$W$}
+\put(280, 82){\line(1, 2){20}}
+\pictext{300}{125}{$L$}
+\pictext{265}{95}{1}
+\pictext{295}{95}{2}
+\end{picture}
+
+## Five - Full Analysis
+
+- The equilibrium state of the game is that A wins.
+- A plays 2 first.
+- Then B can play anything they line.
+- But whatever they do, A will win, by playing the opposite number.
+
+## Backwards Induction
+
+- This process is called backwards induction.
+- We start at the possible ends of the game.
+- At each step, we assume that each player makes the best decision they can, on the assumption that later players will do the same thing.
+
+# Ties
+
+## Backwards Induction in Positive Sum Games
+
+::: {.columns}
+
+:::: {.column width="70%"}
+
+![Three player game tree](images/3_3a.png){height=80%}
+
+::::
+
+:::: {.column width="30%"}
+
+This is three player, but crucially, it is not zero sum.
+
+::::
+
+:::
+
+## {.plain}
+
+![Three player game tree](images/3_3a.png){height=50%}
+
+- In the bottom right, Player 3 doesn't care which choice is made.
+- So we can't infer what Player 3 will do.
+
+## {.plain}
+
+![Three player game tree](images/3_3a.png){height=60%}
+
+- But the other players do care what Player 3 will do.
+- So we can't just ignore this choice.
+
+## {.plain}
+
+![Three player game tree](images/3_3a.png){height=60%}
+
+- The solution is to build two trees, one for each of Player 3's choices.
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="60%"}
+![Solution One](images/3_3b.png){height=60%}
+::::
+
+:::: {.column width="40%"}
+- First, assume 3 plays g.
+- Then 2 would play f at node y.
+- So 1 will actually play a.
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="60%"}
+![Solution Two](images/3_3c.png)
+::::
+
+:::: {.column width="40%"}
+- Now, assume 3 plays h.
+- Then 2 would play e at node y.
+- So 1 will actually play b triggering this play.
+::::
+
+:::
+
+## Multiple Solutions
+
+- This is a game with multiple backwards induction solutions.
+- The solutions don't just differ in what Player 3, who faces the tie, plays.
+- They differ in the very first move!
+
+## Multiple Solutions
+
+- This is the totally general case; most solution concepts are like this.
+- But it's a pain to deal with.
+- And eventually we can solve the game.
