@@ -301,242 +301,253 @@ $W$ means that A wins, and $L$ means that B wins.
     ;
     \end{tikzpicture}
 ```
-## Five (after first level) {.fragile}
 
-\newcommand{\pictext}[3]{
-\put(#1, #2){\makebox(0, 0)[b]{#3}}}
-\begin{picture}(350, 150)
-\pictext{175}{0}{A}
-\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
-\put(177, 13){\line(2, 1){69}}
-\pictext{135}{20}{1}
-\pictext{215}{20}{2}
-\pictext{105}{32}{B}
-\put(105, 47){\circle*{4}}
-\put(105, 47){\line(-1, 1){35}}
-\put(105, 47){\line(1, 1){35}}
-\pictext{80}{55}{1}
-\pictext{130}{55}{2}
-\pictext{245}{32}{B}
-\put(245, 47){\circle*{4}}
-\put(245, 47){\line(-1, 1){35}}
-\put(245, 47){\line(1, 1){35}}
-\pictext{220}{55}{1}
-\pictext{270}{55}{2}
-\pictext{70}{66}{$L$}
-\put(70, 82){\circle*{4}}
-\thicklines
-\put(70, 81){\line(-1, 2){20}}
-\put(70, 82){\line(-1, 2){20}}
-\pictext{50}{125}{$L$}
-\put(70, 81){\line(1, 2){20}}
-\put(70, 82){\line(1, 2){20}}
-\thinlines
-\pictext{90}{125}{$L$}
-\pictext{55}{95}{1}
-\pictext{85}{95}{2}
-\pictext{140}{66}{$W$}
-\put(140, 82){\circle*{4}}
-\put(140, 82){\line(-1, 2){20}}
-\pictext{120}{125}{$L$}
-\thicklines
-\put(140, 81){\line(1, 2){20}}
-\put(140, 82){\line(1, 2){20}}
-\thinlines
-\pictext{160}{125}{$W$}
-\pictext{115}{95}{1}
-\pictext{155}{95}{2}
-\pictext{210}{66}{$W$}
-\put(210, 82){\circle*{4}}
-\put(210, 82){\line(-1, 2){20}}
-\pictext{190}{125}{$L$}
-\thicklines
-\put(210, 81){\line(1, 2){20}}
-\put(210, 82){\line(1, 2){20}}
-\thinlines
-\pictext{230}{125}{$W$}
-\pictext{195}{95}{1}
-\pictext{225}{95}{2}
-\pictext{280}{66}{$W$}
-\put(280, 82){\circle*{4}}
-\thicklines
-\put(280, 81){\line(-1, 2){20}}
-\put(280, 82){\line(-1, 2){20}}
-\thinlines
-\pictext{260}{125}{$W$}
-\put(280, 82){\line(1, 2){20}}
-\pictext{300}{125}{$L$}
-\pictext{265}{95}{1}
-\pictext{295}{95}{2}
-\end{picture}
+## Five (after first level)
+
+On the next slide I'll do the same thing for the other three nodes where A ends the game.
+
+- Note that for one of them, I'll double **two** lines, because we can't figure out just by backward induction reasoning what will happen.
+
+---
+
+```{r engine="tikz"}
+#| fig-format: png
+#| echo: false
+
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}
+  \tikzset{
+    % Three node styles for game trees: solid and hollow and square
+      solid node/.style={circle,draw,inner sep=1.5,fill=black},
+      hollow node/.style={circle,draw,inner sep=1.5},
+      square node/.style={rectangle,draw, inner sep = 1, fill = black}
+      }
+
+  % Specify spacing for each level of the tree
+  \tikzstyle{level 1}=[level distance=15mm,sibling distance=40mm]
+  \tikzstyle{level 2}=[level distance=15mm,sibling distance=20mm]
+  \tikzstyle{level 3}=[level distance=15mm,sibling distance=10mm]
+
+  \node[hollow node,label=above:{A}]{}
+    child { node [solid node,label=left:{B}] {}
+      child { node [solid node,label=left:{$L$}] {}
+        child { node [] {$L$}
+            edge from parent [double]
+            node[left]{1}}
+        child { node [] {$L$}
+            edge from parent [double]
+            node[right]{2}}
+        edge from parent
+            node[left]{1}
+        }
+      child { node [solid node,label=right:{$W$}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$W$}
+            edge from parent [double]
+            node[right]{2}}
+        edge from parent
+            node[right]{2}
+        }        
+      edge from parent
+        node[left]{1}
+    }
+    child { node [solid node,label=right:{B}] {}
+      child { node [solid node,label=left:{$W$}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$W$}
+            edge from parent [double]
+            node[right]{2}}
+        edge from parent
+            node[left]{1}
+        }
+      child { node [solid node,label=right:{$W$}] {}
+        child { node [] {$W$}
+            edge from parent [double]
+            node[left]{1}}
+        child { node [] {$L$}
+            edge from parent
+            node[right]{2}}
+        edge from parent
+            node[right]{2}
+        }        
+      edge from parent
+        node[right]{2}
+    }
+    
+    ;
+    \end{tikzpicture}
+```
 
 ## Next Steps Back
 
-> - Now we do the same thing for B.
-> - We act as if B is choosing between terminal nodes.
-> - It is as if A doesn't have a choice - they will just make the choice that is best for them (i.e., worst for B).
-> - So B knows what the outcome of each choice will be.
+- Now we do the same thing for B.
+- We act as if B is choosing between terminal nodes.
+- It is as if A doesn't have a choice - they will just make the choice that is best for them (i.e., worst for B).
+- So B knows what the outcome of each choice will be.
+- Remember, B prefers $L$ to $W$, because $L$ means that A loses and so B wins.
 
-## Five (After Two Rounds) {.fragile}
+---
 
-\newcommand{\pictext}[3]{
-\put(#1, #2){\makebox(0, 0)[b]{#3}}}
-\begin{picture}(350, 150)
-\pictext{175}{0}{A}
-\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
-\put(177, 13){\line(2, 1){69}}
-\pictext{135}{20}{1}
-\pictext{215}{20}{2}
-\pictext{105}{32}{$L$}
-\put(105, 47){\circle*{4}}
-\thicklines
-\put(105, 47){\line(-1, 1){35}}
-\put(105, 48){\line(-1, 1){35}}
-\thinlines
-\put(105, 47){\line(1, 1){35}}
-\pictext{80}{55}{1}
-\pictext{130}{55}{2}
-\pictext{245}{32}{$W$}
-\put(245, 47){\circle*{4}}
-\thicklines
-\put(245, 47){\line(-1, 1){35}}
-\put(245, 48){\line(-1, 1){35}}
-\put(245, 47){\line(1, 1){35}}
-\put(245, 48){\line(1, 1){35}}
-\thinlines
-\pictext{220}{55}{1}
-\pictext{270}{55}{2}
-\pictext{70}{66}{$L$}
-\put(70, 82){\circle*{4}}
-\thicklines
-\put(70, 81){\line(-1, 2){20}}
-\put(70, 82){\line(-1, 2){20}}
-\pictext{50}{125}{$L$}
-\put(70, 81){\line(1, 2){20}}
-\put(70, 82){\line(1, 2){20}}
-\thinlines
-\pictext{90}{125}{$L$}
-\pictext{55}{95}{1}
-\pictext{85}{95}{2}
-\pictext{140}{66}{$W$}
-\put(140, 82){\circle*{4}}
-\put(140, 82){\line(-1, 2){20}}
-\pictext{120}{125}{$L$}
-\thicklines
-\put(140, 81){\line(1, 2){20}}
-\put(140, 82){\line(1, 2){20}}
-\thinlines
-\pictext{160}{125}{$W$}
-\pictext{115}{95}{1}
-\pictext{155}{95}{2}
-\pictext{210}{66}{$W$}
-\put(210, 82){\circle*{4}}
-\put(210, 82){\line(-1, 2){20}}
-\pictext{190}{125}{$L$}
-\thicklines
-\put(210, 81){\line(1, 2){20}}
-\put(210, 82){\line(1, 2){20}}
-\thinlines
-\pictext{230}{125}{$W$}
-\pictext{195}{95}{1}
-\pictext{225}{95}{2}
-\pictext{280}{66}{$W$}
-\put(280, 82){\circle*{4}}
-\thicklines
-\put(280, 81){\line(-1, 2){20}}
-\put(280, 82){\line(-1, 2){20}}
-\thinlines
-\pictext{260}{125}{$W$}
-\put(280, 82){\line(1, 2){20}}
-\pictext{300}{125}{$L$}
-\pictext{265}{95}{1}
-\pictext{295}{95}{2}
-\end{picture}
+```{r engine="tikz"}
+#| fig-format: png
+#| echo: false
 
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}
+  \tikzset{
+    % Three node styles for game trees: solid and hollow and square
+      solid node/.style={circle,draw,inner sep=1.5,fill=black},
+      hollow node/.style={circle,draw,inner sep=1.5},
+      square node/.style={rectangle,draw, inner sep = 1, fill = black}
+      }
+
+  % Specify spacing for each level of the tree
+  \tikzstyle{level 1}=[level distance=15mm,sibling distance=40mm]
+  \tikzstyle{level 2}=[level distance=15mm,sibling distance=20mm]
+  \tikzstyle{level 3}=[level distance=15mm,sibling distance=10mm]
+
+  \node[hollow node,label=above:{A}]{}
+    child { node [solid node,label=left:{$L$}] {}
+      child { node [solid node,label=left:{$L$}] {}
+        child { node [] {$L$}
+            edge from parent [double]
+            node[left]{1}}
+        child { node [] {$L$}
+            edge from parent [double]
+            node[right]{2}}
+        edge from parent [double]
+            node[left]{1}
+        }
+      child { node [solid node,label=right:{$W$}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$W$}
+            edge from parent [double]
+            node[right]{2}}
+        edge from parent
+            node[right]{2}
+        }        
+      edge from parent
+        node[left]{1}
+    }
+    child { node [solid node,label=right:{$W$}] {}
+      child { node [solid node,label=left:{$W$}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$W$}
+            edge from parent [double]
+            node[right]{2}}
+        edge from parent [double]
+            node[left]{1}
+        }
+      child { node [solid node,label=right:{$W$}] {}
+        child { node [] {$W$}
+            edge from parent [double]
+            node[left]{1}}
+        child { node [] {$L$}
+            edge from parent
+            node[right]{2}}
+        edge from parent [double]
+            node[right]{2}
+        }        
+      edge from parent
+        node[right]{2}
+    }
+    
+    ;
+    \end{tikzpicture}
+```
 
 ## Five (After Two Rounds)
 
 - So we act as if getting to the left hand node means B wins, and getting to the right hand node means A wins.
 - And now we just have to make the choice for the initial node, using this fact.
 
-## Five (Full Graph) {.fragile}
+## Five (Full Graph)
 
-\newcommand{\pictext}[3]{
-\put(#1, #2){\makebox(0, 0)[b]{#3}}}
-\begin{picture}(350, 150)
-\pictext{175}{0}{$W$}
-\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
-\thicklines
-\put(177, 12){\line(2, 1){69}}
-\put(177, 13){\line(2, 1){69}}
-\thinlines
-\pictext{135}{20}{1}
-\pictext{215}{20}{2}
-\pictext{105}{32}{$L$}
-\put(105, 47){\circle*{4}}
-\thicklines
-\put(105, 47){\line(-1, 1){35}}
-\put(105, 48){\line(-1, 1){35}}
-\thinlines
-\put(105, 47){\line(1, 1){35}}
-\pictext{80}{55}{1}
-\pictext{130}{55}{2}
-\pictext{245}{32}{$W$}
-\put(245, 47){\circle*{4}}
-\thicklines
-\put(245, 47){\line(-1, 1){35}}
-\put(245, 47){\line(1, 1){35}}
-\put(245, 48){\line(-1, 1){35}}
-\put(245, 48){\line(1, 1){35}}
-\thinlines
-\pictext{220}{55}{1}
-\pictext{270}{55}{2}
-\pictext{70}{66}{$L$}
-\put(70, 82){\circle*{4}}
-\thicklines
-\put(70, 82){\line(-1, 2){20}}
-\put(70, 81){\line(-1, 2){20}}
-\pictext{50}{125}{$L$}
-\put(70, 82){\line(1, 2){20}}
-\put(70, 81){\line(1, 2){20}}
-\thinlines
-\pictext{90}{125}{$L$}
-\pictext{55}{95}{1}
-\pictext{85}{95}{2}
-\pictext{140}{66}{$W$}
-\put(140, 82){\circle*{4}}
-\put(140, 82){\line(-1, 2){20}}
-\pictext{120}{125}{$L$}
-\thicklines
-\put(140, 82){\line(1, 2){20}}
-\put(140, 81){\line(1, 2){20}}
-\thinlines
-\pictext{160}{125}{$W$}
-\pictext{115}{95}{1}
-\pictext{155}{95}{2}
-\pictext{210}{66}{$W$}
-\put(210, 82){\circle*{4}}
-\put(210, 82){\line(-1, 2){20}}
-\pictext{190}{125}{$L$}
-\thicklines
-\put(210, 82){\line(1, 2){20}}
-\put(210, 81){\line(1, 2){20}}
-\thinlines
-\pictext{230}{125}{$W$}
-\pictext{195}{95}{1}
-\pictext{225}{95}{2}
-\pictext{280}{66}{$W$}
-\put(280, 82){\circle*{4}}
-\thicklines
-\put(280, 82){\line(-1, 2){20}}
-\put(280, 81){\line(-1, 2){20}}
-\thinlines
-\pictext{260}{125}{$W$}
-\put(280, 82){\line(1, 2){20}}
-\pictext{300}{125}{$L$}
-\pictext{265}{95}{1}
-\pictext{295}{95}{2}
-\end{picture}
+```{r engine="tikz"}
+#| fig-format: png
+#| echo: false
+
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}
+  \tikzset{
+    % Three node styles for game trees: solid and hollow and square
+      solid node/.style={circle,draw,inner sep=1.5,fill=black},
+      hollow node/.style={circle,draw,inner sep=1.5},
+      square node/.style={rectangle,draw, inner sep = 1, fill = black}
+      }
+
+  % Specify spacing for each level of the tree
+  \tikzstyle{level 1}=[level distance=15mm,sibling distance=40mm]
+  \tikzstyle{level 2}=[level distance=15mm,sibling distance=20mm]
+  \tikzstyle{level 3}=[level distance=15mm,sibling distance=10mm]
+
+  \node[hollow node,label=above:{$W$}]{}
+    child { node [solid node,label=left:{$L$}] {}
+      child { node [solid node,label=left:{$L$}] {}
+        child { node [] {$L$}
+            edge from parent [double]
+            node[left]{1}}
+        child { node [] {$L$}
+            edge from parent [double]
+            node[right]{2}}
+        edge from parent [double]
+            node[left]{1}
+        }
+      child { node [solid node,label=right:{$W$}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$W$}
+            edge from parent [double]
+            node[right]{2}}
+        edge from parent
+            node[right]{2}
+        }        
+      edge from parent
+        node[left]{1}
+    }
+    child { node [solid node,label=right:{$W$}] {}
+      child { node [solid node,label=left:{$W$}] {}
+        child { node [] {$L$}
+            edge from parent
+            node[left]{1}}
+        child { node [] {$W$}
+            edge from parent [double]
+            node[right]{2}}
+        edge from parent [double]
+            node[left]{1}
+        }
+      child { node [solid node,label=right:{$W$}] {}
+        child { node [] {$W$}
+            edge from parent [double]
+            node[left]{1}}
+        child { node [] {$L$}
+            edge from parent
+            node[right]{2}}
+        edge from parent [double]
+            node[right]{2}
+        }        
+      edge from parent [double]
+        node[right]{2}
+    }
+    
+    ;
+    \end{tikzpicture}
+```
 
 ## Five - Full Analysis
 
@@ -551,86 +562,116 @@ $W$ means that A wins, and $L$ means that B wins.
 - We start at the possible ends of the game.
 - At each step, we assume that each player makes the best decision they can, on the assumption that later players will do the same thing.
 
-# Ties
+# Chain Store Paradox
 
-## Backwards Induction in Positive Sum Games
+## Chain Store Paradox
 
-::: {.columns}
+The Wikipedia page on this isn't bad, and the original article is somewhat accessible.
 
-:::: {.column width="70%"}
+- [The Chain Store Paradox](https://link.springer.com/article/10.1007/BF00131770), by Reinhard Selten, _Theory and Decision_ volume 9, 1978.
 
-![Three player game tree](images/3_3a.png){height=80%}
+## Chain Store Paradox
 
-::::
+- Imagine in 20 college towns, Starbucks is the only coffee shop in town.
+- In each of the towns, some local business people are thinking of starting a new coffee shop.
+- Each of them will soon face a critical decision, whether to go ahead with the shop or give up because it's too hard.
 
-:::: {.column width="30%"}
+## Payouts
 
-This is three player, but crucially, it is not zero sum.
+In each town, there are four options:
 
-::::
+- The local person can enter (E) or stay out (S).
+- If they enter, Starbucks can do nothing (N) or cut prices (C). (Note this happens second.)
 
-:::
+Here is the payoff table per town.
 
-## {.plain}
+|    |   E   |   S   |
+|:--:|:-----:|:-----:|
+| N  |   2,2 |  1,5  |
+| C  |  0,0  |  1,5  |
 
-![Three player game tree](images/3_3a.png){height=50%}
+## Payouts
 
-- In the bottom right, Player 3 doesn't care which choice is made.
-- So we can't infer what Player 3 will do.
+|    |   E   |   S   |
+|:--:|:-----:|:-----:|
+| N  |   2,2 |  1,5  |
+| C  |  0,0  |  1,5  |
 
-## {.plain}
+In each town, the only equilibrium of the game is that the local enters, and Starbucks does nothing.
 
-![Three player game tree](images/3_3a.png){height=60%}
+## Chain Store
 
-- But the other players do care what Player 3 will do.
-- So we can't just ignore this choice.
+What about the following reasoning for Starbucks?
 
-## {.plain}
+- In the first town, if local enters, we'll get 0 rather than 2 by starting a price war.
+- That's a cost, but it's nothing compared to the deterrence effect.
+- Sending a message to the other 19 that they're better off staying out will be worth losing some money in town 1.
 
-![Three player game tree](images/3_3a.png){height=60%}
+## Threat
 
-- The solution is to build two trees, one for each of Player 3's choices.
+|    |   E   |   S   |
+|:--:|:-----:|:-----:|
+| N  |   2,2 |  1,5  |
+| C  |  0,0  |  1,5  |
 
-## {.plain}
+Note that for subsequent towns, the local has a choice between getting 1, if they stay out, or 0, if they enter, assuming Starbucks will launch a price war.
 
-::: {.columns}
+## Threats
 
-:::: {.column width="60%"}
-![Solution One](images/3_3b.png){height=60%}
-::::
+This might not be particularly *nice* of Starbucks, and maybe in some places it would even be illegal. (Though really, who is going to start a lawsuit against Starbucks cutting prices?)
 
-:::: {.column width="40%"}
-- First, assume 3 plays g.
-- Then 2 would play f at node y.
-- So 1 will actually play a.
-::::
+But this sure looks like sensible reasoning on Starbucks's part.
 
-:::
+Take a small loss now to preserve the value of monopoly privileges in the future.
 
-## {.plain}
+## Backward Induction
 
-::: {.columns}
+The problem is that there's this argument that it shouldn't work.
 
-:::: {.column width="60%"}
-![Solution Two](images/3_3c.png)
-::::
+- In town 20, there is no deterrence benefit from cutting prices.
+- So Starbucks won't cut prices there, and the fact that they did in the past won't deter the locals in town 20.
 
-:::: {.column width="40%"}
-- Now, assume 3 plays h.
-- Then 2 would play e at node y.
-- So 1 will actually play b triggering this play.
-::::
+## Backward Induction
 
-:::
+Now think about the locals in town 19. Should they fear that Starbucks will launch a price war to deter future owners?
 
-## Multiple Solutions
+- No; it would only deter the locals in town 20, and we just showed they shouldn't ever be deterred.
+- So the locals in town 19 shouldn't be deterred.
 
-- This is a game with multiple backwards induction solutions.
-- The solutions don't just differ in what Player 3, who faces the tie, plays.
-- They differ in the very first move!
+. . .
 
-## Multiple Solutions
+And that holds in 18, in 17, and all the way back to the start.
 
-- This is the totally general case; most solution concepts are like this.
-- But it's a pain to deal with.
-- And eventually we can solve the game.
+## What Went Wrong
+
+Backward induction reasoning requires a *very* strong rationality assumption.
+
+- It requires not just that everyone is rational, but that everyone knows everyone is rational, everyone knows that everyone knows that everyone is rational, and so on.
+- And this is not what we find in the real world.
+
+## An Experiment
+
+- You'll play the following game. I'm hoping you'll play it three times with three different people, though at the mercy of the tech a little here.
+- At the start of the game there is $0.20 in a pot.
+- At each round, a player can end or continue. (This game is not symmetric; someone goes first.)
+- If the game ends, the pot is divided **unevenly**. The person who ended the game gets $0.20 more.
+- So if it ends with \$1 in the pot, the ender gets \$0.60, and the other player gets \$0.40.
+
+## An Experiment
+
+- If the game does not end, $0.20 gets added to the pot.
+- Once the pot reaches \$2, the game ends, and player 2 gets \$1.10, while player 1 gets \$0.90.
+
+## Theory
+
+- The backward induction solution to the game is that player 1 ends on the first move.
+- At the second last move, player 1 can end and get \$1, or continue and get \$0.90.
+- At the third last move, player 2 can end and get \$0.90, or continue, and, if player 1 ends the next move, get \$0.80.
+- And so on, until player 1 ends on the very first move.
+- Let's see if that happens in practice.
+
+## Experiment
+
+- https://veconlab.econ.virginia.edu/login.php
+- Experiment name: **pbw4**
+- This is last slide; but hopefully we'll have time to talk about what happened.
