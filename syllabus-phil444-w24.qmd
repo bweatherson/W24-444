@@ -325,7 +325,7 @@ Topic
 :    Focal Points
 
 Reading
-:     Judith Mehta, Chris Starmerand Robert Sugden, [The Nature of Salience: An Experimental Investigation of Pure Coordination Games](https://www.jstor.org/stable/2118074)
+:     Judith Mehta, Chris Starmer, and Robert Sugden, [The Nature of Salience: An Experimental Investigation of Pure Coordination Games](https://www.jstor.org/stable/2118074)
 
 ### `r advdate(thu, 12)`
 
