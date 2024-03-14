@@ -23,14 +23,14 @@ code-block-background: true
 ## A Simple Game
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="45%"}
 |          | Left | Right |
 |:--------:|:----:|:-----:|
 |  **Up**  | 4,1  |  2,0  |
 | **Down** | 3,0  |  1,1  |
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 1.  Two players, call them Row and Column.
 2.  Row chooses the row, Column chooses the column - between them they choose a cell.
 3.  Each cell has two numbers - the first is Row's payout, the second is Column's payout.
@@ -40,14 +40,14 @@ code-block-background: true
 ## Strong Dominance
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="45%"}
 |          | Left | Right |
 |:--------:|:----:|:-----:|
 |  **Up**  | 4,1  |  2,0  |
 | **Down** | 3,0  |  1,1  |
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 -   Whatever Column does, Row is better off playing Up rather than Down.
 -   We say that Up **strongly dominates** Down.
 :::
@@ -56,7 +56,7 @@ code-block-background: true
 ## Strong Dominance {.fragile}
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="45%"}
 |            | Left | Right |
 |:----------:|:----:|:-----:|
 |   **Up**   | 4,1  |  2,0  |
@@ -64,7 +64,7 @@ code-block-background: true
 |  **Down**  | 3,0  |  1,1  |
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 -   Adding options doesn't change things.
 -   Up still dominates Down, even if it isn't always best.
 :::
@@ -73,7 +73,7 @@ code-block-background: true
 ## Strong Dominance {.fragile}
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="45%"}
 |            | Left | Right |
 |:----------:|:----:|:-----:|
 |   **Up**   | 3,1  |  0,0  |
@@ -81,7 +81,7 @@ code-block-background: true
 |  **Down**  | 0,0  |  3,1  |
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 -   This is **not** a case of dominance.
 -   Even though Middle is never the highest value, it isn't dominated by any one option.
 :::
@@ -111,14 +111,14 @@ Weak Dominance
 ## Weak Dominance {.fragile}
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="45%"}
 |          | Left |  Right  |
 |:--------:|:----:|:-------:|
 |  **Up**  | 4,1  |   2,0   |
 | **Down** | 3,0  | **2**,1 |
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 -   I've changed the payoffs in the bottom right cell.
 -   Now Up does not strongly dominate Down.
 -   But it does weakly dominate Down.
@@ -141,14 +141,14 @@ Weak Dominance
 ## Easy Example
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="45%"}
 |          | Left | Right |
 |:--------:|:----:|:-----:|
 |  **Up**  | 4,1  |  2,2  |
 | **Down** | 3,3  |  1,4  |
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 We can solve this using just domination.
 :::
 :::
@@ -156,14 +156,14 @@ We can solve this using just domination.
 ## Easy Example
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="45%"}
 |          | Left | Right |
 |:--------:|:----:|:-----:|
 |  **Up**  | 4,1  |  2,2  |
 | **Down** | 3,3  |  1,4  |
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 -   Up dominates Down, so Row should play Up.
 -   Right dominates Left, so Column should play Right.
 -   So the solution is Up/Right.
@@ -173,14 +173,14 @@ We can solve this using just domination.
 ## Another Example
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="45%"}
 |          | Left | Right |
 |:--------:|:----:|:-----:|
 |  **Up**  | 4,0  |  2,1  |
 | **Down** | 3,1  |  1,0  |
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 Now Column doesn't have a dominating option, but that doesn't stop us.
 :::
 :::
@@ -188,14 +188,14 @@ Now Column doesn't have a dominating option, but that doesn't stop us.
 ## Another Example
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="45%"}
 |          | Left | Right |
 |:--------:|:----:|:-----:|
 |  **Up**  | 4,0  |  2,1  |
 | **Down** | 3,1  |  1,0  |
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 -   Up dominates Down, so Row should play Up.
 -   If Row is playing Up, Right is better than Left (1 beats 0).
 -   So since Row is playing Up, Column should play Right.
@@ -297,7 +297,7 @@ We can't immediately solve this with dominance, but we can in a few steps.
 | **1** | 60,10 | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 | 40,30 |
 | **2** | 55,15 | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 | 45,25 |
 | **3** | 50,20 | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 | 50,20 |
-| **4** | 45,25 | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
+| **4** | 45,25 | 40,30 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
 | **5** | 40,30 | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 | 60,10 |
 | **6** | 35,35 | 30,40 | 25,45 | 20,50 | 15,55 | 10,60 | 35,35 |
 
@@ -311,7 +311,7 @@ Think about why each of these payoffs is correct.
 | **1** | [60]{style="color:darkgreen;"},10 | [35]{style="color:darkgreen;"},35 | [20]{style="color:darkgreen;"},50 | [25]{style="color:darkgreen;"},45 | [30]{style="color:darkgreen;"},40 | [35]{style="color:darkgreen;"},35 | [40]{style="color:darkgreen;"},30 |
 | **2** | 55,15                             | 50,20                             | 35,35                             | 30,40                             | 35,35                             | 40,30                             | 45,25                             |
 | **3** | 50,20                             | 45,25                             | 40,30                             | 35,35                             | 40,30                             | 45,25                             | 50,20                             |
-| **4** | 45,25                             | 40,20                             | 35,35                             | 30,40                             | 35,35                             | 50,20                             | 55,15                             |
+| **4** | 45,25                             | 40,30                             | 35,35                             | 30,40                             | 35,35                             | 50,20                             | 55,15                             |
 | **5** | 40,30                             | 35,35                             | 30,40                             | 25,45                             | 20,50                             | 35,35                             | 60,10                             |
 | **6** | 35,35                             | 30,40                             | 25,45                             | 20,50                             | 15,55                             | 10,60                             | 35,35                             |
 
@@ -325,7 +325,7 @@ The highlighted values show that 1 strongly dominates 0.
 | **1** | [60]{style="color:darkgreen;"},10 | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 | 40,30 |
 | **2** | [55]{style="color:red;"},15       | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 | 45,25 |
 | **3** | 50,20                             | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 | 50,20 |
-| **4** | 45,25                             | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
+| **4** | 45,25                             | 40,30 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
 | **5** | 40,30                             | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 | 60,10 |
 | **6** | 35,35                             | 30,40 | 25,45 | 20,50 | 15,55 | 10,60 | 35,35 |
 
@@ -339,7 +339,7 @@ But 2 doesn't dominate 1, because 1 is a better response to 0.
 | **1** | 60,10 | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 | 40,30 |
 | **2** | 55,15 | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 | 45,25 |
 | **3** | 50,20 | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 | 50,20 |
-| **4** | 45,25 | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
+| **4** | 45,25 | 40,30 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
 | **5** | 40,30 | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 | 60,10 |
 | **6** | 35,35 | 30,40 | 25,45 | 20,50 | 15,55 | 10,60 | 35,35 |
 
@@ -353,7 +353,7 @@ The game is symmetric around 3, so 5 also dominates 6 (and is not dominated by 4
 | **1** | 60,10 | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 | 40,30 |
 | **2** | 55,15 | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 | 45,25 |
 | **3** | 50,20 | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 | 50,20 |
-| **4** | 45,25 | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
+| **4** | 45,25 | 40,30 | 35,35 | 30,40 | 35,35 | 50,20 | 55,15 |
 | **5** | 40,30 | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 | 60,10 |
 | **6** | 35,35 | 30,40 | 25,45 | 20,50 | 15,55 | 10,60 | 35,35 |
 
@@ -366,7 +366,7 @@ The game is symmetric for Row/Column, so 0 and 6 are dominated for Column too.
 | **1** | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 |
 | **2** | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 |
 | **3** | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 |
-| **4** | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 |
+| **4** | 40,30 | 35,35 | 30,40 | 35,35 | 50,20 |
 | **5** | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 |
 
 Here's what it looks like after those dominated strategies are removed.
@@ -378,7 +378,7 @@ Here's what it looks like after those dominated strategies are removed.
 | **1** | 35,35 | 20,50 | 25,45 | 30,40 | 35,35 |
 | **2** | 50,20 | 35,35 | 30,40 | 35,35 | 40,30 |
 | **3** | 45,25 | 40,30 | 35,35 | 40,30 | 45,25 |
-| **4** | 40,20 | 35,35 | 30,40 | 35,35 | 50,20 |
+| **4** | 40,30 | 35,35 | 30,40 | 35,35 | 50,20 |
 | **5** | 35,35 | 30,40 | 25,45 | 20,50 | 35,35 |
 
 Note now that 2 dominates 1 - since 0 is removed, and 4 dominates 5. And this holds for both Row and Column.
