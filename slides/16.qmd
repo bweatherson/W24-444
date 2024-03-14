@@ -717,7 +717,7 @@ Backward induction reasoning requires a *very* strong rationality assumption.
 ## An Experiment
 
 - You'll play the following game. I'm hoping you'll play it three times with three different people, though at the mercy of the tech a little here.
-- The game is called **Centipede**.
+- The game is called **Centipede**. 
 
 ![Centipede tree from Wikipedia](centipede.png)
 
