@@ -18,6 +18,71 @@ tbl-cap-location: bottom
 code-block-background: true
 ---
 
+# Traveller's Dilemma
+
+## Traveller's Dilemma
+
+I messed this up last time, so I'm trying again.
+
+Here are the actual instructions.
+
+---
+
+- It's a 2 player game.
+- You will play 5 times, hopefully with different people. (I want to see what happens over time, but not in an Axelrod style repeated game.)
+- Each of you will make a 'bid' between $1 and $2. It must be a multiple of $0.1, so the bids are $1.00, $1.10, $1.20, ..., $1.90, $2.
+- If the bids are tied, you each get that amount.
+- If one person bids lower, they get what they bid plus $0.20.
+- Also if one person bids lower, the other gets the low bid **minus** $0.20.
+
+## Example Games
+
+A bids $1.80, B bids $1.80
+:    They both get $1.80.
+
+A bids $1.80, B bids $1.70
+:    A gets $1.50, B gets $1.90.
+
+A bids $1.90, B bids $1.80
+:    A gets $1.60, B gets $2.00.
+
+- Most you can get is $2.10, if you bid $1.90, other bids $2.
+- Least you can get is $0.90, if you bid $1.10, other bids $1.
+
+## Playtime
+
+Site: veconlab.econ.virginia.edu/login.php
+
+Code: **pbw3**. 
+
+(Same code as tried on Tuesday, I reset parameters.)
+
+## Discussion
+
+Let's see what happens. I'm looking for two things
+
+1. Do we immediately go to the result that we get from deleting weakly dominated strategies?
+2. Do we go there over time?
+
+## Theory
+
+Both $1.80 and $1.90 **weakly** dominate $2.
+
+- $1.90 does better if the other plays $2.
+- $1.80 does better if the other plays $1.90.
+- Otherwise they do the **same**.
+
+If we eliminate $2, then $1.70 and $1.80 both weakly dominate $1.90.
+
+- $1.70 does worse than $2 if the other person plays $2, but once $2 is eliminated, there is no way for $2 to do better.
+
+## Theory
+
+And this process can continue all the way down to $1 as the only remaining solution.
+
+- Note this requires iterated deletion of **weakly** dominated strategies.
+- Note also that it doesn't always match up with practice.
+
 # Trees
 
 ## Time
@@ -652,15 +717,33 @@ Backward induction reasoning requires a *very* strong rationality assumption.
 ## An Experiment
 
 - You'll play the following game. I'm hoping you'll play it three times with three different people, though at the mercy of the tech a little here.
+- The game is called **Centipede**. 
+
+![Centipede tree from Wikipedia](centipede.png)
+
+---
+
 - At the start of the game there is $0.20 in a pot.
 - At each round, a player can end or continue. (This game is not symmetric; someone goes first.)
 - If the game ends, the pot is divided **unevenly**. The person who ended the game gets $0.20 more.
 - So if it ends with \$1 in the pot, the ender gets \$0.60, and the other player gets \$0.40.
-
-## An Experiment
-
 - If the game does not end, $0.20 gets added to the pot.
 - Once the pot reaches \$2, the game ends, and player 2 gets \$1.10, while player 1 gets \$0.90.
+
+---
+
+| Ending Round | Ending Player |   P1    |   P2   |
+|:------------:|:-------------:|:-------:|:------:|
+|      1       |       1       |  $0.20  |   0    |
+|      2       |       2       |  $0.10  |  $0.30 |
+|      3       |       1       |  $0.40  |  $0.20 |
+|      4       |       2       |  $0.30  |  $0.50 |
+|      5       |       1       |  $0.60  |  $0.40 |
+|      6       |       2       |  $0.50  |  $0.70 |
+|      7       |       1       |  $0.80  |  $0.60 |
+|      8       |       2       |  $0.70  |  $0.90 |
+|      9       |       1       |  $1.00  |  $0.80 |
+|     10       |  2 (force)    |  $0.90  |  $1.10 |
 
 ## Theory
 

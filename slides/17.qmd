@@ -1,0 +1,513 @@
+---
+subtitle: "444 Lecture 17"
+title: "Two Topics"
+author: "Brian Weatherson"
+date: "March 19 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+
+## Plan for Today
+
+1. Finish the stuff on backward induction
+2. Talk about Stag Hunts
+
+# Backward Induction 
+
+- This process is called backwards induction.
+- We start at the possible ends of the game.
+- At each step, we assume that each player makes the best decision they can, on the assumption that later players will do the same thing.
+
+## Chain Store Paradox
+
+The Wikipedia page on this isn't bad, and the original article is somewhat accessible.
+
+- [The Chain Store Paradox](https://link.springer.com/article/10.1007/BF00131770), by Reinhard Selten, _Theory and Decision_ volume 9, 1978.
+
+## Chain Store Paradox
+
+- Imagine in 20 college towns, Starbucks is the only coffee shop in town.
+- In each of the towns, some local business people are thinking of starting a new coffee shop.
+- Each of them will soon face a critical decision, whether to go ahead with the shop or give up because it's too hard.
+
+## Payouts
+
+In each town, there are four options:
+
+- The local person can enter (E) or stay out (S).
+- If they enter, Starbucks can do nothing (N) or cut prices (C). (Note this happens second.)
+
+Here is the payoff table per town.
+
+|    |   E   |   S   |
+|:--:|:-----:|:-----:|
+| N  |   2,2 |  1,5  |
+| C  |  0,0  |  1,5  |
+
+## Payouts
+
+|    |   E   |   S   |
+|:--:|:-----:|:-----:|
+| N  |   2,2 |  1,5  |
+| C  |  0,0  |  1,5  |
+
+In each town, the only equilibrium of the game is that the local enters, and Starbucks does nothing.
+
+## Chain Store
+
+What about the following reasoning for Starbucks?
+
+- In the first town, if local enters, we'll get 0 rather than 2 by starting a price war.
+- That's a cost, but it's nothing compared to the deterrence effect.
+- Sending a message to the other 19 that they're better off staying out will be worth losing some money in town 1.
+
+## Threat
+
+|    |   E   |   S   |
+|:--:|:-----:|:-----:|
+| N  |   2,2 |  1,5  |
+| C  |  0,0  |  1,5  |
+
+Note that for subsequent towns, the local has a choice between getting 1, if they stay out, or 0, if they enter, assuming Starbucks will launch a price war.
+
+## Threats
+
+This might not be particularly *nice* of Starbucks, and maybe in some places it would even be illegal. (Though really, who is going to start a lawsuit against Starbucks cutting prices?)
+
+But this sure looks like sensible reasoning on Starbucks's part.
+
+Take a small loss now to preserve the value of monopoly privileges in the future.
+
+## Backward Induction
+
+The problem is that there's this argument that it shouldn't work.
+
+- In town 20, there is no deterrence benefit from cutting prices.
+- So Starbucks won't cut prices there, and the fact that they did in the past won't deter the locals in town 20.
+
+## Backward Induction
+
+Now think about the locals in town 19. Should they fear that Starbucks will launch a price war to deter future owners?
+
+- No; it would only deter the locals in town 20, and we just showed they shouldn't ever be deterred.
+- So the locals in town 19 shouldn't be deterred.
+
+. . .
+
+And that holds in 18, in 17, and all the way back to the start.
+
+## What Went Wrong
+
+Backward induction reasoning requires a *very* strong rationality assumption.
+
+- It requires not just that everyone is rational, but that everyone knows everyone is rational, everyone knows that everyone knows that everyone is rational, and so on.
+- And this is not what we find in the real world.
+
+## An Experiment
+
+- You'll play the following game. I'm hoping you'll play it three times with three different people, though I'm at the mercy of the tech a little here.
+- The game is called **Centipede**. 
+
+![Centipede tree from Wikipedia](centipede.png)
+
+---
+
+- At the start of the game there is $0.20 in a pot.
+- At each round, a player can end or continue. (This game is not symmetric; someone goes first.)
+- If the game ends, the pot is divided **unevenly**. The person who ended the game gets $0.20 more.
+- So if it ends with \$1 in the pot, the ender gets \$0.60, and the other player gets \$0.40.
+- If the game does not end, $0.20 gets added to the pot.
+- Once the pot reaches \$2, the game ends, and player 2 gets \$1.10, while player 1 gets \$0.90.
+
+---
+
+| Ending Round | Ending Player |   P1    |   P2   |
+|:------------:|:-------------:|:-------:|:------:|
+|      1       |       1       |  $0.20  |   0    |
+|      2       |       2       |  $0.10  |  $0.30 |
+|      3       |       1       |  $0.40  |  $0.20 |
+|      4       |       2       |  $0.30  |  $0.50 |
+|      5       |       1       |  $0.60  |  $0.40 |
+|      6       |       2       |  $0.50  |  $0.70 |
+|      7       |       1       |  $0.80  |  $0.60 |
+|      8       |       2       |  $0.70  |  $0.90 |
+|      9       |       1       |  $1.00  |  $0.80 |
+|     10       |  2 (force)    |  $0.90  |  $1.10 |
+
+## Theory
+
+- The backward induction solution to the game is that player 1 ends on the first move.
+- At the second last move, player 1 can end and get \$1, or continue and get \$0.90.
+- At the third last move, player 2 can end and get \$0.90, or continue, and, if player 1 ends the next move, get \$0.80.
+- And so on, until player 1 ends on the very first move.
+- Let's see if that happens in practice.
+
+## Experiment
+
+- https://veconlab.econ.virginia.edu/login.php
+- Experiment name: **pbw4**
+
+## Discussion
+
+Let's stop for a minute to discuss what happened.
+
+I can't write slides for this until I see the actual results!
+
+# Stag Hunt
+
+## Short Version
+
+- There are a lot of situations in life that feel like prisoners dilemmas.
+- The concept of a prisoners dilemma is so widely known, that a lot of people in those situations will conceptualise these situations as a prisoners dilemma.
+- Often, they will be wrong; they are actually in a Stag Hunt.
+
+# Stag Hunt
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Stag Hunt
+
+::: {.columns}
+
+:::: {.column width="40%"}
+|      |    Gather    |    Hunt   |
+|:----:|:------------:|:---------:|
+| **Gather** |  $x,x$  |   $y,z$  |
+| **Hunt**   |  $z,y$  |   $w,w$  |
+::::
+
+:::: {.column width="60%"}
+With the following constraints:
+
+- $x > z$
+- $w > y$
+- $w > x$
+- $x + y > z + w$
+::::
+
+:::
+
+## Concrete Example of Stag Hunt
+
+|      |    Gather    |    Hunt   |
+|:----:|:------------:|:---------:|
+| **Gather** |  2,2    |   4,0    |
+| **Hunt**   |  0,4  |   5,5    |
+
+## Differences with Prisoners' Dilemma
+
+- Again, there is a cooperative move (in this case Hunt), which is socially better than the individualistic move (Gather).
+- But in this case, cooperation is an equilibrium; it isn't dominated.
+- The problem is that there are nevertheless reasons to do the individualistic thing.
+
+## Regret Based Reasons
+
+- Whatever you do in Stag Hunt, you're hoping/guessing that the other player does the same thing.
+- If you guess wrong, you'll regret your choice. 
+- If you Gather when the other player Hunts, you'll get 4 and you could have got 5 - a regret of 1. 
+- If you Hunt when the other player Gathers, you'll get 0 and you could have got 2 - a regret of 2. 
+
+## Regret Based Reasons
+
+- Mistakenly Hunting leads to higher regret than mistakenly Gathering.
+- Minimising regret, which a lot of people think is important in decisions under radical uncertainty, implies Gathering.
+
+## Random Choice
+
+- There are two equilibria.
+- Maybe it's reasonable, as a first pass, to have equal probabilities in each hypothesis about what the other player will pick.
+- So in this case, you'd be (as a first pass), 50/50 about whether the other person will Gather or Hunt. 
+
+## Random Choice
+
+- But if it's 50/50 what the other person will do, it maximises expected utility to Gather.
+- That has expected utility 3, while Hunting has expected utility 2.5.
+
+## Evolutionary Explanations
+
+- Imagine an Axelrod type evolutionary situation, that starts out with equal numbers of Gatherers and Hunters.
+- Each person interacts with everyone else in the community, and they add up their score.
+- Then in the next generation, the number of Gatherers and Hunters is proportionate to the score that Gatherers and Hunters get in this generation.
+
+## Evolutionary Explanations
+
+- If all that happens, in fairly short order, you have a population of more or less all Gatherers.
+- Indeed, that happens unless you start with at least 2/3 Hunters.
+
+## Social Challenge
+
+- How do we get people to be cooperative, i.e., Hunt?
+- Note that we don't have to imagine changing the payouts, i.e., punishing, or taking away options.
+- It suffices to get everyone to (truly) believe that others will Hunt.
+- This isn't trivial, but it's a very different kind of challenge than in PD.
+
+## Modeling Challenge
+
+- Which cases are really Stag Hunt not PD?
+- I'm going to talk about this a bit more, but it's really worth thinking through real life cases.
+- Is there a genuine equilibrium where merely by everyone believing that everyone else will Hunt, it becomes in their own interest to Hunt?
+
+## Modeling Challenge
+
+- Note that it is really great if this if situations that look like PD are actually Stag Hunts.
+- The view from Hobbes on was that getting out of PD required heavy handed intervention.
+- But getting to the cooperative equilibrium in Stag Hunt might just require nudging.
+
+## Mixing the Issues
+
+- The modeling challenge and the social challenge can run together.
+- If we want to change behavior, it helps to know what kind of game people are, or take themselves, to be playing.
+- So the theoretical question of how to conceptualise a practice might be related to the social question of how to repair it.
+
+# More than 2 Players
+
+## Generalising
+
+- The world doesn't have many 2 player 2 option games.
+- If we're thinking of modelling real world situations, either as PD or Stag Hunt, we need something more general.
+
+## Generalised Prisoners' Dilemma
+
+- $n > 2$ players each choose a number $x$ in $[0, 1]$.
+- The mean of the choices is $m$.
+- Payoff to each player is $m - \frac{x}{r}$, for $r$ between $2$ and $n$.
+
+## General Pattern
+
+- If everyone picks the same number, better for everyone that that number is higher. \pause
+- Holding fixed other players moves, it is always better to pick a lower number.
+
+## Experiment
+
+Choose a number $x$ in [0,1].
+
+Your payoff will be $m$ - $\frac{x}{10}, where $m$ is the class average, and $x$ is what you said.
+
+## Experiment
+
+We'll use Google Sheets for this one.
+
+Go to the linked form, and just answer question 1.
+
+**NOTE TO SELF**: Build the slide here
+
+## Results
+
+Quick discussion - once we know the numbers.
+
+## Experiment
+
+Let's repeat that, knowing what $m$ was the first time.
+
+Go to the linked form, and answer question 2.
+
+**NOTE TO SELF**: Build the slide here
+
+## Experiment
+
+Let's repeat it again, knowing what $m$ was the first two times.
+
+Go to the linked form, and answer question 3.
+
+**NOTE TO SELF**: Build the slide here
+
+
+## Iteration
+
+- It's really hard to do Axelrod-type stuff in these kinds of games.
+- Just having the chance to interact again is not enough to push people to cooperate.
+- There isn't enough freedom of movement; do you defect if 1 player out of 100 defects?
+
+## Punishment
+
+- Changing the payouts is a more effective move.
+- So what we see in these kinds of situations is what is called 'altruistic punishment'.
+- One person makes themselves temporarily worse off, and the perpetrator much worse off, to send a signal that defection will not be tolerated.
+- Of course there is a free riding issue with who carries out the punishment, so ...
+
+## Generalised Stag Hunt
+
+- $n > 2$ players each choose a number $x$ in $[0, 1]$.
+- The mean of the choices is $m$. \pause
+- If a player chooses $x \leq m$, their payout is $x$. \pause
+- If they choosee $x > m$, they receive $m - r(x - m)$, where $r > 1$ is some measure of how much one is penalised for leaving the equilibrium.
+
+## General Pattern
+
+- For any $x$, everyone choosing $x$ is a (strict) equilibrium.
+- The higher $x$ is, the better this equilibrium is for everyone.
+- Choosing 0 minimises regret, and maximises expected return given some natural distributions of probability to the other player's moves.
+
+## Experiment
+
+Choose a number $x$ in [0,1].
+
+Your payoff will be:
+
+- $m$ if $x \leq m$.
+- $3m-2x$ if $x > m$.
+
+## Experiment
+
+We'll use Google Sheets again.
+
+Go to the linked form, and just answer question 4.
+
+**NOTE TO SELF**: Build the slide here
+
+## Results
+
+Quick discussion - once we know the numbers.
+
+## Experiment
+
+Let's repeat that, knowing what $m$ was the first time.
+
+Go to the linked form, and answer question 5.
+
+**NOTE TO SELF**: Build the slide here
+
+## Experiment
+
+Let's repeat it again, knowing what $m$ was the first two times.
+
+Go to the linked form, and answer question 6.
+
+**NOTE TO SELF**: Build the slide here
+
+
+## Real World
+
+- For something to be a real world stag hunt, these are the features you (approximately) need.
+- The best thing to do is to do what everyone else does.
+- If everyone does the same thing, better that everyone does the more cooperative thing.
+- Given radical uncertainty about what others will do, best to do the uncooperative thing.
+
+#  Real Life Stag Hunts
+
+## PD or Stag Hunt
+
+So here's a depressingly common kind of situation.
+
+- There is a social interaction where we'd all be better off if we all cooperated.
+- But for whatever reason, cooperation hasn't arisen.
+
+## PD or Stag Hunt
+
+So here's a depressingly common kind of situation.
+
+- One question to ask, assuming people are rational, well-informed, etc, is whether this is more like PD or Stag Hunt.
+- In particular, if people did cooperate in this kind of situation, would cooperation be naturally sustainable, or would it require constant effort to sustain the cooperative equilibrium?
+
+## Vague Question
+
+- There are, as always, borderline cases.
+- As Skyrms points out, there is a natural sense in which Iterated PD is, in the sense we're interested in, a Stag Hunt not a PD.
+- That's because mutual cooperation is, at least in the iterated game, an equilibrium.
+- But when there isn't a lot of iteration, and in particular when there isn't iteration between the same people over and over again, we're back in PD.
+
+## Why This Matters
+
+1. We're theorists here and we like getting this kind of thing right!
+2. The social reforms needed to develop, and sustain, a cooperative equilibrium in the two cases might be very different.
+
+## How Do We Tell
+
+- If we were in the cooperative state, would everyone have an incentive to stay in it, or would they still have a (small) incentive to defect.
+- In PD, everyone wants to defect even in the happy world where everyone else cooperates.
+- In Stag Hunt, once there is cooperation, cooperation is actually beneficial to the participants.
+
+## Example One - Walking
+
+- So think about what it's like to walk through a crowded shared space: the corridors of a university, the common spaces of a shopping mall, a crowded sidewalk in a busy city.
+- There are more or less cooperative ways to walk. Roughly speaking, the straighter the line you walk in, and the closer your speed is to the median speed, the more cooperative you are.
+
+## Example One - Walking
+
+- Some places are pretty cooperative. UM hallways are surprisingly so on the whole, and any major business city I've been in has been pretty cooperative during the morning and evening commute. 
+- But a lot of places are not - everyone is going in all directions, and it's a constant struggle to not get collided into many times. The touristy parts of big cities are like this all the time.
+
+## PD or Stag Hunt
+
+So question - if you're in one of the situations where things are going well, is there an incentive to defect and try to cut through the crowds even more quickly?
+
+## My (very anecdotal) View
+
+- This kind of feels like a Stag Hunt to me.
+- If you're somewhere where the pedestrian traffic is moving smoothly and quickly enough, there isn't much to gain by darting between people looking for a small edge. You just go with the traffic.
+
+## My (very anecdotal) View
+
+- But if everyone is going at all angles and all speeds, then trying to be as cooperative as possible, sticking to a steady speed and a straight line, will be a disaster.
+- The best way to get where you're going (in a reasonable time with minimal risk) is to do what everyone else does.
+
+## Example Two - Climate Change
+
+- Let's focus on climate change as an issue that affects the relationship between countries. (How individuals relate to each other vis a vis climate change is a trickier question.)
+- At this level it is often thought to be a PD (or what's sometimes called a free rider problem).
+- Everyone would prefer that everyone had lower emissions.
+- But everyone would prefer to not lower their own emissions.
+
+## Is This Right?
+
+Three reasons for scepticism.
+
+1. Synergies
+2. Health
+3. Altruistic Sentiment
+
+## Synergy
+
+- There is an incredible amount of learning by doing in clean energy.
+- As more people install it, the prices just keep falling. 
+- So possibly if everyone cuts emissions, it is in everyone's interests to be part of the cheap energy revolution that is unleashed.
+
+## Health
+
+Carbon based forms of energy have two downsides.
+
+1. They affect the climate, with negative consequences for the planet.
+2. They are polluting, with negative health consequences for the people living near where the energy is generated.
+
+The second puts some independent pressure on countries to get cleaner. You saw this in the US in the late 20th century (especially in Los Angeles), and in big cities in China and India now.
+
+## Altruism
+
+![A recent paper arguing against the PD model](images/PD_article.png){height=70%}
+
+## Altruism
+
+- The voting public, at least in rich industrial countries, does not favor unilateral defection from climate agreements.
+- This could be because of the first two factors I mentioned.
+- But I suspect a non-trivial factor is that people are altruistic - they care about others.
+- That is, at least given the subjectivist approach to utility we're using, enough to make the game not a PD.
+
+## The Big Distinction
+
+Is the situation you're looking at one where rational agents:
+
+1. Will not cooperate without some added incentive, or
+2. Will not be the first to cooperate without some added incentive?
+
+## The Big Distinction
+
+- If it's the first, you're in a PD; if it's the second, you may be in a Stag Hunt. 
+- And then you might be better off doing some 'one-time' interventions to get people to a new sustainable equilibrium.
+
+## Next Time
+
+We'll go back to thinking about Traveller's Dilemma.
