@@ -1,0 +1,385 @@
+---
+subtitle: "444 Lecture 18"
+title: "Risk and Reward"
+author: "Brian Weatherson"
+date: "March 21 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+# More than 2 Players
+
+## Stag Hunt and PD
+
+::: {.columns}
+
+::: {.column width="50%"}
+|      |     Co-op    |    Defect    |
+|:----:|:------------:|:------------:|
+| Co-op |   3,3   |   0,5 |
+| Defect |  5,0   |   1,1  |
+
+: PD
+::::
+
+:::: {.column width="50%"}
+|      |     Co-op    |    Defect    |
+|:----:|:------------:|:------------:|
+| Co-op |   5,5   |   0,4 |
+| Defect |  4,0   |   2,2  |
+
+: Stag Hunt
+::::
+
+:::
+
+## Generalising
+
+- The world doesn't have many 2 player 2 option games.
+- If we're thinking of modelling real world situations, either as PD or Stag Hunt, we need something more general.
+
+## Generalised Prisoners' Dilemma
+
+- $n > 2$ players each choose a number $x$ in $[0, 1]$.
+- The mean of the choices is $m$.
+- Payoff to each player is $m - \frac{x}{r}$, for $r$ between $2$ and $n$.
+
+## General Pattern
+
+- If everyone picks the same number, better for everyone that that number is higher. \pause
+- Holding fixed other players moves, it is always better to pick a lower number.
+
+## Experiment
+
+Choose a number $x$ in [0,1].
+
+Your payoff will be $m$ - $\frac{x}{10}$, where $m$ is the class average, and $x$ is what you said.
+
+## Experiment
+
+::: {.columns}
+
+::: {.column width="50%"}
+We'll use Google Sheets for this one.
+
+Go to the linked form, and just answer question 1.
+::::
+
+:::: {.column width="50%"}
+![QR code for https://myumi.ch/4j81q](March_19_qr.png)
+::::
+
+:::
+
+## Results
+
+Quick discussion - once we know the numbers.
+
+## Experiment
+
+::: {.columns}
+
+::: {.column width="50%"}
+Let's repeat that, knowing what $m$ was the first time.
+
+Go to the linked form, and just answer question 2.
+::::
+
+:::: {.column width="50%"}
+![QR code for https://myumi.ch/4j81q](March_19_qr.png)
+::::
+
+:::
+
+## Experiment
+
+::: {.columns}
+
+::: {.column width="50%"}
+Let's repeat it again, knowing what $m$ was the first two times.
+
+Go to the linked form, and answer question 3.
+::::
+
+:::: {.column width="50%"}
+![QR code for https://myumi.ch/4j81q](March_19_qr.png)
+::::
+
+:::
+
+## Iteration
+
+- It's really hard to do Axelrod-type stuff in these kinds of games.
+- Just having the chance to interact again is not enough to push people to cooperate.
+- There isn't enough freedom of movement; do you defect if 1 player out of 100 defects?
+
+## Punishment
+
+- Changing the payouts is a more effective move.
+- So what we see in these kinds of situations is what is called 'altruistic punishment'.
+- One person makes themselves temporarily worse off, and the perpetrator much worse off, to send a signal that defection will not be tolerated.
+- Of course there is a free riding issue with who carries out the punishment, so ...
+
+## Generalised Stag Hunt
+
+- $n > 2$ players each choose a number $x$ in $[0, 1]$.
+- The mean of the choices is $m$. \pause
+- If a player chooses $x \leq m$, their payout is $x$. \pause
+- If they choosee $x > m$, they receive $m - r(x - m)$, where $r > 1$ is some measure of how much one is penalised for leaving the equilibrium.
+
+## General Pattern
+
+- For any $x$, everyone choosing $x$ is a (strict) equilibrium.
+- The higher $x$ is, the better this equilibrium is for everyone.
+- Choosing 0 minimises regret, and maximises expected return given some natural distributions of probability to the other player's moves.
+
+## Experiment
+
+Choose a number $x$ in [0,1].
+
+Your payoff will be:
+
+- $m$ if $x \leq m$.
+- $3m-2x$ if $x > m$.
+
+## Experiment
+
+::: {.columns}
+
+::: {.column width="50%"}
+We'll use Google Sheets again.
+
+Go to the linked form, and just answer question 4.
+::::
+
+:::: {.column width="50%"}
+![QR code for https://myumi.ch/4j81q](March_19_qr.png)
+::::
+
+:::
+
+## Results
+
+Quick discussion - once we know the numbers.
+
+## Experiment
+
+::: {.columns}
+
+::: {.column width="50%"}
+Let's repeat that, knowing what $m$ was the first time.
+
+Go to the linked form, and answer question 5.
+::::
+
+:::: {.column width="50%"}
+![QR code for https://myumi.ch/4j81q](March_19_qr.png)
+::::
+
+:::
+
+## Experiment
+
+::: {.columns}
+
+::: {.column width="50%"}
+Let's repeat it again, knowing what $m$ was the first two times.
+
+Go to the linked form, and answer question 6.
+::::
+
+:::: {.column width="50%"}
+![QR code for https://myumi.ch/4j81q](March_19_qr.png)
+::::
+
+:::
+
+
+## Real World
+
+- For something to be a real world stag hunt, these are the features you (approximately) need.
+- The best thing to do is to do what everyone else does.
+- If everyone does the same thing, better that everyone does the more cooperative thing.
+- Given radical uncertainty about what others will do, best to do the uncooperative thing.
+
+#  Real Life Stag Hunts
+
+## PD or Stag Hunt
+
+So here's a depressingly common kind of situation.
+
+- There is a social interaction where we'd all be better off if we all cooperated.
+- But for whatever reason, cooperation hasn't arisen.
+
+## PD or Stag Hunt
+
+So here's a depressingly common kind of situation.
+
+- One question to ask, assuming people are rational, well-informed, etc, is whether this is more like PD or Stag Hunt.
+- In particular, if people did cooperate in this kind of situation, would cooperation be naturally sustainable, or would it require constant effort to sustain the cooperative equilibrium?
+
+## Vague Question
+
+- There are, as always, borderline cases.
+- As Skyrms points out, there is a natural sense in which Iterated PD is, in the sense we're interested in, a Stag Hunt not a PD.
+- That's because mutual cooperation is, at least in the iterated game, an equilibrium.
+- But when there isn't a lot of iteration, and in particular when there isn't iteration between the same people over and over again, we're back in PD.
+
+## Why This Matters
+
+1. We're theorists here and we like getting this kind of thing right!
+2. The social reforms needed to develop, and sustain, a cooperative equilibrium in the two cases might be very different.
+
+## How Do We Tell
+
+- If we were in the cooperative state, would everyone have an incentive to stay in it, or would they still have a (small) incentive to defect.
+- In PD, everyone wants to defect even in the happy world where everyone else cooperates.
+- In Stag Hunt, once there is cooperation, cooperation is actually beneficial to the participants.
+
+## Ex. 1 - Walking
+
+- So think about what it's like to walk through a crowded shared space: the corridors of a university, the common spaces of a shopping mall, a crowded sidewalk in a busy city.
+- There are more or less cooperative ways to walk. Roughly speaking, the straighter the line you walk in, and the closer your speed is to the median speed, the more cooperative you are.
+
+## Ex. 1 - Walking
+
+- Some places are pretty cooperative. UM hallways are surprisingly so on the whole, and any major business city I've been in has been pretty cooperative during the morning and evening commute. 
+- But a lot of places are not - everyone is going in all directions, and it's a constant struggle to not get collided into many times. The touristy parts of big cities are like this all the time.
+
+## PD or Stag Hunt
+
+So question - if you're in one of the situations where things are going well, is there an incentive to defect and try to cut through the crowds even more quickly?
+
+## My (very anecdotal) View
+
+- This kind of feels like a Stag Hunt to me.
+- If you're somewhere where the pedestrian traffic is moving smoothly and quickly enough, there isn't much to gain by darting between people looking for a small edge. You just go with the traffic.
+
+## My (very anecdotal) View
+
+- But if everyone is going at all angles and all speeds, then trying to be as cooperative as possible, sticking to a steady speed and a straight line, will be a disaster.
+- The best way to get where you're going (in a reasonable time with minimal risk) is to do what everyone else does.
+
+## Ex. 2 - Climate Change
+
+- Let's focus on climate change as an issue that affects the relationship between countries. (How individuals relate to each other vis a vis climate change is a trickier question.)
+- At this level it is often thought to be a PD (or what's sometimes called a free rider problem).
+- Everyone would prefer that everyone had lower emissions.
+- But everyone would prefer to not lower their own emissions.
+
+## Is This Right?
+
+Three reasons for scepticism.
+
+1. Synergies
+2. Health
+3. Altruistic Sentiment
+
+## Synergy
+
+- There is an incredible amount of learning by doing in clean energy.
+- As more people install it, the prices just keep falling. 
+- So possibly if everyone cuts emissions, it is in everyone's interests to be part of the cheap energy revolution that is unleashed.
+
+## Health
+
+Carbon based forms of energy have two downsides.
+
+1. They affect the climate, with negative consequences for the planet.
+2. They are polluting, with negative health consequences for the people living near where the energy is generated.
+
+The second puts some independent pressure on countries to get cleaner. You saw this in the US in the late 20th century (especially in Los Angeles), and in big cities in China and India now.
+
+## Altruism
+
+![A recent paper arguing against the PD model](PD_article.png){height=70%}
+
+## Altruism
+
+- The voting public, at least in rich industrial countries, does not favor unilateral defection from climate agreements.
+- This could be because of the first two factors I mentioned.
+- But I suspect a non-trivial factor is that people are altruistic - they care about others.
+- That is, at least given the subjectivist approach to utility we're using, enough to make the game not a PD.
+
+## The Big Distinction
+
+Is the situation you're looking at one where rational agents:
+
+1. Will not cooperate without some added incentive, or
+2. Will not be the first to cooperate without some added incentive?
+
+## The Big Distinction
+
+- If it's the first, you're in a PD; if it's the second, you may be in a Stag Hunt. 
+- And then you might be better off doing some 'one-time' interventions to get people to a new sustainable equilibrium.
+
+# Choices
+
+## What are the Options?
+
+Here are two facts that might seem to be in some tension.
+
+1. In the strategic version of chess (the chess computer version), the options are all the possible strategies for playing chess.
+2. There are well over $10^{100}$ strategies for playing chess.
+3. There are, ballpark, $10^{80}$ atoms in the universe.
+
+## Tension
+
+Given the rather weak constraint that a machine cannot process more options than it has atoms in it, no machine (carbon-based, silicon-based or otherwise) can process all the strategies for chess.
+
+What does that tell us about how we should think of the rational options in chess?
+
+## Proposal
+
+When there are too many options to think about, a rational enough thing to do is to group the options together, and treat the choice as being between groups.
+
+That's kind of what chess computers do. They don't pick full strategies, they pick strategies for the next few moves, with a complicated value function for the 'end state' of those next few moves.
+
+## Proposal
+
+What if we think of ordinary humans doing that?
+
+It turns out that we get different results in various games.
+
+## Travellers Dilemma
+
+Think about a two player Travellers Dilemma.
+
+- Each player says a multiple of 0.001 in [0, 1]
+- If they say the same, that's what they get.
+- If one says lower, they get what they said plus 0.05.
+- And in that case the other gets what the lower said minus 0.05.
+- Only equilibrium is both say 0.
+
+## Travellers Dilemma
+
+What the reading suggests is we think about the game the following way.
+
+- No one really thinks through all 1001 options.
+- Maybe they just choose Low, Medium, or High.
+- Then the pick a number by randomly choosing a low number, a medium number, or a high number, depending on what they chose.
+
+## Travellers Dilemma
+
+If that's the rule they both use, then High-High is actually an equilibrium.
+
+Could that be why people cooperate in the game?
+
+Maybe - hard to disentangle from, e.g., instincts learned from playing repeated games. But it seems like it could be part of the story.
+
+## For Next Week
+
+Next week we are moving away fully from rational choice analysis of games, and looking at some important ideas about how people actually behave in some game-like cases.
+
+Our first stop will be looking at coordination games - games where everyone's first priority is to end up with the same move as everyone else.
