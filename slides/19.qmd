@@ -1,0 +1,387 @@
+---
+subtitle: "444 Lecture 19"
+title: "Focal Points"
+author: "Brian Weatherson"
+date: "March 26 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+## Theme for Week
+
+Some ways in which theory and practice don't line up because theory requires too many iterations of thinking about thinking about thinking about ...
+
+## Positive and Negative
+
+We've looked a lot at games where people don't get to what theory says is the right solution.
+
+What we'll (eventually) get to today are games where people do often settle on a solution, in a way that goes beyond what pure theory would predict.
+
+# Iterated Belief
+
+## Keynesian Beauty Contest
+
+An early discussion of the importance of thinking about what other people are thinking about, even when those other people are thinking about what you are thinking about, comes from John Maynard Keynes's 1936 book _The General Theory of Employment, Interest, and Money_.
+
+One of the aims of that book is to explain the instability in capitalist economies; remember that 1936 is well into the Great Depression.
+
+---
+
+> [P]rofessional investment may be likened to those newspaper competitions in which the competitors have to pick out the six prettiest faces from a hundred photographs, the prize being awarded to the competitor whose choice most nearly corresponds to the average preferences of the competitors as a whole; so that each competitor has to pick, not those faces which he himself finds prettiest, but those which he thinks likeliest to catch the fancy of the other competitors, all of whom are looking at the problem from the same point of view. 
+
+---
+
+> It is not a case of choosing those which, to the best of one’s judgment, are really the prettiest, nor even those which average opinion genuinely thinks the prettiest. We have reached the third degree where we devote our intelligences to anticipating what average opinion expects the average opinion to be. And there are some, I believe, who practise the fourth, fifth and higher degrees.
+
+## How Many Degrees
+
+- Each iteration of iterated deletion is a further 'degree' in Keynes's sense.
+- In 1936, he thinks it is stunning that people are even thinking about fourth of fifth degrees.
+- Once we introduce iterated deletion, it becomes mechanical to have as many degrees as you like.
+- One aim of this week is to recover a bit that naive view; what happens in a world where people can only do at most two or three rounds of this.
+
+# Focal Points
+
+## Thomas Schelling
+
+![Thomas Schelling (1921-2016)](schelling.jpg){width=70%}
+
+## Thomas Schelling
+
+- Won 2005 Nobel Prize, shared with the Israeli game theorist Robert Aumann.
+- Aumann's work is very theoretical and mathematical.
+- Schelling was interested in games that were mathematically very simple, but was interested in their practical application.
+
+## Thomas Schelling
+
+I think if you come across Schelling in a philosophy course these days, it's likely for one of two reasons.
+
+1. Focal points (that's what we're doing today)
+2. Models of segregation
+
+## Segregation Model
+
+Imagine you've got a chess board (or some similar board), and on it you place some coins, some of them Heads up, some of them Tails up.
+
+At each stage in the game, a coin looks to its neighbors (up to 8), and if the majority are the opposite kind to it (e.g., it's Heads and it has 3 Tails neighbours and 1 Heads neighbour), it moves to a random new spot on the board.
+
+What happens?
+
+## Segregation Model
+
+For many starting positions, the final result is full segregation - Heads on one part of the board, Tails on the other.
+
+This wasn't because each individual had a strong preference for being in homogeneous groups, but just because they had a preference for not being outnumbered.
+
+Is this a useful model of real-world segregation? **Good question**
+
+## Focal Points
+
+Let's stick with the coin model. Imagine Row and Column are told the following things.
+
+- Each of you will place a coin down in front of you, either Heads up or Tails up.
+- The other person won't be able to see it when you place it down.
+- We'll reveal the coins simultaneously.
+- If they are both facing the same way, you both win a prize.
+
+## Focal Points
+
+Here is the payoff table for the game.
+
+|    |   Heads  |   Tails  |
+|:--:|:--------:|:--------:|
+| **Heads** | 1,1 | 0,0 |
+| **Tails** | 0,0 | 1,1 |
+
+Let's see how it works in practice.
+
+## Form - https://myumi.ch/N6k9R
+
+:::{.columns}
+::::{.column-width="50%"}
+Google forms seem to be working better than vecon for now, so I'll use them where possible.
+
+**<https://myumi.ch/N6k9R>**
+
+Fill in your name, and do the Heads or Tails question.
+::::
+
+::::{.column-width="50%"}
+![Link to https://myumi.ch/N6k9R](qr_march_26.png)
+::::
+:::
+
+## Analysis
+
+We'll see if we're different, but when this has been run in the past, the usual outcome is a solid majority for Heads.
+
+The pure game theory doesn't say this, it's just a symmetric game.
+
+For anyone who chose Heads, why did you choose it?
+
+## Ordering
+
+Go back to the Google form (which hopefully you've still got open, and answer the questions about letter ordering.
+
+We'll come back to these a bit at the end of the discussion, so I want to have them on the table.
+
+## Ordering
+
+Discussion of what the results are, and perhaps how they relate to the location of the lectures.
+
+## Cities
+
+The most common example that's used to explan Schelling's idea of focal points is an old tale about meeting up in cities.
+
+Remember it's 1960, so decades before cell phones come in.
+
+A and B are in a particular city, and want to meet up, but have no way of getting in touch. They do know that it's common knowledge they want to meet up (this is important).
+
+What do they do?
+
+## Cities
+
+In Schelling's original version of the question, he asked both _when_ A and B would aim to meet, and _where_.
+
+The _when_ question landed on midday almost all the time, and I'm mostly going to skip it.
+
+I am interested in there _where_.
+
+## Cities
+
+Note that unlike the earlier versions, this isn't a game where any equilibrium is as good as any other. It's a bit more like the following game.
+
+|  |  O1  |  O2  |  O3  | O4  |  O5 |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| **O1** | 5,5 | 0,0 | 0,0 | 0,0 | 0,0 |
+| **O2** | 0,0 | 6,6 | 0,0 | 0,0 | 0,0 |
+| **O3** | 0,0 | 0,0 | 4,4 | 0,0 | 0,0 |
+| **O4** | 0,0 | 0,0 | 0,0 | 2,2 | 0,0 |
+| **O5** | 0,0 | 0,0 | 0,0 | 0,0 | 5,5 |
+
+Actually even that might be too simple - maybe if O4 is bad it should have negative scores for the person going there.
+
+## Foreign Cities
+
+Go to the Google form and answer the questions about foreign cities.
+
+If you don't know the foreign city at all, just guess something.
+
+## Discussion
+
+- Which cities did best for coordination?
+- We'll get back to what criteria you used for choosing in a bit.
+
+## US Cities
+
+Go to the Google form and answer the questions about US cities.
+
+Again, if you don't have an answer, just guess.
+
+Be *reasonably* precise. On the UM campus isn't really an answer for the Ann Arbor question - it should be somewhere precise enough that you'd be able to see the other person if they chose the same thing.
+
+## Discussion
+
+- Do we do better with more knowledge?
+- My guess is that we don't; ideally you have some knowledge but not a lot.
+
+Note how culturally specific this is. When Schelling asked the one about NYC, the most common answer was the information desk at Grand Central. I *think* that was because he was asking students at Harvard, and trains to New England leave from Grand Central.
+
+## Criteria
+
+First-Personal
+
+- Ease of access; pleasantness of being there if waiting around.
+
+Second-Personal
+
+- How likely you think the other person is to like the location.
+
+Third-Personal
+
+- How culturally significant the place is.
+
+## Discussion
+
+How did you choose the options that you picked?
+
+- Hopefully we'll go over a few of the cities here.
+
+# Choosing a Focal Point
+
+## Two Approaches
+
+We'll go over two approaches for choosing a focal point.
+
+One of them I'll call the **levels** approach.
+
+The other I'll call the **convention** approach.
+
+As I understand him, Schelling himself favored the convention approach, and intuitively I find it more appealing. But the experimental evidence does give some support to the levels approach.
+
+## Levels
+
+Level 0
+:    Which option do I like the best? Would I rather be in Times Square, or the Museum of Modern Art, or by one of the lakes in Central Park?
+
+Level 1
+:    What's my best guess as to everyone else's answer to the Level 0 question?
+
+Level 2
+:    What's my best guess as to everyone else's answer to the Level 1 question?
+
+## Levels
+
+The theory is that people keep asking and answering as many of these questions as they can, or as they feel like, and choose the location that's the answer to the last question they ask.
+
+Or, more realistically, they do something inchoate that is *as if* they are stepping through these levels questions.
+
+We'll see some evidence for this in some experimental evidence on Tuesday.
+
+## Keynesian Beauty Contest
+
+That's I think the way to read what Keynes was saying about the beauty contest.
+
+The contestant picks the prettiest face, then tries to adjust for what other people think, and maybe for what other people think other people think, and so on.
+
+## Levels
+
+We'll see some experimental evidence for this answer on Thursday (some of it I guess was in the reading for today).
+
+But there are some theoretical reasons for thinking it shouldn't be right.
+
+## Levels and Arbitrary Choices
+
+As stated, the levels view has a hard time with the Heads/Tails question, and the ABC question.
+
+After all, the answer to the Level 0 question, in either case, is that it literally doesn't matter; I do not care whether I write heads or tails, or ABC rather than CAB.
+
+And this is obvious, so "Don't care, they are all the same" is also the answer to the level 1, level 2, etc questions.
+
+## Levels and Sub-Optimal Choices
+
+Imagine A and B are playing the following game. Each of them has to pick a number between 1 and 1000. 
+
+If they pick the same number, they'll get $100 each.
+
+Exception: if they both pick 229, they'll get $99 each.
+
+Question: What to do?
+
+## Levels and Sub-Optimal Choices
+
+The levels approach I think says to do anything except 229; it's the worst option. But the other 999 options are equally good at every level.
+
+But doesn't it seem like 229 is actually the *right* option? It stands out, and it's a natural thing to pick.
+
+## Convention Approach
+
+Each player asks themselves the question
+
+- What is the answer that people like me give to questions like this? What is likely to pop out of all the options as the answer to give?
+
+## Convention Approach
+
+Some things that might help them answer that:
+
+- **History**: What have people coordinated on in the past?
+- **Prominence**: Which options are easy to think of first when thinking about questions like this?
+- **Simplicity**: Which options would be simple to implement? (The Statue of Liberty or Sacre Coeur aren't great answers for this reason.)
+- **Independently Best**: Perhaps being the clearly right answer to the level 0 question is one thing that might make something conventional, but this won't always be the case.
+
+## Convention Approach
+
+Of course we could try iterating this, and asking which answers other people think *that other people think* are the right answers to questions like this.
+
+But we probably don't need to - the first-order question will do pretty well.
+
+## Comparing the Two Approaches
+
+Ideally, we'd get to the infinite top of the hierarchy of levels questions. But we can't do that, not being infinite. So the two approaches differ in how they think people manage that.
+
+- Levels says get as high as you can.
+- Convention says guess what the end point will look like as well as you can.
+
+More to come on this question.
+
+# Modern Relevance
+
+## Focal Points
+
+Schelling came up with this notion in the context of working on strategy for the Cold War.
+
+And his main example has been rendered a bit moot by the existence of cell phones.
+
+So why are we still doing this?
+
+## Focal Points
+
+Schelling's original interest was partially in cases where neither party particularly trusts the other.
+
+It doesn't matter how good communication technology is, if you don't believe the person at the other end of the line.
+
+## Limited Warfare
+
+I think at some level that's what is going on with Russia/Ukraine/US right now.
+
+As you might have noticed, we've been supporting a country fighting for its life against Russia for two years.
+
+And we have nukes, and nobody thinks we'll offer *that* support. Russia has nukes too, and they aren't using them either.
+
+## Limited Warfare
+
+Somehow Russia and the US have formed an agreement that if neither escalates in a particular way, the other will also respect some limits.
+
+*Maybe* this has been done by direct communication.
+
+But probably there is also something like settling on a focal point. Even if there was an explicit agreement, agreeing to settle at a focal point might be more credible. (This might also be relevant to India/China hostilities.)
+
+## Unknown Counterparties
+
+The bigger reason we care about focal points is that sometimes you can't communicate with the person you're trying to coordinate with because you don't know who they are, or (relatedly) there are too many of them.
+
+Two examples.
+
+1. Public celebrations.
+2. Business locations.
+
+## Public Celebrations
+
+I don't know how many of you did this - I was stuck in transit hell at the time - but I suspect some people had the following thought after Michigan won the football championship.
+
+1. I want to go celebrate with other fans/students.
+2. So I want to go to where they are.
+3. And where they are will be, where enough of them think everyone else will be.
+
+## Business Locations
+
+As you may know, a new Dunkin Donuts opened up about 100 yards from where we are now.
+
+They had a lot of choices of location, and oddly after years of not opening in AA, they opened two stores.
+
+I don't know the inner workings of Dunkin Donuts, but I bet their main criteria for a location is foot traffic.
+
+## Business Locations
+
+Here's why this is related to focal points.
+
+1. How much foot traffic there is partially depends on how many other businesses are there. Not much foot traffic on Thompson St, despite a central location.
+2. Whether other businesses open there is in part a function of how much traffic they think the location will bring.
+3. And Dunkin itself opening is a reason to think there will be more traffic there.
+
+In short, Dunkin and the other, future, businesses are trying to solve a coordination problem. But Dunkin doesn't know who they are, so can't explicitly communicate with them. It can settle on a focal point solution.
+
+## For Next Time
+
+We'll talk over the experimental evidence (a bit old now, but I think still well regarded) about how people actually solve certain kinds of coordination games that can be run in labs.
