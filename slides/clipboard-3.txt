@@ -1,0 +1,19 @@
+---
+subtitle: "444 Lecture 18"
+title: "Risk and Reward"
+author: "Brian Weatherson"
+date: "March 21 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
