@@ -73,6 +73,8 @@ One easy way to get that coordination in the cities game is if lots of people on
 
 - Sydney Opera House, Eiffel Tower, Big Ben, are all helped on this line (especially I imagine the Opera House)
 
+## Focal Points in Cities
+
 But sometimes something stands out not as something with first-order value, but as a natural coordination point.
 
 - Heads in the heads/tails game, and I *think* the Bean in Chicago are like that.
@@ -165,19 +167,17 @@ The contestant picks the prettiest face, then tries to adjust for what other peo
 
 ## General Levels
 
-You could have different 
+You could have different ways of answering the Level 0 question.
 
-## Levels
+It could just be "How likely am I to give this answer rather than that answer?".
 
-We'll see some experimental evidence for this answer on Thursday (some of it I guess was in the reading for today).
+And that could be rational (because I like one or other better), arational (because one is salient), or even irrational (because that's the kind of stupid thing I do).
 
-But there are some theoretical reasons for thinking it shouldn't be right.
+## General Levels
 
-## Levels and Arbitrary Choices
+On the picture I think you get in Keynes, where the Level 0 question is "Which is best?", the levels view has a hard time with the Heads/Tails question, and the ABC question.
 
-As stated, the levels view has a hard time with the Heads/Tails question, and the ABC question.
-
-After all, the answer to the Level 0 question, in either case, is that it literally doesn't matter; I do not care whether I write heads or tails, or ABC rather than CAB.
+After all, the answer to **that** Level 0 question, in either case, is that it literally doesn't matter; I do not care whether I write heads or tails, or ABC rather than CAB.
 
 And this is obvious, so "Don't care, they are all the same" is also the answer to the level 1, level 2, etc questions.
 
@@ -193,38 +193,139 @@ Question: What to do?
 
 ## Levels and Sub-Optimal Choices
 
-The levels approach I think says to do anything except 229; it's the worst option. But the other 999 options are equally good at every level.
+If the Level 0 question is "Which is best?", it says to do anything except 229; it's the worst option. But the other 999 options are equally good at every level.
 
 But doesn't it seem like 229 is actually the *right* option? It stands out, and it's a natural thing to pick.
 
-## Convention Approach
+## Levels Approach
 
-Each player asks themselves the question
+Whatever the level 0 question is, the levels view relies on an **asymmetry** between the person giving the answer, and the people they are mentally modelling.
 
-- What is the answer that people like me give to questions like this? What is likely to pop out of all the options as the answer to give?
-
-## Convention Approach
-
-Some things that might help them answer that:
-
-- **History**: What have people coordinated on in the past?
-- **Prominence**: Which options are easy to think of first when thinking about questions like this?
-- **Simplicity**: Which options would be simple to implement? (The Statue of Liberty or Sacre Coeur aren't great answers for this reason.)
-- **Independently Best**: Perhaps being the clearly right answer to the level 0 question matters.
+They use level *n* reasoning, but they assume (perhaps implicitly) that everyone else is using level *n*-1 reasoning.
 
 ## Convention Approach
 
-Of course we could try iterating this, and asking which answers other people think *that other people think* are the right answers to questions like this.
+The essence of the convention approach (what Mehta et al call the *Schelling salience* approach) is that it removes this asymmetry.
 
-But we probably don't need to - the first-order question will do pretty well.
+Here's how I think of it; it's kind of a Kantian view.
 
-## Comparing the Two Approaches
+The player should ask themselves this question: What is a rule for answering this question that everyone could rationally apply, and what happens if I apply that rule?
 
-Ideally, we'd get to the infinite top of the hierarchy of levels questions. But we can't do that, not being infinite. So the two approaches differ in how they think people manage that.
+## Convention Approach
 
-- Levels says get as high as you can.
-- Convention says guess what the end point will look like as well as you can.
+There's no sense of levels here - everything is happening all at once.
 
-More to come on this question.
+And there is no asymmetry - each player asks whether it makes sense for everyone else to be just like them.
 
+# Evidence
 
+## Mehta et al on Luck
+
+The core of the Mehta et al paper is a clever experiment designed to tease apart the Luck answer from everything else.
+
+Strategy:
+
+1. Ask a control group to simply answer a question.
+2. Tell a treatment group that they are playing a coordination game involving that question.
+
+If the luck view is right, you should get the two groups saying the same thing.
+
+## Boy's Name
+
+![Control and treatment group for the boy's name experiment](images/mehta_boys.png){width=80%}
+
+## Conclusion
+
+Subjects in the coordination game are not just answering at random and happening to have the same dispositions.
+
+On it's own, this doesn't say much more than that.
+
+## Ordering
+
+![Control and treatment group for the color experiment](images/mehta_colors.png){width=80%}
+
+Should we worry that the order of the groups is different?
+
+## Hypothesis
+
+![Control and treatment group for the color experiment](images/mehta_numbers.png){width=80%}
+
+An even more dramatic case that they think is hard for the levels view to get right.
+
+## Nagel
+
+Ask people a version of the game we played on day one of the course:
+
+Guess 2/3 of the average of what everyone guesses.
+
+She also asks the guess 1/2 of the average, and guess 4/3 of the average.
+
+## Nagel
+
+By modern standards, this is a *terrible* experiment.
+
+The sample consists entirely of university students, though that's something we still do today.
+
+But it's just 18 people! And there doesn't seem to have been any attempt to check they were answering seriously; in one run someone started doing bizarre things in later rounds which was enough to mess up the means.
+
+## History
+
+Both these papers are from the mid-1990s, and they are both in one of the most prestigious economics journals.
+
+Neither is a fantastic experimental paper by contemporary standards, but by standards of the mid-1990s, they were good enough to be published in a top journal, and be very widely cited.
+
+(I mean really widely cited - over 2000 times, which is a phenomenal number.)
+
+## Nagel
+
+I'm going to skip the 4/3 example, because it raises distinctive complications and just focus on the 1/2 and 2/3 cases.
+
+The right answer, according to orthodox game theory, is 0 in each case.
+
+## Nagel
+
+One way to get that answer is by infinitely many rounds of iterated deletion.
+
+But there's another way to get to that answer.
+
+It's the only answer that you can give while thinking that everyone else gives it.
+
+## Convention
+
+Remember the rule for the convention approach:
+
+- What is a rule for answering this question that everyone could rationally apply, and what happens if I apply that rule?
+
+If you use that, you say 0. And it's not what people say.
+
+## Levels
+
+On the other hand, Nagel found a bit of evidence (among her 18 subjects!!!) for something like the levels approach. Here were the three things that most struck me.
+
+## Clustering
+
+At the first round, there was some clustering of answers at around 50*p* and 50*p*^2^.
+
+Those are the answers people who do one level, and who do two levels, would give.
+
+## Downward Steps
+
+Pretty systematically, after each round, people move towards the equilibrium.
+
+And it's not quite the Cournot, do whatever would have won on the last round approach.
+
+## Level Consistency
+
+OK, really grasping at straws here, but there was some weak signal that the median player was consistently doing two levels of reasoning here. They start with around 50*p*^2^, and they multiply by *p*^2^ each round.
+
+## Summary
+
+The luck theory doesn't seem consistent with the data at all.
+
+Some cases, like the colors and boy's names, are *somewhat* easier to make sense of on the levels view than on the convention view.
+
+The case that Nagel works through is *much* easier to make sense of on the convention view than on the levels view.
+
+## For Next Time
+
+We're going onto signalling, and how game theory is used to understand various phenomena about explicit and implicit communication.
