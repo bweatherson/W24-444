@@ -1,0 +1,230 @@
+---
+subtitle: "444 Lecture 20"
+title: "Coordinating"
+author: "Brian Weatherson"
+date: "March 28 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+## Theme for Day
+
+Models of coordination.
+
+Two big approaches
+
+1. Levels approach
+2. Convention approach
+
+We'll also mention briefly a *pure chance* approach.
+
+# Background
+
+1. Keynesian Beauty Contest (revision)
+2. Focal Points (revision)
+3. Picking and choosing
+4. Rational, irrational, and arational/non-rational
+
+---
+
+
+> [P]rofessional investment may be likened to those newspaper competitions in which the competitors have to pick out the six prettiest faces from a hundred photographs, the prize being awarded to the competitor whose choice most nearly corresponds to the average preferences of the competitors as a whole; so that each competitor has to pick, not those faces which he himself finds prettiest, but those which he thinks likeliest to catch the fancy of the other competitors, all of whom are looking at the problem from the same point of view. 
+
+---
+
+> It is not a case of choosing those which, to the best of one’s judgment, are really the prettiest, nor even those which average opinion genuinely thinks the prettiest. We have reached the third degree where we devote our intelligences to anticipating what average opinion expects the average opinion to be. And there are some, I believe, who practise the fourth, fifth and higher degrees.
+
+## Iterations
+
+This is an iterated model.
+
+At every stage, someone is thinking about the results of the previous stage.
+
+Keynes thinks it is remarkable that we might get to the fourth or fifth stage.
+
+## Questions about the Model
+
+1. What is the base level?
+2. How many steps of iteration do real people actually do?
+3. Is this even remotely the right model?
+
+## Focal Points
+
+Some people are playing a (more or less pure) coordination game.
+
+In practice we observe that coordination is achieved considerably more often than we'd expect from chance.
+
+Something about the coordinating option makes it more likely to be something we achieve coordination on.
+
+## Focal Points in Cities
+
+One easy way to get that coordination in the cities game is if lots of people only really know one landmark in the city.
+
+- Sydney Opera House, Eiffel Tower, Big Ben, are all helped on this line (especially I imagine the Opera House)
+
+But sometimes something stands out not as something with first-order value, but as a natural coordination point.
+
+- Heads in the heads/tails game, and I *think* the Bean in Chicago are like that.
+
+## Picking and Choosing
+
+Some helpful terminology. This is somewhat stipulative, though it's not completely made up.
+
+Say that someone **chooses** an option if they have (or at least take themselves to have) reason to prefer it to the other options.
+
+And they **pick** an option if they have to make an arbitrary selection.
+
+## Picking and Choosing
+
+There can be in between cases.
+
+Imagine I'm doing the groceries, and on my shopping list is *Can of diced tomatoes*.
+
+I get to the shelf and there are hundreds of them.
+
+I **choose** to take one from the front, not the back.
+
+I **pick** one particular can at the front, rather than one of the other ones just as easy to reach.
+
+## Rationality
+
+A rational selection is where one takes the option that has the most (expected) value.
+
+An irrational selection is where one passes up some value.
+
+But there is an important intermediate category, called *non-rational* or *arational* selections.
+
+## Rationality
+
+Taking a can from the back of the shelf is **irrational**.
+
+Taking the third can from the left rather than the fourth can from the left is **arational** or **non-rational**.
+
+When the authors describe a choice as non-rational, they aren't necessarilyt criticising it; they are saying it might just be arbitrary.
+
+# Two-and-a-Half Models
+
+## The Models
+
+Luck
+:    What Mehta et al call *primary salience*.
+
+Levels
+:    What Mehta et al sort of call *secondary salience* (though it also includes what they call tertiary etc salience).
+
+Convention
+:    What Mehta et al call *Schelling salience*.
+
+## Luck
+
+Here is one simple way that people could do better than chance in a coordination game.
+
+They all have enough of the same pre-existing dispositions in favor of one of the options, and when faced with an arbitrary choice, they act on those biases.
+
+## Sydney Again
+
+One way to have a pre-existing disposition like this is to only have one answer that you know - maybe that was going on with Sydney.
+
+Another is to have the rule *say first thing that pops into my head*, and have enough overlap with what these are.
+
+## Levels Example
+
+Level 0
+:    Which option do I like the best? Would I rather be in Times Square, or the Museum of Modern Art, or by one of the lakes in Central Park?
+
+Level 1
+:    What's my best guess as to everyone else's answer to the Level 0 question?
+
+Level 2
+:    What's my best guess as to everyone else's answer to the Level 1 question?
+
+## Levels
+
+The theory is that people keep asking and answering as many of these questions as they can, or as they feel like, and choose the location that's the answer to the last question they ask.
+
+Or, more realistically, they do something inchoate that is *as if* they are stepping through these levels questions.
+
+We'll see some evidence for this in some experimental evidence on Tuesday.
+
+## Keynesian Beauty Contest
+
+That's I think the way to read what Keynes was saying about the beauty contest.
+
+The contestant picks the prettiest face, then tries to adjust for what other people think, and maybe for what other people think other people think, and so on.
+
+## General Levels
+
+You could have different 
+
+## Levels
+
+We'll see some experimental evidence for this answer on Thursday (some of it I guess was in the reading for today).
+
+But there are some theoretical reasons for thinking it shouldn't be right.
+
+## Levels and Arbitrary Choices
+
+As stated, the levels view has a hard time with the Heads/Tails question, and the ABC question.
+
+After all, the answer to the Level 0 question, in either case, is that it literally doesn't matter; I do not care whether I write heads or tails, or ABC rather than CAB.
+
+And this is obvious, so "Don't care, they are all the same" is also the answer to the level 1, level 2, etc questions.
+
+## Levels and Sub-Optimal Choices
+
+Imagine A and B are playing the following game. Each of them has to pick a number between 1 and 1000. 
+
+If they pick the same number, they'll get $100 each.
+
+Exception: if they both pick 229, they'll get $99 each.
+
+Question: What to do?
+
+## Levels and Sub-Optimal Choices
+
+The levels approach I think says to do anything except 229; it's the worst option. But the other 999 options are equally good at every level.
+
+But doesn't it seem like 229 is actually the *right* option? It stands out, and it's a natural thing to pick.
+
+## Convention Approach
+
+Each player asks themselves the question
+
+- What is the answer that people like me give to questions like this? What is likely to pop out of all the options as the answer to give?
+
+## Convention Approach
+
+Some things that might help them answer that:
+
+- **History**: What have people coordinated on in the past?
+- **Prominence**: Which options are easy to think of first when thinking about questions like this?
+- **Simplicity**: Which options would be simple to implement? (The Statue of Liberty or Sacre Coeur aren't great answers for this reason.)
+- **Independently Best**: Perhaps being the clearly right answer to the level 0 question matters.
+
+## Convention Approach
+
+Of course we could try iterating this, and asking which answers other people think *that other people think* are the right answers to questions like this.
+
+But we probably don't need to - the first-order question will do pretty well.
+
+## Comparing the Two Approaches
+
+Ideally, we'd get to the infinite top of the hierarchy of levels questions. But we can't do that, not being infinite. So the two approaches differ in how they think people manage that.
+
+- Levels says get as high as you can.
+- Convention says guess what the end point will look like as well as you can.
+
+More to come on this question.
+
+
