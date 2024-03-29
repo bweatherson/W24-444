@@ -1,0 +1,142 @@
+
+
+```markdown
+% Signaling Games
+% University of Michigan
+% Date of Presentation
+
+# Introduction to Signaling Games
+
+- Signaling games model **communication** between **senders** and **receivers** with potentially misaligned interests.
+- These games are fundamental in **economics**, **biology**, and **political science**.
+- They illustrate how signals can convey **information** and influence **decisions**.
+
+# The Structure of a Signaling Game
+
+- A Sender with private information chooses a **signal** to send.
+- A Receiver observes the signal and takes an **action**.
+- **Payoffs** depend on the action, signal, and the **true state of the world**.
+
+# Applications of Signaling Games
+
+- **Economics**: job-market signaling, product quality.
+- **Biology**: warning colors in animals, mating signals.
+- **Political Science**: crisis signaling, legislative signaling.
+
+# Key Concepts in Signaling Games
+
+- **Types**: Variations of the sender's private information.
+- **Signals**: Observable actions or messages sent by the sender.
+- **Actions**: Moves by the receiver in response to the signal.
+- **Payoffs**: The outcome determining the utility for both parties.
+
+# Examples of Signaling Games
+
+- A job candidate signals competence through **educational qualifications**.
+- A car seller uses a **warranty** to signal car quality to potential buyers.
+
+# Equilibrium Concepts
+
+- **Separating Equilibrium**: Different types send distinct signals.
+- **Pooling Equilibrium**: All types send the same signal.
+- **Semi-Separating Equilibrium**: Some but not all types send different signals.
+
+# A Basic Signaling Game Diagram
+
+\begin{tikzpicture}[grow=right, sloped]
+\node{Nature}
+    child {
+        node{Sender (Type A)}
+            child {
+                node{Receiver}
+                    child {
+                        node{Outcome A1}
+                        edge from parent
+                        node[above] {Action X}
+                    }
+                    child {
+                        node{Outcome A2}
+                        edge from parent
+                        node[below] {Action Y}
+                    }
+                edge from parent
+                node[above] {Signal 1}
+            }
+            child {
+                node{Receiver}
+                    child {
+                        node{Outcome A3}
+                        edge from parent
+                        node[above] {Action X}
+                    }
+                    child {
+                        node{Outcome A4}
+                        edge from parent
+                        node[below] {Action Y}
+                    }
+                edge from parent
+                node[below] {Signal 2}
+            }
+        edge from parent 
+        node[above] {Probability p}
+    }
+    child {
+        node{Sender (Type B)}
+            child {
+                node{Receiver}
+                    child {
+                        node{Outcome B1}
+                        edge from parent
+                        node[above] {Action X}
+                    }
+                    child {
+                        node{Outcome B2}
+                        edge from parent
+                        node[below] {Action Y}
+                    }
+                edge from parent
+                node[above] {Signal 1}
+            }
+            child {
+                node{Receiver}
+                    child {
+                        node{Outcome B3}
+                        edge from parent
+                        node[above] {Action X}
+                    }
+                    child {
+                        node{Outcome B4}
+                        edge from parent
+                        node[below] {Action Y}
+                    }
+                edge from parent
+                node[below] {Signal 2}
+            }
+        edge from parent
+        node[below] {Probability 1-p}
+    };
+\end{tikzpicture}
+
+
+# Challenges in Signaling Games
+
+- Distinguishing between **honest** and **deceptive** signals.
+- The existence and stability of **equilibria** in different games.
+- Designing mechanisms or institutions to facilitate **efficient** signaling.
+
+# Expanding the Model
+
+- Introduction of **noise** in the signaling process.
+- **Dynamic** signaling games, where signaling takes place over several periods.
+- **Multi-sender** and/or **multi-receiver** signaling games.
+
+# Conclusion
+
+- Signaling games provide a rich theoretical framework to understand **strategic communication**.
+- The evolution of **signaling strategies** depends on the structure of the game and **incentives** of the players.
+- They remain an area of active research with vast applications.
+
+# Questions
+
+- Are there any questions or topics related to signaling games you would like to discuss further?
+```
