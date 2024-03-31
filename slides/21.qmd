@@ -1,0 +1,311 @@
+---
+subtitle: "444 Lecture 21"
+title: "Signals"
+author: "Brian Weatherson"
+date: "April 2 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+## Basic Idea
+
+- Signaling games model **communication** between **senders** and **receivers** with potentially misaligned interests.
+
+So we have three attributes:
+
+1. A **state** provided by nature.
+2. A **sender** who sees the state and sends a signal.
+3. A **receiver** who sees the signal, but not the state, and acts.
+
+## Basic Structure
+
+- A Sender with private information chooses a **signal** to send.
+- A Receiver observes the signal and takes an **action**.
+- **Payoffs** depend on the action, signal, and the **true state of the world**.
+
+## Simple Model
+
+The English are advancing on the American positions around Boston (in 1775).
+
+The priest at the Old North Church has the **information** about what the English are doing. (We will model the English not as actors, but as random.) The options are advance by Land or Sea.
+
+He puts a **signal** in the church window, either one or two lanterns.
+
+The **receiver**, Paul Revere, sees the lanterns, and rides tells the Americans to prepare for a land or sea assault.
+
+---
+
+```{r engine='tikz'}
+#| label: fig-second-anti-war
+#| fig.cap: "Basic Signal Game"
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=12mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=13mm,sibling distance=11mm]
+
+% The Tree
+\node(0)[hollow node,label=above:{Nature}]{}
+child[grow=left]{node[solid node,label=left:{
+$Chooser$
+}] {}
+child[grow=up]{node(1)[solid node]{}
+child{node[square node,label=above:{$400,0$}]{} edge from parent node [right]{$T$}}
+child{node[square node,label=above:{$40,1$}]{} edge from parent node [left]{$H$}}
+edge from parent node [left, yshift = -5]{$Up$}
+}
+child[grow=down]{node(3)[solid node]{}
+child{node[square node,label=below:{$0,1$}]{} edge from parent node [left]{$H$}}
+child{node[square node,label=below:{$0,0$}]{} edge from parent node [right]{$T$}}
+edge from parent node [left, yshift = 5]{$Down$}
+}
+edge from parent node [below, align=center]{$H$ \\ $0.5$}
+}
+child[grow=right]{node[solid node,label=right:{
+$Chooser$
+}] {}
+child[grow=up]{node(2)[solid node]{}
+child{node[square node,label=above:{$28,1$}]{} edge from parent node [right]{$T$}}
+child{node[square node,label=above:{$40,0$}]{} edge from parent node [left]{$H$}}
+edge from parent node [right, yshift = -5]{$Up$}
+}
+child[grow=down]{node(4)[solid node]{}
+child{node[square node,label=below:{$0,0$}]{} edge from parent node [left]{$H$}}
+child{node[square node,label=below:{$44,1$}]{} edge from parent node [right]{$T$}}
+edge from parent node [right, yshift = 5]{$Down$}
+}
+edge from parent node [below,align=center]{$T$ \\ $0.5$}
+};
+
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.45,.45)$)rectangle($(2) +(.45,-.45)$);
+\draw[dashed,rounded corners=10]($(3) + (-.45,.45)$)rectangle($(4) +(.45,-.45)$);
+% specify mover at 2nd information set
+\node at ($(1)!.5!(2)$) {$Demon$};
+\node at ($(3)!.5!(4)$) {$Demon$};
+\end{tikzpicture}
+```
+
+## About This Diagram
+
+We start at the center, at the open node.
+
+The first thing that happens is Nature chooses one or other event to happen.
+
+In this model there are only two possibilities: Land or Sea.
+
+We'll occasionally generalise that, to Nature choosing a real-value (e.g., how many troops).
+
+We'll assume both parties know the probability of each choice.
+
+## Nature
+
+Often we'll talk about Nature assigning a **type** to Sender.
+
+This is a weird way to talk about the priest at the Old North Church.
+
+But often the information we're interested in is some property of the sender.
+
+## Sender
+
+The next thing that happens is that Sender issues a signal.
+
+In this game, Sender only has two options, though again we're going to want to generalise that in the future.
+
+Note that Sender knows the information
+
+## Receiver
+
+Finally, receiver performs an action.
+
+On the tree I've put a dashed circle around the nodes where receiver acts.
+
+That means those nodes are part of the same **information set**.
+
+An information set is a set of points which the person who is acting can't tell apart.
+
+## Information Set
+
+If you go back to the tree, there are two nodes in each of these sets.
+
+What those nodes have in common is that the same signal is sent.
+
+But the underlying state is different.
+
+That means that receiver does know the signal, but doesn't know the state.
+
+Paul Revere can see the church, but he can't see the British.
+
+## Payouts
+
+Finally, there are payouts for sender and receiver.
+
+In this case, I've set the game up to be purely **co-operative**.
+
+The sender (i.e., the priest), and the receiver (Paul Revere) both win if what Revere says to the army out at Concord matches what's actually happening.
+
+We will **not** keep this co-operative notion around forever.
+
+## Payouts
+
+There are 16 payouts to set, and the probability for the two information kinds.
+
+So even with 
+
+## Activity
+
+Go to <https://veconlab.econ.virginia.edu> and say that you're playing game pbw11.
+
+You'll be randomly assigned sender or receiver, and you'll play the game on the next slide.
+
+Note that A has probability 2/3 of being selected.
+
+
+# Applications of Signaling Games
+
+- **Economics**: job-market signaling, product quality.
+- **Biology**: warning colors in animals, mating signals.
+- **Political Science**: crisis signaling, legislative signaling.
+
+# Key Concepts in Signaling Games
+
+- **Types**: Variations of the sender's private information.
+- **Signals**: Observable actions or messages sent by the sender.
+- **Actions**: Moves by the receiver in response to the signal.
+- **Payoffs**: The outcome determining the utility for both parties.
+
+# Examples of Signaling Games
+
+- A job candidate signals competence through **educational qualifications**.
+- A car seller uses a **warranty** to signal car quality to potential buyers.
+
+# Equilibrium Concepts
+
+- **Separating Equilibrium**: Different types send distinct signals.
+- **Pooling Equilibrium**: All types send the same signal.
+- **Semi-Separating Equilibrium**: Some but not all types send different signals.
+
+# A Basic Signaling Game Diagram
+
+\begin{tikzpicture}[grow=right, sloped]
+\node{Nature}
+    child {
+        node{Sender (Type A)}
+            child {
+                node{Receiver}
+                    child {
+                        node{Outcome A1}
+                        edge from parent
+                        node[above] {Action X}
+                    }
+                    child {
+                        node{Outcome A2}
+                        edge from parent
+                        node[below] {Action Y}
+                    }
+                edge from parent
+                node[above] {Signal 1}
+            }
+            child {
+                node{Receiver}
+                    child {
+                        node{Outcome A3}
+                        edge from parent
+                        node[above] {Action X}
+                    }
+                    child {
+                        node{Outcome A4}
+                        edge from parent
+                        node[below] {Action Y}
+                    }
+                edge from parent
+                node[below] {Signal 2}
+            }
+        edge from parent 
+        node[above] {Probability p}
+    }
+    child {
+        node{Sender (Type B)}
+            child {
+                node{Receiver}
+                    child {
+                        node{Outcome B1}
+                        edge from parent
+                        node[above] {Action X}
+                    }
+                    child {
+                        node{Outcome B2}
+                        edge from parent
+                        node[below] {Action Y}
+                    }
+                edge from parent
+                node[above] {Signal 1}
+            }
+            child {
+                node{Receiver}
+                    child {
+                        node{Outcome B3}
+                        edge from parent
+                        node[above] {Action X}
+                    }
+                    child {
+                        node{Outcome B4}
+                        edge from parent
+                        node[below] {Action Y}
+                    }
+                edge from parent
+                node[below] {Signal 2}
+            }
+        edge from parent
+        node[below] {Probability 1-p}
+    };
+\end{tikzpicture}
+
+
+# Challenges in Signaling Games
+
+- Distinguishing between **honest** and **deceptive** signals.
+- The existence and stability of **equilibria** in different games.
+- Designing mechanisms or institutions to facilitate **efficient** signaling.
+
+# Expanding the Model
+
+- Introduction of **noise** in the signaling process.
+- **Dynamic** signaling games, where signaling takes place over several periods.
+- **Multi-sender** and/or **multi-receiver** signaling games.
+
+# Conclusion
+
+- Signaling games provide a rich theoretical framework to understand **strategic communication**.
+- The evolution of **signaling strategies** depends on the structure of the game and **incentives** of the players.
+- They remain an area of active research with vast applications.
+
+# Questions
+
+- Are there any questions or topics related to signaling games you would like to discuss further?
+```
