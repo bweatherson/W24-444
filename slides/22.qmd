@@ -1,0 +1,75 @@
+---
+subtitle: "444 Lecture 22"
+title: "Lemons"
+author: "Brian Weatherson"
+date: "April 4 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+## Signaling Games
+
+- Signaling games model **communication** between **senders** and **receivers** with potentially misaligned interests.
+
+So we have three attributes:
+
+1. A **state** provided by nature.
+2. A **sender** who sees the state and sends a signal.
+3. A **receiver** who sees the signal, but not the state, and acts.
+
+## Basic Structure
+
+- A Sender with private information chooses a **signal** to send.
+- A Receiver observes the signal and takes an **action**.
+- **Payoffs** depend on the action, signal, and the **true state of the world**.
+
+## New Idea
+
+Sometimes structures that look nothing like *signaling* in any traditional sense also have this exact structure.
+
+All that we need is a situation where there are two parties with the following attributes:
+
+1. The first party (a) has more information, and (b) moves first.
+2. The second party (a) sees the move but not the information, and (b) performs an action whose value is affected by the underlying information.
+
+## Asymmetries
+
+In other words, all that we really need is:
+
+- An information asymmetry (someone knows something and someone else doesn't);
+- That is relevant (the value to each player of the outcome is sensitive to the information)'
+- And where the more informed player moves first. 
+
+## Markets
+
+In ordinary life, something like this situation often occurs in **markets**.
+
+It's really common for a seller to have more information about the thing they are selling than buyers do.
+
+## Buyers and Sellers
+
+So we can have a (stylised) situation where:
+
+- Sellers know the quality of what they are selling;
+- Buyers do not know the quality, but can observe (a) that the seller is interested in selling, and (b) what price they are offering to sell it for.
+
+## Plan
+
+Talk about 101 (full information, or at least symmetric information)
+
+Talk about Akerlof (why it is a problem, old solutions, his solution with a two quality model, how you get realistic solutions with (a) forced sellers and (b) variable quality, why it went away)
+
+Talk about veconlab game (three quality grades with producers making free choice, grade 2 is optimal for consumer surplus, with full information market tends to get there, actual structure is a bit complicated, with asymmetric information tends to end up at low grade)
+
+Solutions (market for information, e.g, carfax; regulation; possible situations where regulation is good for business as a whole, but not for individual businesses; interesting political consequences of the latter)

@@ -1,0 +1,516 @@
+---
+subtitle: "444 Lecture 21"
+title: "Signals"
+author: "Brian Weatherson"
+date: "April 2 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+## Basic Idea
+
+- Signaling games model **communication** between **senders** and **receivers** with potentially misaligned interests.
+
+So we have three attributes:
+
+1. A **state** provided by nature.
+2. A **sender** who sees the state and sends a signal.
+3. A **receiver** who sees the signal, but not the state, and acts.
+
+## Basic Structure
+
+- A Sender with private information chooses a **signal** to send.
+- A Receiver observes the signal and takes an **action**.
+- **Payoffs** depend on the action, signal, and the **true state of the world**.
+
+## Simple Model
+
+The English are advancing on the American positions around Boston (in 1775).
+
+The priest at the Old North Church has the **information** about what the English are doing. (We will model the English not as actors, but as random.) The options are advance by Land or Sea.
+
+He puts a **signal** in the church window, either one or two lanterns.
+
+The **receiver**, Paul Revere, sees the lanterns, and rides tells the Americans to prepare for a land or sea assault.
+
+---
+
+```{r engine='tikz'}
+#| label: fig-second-anti-war
+#| fig.cap: "Basic Signal Game"
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=12mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=13mm,sibling distance=11mm]
+
+% The Tree
+\node(0)[hollow node,label=right:{English}]{}
+child[grow=up]{node[solid node,label=above:{Priest}] {}
+child[grow=left]{node(1)[solid node]{}
+child{node[square node,label=left:{1,1}]{} edge from parent node [above]{L}}
+child{node[square node,label=left:{0,0}]{} edge from parent node [below]{S}}
+edge from parent node [below]{1}
+}
+child[grow=right]{node(3)[solid node]{}
+child{node[square node,label=right:{0,0}]{} edge from parent node [below]{S}}
+child{node[square node,label=right:{1,1}]{} edge from parent node [above]{L}}
+edge from parent node [below]{2}
+}
+edge from parent node [left, align=center]{Land \\ 2/3}
+}
+child[grow=down]{node[solid node,label=below:{Priest}] {}
+child[grow=left]{node(2)[solid node]{}
+child{node[square node,label=left:{0,0}]{} edge from parent node [above]{L}}
+child{node[square node,label=left:{1,1}]{} edge from parent node [below]{S}}
+edge from parent node [above]{1}
+}
+child[grow=right]{node(4)[solid node]{}
+child{node[square node,label=right:{1,1}]{} edge from parent node [below]{S}}
+child{node[square node,label=right:{0,0}]{} edge from parent node [above]{L}}
+edge from parent node [above]{2}
+}
+edge from parent node [left,align=center]{Sea \\ 1/3}
+};
+
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.45,.45)$)rectangle($(2) +(.45,-.45)$);
+\draw[dashed,rounded corners=10]($(3) + (-.45,.45)$)rectangle($(4) +(.45,-.45)$);
+% specify mover at 2nd information set
+\node at ($(1)!.5!(2)$) {Revere};
+\node at ($(3)!.5!(4)$) {Revere};
+\end{tikzpicture}
+```
+
+## About This Diagram
+
+We start at the center, at the open node.
+
+The first thing that happens is Nature chooses one or other event to happen.
+
+Now in this example 'Nature' is another agent, but we are modeling the English here as a random number generator!
+
+## About This Diagram
+
+In this model there are only two possibilities: Land or Sea.
+
+We'll occasionally generalise that, to Nature choosing a real-value (e.g., how many troops).
+
+We'll assume both parties know the probability of each choice.
+
+## Nature
+
+Often we'll talk about Nature assigning a **type** to Sender.
+
+This is a weird way to talk about the priest at the Old North Church.
+
+But often the information we're interested in is some property of the sender.
+
+## Sender
+
+The next thing that happens is that Sender issues a signal.
+
+In this game, Sender only has two options, though again we're going to want to generalise that in the future.
+
+Note that Sender knows the information
+
+## Receiver
+
+Finally, receiver performs an action.
+
+On the tree I've put a dashed circle around the nodes where receiver acts.
+
+That means those nodes are part of the same **information set**.
+
+An information set is a set of points which the person who is acting can't tell apart.
+
+## Information Set
+
+If you go back to the tree, there are two nodes in each of these sets.
+
+What those nodes have in common is that the same signal is sent.
+
+But the underlying state is different.
+
+That means that receiver does know the signal, but doesn't know the state.
+
+Paul Revere can see the church, but he can't see the British.
+
+## Payouts
+
+Finally, there are payouts for sender and receiver.
+
+In this case, I've set the game up to be purely **co-operative**.
+
+The sender (i.e., the priest), and the receiver (Paul Revere) both win if what Revere says to the army out at Concord matches what's actually happening.
+
+We will **not** keep this co-operative notion around forever.
+
+## Payouts
+
+There are 16 payouts to set, and the probability for the two information kinds.
+
+So even with this very simple situation, 2 states, 2 signals, 2 actions, there are 17 variables, and we can model a lot of real-world situations.
+
+## Payouts
+
+One important distinction is between signaling games where the interests of the sender and receiver are aligned, as in this example, and cases where they are not.
+
+The cooperative games are a little easier, and we'll start with them.
+
+## Activity
+
+Go to <https://veconlab.econ.virginia.edu> and say that you're playing game **pbw11**.
+
+You'll be randomly assigned sender or receiver, and you'll play the game on the next slide.
+
+Note that A has probability 2/3 of being selected.
+
+---
+
+```{r engine='tikz'}
+#| label: fig-pbw11
+#| fig.cap: "Tree for pbw11"
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=12mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=18mm,sibling distance=11mm]
+
+% The Tree
+\node(0)[hollow node,label=right:{Nature}]{}
+child[grow=up]{node[solid node,label=above:{Proposer}] {}
+child[grow=left]{node(1)[solid node]{}
+child{node[square node,label=left:{1,1}]{} edge from parent node [above]{R1}}
+child{node[square node,label=left:{0,0}]{} edge from parent node [below]{R2}}
+edge from parent node [below]{P1}
+}
+child[grow=right]{node(3)[solid node]{}
+child{node[square node,label=right:{0,0}]{} edge from parent node [below]{R2}}
+child{node[square node,label=right:{1,1}]{} edge from parent node [above]{R1}}
+edge from parent node [below]{P2}
+}
+edge from parent node [left, align=center]{A \\ 2/3}
+}
+child[grow=down]{node[solid node,label=below:{Proposer}] {}
+child[grow=left]{node(2)[solid node]{}
+child{node[square node,label=left:{0,0}]{} edge from parent node [above]{R1}}
+child{node[square node,label=left:{1,1}]{} edge from parent node [below]{R2}}
+edge from parent node [above]{P1}
+}
+child[grow=right]{node(4)[solid node]{}
+child{node[square node,label=right:{1,1}]{} edge from parent node [below]{R2}}
+child{node[square node,label=right:{0,0}]{} edge from parent node [above]{R1}}
+edge from parent node [above]{P2}
+}
+edge from parent node [left,align=center]{B \\ 1/3}
+};
+
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.55,.45)$)rectangle($(2) +(.55,-.45)$);
+\draw[dashed,rounded corners=10]($(3) + (-.55,.45)$)rectangle($(4) +(.55,-.45)$);
+% specify mover at 2nd information set
+\node at ($(1)!.5!(2)$) {Responder};
+\node at ($(3)!.5!(4)$) {Responder};
+\end{tikzpicture}
+```
+
+## How it went
+
+Let's talk about the results.
+
+My pre-game guess is that people would eventually get to some kind of arrangement that would get high returns.
+
+## Terminology
+
+- **Separating Equilibrium**: Different types send distinct signals.
+- **Pooling Equilibrium**: All types send the same signal.
+- **Semi-Separating Equilibrium**: Some but not all types send different signals.
+- **Babbling Equilibrium**: (Some) types send signals at random.
+
+## Paul Revere
+
+The 'semi' option isn't available because there are only two types, but all others are.
+
+Two separating equilibria:
+
+- The one they actually use. Put up 1 lantern for Land, 2 for Sea; Report Land if 1 lantern, Sea if 2 lanterns.
+- The other way around. Put up 1 lantern for Sea, 2 for Land; Report Sea if 1 lantern, Land if 2 lanterns.
+
+## Paul Revere
+
+But there are other equilibria as well.
+
+- Put out 1 lantern no matter what; Say Land no matter what.
+- Put out 2 lanterns no matter what; Say Land no matter what.
+
+It's got to be Land because that has higher probability.
+
+## Equilibria
+
+Saying these are equilibria just means that neither player can improve their outcome by **unilaterally** changing their move.
+
+One of the challenges here is figuring out what factors lead to real people ending up with one equilibria rather than another.
+
+# Different Interests
+
+## US-England Game
+
+There are two types of people who might walk into the coffee shop: Americans and English.
+
+The Americans prefer coffee, the English prefer tea.
+
+People who are thought to be English are mocked, so everyone wants to be thought of as American.
+
+The people in the coffee shop want to mock all and only the English.
+
+## Rules
+
+1. Proposer is assigned a nationality; it is 2/3 likely that they are American.
+2. Proposer orders coffee or tea.
+3. Responder (person in shop) guesses whether they are American or English.
+
+## Scores for Proposer
+
+- 1 point for ordering their favorite drink.
+- 2 (more) points for being thought of as American.
+- So lowest score 0 (wrong drink, English), highest score 3 (right drink, American.)
+
+## Scores for Responder
+
+- 2 points for correct.
+- 0 points for incorrect.
+
+---
+
+```{r engine='tikz'}
+#| label: fig-us-uk
+#| fig.cap: "Tree for US-England game"
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=12mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=18mm,sibling distance=11mm]
+
+% The Tree
+\node(0)[hollow node,label=right:{Nature}]{}
+child[grow=up]{node[solid node,label=above:{Entrant}] {}
+child[grow=left]{node(1)[solid node]{}
+child{node[square node,label=left:{3,2}]{} edge from parent node [above]{US}}
+child{node[square node,label=left:{1,0}]{} edge from parent node [below]{Eng}}
+edge from parent node [below]{Coffee}
+}
+child[grow=right]{node(3)[solid node]{}
+child{node[square node,label=right:{0,0}]{} edge from parent node [below]{Eng}}
+child{node[square node,label=right:{2,2}]{} edge from parent node [above]{US}}
+edge from parent node [below]{Tea}
+}
+edge from parent node [left, align=center]{US \\ 2/3}
+}
+child[grow=down]{node[solid node,label=below:{Entrant}] {}
+child[grow=left]{node(2)[solid node]{}
+child{node[square node,label=left:{2,0}]{} edge from parent node [above]{US}}
+child{node[square node,label=left:{0,2}]{} edge from parent node [below]{Eng}}
+edge from parent node [above]{Coffee}
+}
+child[grow=right]{node(4)[solid node]{}
+child{node[square node,label=right:{1,2}]{} edge from parent node [below]{US}}
+child{node[square node,label=right:{3,0}]{} edge from parent node [above]{Eng}}
+edge from parent node [above]{Tea}
+}
+edge from parent node [left,align=center]{Eng \\ 1/3}
+};
+
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.35,.45)$)rectangle($(2) +(.35,-.45)$);
+\draw[dashed,rounded corners=10]($(3) + (-.35,.45)$)rectangle($(4) +(.35,-.45)$);
+% specify mover at 2nd information set
+\node at ($(1)!.5!(2)$) {Crowd};
+\node at ($(3)!.5!(4)$) {Crowd};
+\end{tikzpicture}
+```
+
+---
+
+```{r engine='tikz'}
+#| label: fig-pbw12
+#| fig.cap: "Tree for pbw12"
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=12mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=18mm,sibling distance=11mm]
+
+% The Tree
+\node(0)[hollow node,label=right:{Nature}]{}
+child[grow=up]{node[solid node,label=above:{Proposer}] {}
+child[grow=left]{node(1)[solid node]{}
+child{node[square node,label=left:{3,2}]{} edge from parent node [above]{R1}}
+child{node[square node,label=left:{1,0}]{} edge from parent node [below]{R2}}
+edge from parent node [below]{P1}
+}
+child[grow=right]{node(3)[solid node]{}
+child{node[square node,label=right:{0,0}]{} edge from parent node [below]{R2}}
+child{node[square node,label=right:{2,2}]{} edge from parent node [above]{R1}}
+edge from parent node [below]{P2}
+}
+edge from parent node [left, align=center]{A \\ 2/3}
+}
+child[grow=down]{node[solid node,label=below:{Proposer}] {}
+child[grow=left]{node(2)[solid node]{}
+child{node[square node,label=left:{2,0}]{} edge from parent node [above]{R1}}
+child{node[square node,label=left:{0,2}]{} edge from parent node [below]{R2}}
+edge from parent node [above]{P1}
+}
+child[grow=right]{node(4)[solid node]{}
+child{node[square node,label=right:{1,2}]{} edge from parent node [below]{R2}}
+child{node[square node,label=right:{3,0}]{} edge from parent node [above]{R1}}
+edge from parent node [above]{P2}
+}
+edge from parent node [left,align=center]{B \\ 1/3}
+};
+
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.55,.45)$)rectangle($(2) +(.55,-.45)$);
+\draw[dashed,rounded corners=10]($(3) + (-.55,.45)$)rectangle($(4) +(.55,-.45)$);
+% specify mover at 2nd information set
+\node at ($(1)!.5!(2)$) {Responder};
+\node at ($(3)!.5!(4)$) {Responder};
+\end{tikzpicture}
+```
+
+## Next Interaction
+
+Go to <https://veconlab.econ.virginia.edu/> and join game **pbw12**. You'll be either Proposer or Respondent.
+
+I'll go back to slide on previous page when we start, but for now here's the translation scheme.
+
+- A means Person is US, B they are England.
+- P1 means order coffee, P2 means order tea.
+- R1 means guess US, R2 means guess Eng.
+
+## Discussion
+
+What happened?!
+
+## Why This Game Matters
+
+Three reasons, that I'll say a bit more about.
+
+1. Mathematical: what is the right solution concept.
+2. Social scientific: are there real life situations this can be used to model?
+3. Conceptual: If this is a signaling game, when are the signals **deceptive**?
+
+## Mathematical
+
+Consider the following approach to the game.
+
+- The new arrival has the plan to order Tea no matter what nationality they are.
+- The crowd has the plan to judge that someone is American if they order Tea, British if they order coffee.
+- This is an equilibrium; neither side can do better given what the other does. (Why?)
+- But it's absurd, and saying just why it is absurd is hard.
+
+## Social Scientific
+
+We'll talk about this a **lot** over the next two classes, so I'll go quickly here.
+
+Why do English people order coffee in this situation?
+
+Intuitively, because they are sending a signal that they are American.
+
+Are there cases a lot like this where we explain someone's apparently suboptimal behavior?
+
+## Conceptual
+
+These kinds of games get used a lot in social sciences, but also in biological sciences.
+
+It's really common to see signaling games used to theorise about interactions between different animals.
+
+They are even used to explain interactions between individual cells, which we don't normally think of as anything like intelligent actors.
+
+## Conceptual
+
+In this context, one possibly interesting question is when behavior in one of these games is **deceptive**.
+
+At least, that would be an interesting question if we could get anywhere close to agreement on what is deception.
+
+This turns out to be really hard, and there is a bit of work in philosophy of biology on trying to work through tricky cases.
+
+## Conceptual
+
+So to come back to this game, is ordering coffee **deceptive** if you're English?
+
+If so, is there a mathematical characterisation of deception that covers it?
+
+We won't be going into this question, but what deception is in this context, and whether it's a helpful concept to use, are widely discussed questions.
+
+## For Next Time
+
+We'll look at one of the earliest examples of using game theory to explain market outcomes, George Akerlof's theory of why used cars (used to) sell at large discounts to new cars.
