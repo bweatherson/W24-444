@@ -64,6 +64,82 @@ So we can have a (stylised) situation where:
 - Sellers know the quality of what they are selling;
 - Buyers do not know the quality, but can observe (a) that the seller is interested in selling, and (b) what price they are offering to sell it for.
 
+## Econ 101
+
+The standard supply-demand story you get taught in high school/econ 101 assumes symmetric information.
+
+It doesn't strictly speaking assume full information.
+
+You can still tell the standard story about the market for apples even if some apples might be rotten when you cut into them.
+
+But you do need to assume that everyone has the same information about whether a particular apple is rotten.
+
+# Akerlof
+
+## George Akerlof
+
+The reading today is a famous old paper by George Akerlof, which really introduced the idea that information asymmetries might be economically important.
+
+Before that, there was kind of a thought that information asymmetries were like rationality failures; something that didn't have a place in equilibrium explanations.
+
+Akerlof is now more famous for being Janet Yellen's husband, but we're looking back at why he was famous 50 years ago.
+
+## Used Cars
+
+Here are a striking pair of facts about the used car market throughout the 20th century. It is no longer a fact about the used car market, which is also striking if you know how prevalent it was.
+
+- There was a deep market for used cars, and lots of people (including even relatively rich people) bought used cars.
+- The resale value of a very recently purchased car was 70-80% of its new value.
+
+## Unusual
+
+Cars weren't the only assets for which these two claims held, but it was pretty unusual.
+
+- Houses have a rich resale market, but they don't have a discount for used. (If anything there is a small premium for lightly used.)
+- Other large items, especially furniture, had too thin a resale market.
+
+## Explanations
+
+- Raw bias for new cars?
+- New car smell?
+- Not wanting something other people had been in.
+
+## Explanations
+
+None of these work.
+
+- The new car smell is gross, and probably poisonous.
+- The not wanting other people in story would predict something we definitely do not see; a huge premium in the price of new **houses**.
+- It would also predict that there would be a premium for cars which were never test driven, and we don't see that.
+
+## Akerlof's Explanation
+
+Assume the following stylised facts.
+
+1. There is a big variation in the quality of cars, even from a given production line.
+2. A lot of the variation can't be detected by visual inspection or a test drive.
+3. But you can tell how good the car is by owning it for a few months. 
+
+## Akerlof's Explanation
+
+Putting those together, we get the following:
+
+- Each token car has some quality that is known to seller and unknown to buyer.
+- Seller decides whether to sell at the market price for used cars.
+- Buyer doesn't know anything about the quality of the car, but does know that Seller chose to sell.
+
+## Akerlof's Explanation
+
+Given some plausible assumptions about the nature of the variation, this game has an equilibrium that looks like this:
+
+- Sellers sell if their car is rather bad, and keep it otherwise.
+- Buyers demand a huge discount to new cars to buy a used car, *because the car is probably bad*.
+- The last point is because it wouldn't be for sale if it was good.
+
+## Signals
+
+The point is that putting the car up for sale is an  
+
 ## Plan
 
 Talk about 101 (full information, or at least symmetric information)
