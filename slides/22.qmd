@@ -138,14 +138,94 @@ Given some plausible assumptions about the nature of the variation, this game ha
 
 ## Signals
 
-The point is that putting the car up for sale is an  
+The point is that putting the car up for sale is an indication that it isn't very good.
 
-## Plan
+The seller might not want to signal that they have a bad car, but in fact that's what they signal.
 
-Talk about 101 (full information, or at least symmetric information)
+Once we allow for that fact, there can be a model where the discount exists, where everyone is a utility maximiser, and everyone has a sensible probability distribution. 
 
-Talk about Akerlof (why it is a problem, old solutions, his solution with a two quality model, how you get realistic solutions with (a) forced sellers and (b) variable quality, why it went away)
+That is, their probability that the car is bad matches the frequency that cars are bad, and their probability that it will go up for sale matches the frequency that people put up cars of that quality for sale.
 
-Talk about veconlab game (three quality grades with producers making free choice, grade 2 is optimal for consumer surplus, with full information market tends to get there, actual structure is a bit complicated, with asymmetric information tends to end up at low grade)
+## Used Cars
 
-Solutions (market for information, e.g, carfax; regulation; possible situations where regulation is good for business as a whole, but not for individual businesses; interesting political consequences of the latter)
+This model made two big assumption about the used car market:
+
+1. High variability of the quality of cars coming off a given production line;
+2. Asymmetry of information between buyer and seller.
+
+That suggests the discount should go away if either assumption ceased being true. And that's more or less what happened.
+
+## Used Cars
+
+Over the late 20th century, production lines got much more reliable. I *think* Toyota led the way here, but I'd be very happy to be told that one of the Michigan companies was also at the cutting edge.
+
+And over the early 21st century, used car buyers got access to much better sources of information about the cars they were buying (think of things like Carfax).
+
+So if Akerlof was right, you'd expect the discount to have vanished by now. That is, I think, basically what's happened.
+
+# Choosing Quality
+
+## Veconlab
+
+I'm not going to have us do the version of the market for 'lemons' (the old term for bad cars) that veconlab incorporates. It's a bit complicated, and requires that everyone's computer work at the same time.
+
+But I do want to talk through it just enough for you to understand what's happening.
+
+## Variable Quality
+
+In the game they set up, the variable quality isn't a brute fact imposed from the outside.
+
+Rather, it is something that one of the players chooses.
+
+Here is how the game works (on next slide!).
+
+## Variable Quality
+
+- Two players: businesses and customers.
+- Each business makes two choices.
+- First, they choose whether to make goods that are grade 1, 2, or 3 quality. Higher number is higher quality, and 2 has the greatest split between value to customers and production costs.
+- Second, they set a price.
+- Then customers choose whether to buy, and if so which business to buy from.
+
+## Full Information
+
+- In one version of the game, customers are told what quality was chosen before they buy.
+- In this version, it naturally moves to businesses producing grade 2 goods, and buyers paying something like 1/2 way between the cost of producing the good, and the value of having the good.
+
+## Asymmetry
+
+- In the second version, the customers are told the price each business is using, but **not** the quality of the good being produced.
+- They do get to find this out after each round.
+- There is no mechanism in the game for communicating with other buyers when someone sold you a grade 1 product.
+
+## Results
+
+- Race to the bottom.
+- Businesses will produce grade 1 goods and price them as if they were grade 2.
+- So everyone will start assuming that everything for sale is grade 1.
+- And we end up in an equilibrium of grade 1 only production.
+
+## Realism?
+
+- In the model, this outcome is worse for businesses **and** consumers.
+- Businesses might get a short term boost from passing off cheaply made goods as higher quality.
+- But if the highest gap between production costs and value to the consumer is at a higher quality point, it can't be an equilibrium *in this game*.
+
+## Realism?
+
+- If this were a model of reality (maybe it is!), there would be an odd conflict between the interests of businesses collectively, and the interests of individual businesses.
+- Each individual business would be better off with a regulation requiring them to say what the quality of the products was.
+- But each individual business might prefer to hide this.
+
+## Solutions
+
+1. Regulation (as we see a lot in food industries)
+2. Communication between buyers (as happens a lot these days)
+3. Reputation; in an industry like the one being modeled here, customers are actually better off with fewer suppliers, as long as there is enough to generate competition.
+
+## For Next Time
+
+Two big plans
+
+1. Go over an assignment (the one due the 12th) which is relatively straightforward, but needs some explaining.
+2. Explain the model of college as a signaling device.

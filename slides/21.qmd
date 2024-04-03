@@ -367,8 +367,8 @@ child{node[square node,label=left:{0,2}]{} edge from parent node [below]{Eng}}
 edge from parent node [above]{Coffee}
 }
 child[grow=right]{node(4)[solid node]{}
-child{node[square node,label=right:{1,2}]{} edge from parent node [below]{US}}
-child{node[square node,label=right:{3,0}]{} edge from parent node [above]{Eng}}
+child{node[square node,label=right:{3,2}]{} edge from parent node [below]{US}}
+child{node[square node,label=right:{1,0}]{} edge from parent node [above]{Eng}}
 edge from parent node [above]{Tea}
 }
 edge from parent node [left,align=center]{Eng \\ 1/3}
@@ -430,8 +430,8 @@ child{node[square node,label=left:{0,2}]{} edge from parent node [below]{R2}}
 edge from parent node [above]{P1}
 }
 child[grow=right]{node(4)[solid node]{}
-child{node[square node,label=right:{1,2}]{} edge from parent node [below]{R2}}
-child{node[square node,label=right:{3,0}]{} edge from parent node [above]{R1}}
+child{node[square node,label=right:{3,2}]{} edge from parent node [below]{R2}}
+child{node[square node,label=right:{1,0}]{} edge from parent node [above]{R1}}
 edge from parent node [above]{P2}
 }
 edge from parent node [left,align=center]{B \\ 1/3}

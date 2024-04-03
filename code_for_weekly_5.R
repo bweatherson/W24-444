@@ -8,8 +8,8 @@
 require(tidyverse)
 
 
-set.seed(4)
-
+#set.seed(4)
+set.seed(14071789)
 
 # Building the tree
 

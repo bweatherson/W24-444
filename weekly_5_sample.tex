@@ -43,7 +43,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\usepackage[top=20mm,left=25mm,heightrounded]{geometry}
+\usepackage[top=25mm,left=25mm,heightrounded]{geometry}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
@@ -131,7 +131,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Weekly 5},
+  pdftitle={Weekly 5 Practice Version},
   pdfauthor={Phil 444},
   colorlinks=true,
   linkcolor={black},
@@ -140,9 +140,9 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Weekly 5}
+\title{Weekly 5 Practice Version}
 \author{Phil 444}
-\date{2024-04-12}
+\date{2024-04-09}
 
 \begin{document}
 \maketitle
@@ -156,7 +156,7 @@ both the table and the tree.
 
 \begin{longtable}[]{@{}llll@{}}
 
-\caption{\label{tbl-tree-payouts}Payouts for Weekly 5 problem}
+\caption{\label{tbl-tree-payouts}Payouts for Weekly 5 practice version}
 
 \tabularnewline
 
@@ -166,14 +166,14 @@ Type & Proposer & Responder & Payouts \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-A & L & D & 2, 4 \\
-A & L & U & 0, 0 \\
-A & R & D & 1, 3 \\
+A & L & D & 3, 0 \\
+A & L & U & 2, 1 \\
+A & R & D & 4, 1 \\
 A & R & U & 1, 1 \\
-B & L & D & 4, 0 \\
-B & L & U & 1, 4 \\
+B & L & D & 3, 0 \\
+B & L & U & 3, 1 \\
 B & R & D & 3, 2 \\
-B & R & U & 4, 2 \\
+B & R & U & 0, 4 \\
 
 \end{longtable}
 
@@ -181,11 +181,11 @@ B & R & U & 4, 2 \\
 
 \centering{
 
-\includegraphics{weekly_5_files/figure-pdf/fig-pbw11-1.png}
+\includegraphics{weekly_5_sample_files/figure-pdf/fig-tree-1.png}
 
 }
 
-\caption{\label{fig-pbw11}Tree for Weekly 5}
+\caption{\label{fig-tree}Tree for Weekly 5 practice version}
 
 \end{figure}%
 
@@ -197,13 +197,13 @@ In this tree, Proposer has four possible strategies:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Left if A, Left if B
+  Left if A, Left if B (LL)
 \item
-  Left if A, Right if B
+  Left if A, Right if B (LR)
 \item
-  Right if A, Left if B
+  Right if A, Left if B (RL)
 \item
-  Right if A, Right if B
+  Right if A, Right if B (RR)
 \end{enumerate}
 
 And Responder has four possible strategies
@@ -212,13 +212,13 @@ And Responder has four possible strategies
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Up if Left, Up if Right
+  Up if Left, Up if Right (UU)
 \item
-  Up if Left, Down if Right
+  Up if Left, Down if Right (UD)
 \item
-  Down if Left, Up if Right
+  Down if Left, Up if Right (DU)
 \item
-  Down if Left, Down if Right
+  Down if Left, Down if Right (DD)
 \end{enumerate}
 
 That leads to 16 possible combinations of strategies. For each of these
@@ -245,6 +245,47 @@ Once you've done that, for each pair work out whether it is:
 \item
   Not an equilibrium.
 \end{enumerate}
+
+\subsection{Answers}\label{answers}
+
+\begin{longtable}[]{@{}lllll@{}}
+
+\caption{\label{tbl-main-tree}Expected values for Weekly 1 practice
+version}
+
+\tabularnewline
+
+\toprule\noalign{}
+P1 & DD & DU & UD & UU \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+LL & 3, 0 & 3, 0 & 2.4, 1 & 2.4, 1 \\
+LR & 3, 0.8 & 1.8, 1.6 & 2.4, 1.4 & 1.2, 2.2 \\
+RL & 3.6, 0.6 & 1.8, 0.6 & 3.6, 1 & 1.8, 1 \\
+RR & 3.6, 1.4 & 0.6, 2.2 & 3.6, 1.4 & 0.6, 2.2 \\
+
+\end{longtable}
+
+The only pooling equilibrium is:
+
+\begin{itemize}
+\tightlist
+\item
+  LL, UU
+\end{itemize}
+
+The only separating equilibrium is:
+
+\begin{itemize}
+\tightlist
+\item
+  RL, UD
+\end{itemize}
+
+Note that in general there may be 0, 1, or more of each type of
+equilibrium.
 
 
 
