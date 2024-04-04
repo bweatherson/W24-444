@@ -1,31 +1,22 @@
 ---
-title: 'Weekly 5 Practice Version'
-author: 'Phil 444'
-date: 'April 9, 2024'
-execute:
-  warning: false
-  message: false
-  cache: FALSE
+subtitle: "444 Lecture 23"
+title: "College"
+author: "Brian Weatherson"
+date: "April 9 2024"
 format:
-    html:
-      toc: false
-      mainfont: SF Pro Rounded
-    pdf: 
-      format: scrreprt
-      keep-tex: true
-      geometry:
-        - top=25mm
-        - left=25mm
-        - heightrounded
-      mainfont: Scala Pro
-      sansfont: Scala Sans Pro
-      mainfontoptions: Scale = MatchLowercase
-      fontsize: 12pt
-      linkcolor: black
-      link-citations: true
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
 ---
-
-The questions all concern the signaling game shown below. The game is like the ones we discussed in class. First Nature reveals a type (A or B), then Proposer sends a signal (Left or Right), then Responder, seeing the signal but not the state, chooses and action (Up or Down). The payout to each player is a function of all three choices, as shown in both the table and the tree.
 
 ```{r}
 #| label: set-up-tree
@@ -162,22 +153,15 @@ exp_strats <- exp_strats |>
 # }
 ```
 
-```{r}
-#| label: tbl-tree-payouts
-#| cache: FALSE
-#| echo: FALSE
-#| tbl-cap: "Payouts for Weekly 5 practice version"
-require(tidyverse)
+## Assignment
 
-tree_pay <- tree |>
-    select(Type = n, Proposer = p1, Responder = p2, pay1, pay2) |>
-    mutate(Payouts = paste(pay1, pay2, sep=", ")) |>
-    select(-pay1, -pay2)
+This week's assignment is about a signaling game. 
 
-library(knitr)
+- First Nature reveals a type (A or B); 
+- Then Proposer sends a signal (Left or Right); 
+- Then Responder, seeing the signal but not the state, chooses and action (Up or Down).
 
-kable(tree_pay)
-```
+---
 
 ```{r engine='tikz'}
 #| label: fig-tree
@@ -240,7 +224,26 @@ edge from parent node [left,align=center]{B \\ 0.4}
 \end{tikzpicture}
 ```
 
-\newpage
+---
+
+```{r}
+#| label: tbl-tree-payouts
+#| cache: FALSE
+#| echo: FALSE
+#| tbl-cap: "Payouts for Weekly 5 practice version"
+require(tidyverse)
+
+tree_pay <- tree |>
+    select(Type = n, Proposer = p1, Responder = p2, pay1, pay2) |>
+    mutate(Payouts = paste(pay1, pay2, sep=", ")) |>
+    select(-pay1, -pay2)
+
+library(knitr)
+
+kable(tree_pay)
+```
+
+## Strategies
 
 In this tree, Proposer has four possible strategies:
 
@@ -249,6 +252,8 @@ In this tree, Proposer has four possible strategies:
 3. Right if A, Left if B (RL)
 4. Right if A, Right if B (RR)
 
+## Strategies
+
 And Responder has four possible strategies
 
 1. Up if Left, Up if Right (UU)
@@ -256,18 +261,17 @@ And Responder has four possible strategies
 3. Down if Left, Up if Right (DU)
 4. Down if Left, Down if Right (DD)
 
-That leads to 16 possible combinations of strategies. For each of these 16, work out
+## Strategy Pairs
 
-A.  What Proposer's _expected_ payout is.
-B.  What Responder's _expected_ payout is.
+So the strategy table has four rows for Proposer, and four columns for Responder, and that means 16 cells.
 
-Once you've done that, for each pair work out whether it is:
+If there was no randomness, then for any pair, you could tell what each player would get.
 
-A.  A pooling equilibrium;
-B.  A separating equilibrium; or
-C.  Not an equilibrium.
+But there is randomness. So what do we do?
 
 ## Answers
+
+I'll start with the answers, then work back to how to figure them out.
 
 ```{r}
 #| label: tbl-main-tree
@@ -279,12 +283,129 @@ library(knitr)
 kable(exp_wide)
 ```
 
-The only pooling equilibrium is:
+## Bottom Right
 
-- LL, UU
+Let's start in the bottom right, the 0.6, 2.2.
 
-The only separating equilibrium is:
+The formula for P1's expected return is:
 
-- RL, UD
+- Probability of A times P1's return if A happens (and they play these strategies); plus
+- Probability of B times P1's return if B happens (and they play these strategies)
 
-Note that in general there may be 0, 1, or more of each type of equilibrium.
+## Bottom Right
+
+If A happens, and P1 plays RR, that means P1 chooses R (the first letter in P1's strategy).
+
+If P1 chooses R, and P2 plays UU, that means P2 chooses U (the second letter in P1's strategy).
+
+So the row of the table we're on is where A, then R, then U happen.
+
+---
+
+```{r}
+#| echo: FALSE
+kable(tree_pay)
+```
+And at that row P1 gets 1.
+
+## Bottom Right
+
+If A happens, and P1 plays RR, that means P1 chooses R (the first letter in P1's strategy).
+
+If P1 chooses R, and P2 plays UU, that means P2 chooses U (the second letter in P1's strategy).
+
+So the row of the table we're on is where A, then R, then U happen.
+
+---
+
+```{r}
+#| echo: FALSE
+kable(tree_pay)
+```
+And at that row P1 gets 1.
+
+## Bottom Right
+
+If B happens, and P1 plays RR, that means P1 chooses R (the first letter in P1's strategy).
+
+If P1 chooses R, and P2 plays UU, that means P2 chooses U (the second letter in P1's strategy).
+
+So the row of the table we're on is where B, then R, then U happen.
+
+---
+
+```{r}
+#| echo: FALSE
+kable(tree_pay)
+```
+And at that row P1 gets 0.
+
+## The Formula
+
+So P1's expected return is:
+
+- 0.6 times 1, plus 0.4 times 0
+- which is 0.6.
+
+## Bottom Right
+
+The formula for P2's expected return is:
+
+- Probability of A times P2's return if A happens (and they play these strategies); plus
+- Probability of B times P2's return if B happens (and they play these strategies)
+
+## Bottom Right
+
+If A happens, and P1 plays RR, that means P1 chooses R (the first letter in P1's strategy).
+
+If P1 chooses R, and P2 plays UU, that means P2 chooses U (the second letter in P1's strategy).
+
+So the row of the table we're on is where A, then R, then U happen.
+
+---
+
+```{r}
+#| echo: FALSE
+kable(tree_pay)
+```
+And at that row P2 gets 1.
+
+## Bottom Right
+
+If A happens, and P1 plays RR, that means P1 chooses R (the first letter in P1's strategy).
+
+If P1 chooses R, and P2 plays UU, that means P2 chooses U (the second letter in P1's strategy).
+
+So the row of the table we're on is where A, then R, then U happen.
+
+---
+
+```{r}
+#| echo: FALSE
+kable(tree_pay)
+```
+And at that row P2 gets 1.
+
+## Bottom Right
+
+If B happens, and P1 plays RR, that means P1 chooses R (the first letter in P1's strategy).
+
+If P1 chooses R, and P2 plays UU, that means P2 chooses U (the second letter in P1's strategy).
+
+So the row of the table we're on is where B, then R, then U happen.
+
+---
+
+```{r}
+#| echo: FALSE
+kable(tree_pay)
+```
+And at that row P2 gets 4.
+
+## The Formula
+
+So P1's expected return is:
+
+- 0.6 times 1, plus 0.4 times 4
+- which is 2.2.
+
