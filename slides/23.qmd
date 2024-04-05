@@ -294,60 +294,7 @@ The formula for P1's expected return is:
 
 ## Bottom Right
 
-If A happens, and P1 plays RR, that means P1 chooses R (the first letter in P1's strategy).
-
-If P1 chooses R, and P2 plays UU, that means P2 chooses U (the second letter in P1's strategy).
-
-So the row of the table we're on is where A, then R, then U happen.
-
----
-
-```{r}
-#| echo: FALSE
-kable(tree_pay)
-```
-And at that row P1 gets 1.
-
-## Bottom Right
-
-If A happens, and P1 plays RR, that means P1 chooses R (the first letter in P1's strategy).
-
-If P1 chooses R, and P2 plays UU, that means P2 chooses U (the second letter in P1's strategy).
-
-So the row of the table we're on is where A, then R, then U happen.
-
----
-
-```{r}
-#| echo: FALSE
-kable(tree_pay)
-```
-And at that row P1 gets 1.
-
-## Bottom Right
-
-If B happens, and P1 plays RR, that means P1 chooses R (the first letter in P1's strategy).
-
-If P1 chooses R, and P2 plays UU, that means P2 chooses U (the second letter in P1's strategy).
-
-So the row of the table we're on is where B, then R, then U happen.
-
----
-
-```{r}
-#| echo: FALSE
-kable(tree_pay)
-```
-And at that row P1 gets 0.
-
-## The Formula
-
-So P1's expected return is:
-
-- 0.6 times 1, plus 0.4 times 0
-- which is 0.6.
-
-## Bottom Right
+Let's start in the bottom right, the 0.6, 2.2.
 
 The formula for P2's expected return is:
 
@@ -368,23 +315,7 @@ So the row of the table we're on is where A, then R, then U happen.
 #| echo: FALSE
 kable(tree_pay)
 ```
-And at that row P2 gets 1.
-
-## Bottom Right
-
-If A happens, and P1 plays RR, that means P1 chooses R (the first letter in P1's strategy).
-
-If P1 chooses R, and P2 plays UU, that means P2 chooses U (the second letter in P1's strategy).
-
-So the row of the table we're on is where A, then R, then U happen.
-
----
-
-```{r}
-#| echo: FALSE
-kable(tree_pay)
-```
-And at that row P2 gets 1.
+And at that row P1 gets 1, and P2 gets 1.
 
 ## Bottom Right
 
@@ -400,12 +331,301 @@ So the row of the table we're on is where B, then R, then U happen.
 #| echo: FALSE
 kable(tree_pay)
 ```
-And at that row P2 gets 4.
+And at that row P1 gets 0, and P2 gets 4.
 
 ## The Formula
 
 So P1's expected return is:
 
-- 0.6 times 1, plus 0.4 times 4
-- which is 2.2.
+- 0.6 times 1, plus 0.4 times 0
+- which is 0.6.
+
+And P2's expected return is:
+
+- 0.6 times 1 plus 0.4 times 4
+- which is 2.2
+
+## RL/UD
+
+Let's do one more of these: the one where Player 1 plays RL and Player 2 plays UD.
+
+The formulae are still the same, but we have to be a bit more careful about the applications.
+
+## RL/UD
+
+As the table says, the results are 3.6 and 1.0. Let's work to get there.
+
+The formula for P1's expected return is:
+
+- Probability of A times P1's return if A happens (and they play these strategies); plus
+- Probability of B times P1's return if B happens (and they play these strategies)
+
+## RL/UD
+
+If A happens, and P1 plays RL, that means P1 chooses R (the first letter in P1's strategy).
+
+If P1 chooses R, and P2 plays UD, that means P2 chooses D (the second letter in P1's strategy).
+
+So the row of the table we're on is where A, then R, then D happen.
+
+---
+
+```{r}
+#| echo: FALSE
+kable(tree_pay)
+```
+And at that row P1 gets 4, and P2 gets 1.
+
+## RL/UD
+
+If B happens, and P1 plays RL, that means P1 chooses L (the second letter in P1's strategy).
+
+If P1 chooses L, and P2 plays UD, that means P2 chooses U (the first letter in P1's strategy).
+
+So the row of the table we're on is where B, then L, then U happen.
+
+---
+
+```{r}
+#| echo: FALSE
+kable(tree_pay)
+```
+And at that row P1 gets 3, and P2 gets 1.
+
+## The Formula
+
+So P1's expected return is:
+
+- 0.6 times 4, plus 0.4 times 3
+- which is 3.6.
+
+And P2's expected return is
+
+- 0.6 times 1, plus 0.4 times 1
+- which is 1
+
+## Equilibria
+
+Now we have to find the equilibria for the game.
+
+An equilibria is a pair of choices where neither party can do better by changing their view. 
+
+So the top right corner: LL, UU is an equilibrium.
+
+## Equilibria
+
+If P1 plays LL, then P2 gets (in expectation)
+
+- 0 if they play DD;
+- 0 if they play DU;
+- 1 if they play UD;
+- 1 if they play UU.
+
+They can't do better than playing UU. (Ties aren't a problem.)
+
+## Equilibria
+
+If P2 plays UU, then P1 gets (in expectation)
+
+- 2.4 if they play LL;
+- 1.2 if they play LR;
+- 1.8 if they play RL;
+- 0.6 if they play RR.
+
+They can't do better than playing LL.
+
+## Finding Equilibria
+
+We don't want to have to check all 16 cells this way. Fortunately, we can speed things up.
+
+There are a few approaches - here's one.
+
+## Finding Equilibria
+
+Go through each column, and find the highest score for P1.
+
+That will be P1's **best response** to that strategy for P2.
+
+Note that there may be more than one of these, if there are ties.
+
+## Finding Equilibria
+
+Then for each of the things you find, check whether P2 can do better by switching.
+
+If so, it's not an equilibria.
+
+If not, it is one.
+
+And you'll find all the equilibria this way.
+
+## Equilibria
+
+```{r}
+#| label: tbl-main-tree-reprise
+#| cache: FALSE
+#| echo: FALSE
+#| warning: false
+#| tbl-cap: "Expected values for Weekly 1 practice version"
+library(knitr)
+kable(exp_wide)
+```
+
+Applying this technique shows that LL,UU and RL,UD are the only equilibria.
+
+## Pooling/Separating
+
+An equilibrium is **pooling** if P1 does the same thing in each state. So P1 plays LL or RR.
+
+An equilibrium is **separating** if P1 does different things when the states are different. So P2 plays LR or RL.
+
+## Further Questions
+
+If we were doing more game theory, there are more questions we could ask at this point.
+
+Some equilibria that you can find this way are not intuitively sensible.
+
+## Further Questions
+
+Sometimes that's because they imply P2 will do things that no longer make sense once they see P1's move. The notion of **sequential equilibrium** was developed to rule out these. 
+
+For real life cases, there are times when it is sensible to bluff, but not sensible to stick with the bluff once it has been exposed. But the procedure we've outlined here might include equilibria where committing to the bluff *even when the cards are shown* might be an equilibrium.
+
+## Further Questions
+
+And into the really not on the exam stuff, there is the question of what to do with the equilibrium in the US-UK game where P1 believes that P2 believes that P1 will buy tea if and only if American.
+
+It is somewhat less clear that this creats real life problems.
+
+# College and Signals
+
+## Some Stylised Facts
+
+1. College is expensive, both in actual costs and opportunity costs.
+2. College graduates get a lot more money over their lifetime than non-graduates.
+3. Just getting into a fancy college does not trigger this higher lifetime earning.
+4. Completing some but not all of a degree does not trigger this higher lifetime earning.
+5. The increase earning to college graduates tends to get larger as people get older.
+
+## Sources
+
+Lots of data: <https://www.oecd-ilibrary.org/education/education-at-a-glance-2023_e13bef63-en>
+
+These facts: <https://www.oecd-ilibrary.org/sites/9633d9f3-en/index.html?itemId=/content/component/9633d9f3-en#tablegrp-d1e7393-3a40fea345>
+
+---
+
+![Relative wage by educational attainment](premium.png){width=75%}
+
+## US Specific
+
+For most of these facts we can get very resilient data cross-nationally.
+
+But there's one group, which will be important in what follows, for which we really have to focus on US data.
+
+That's the 'some college' group.
+
+## Some College
+
+::: {.columns}
+
+:::: {.column width=30%}
+![Educational Attainment in the US (wiki)](ed_attain.png){width=70%}
+::::
+
+:::: {.column width=65%}
+Note the gap between 'some college' and 'associate degree' (which means at least associate).
+
+To the best of my knowledge, this gap is many times higher in the US than in any other rich country.
+::::
+
+:::
+
+## Gender
+
+I'm not going to go into the gender splits in these numbers, but I think the rough picture is this.
+
+The college premium is particularly high for men.
+
+Not breaking things down by gender tends to *under-state* the premium because more women go to college and women earn less.
+
+## Questions
+
+1. Why do people go to college?
+2. Why do employers pay so much extra for college graduates?
+
+## Two Complications
+
+We should include as contrasts things that are really far from reality - part of the job is to explain why those things are far from reality.
+
+Ideally, we'd like explanations where people are basically rational.
+
+Maybe we'll have to give up on the latter, but let's try.
+
+## Simple Answer
+
+People go to college because it means they get more money than not going, and people like money.
+
+. . .
+
+Two problems:
+
+1. Still leaves the question of why they get paid this money.
+2. Leaves the question of why they don't do something else, e.g., turn up to job interviews with admission letters and nothing else.
+
+## Discussion
+
+What do you think?
+
+Why do people go to college, and why do employers pay so much for college grads?
+
+## Three Models
+
+1. Selection
+2. Human Capital
+3. Signaling
+
+## Selection
+
+- Everyone really wants to go to college.
+- Colleges only admit smart people.
+- Employers want to hire smart people.
+- So the college wage premium is explained by intelligence (or something like it) being the common cause of being admitted to college, and being paid the big bucks.
+
+## Human Capital
+
+- Going to college means you acquire skills that are valued by employers.
+- It's worth going to college because the payoff in higher salary is more than the cost of acquiring those skills.
+- Employers pay more for college grads because they value those skills.
+
+## Signaling
+
+- Going to college is costly and unpleasant, and no one really wants to do it, and no one gets value from it.
+- But it's more costly and unpleasant for less intelligent people.
+- Going to college sends a signal to employers that you're one of the people who can cope with college.
+- Employers like this because they want to hire intelligent people.
+
+## Three Models
+
+All of these models explain the existence of a college wage premium.
+
+They aren't completely incompatible - the truth may contain some measure of each.
+
+We'll go over next time much more detail about which of them explain the various facts.
+
+## Puzzles
+
+Just getting into college isn't valuable:
+
+- This is tricky for the selection effect to explain.
+
+Doing 2-3 years of college isn't valuable:
+
+- This is tricky for the human capital theory to explain.
+
+The college wage premium rises over time:
+
+- This is tricky for the signaling theory to explain.
+
+Much more to follow!
+
 
