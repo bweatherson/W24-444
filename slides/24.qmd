@@ -1,0 +1,169 @@
+# College
+
+## Some Stylised Facts
+
+1. College is expensive, both in actual costs and opportunity costs.
+2. College graduates get a lot more money over their lifetime than non-graduates.
+3. Just getting into a fancy college does not trigger this higher lifetime earning.
+4. Completing some but not all of a degree does not trigger this higher lifetime earning.
+5. The increase earning to college graduates tends to get larger as people get older.
+
+## Questions
+
+1. Why do people go to college?
+2. Why do employers pay so much extra for college graduates?
+
+Ideally we should
+
+- Consider radically different alternatives;
+- Make everyone act rationally
+
+## Three Models
+
+1. Selection
+2. Human Capital
+3. Signaling
+
+## Selection
+
+- Everyone really wants to go to college.
+- Colleges only admit smart people.
+- Employers want to hire smart people.
+- So the college wage premium is explained by intelligence (or something like it) being the common cause of being admitted to college, and being paid the big bucks.
+
+## Human Capital
+
+- Going to college means you acquire skills that are valued by employers.
+- It's worth going to college because the payoff in higher salary is more than the cost of acquiring those skills.
+- Employers pay more for college grads because they value those skills.
+
+## Signaling
+
+- Going to college is costly and unpleasant, and no one really wants to do it, and no one gets value from it.
+- But it's more costly and unpleasant for less intelligent people.
+- Going to college sends a signal to employers that you're one of the people who can cope with college.
+- Employers like this because they want to hire intelligent people.
+
+## Puzzles
+
+Just getting into college isn't valuable:
+
+- This is tricky for the selection effect to explain.
+
+Doing 2-3 years of college isn't valuable:
+
+- This is tricky for the human capital theory to explain.
+
+The college wage premium rises over time:
+
+- This is tricky for the signaling theory to explain.
+
+# Signaling Model
+
+## Toy Example
+
+Spence gives an example where lots of variables are **continuous**.
+
+We're going to use a much simpler example, where the variables are **binary**.
+
+This will obviously mean much less realism, but I *think* it doesn't change the important strengths and weaknesses of the model.
+
+Though if you think I'm being too fair (or more likely too unfair) to the model for this reason, say so!
+
+## Structure
+
+- Nature assigns each player a **type**, we'll call it H for High Value, or L for Low Value.
+- Worker goes to either C (for College), or B (for Beach). (In real world B might include starting work and using the money for more beach.)
+- Employer decides whether to offer G (for Good) or P (for Poor) job.
+
+## Payouts
+
+For Employer it's easy
+
+- They get 1 for offering Good to High, and Poor to Low; and 0 otherwise.
+ 
+For Worker it's a bit trickier
+
+- Poor is worth 0, and Good is worth 4.
+- Going to Beach costs 0.
+- Going to College costs 5 if Low, and 1 if High. 
+
+---
+
+|  Nature  |  Worker  |  Employer  |  Work-Pay  |  Emp-Pay  |
+|:--------:|:--------:|:----------:|:----------:|:---------:|
+|  High    |  College |  Good      |    3       |    1      |
+|  High    |  College |  Poor      |    -1      |    0      |
+|  High    |  Beach   |  Good      |    4       |    1      |
+|  High    |  Beach   |  Poor      |    0       |    0      |
+|  Low     |  College |  Good      |    -1      |    0      |
+|  Low     |  College |  Poor      |    -5      |    1      |
+|  Low     |  Beach   |  Good      |    4       |    0      |
+|  Low     |  Beach   |  Poor      |    0       |    1      |
+
+---
+
+```{r engine='tikz'}
+#| label: fig-second-anti-war
+#| fig.cap: "College or Beach game"
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=12mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=13mm,sibling distance=11mm]
+
+% The Tree
+\node(0)[hollow node,label=right:{Nature}]{}
+child[grow=up]{node[solid node,label=above:{Worker}] {}
+child[grow=left]{node(1)[solid node]{}
+child{node[square node,label=left:{1,1}]{} edge from parent node [above]{G}}
+child{node[square node,label=left:{0,0}]{} edge from parent node [below]{P}}
+edge from parent node [below]{C}
+}
+child[grow=right]{node(3)[solid node]{}
+child{node[square node,label=right:{0,0}]{} edge from parent node [below]{S}}
+child{node[square node,label=right:{1,1}]{} edge from parent node [above]{L}}
+edge from parent node [below]{2}
+}
+edge from parent node [left, align=center]{Land \\ 2/3}
+}
+child[grow=down]{node[solid node,label=below:{Priest}] {}
+child[grow=left]{node(2)[solid node]{}
+child{node[square node,label=left:{0,0}]{} edge from parent node [above]{L}}
+child{node[square node,label=left:{1,1}]{} edge from parent node [below]{S}}
+edge from parent node [above]{1}
+}
+child[grow=right]{node(4)[solid node]{}
+child{node[square node,label=right:{1,1}]{} edge from parent node [below]{S}}
+child{node[square node,label=right:{0,0}]{} edge from parent node [above]{L}}
+edge from parent node [above]{2}
+}
+edge from parent node [left,align=center]{Sea \\ 1/3}
+};
+
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.45,.45)$)rectangle($(2) +(.45,-.45)$);
+\draw[dashed,rounded corners=10]($(3) + (-.45,.45)$)rectangle($(4) +(.45,-.45)$);
+% specify mover at 2nd information set
+\node at ($(1)!.5!(2)$) {Revere};
+\node at ($(3)!.5!(4)$) {Revere};
+\end{tikzpicture}
+```
+
+<!--The graph isn't done-->
+
+
