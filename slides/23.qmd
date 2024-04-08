@@ -586,9 +586,8 @@ Why do people go to college, and why do employers pay so much for college grads?
 
 ## Selection
 
-- Everyone really wants to go to college.
 - Colleges only admit smart people.
-- Employers want to hire smart people.
+- Employers want to hire smart people, but are kind of useless at telling who is smart, and find it easier to defer this decision to university admissions committees.
 - So the college wage premium is explained by intelligence (or something like it) being the common cause of being admitted to college, and being paid the big bucks.
 
 ## Human Capital

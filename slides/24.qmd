@@ -26,9 +26,8 @@ Ideally we should
 
 ## Selection
 
-- Everyone really wants to go to college.
 - Colleges only admit smart people.
-- Employers want to hire smart people.
+- Employers want to hire smart people, but are kind of useless at telling who is smart, and find it easier to defer this decision to university admissions committees.
 - So the college wage premium is explained by intelligence (or something like it) being the common cause of being admitted to college, and being paid the big bucks.
 
 ## Human Capital
@@ -57,6 +56,14 @@ Doing 2-3 years of college isn't valuable:
 The college wage premium rises over time:
 
 - This is tricky for the signaling theory to explain.
+
+## Puzzles
+
+These are primarily puzzles for the view that one or other of these views explain 100% of the college wage premium.
+
+There is a further question of whether the view could be a big part of the explanation for the premium.
+
+And there there is a yet further question of how to make one of the views precise in ways that preserve its share of the explanation.
 
 # Signaling Model
 
