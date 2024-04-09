@@ -1,0 +1,293 @@
+---
+title: 'Weekly 5 Section Version'
+author: 'Phil 444'
+date: 'April 11, 2024'
+execute:
+  warning: false
+  message: false
+  cache: FALSE
+format:
+    html:
+      toc: false
+      mainfont: SF Pro Rounded
+    pdf: 
+      format: scrreprt
+      keep-tex: true
+      geometry:
+        - top=25mm
+        - left=25mm
+        - heightrounded
+      mainfont: Scala Pro
+      sansfont: Scala Sans Pro
+      mainfontoptions: Scale = MatchLowercase
+      fontsize: 12pt
+      linkcolor: black
+      link-citations: true
+---
+
+The questions all concern the signaling game shown below. The game is like the ones we discussed in class. First Nature reveals a type (A or B), then Proposer sends a signal (Left or Right), then Responder, seeing the signal but not the state, chooses and action (Up or Down). The payout to each player is a function of all three choices, as shown in both the table and the tree.
+
+```{r}
+#| label: set-up-tree
+#| cache: FALSE
+#| echo: FALSE
+# Work out the payouts for signal games
+# First Nature chooses A or B
+# Then P1 chooses L or R
+# Then P2 chooses U or D
+# P1 strategy is c(X, Y) meaning X if A, Y if B
+# P2 strategy is c(X, Y) meaning X if L, Y if R
+
+require(tidyverse)
+
+
+set.seed(07041776)
+
+
+# Building the tree
+
+# What Nature does
+n <- data.frame(n=c("A","B"))
+
+# What P1 does 
+p1 <- data.frame(p1=c("L","R"))
+
+# What P2 does 
+p2 <- data.frame(p2=c("U","D"))
+
+tree <- crossing(n, p1, p2) |>
+  mutate(pay1 = floor(runif(8)*5)) |>
+  mutate(pay2 = floor(runif(8)*5))
+
+# Determining Strategies
+
+# What Nature does
+n <- data.frame(n=c("A","B"))
+
+# What P1 does if A
+p1a <- data.frame(p1a=c("L","R"))
+# What P1 does if B
+p1b <- data.frame(p1b=c("L","R"))
+
+# What P2 does if L
+p2a <- data.frame(p2a=c("U","D"))
+# What P1 does if R
+p2b <- data.frame(p2b=c("U","D"))
+
+strats <- crossing(n, p1a, p1b, p2a, p2b)
+
+# Working out payouts
+
+strats <- strats |> mutate(pay1 = 0, pay2 = 0)
+for (i in 1:nrow(strats)){
+  this_n <- strats$n[i]
+
+  if (this_n == "A"){
+    this_p1 <- strats$p1a[i]
+  }
+  else{
+    this_p1 <- strats$p1b[i]
+  }
+  
+  if (this_p1 == "L"){
+    this_p2 <- strats$p2a[i]
+  }
+  else{
+    this_p2 <- strats$p2b[i]
+  }  
+  tree_part <- tree |>
+    filter(n == this_n, p1 == this_p1, p2 == this_p2)
+  strats$pay1[i] <- tree_part$pay1[1]
+  strats$pay2[i] <- tree_part$pay2[1]
+}
+
+# Now build table without A
+
+a_prob <- 0.6
+exp_strats <- crossing(p1a, p1b, p2a, p2b) |> mutate(pay1 = 0, pay2 = 0, e1 = 0, e2 = 0)
+for (i in 1:nrow(exp_strats)){
+  a_pay_1 <- filter(strats, 
+                  n == "A",
+                  p1a == exp_strats$p1a[i],
+                  p1b == exp_strats$p1b[i],
+                  p2a == exp_strats$p2a[i],
+                  p2b == exp_strats$p2b[i])$pay1
+  b_pay_1 <- filter(strats, 
+                  n == "B",
+                  p1a == exp_strats$p1a[i],
+                  p1b == exp_strats$p1b[i],
+                  p2a == exp_strats$p2a[i],
+                  p2b == exp_strats$p2b[i])$pay1
+  a_pay_2 <- filter(strats, 
+                    n == "A",
+                    p1a == exp_strats$p1a[i],
+                    p1b == exp_strats$p1b[i],
+                    p2a == exp_strats$p2a[i],
+                    p2b == exp_strats$p2b[i])$pay2
+  b_pay_2 <- filter(strats, 
+                    n == "B",
+                    p1a == exp_strats$p1a[i],
+                    p1b == exp_strats$p1b[i],
+                    p2a == exp_strats$p2a[i],
+                    p2b == exp_strats$p2b[i])$pay2
+  exp_strats$pay1[i] <- a_pay_1 * a_prob + b_pay_1 * (1-a_prob)
+  exp_strats$pay2[i] <- a_pay_2 * a_prob + b_pay_2 * (1-a_prob)
+}
+
+best_response_p1 <- exp_strats |>
+  group_by(p2a, p2b) |>
+  summarise(best_1 = max(pay1), .groups = "drop")
+  
+best_response_p2 <- exp_strats |>
+  group_by(p1a, p1b) |>
+  summarise(best_2 = max(pay2), .groups = "drop")
+
+exp_strats <- exp_strats |>
+  left_join(best_response_p1, by = c("p2a", "p2b")) |>
+  left_join(best_response_p2, by = c("p1a", "p1b")) |>
+  mutate(eqm = case_when(
+    pay1 == best_1 & pay2 == best_2 ~ 1,
+    TRUE ~ 0
+  ))
+
+ exp_wide <- exp_strats |>
+   mutate(P1 = paste(p1a, p1b, sep="")) |>
+   mutate(P2 = paste(p2a, p2b, sep="")) |>
+   mutate(payout = paste(pay1, pay2, sep=", ")) |>
+   pivot_wider(id_cols = P1, names_from = P2, values_from = payout)
+
+# if (sum(exp_strats$eqm) > 4){
+#  print(s)
+#  print(sum(exp_strats$eqm))
+# }
+```
+
+```{r}
+#| label: tbl-tree-payouts
+#| cache: FALSE
+#| echo: FALSE
+#| tbl-cap: "Payouts for Weekly 5 section version"
+require(tidyverse)
+
+tree_pay <- tree |>
+    select(Type = n, Proposer = p1, Responder = p2, pay1, pay2) |>
+    mutate(Payouts = paste(pay1, pay2, sep=", ")) |>
+    select(-pay1, -pay2)
+
+library(knitr)
+
+kable(tree_pay)
+```
+
+<!--
+
+```{r engine='tikz'}
+#| label: fig-tree
+#| fig.cap: "Tree for Weekly 5 section version"
+#| fig.ext: 'png'
+#| cache: FALSE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=12mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=18mm,sibling distance=11mm]
+
+% The Tree
+\node(0)[hollow node,label=right:{Nature}]{}
+child[grow=up]{node[solid node,label=above:{Proposer}] {}
+child[grow=left]{node(1)[solid node]{}
+child{node[square node,label=left:{2,1}]{} edge from parent node [above]{U}}
+child{node[square node,label=left:{3,0}]{} edge from parent node [below]{D}}
+edge from parent node [below]{L}
+}
+child[grow=right]{node(3)[solid node]{}
+child{node[square node,label=right:{4,1}]{} edge from parent node [below]{D}}
+child{node[square node,label=right:{1,1}]{} edge from parent node [above]{U}}
+edge from parent node [below]{R}
+}
+edge from parent node [left, align=center]{A \\ 0.6}
+}
+child[grow=down]{node[solid node,label=below:{Proposer}] {}
+child[grow=left]{node(2)[solid node]{}
+child{node[square node,label=left:{3,1}]{} edge from parent node [above]{U}}
+child{node[square node,label=left:{3,0}]{} edge from parent node [below]{D}}
+edge from parent node [above]{L}
+}
+child[grow=right]{node(4)[solid node]{}
+child{node[square node,label=right:{3,2}]{} edge from parent node [below]{D}}
+child{node[square node,label=right:{0,4}]{} edge from parent node [above]{U}}
+edge from parent node [above]{R}
+}
+edge from parent node [left,align=center]{B \\ 0.4}
+};
+
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.55,.45)$)rectangle($(2) +(.55,-.45)$);
+\draw[dashed,rounded corners=10]($(3) + (-.55,.45)$)rectangle($(4) +(.55,-.45)$);
+% specify mover at 2nd information set
+\node at ($(1)!.5!(2)$) {Responder};
+\node at ($(3)!.5!(4)$) {Responder};
+\end{tikzpicture}
+```
+-->
+\newpage
+
+In this tree, Proposer has four possible strategies:
+
+1. Left if A, Left if B (LL)
+2. Left if A, Right if B (LR)
+3. Right if A, Left if B (RL)
+4. Right if A, Right if B (RR)
+
+And Responder has four possible strategies
+
+1. Up if Left, Up if Right (UU)
+2. Up if Left, Down if Right (UD)
+3. Down if Left, Up if Right (DU)
+4. Down if Left, Down if Right (DD)
+
+That leads to 16 possible combinations of strategies. For each of these 16, work out
+
+A.  What Proposer's _expected_ payout is.
+B.  What Responder's _expected_ payout is.
+
+Once you've done that, for each pair work out whether it is:
+
+A.  A pooling equilibrium;
+B.  A separating equilibrium; or
+C.  Not an equilibrium.
+
+## Answers
+
+```{r}
+#| label: tbl-main-tree
+#| cache: FALSE
+#| echo: FALSE
+#| warning: false
+#| tbl-cap: "Expected values for Weekly 1 section version"
+library(knitr)
+kable(exp_wide)
+```
+
+The only pooling equilibrium is:
+
+- RR, UD
+
+The separating equilibria are:
+
+- LR, DD
+- RL, UU
+
+Note that in general there may be 0, 1, or more of each type of equilibrium.

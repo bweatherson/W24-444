@@ -9,7 +9,7 @@ require(tidyverse)
 
 
 #set.seed(4)
-set.seed(14071789)
+set.seed(07041776)
 
 # Building the tree
 
@@ -123,7 +123,7 @@ exp_strats <- exp_strats |>
    mutate(payout = paste(pay1, pay2, sep=", ")) |>
    pivot_wider(id_cols = P1, names_from = P2, values_from = payout)
 
-# if (sum(exp_strats$eqm) > 4){
-#  print(s)
-#  print(sum(exp_strats$eqm))
-# }
+if (sum(exp_strats$eqm) > 4){
+ print(s)
+ print(sum(exp_strats$eqm))
+}

@@ -1,0 +1,282 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+  \setmainfont[Scale = MatchLowercase]{Scala Pro}
+  \setsansfont[]{Scala Sans Pro}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=25mm,left=25mm,heightrounded]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Weekly 5 Section Version},
+  pdfauthor={Phil 444},
+  colorlinks=true,
+  linkcolor={black},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Weekly 5 Section Version}
+\author{Phil 444}
+\date{2024-04-11}
+
+\begin{document}
+\maketitle
+
+The questions all concern the signaling game shown below. The game is
+like the ones we discussed in class. First Nature reveals a type (A or
+B), then Proposer sends a signal (Left or Right), then Responder, seeing
+the signal but not the state, chooses and action (Up or Down). The
+payout to each player is a function of all three choices, as shown in
+both the table and the tree.
+
+\begin{longtable}[]{@{}llll@{}}
+
+\caption{\label{tbl-tree-payouts}Payouts for Weekly 5 section version}
+
+\tabularnewline
+
+\toprule\noalign{}
+Type & Proposer & Responder & Payouts \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & L & D & 4, 3 \\
+A & L & U & 0, 3 \\
+A & R & D & 3, 1 \\
+A & R & U & 2, 2 \\
+B & L & D & 3, 1 \\
+B & L & U & 4, 3 \\
+B & R & D & 4, 3 \\
+B & R & U & 1, 0 \\
+
+\end{longtable}
+
+\newpage
+
+In this tree, Proposer has four possible strategies:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Left if A, Left if B (LL)
+\item
+  Left if A, Right if B (LR)
+\item
+  Right if A, Left if B (RL)
+\item
+  Right if A, Right if B (RR)
+\end{enumerate}
+
+And Responder has four possible strategies
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Up if Left, Up if Right (UU)
+\item
+  Up if Left, Down if Right (UD)
+\item
+  Down if Left, Up if Right (DU)
+\item
+  Down if Left, Down if Right (DD)
+\end{enumerate}
+
+That leads to 16 possible combinations of strategies. For each of these
+16, work out
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi}.}
+\tightlist
+\item
+  What Proposer's \emph{expected} payout is.
+\item
+  What Responder's \emph{expected} payout is.
+\end{enumerate}
+
+Once you've done that, for each pair work out whether it is:
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi}.}
+\tightlist
+\item
+  A pooling equilibrium;
+\item
+  A separating equilibrium; or
+\item
+  Not an equilibrium.
+\end{enumerate}
+
+\subsection{Answers}\label{answers}
+
+\begin{longtable}[]{@{}lllll@{}}
+
+\caption{\label{tbl-main-tree}Expected values for Weekly 1 section
+version}
+
+\tabularnewline
+
+\toprule\noalign{}
+P1 & DD & DU & UD & UU \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+LL & 3.6, 2.2 & 3.6, 2.2 & 1.6, 3 & 1.6, 3 \\
+LR & 4, 3 & 2.8, 1.8 & 1.6, 3 & 0.4, 1.8 \\
+RL & 3, 1 & 2.4, 1.6 & 3.4, 1.8 & 2.8, 2.4 \\
+RR & 3.4, 1.8 & 1.6, 1.2 & 3.4, 1.8 & 1.6, 1.2 \\
+
+\end{longtable}
+
+The only pooling equilibrium is:
+
+\begin{itemize}
+\tightlist
+\item
+  RR, UD
+\end{itemize}
+
+The separating equilibria are:
+
+\begin{itemize}
+\tightlist
+\item
+  LR, DD
+\item
+  RL, UU
+\end{itemize}
+
+Note that in general there may be 0, 1, or more of each type of
+equilibrium.
+
+
+
+\end{document}
