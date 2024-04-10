@@ -1,3 +1,23 @@
+---
+subtitle: "444 Lecture 24"
+title: "College"
+author: "Brian Weatherson"
+date: "April 11 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
 # College
 
 ## Some Stylised Facts
@@ -7,6 +27,67 @@
 3. Just getting into a fancy college does not trigger this higher lifetime earning.
 4. Completing some but not all of a degree does not trigger this higher lifetime earning.
 5. The increase earning to college graduates tends to get larger as people get older.
+
+---
+
+![](premium.png){width=75%}
+
+Relative wage by educational attainment
+
+## Summary 
+```{r}
+require(tidyverse)
+require(readr)
+require(knitr)
+grad_pay_2022 <- read_csv("grad_pay_2022.csv",
+                          show_col_types = FALSE) |>
+  pivot_longer(
+    cols = ends_with("Grad"),
+    names_to = "Age",
+    values_to = "Pay"
+  ) |>
+  group_by(Region, Age) |>
+  summarise(Pay = mean(Pay), .groups = "drop") |>
+  mutate(Pay= round(Pay)) |>
+  filter(Region != "Other") |>
+  pivot_wider(names_from = "Age", values_from = "Pay") |>
+  select(Region, 'Grads 25-34' = NewGrad, 'Grads 45-54' = OldGrad, 'All Grads' = AllGrad)
+kable(grad_pay_2022)
+```
+
+## Notes
+
+'Nordic' here is Norway, Sweden, Finland, Denmark; 'Europe' is rest of Europe; 'Pacific' excludes USA.
+
+Source: <https://www.oecd-ilibrary.org/sites/9633d9f3-en/index.html?itemId=/content/component/9633d9f3-en#tablegrp-d1e7393-3a40fea345>
+
+## US Specific
+
+For most of these facts we can get very resilient data cross-nationally.
+
+But there's one group, which will be important in what follows, for which we really have to focus on US data.
+
+That's the 'some college' group.
+
+---
+
+![Educational Attainment in the US (wiki)](ed_attain.png)
+
+---
+
+![<https://www.bls.gov/emp/chart-unemployment-earnings-education.htm>](ep_chart_001.png)
+
+US weekly pay by educational attainment. Actually a little over million dollar bonus for college grads
+
+## US Summary
+
+| Level | Proportion | Median Pay |
+|:----:|:----:|:----:|
+| High School | 28.5% | $853 |
+| Some College | 16% | $935 |
+| Associate | 10% | $1,005 |
+| Bachelors | 22% | $1,432 |
+| Masters | 9.5% | $1,661 |
 
 ## Questions
 
@@ -20,50 +101,146 @@ Ideally we should
 
 ## Three Models
 
-1. Selection
-2. Human Capital
+Well, three plus/minus one:
+
+1. Human Capital
+2. Selection
 3. Signaling
 
-## Selection
+And one extra (that may be one of the last two)
 
-- Colleges only admit smart people.
-- Employers want to hire smart people, but are kind of useless at telling who is smart, and find it easier to defer this decision to university admissions committees.
-- So the college wage premium is explained by intelligence (or something like it) being the common cause of being admitted to college, and being paid the big bucks.
+4. Honest signaling
+
+# Human Capital
 
 ## Human Capital
 
-- Going to college means you acquire skills that are valued by employers.
-- It's worth going to college because the payoff in higher salary is more than the cost of acquiring those skills.
-- Employers pay more for college grads because they value those skills.
+College develops skills, and those skills are valuable.
 
-## Signaling
+Employers are rationally willing to pay for employees with those skills.
 
-- Going to college is costly and unpleasant, and no one really wants to do it, and no one gets value from it.
-- But it's more costly and unpleasant for less intelligent people.
-- Going to college sends a signal to employers that you're one of the people who can cope with college.
-- Employers like this because they want to hire intelligent people.
+Students develop those skills because the (appropriately discounted) returns from developing them are larger than the costs of developing the skills.
 
-## Puzzles
+## Two Caveats
 
-Just getting into college isn't valuable:
+First, not everyone would develop skills by going to college, so not everyone should go.
 
-- This is tricky for the selection effect to explain.
+For some people, going to college would be like building a fancy house next to a bunch of factories - not a good use of the land. (And that's true even if the land might be very valuable, just not in the way that is enhanced by a fancy house.)
 
-Doing 2-3 years of college isn't valuable:
+## Two Caveats
 
-- This is tricky for the human capital theory to explain.
+Second, when we say **college** develops skills, we don't mean that **lectures** develop skills. College also includes:
 
-The college wage premium rises over time:
+- Discussion sections;
+- Feedback on work;
+- Extra-curricular activities (theatre, sports, social organisations)
+- Living with unfamiliar people
 
-- This is tricky for the signaling theory to explain.
+## Which Skills
 
-## Puzzles
+Should be a bit careful about the last couple of points.
 
-These are primarily puzzles for the view that one or other of these views explain 100% of the college wage premium.
+- Not all US colleges are residential, or have extensive extra-curriculars.
+- In many countries, living on campus is the exception not the norm, but the college wage premium is still high.
 
-There is a further question of whether the view could be a big part of the explanation for the premium.
+## Problems
 
-And there there is a yet further question of how to make one of the views precise in ways that preserve its share of the explanation.
+1. Causal mechanism
+2. Gate-keeping (or lack of)
+3. Sheepskin effect
+
+## Causal Mechanism
+
+I can see (dimly) how the stuff we're covering in 444 could be valuable for employers.
+
+But the last big course I taught had a long unit on medieval epistemology, which I think is really philosophically valuable, but I have **no idea** how it leads to increased profits for an employer hiring someone who took the course.
+
+And a commonly expressed worry is that lots of courses are like this.
+
+## Causal Mechanism
+
+In reply, one might note that a lot of college courses set grads up with skills that come in useful in unexpected ways.
+
+For instance, I'm told the people who are getting the best results out of image generating software are art history majors who have a better understanding of the ways in which pictures have been put together over the centuries.
+
+In general, by not optimising for the present, we might produce good long term value.
+
+## Gatekeeping
+
+If you go to a UM soccer match, where tickets are like $5, there is someone carefully checking the tickets.
+
+On the human capital model, you'd think this lecture was **much** more valuable than a soccer match.
+
+But there are no ticket collectors at the door. Anyone could walk in! We don't act like it is some special value.
+
+## Gatekeeping
+
+On the other hand, we don't grade just anyone's work, and we do restrict entry to the dorms.
+
+If the lectures are a small part of the way in which we add skills, this might all make sense.
+
+## Sheepskin Effect
+
+This is the name for the premium people get for **finishing** a college degree.
+
+It is really substantial.
+
+On the human capital model, you'd think that 3 years of college would get you 3/4 of the skill acquisition of 4 years of college.
+
+But you really, *really* don't see that in the wage data.
+
+## Sheepskin Effect
+
+This is an objection to the human capital effect being **all** of the explanation for the college wage premium.
+
+We'll want to be careful as we proceed about distinguising:
+
+- Reasons for thinking something isn't a full explanation;
+- Reasons for thinking something isn't any part of the explanation.
+
+# Selection
+
+## Selection Effects
+
+Not everyone gets admitted to fancy colleges. Here's a model for the college wage premium.
+
+- The premium is driven in large part by fancy schools; there isn't much premium for non-selective schools.
+- Not everyone can go to fancy schools; we literally don't let everyone who applies in.
+- The people we admit are independently valuable to employers.
+
+## Selection Effects
+
+The strongest version of this theory is that this explains 100% of the college wage premium.
+
+I think (for reasons I'll soon get to) that is pretty implausible.
+
+A weaker version is that it explains some of the college wage premium. And it would be surprising if it explained nothing.
+
+## Problems
+
+1. Non-selective colleges.
+2. Dropouts
+
+## Non-Selective
+
+Some colleges admit most applicants; some colleges admit all applicants.
+
+These colleges do (as far as I can tell) have a *smaller* wage premium than Michigan or similarly selective schools.
+
+But they do still have a premium, and the selection model can't explain this.
+
+## Dropouts
+
+The strongest version of this theory is that it's just the admission of getting into college that's evidence you'll get a high paying job.
+
+If that were true, we'd expect to see a very different world to the one we actually see.
+
+## Dropouts
+
+Why does admission to college mean you'll get a high paying job?
+
+1. Because it signals to employers (who are too stupid to see for themselves) that you're smart. But then why bother actually going? Why wouldn't an offer letter have the same market value as a degree?
+2. Because it's a sign to you that employers will, independently, be able to tell that you're smart. But still why go to college? Perhaps because it's so much fun. But there are more fun things that don't involve calculus classes.
 
 # Signaling Model
 
@@ -73,7 +250,7 @@ Spence gives an example where lots of variables are **continuous**.
 
 We're going to use a much simpler example, where the variables are **binary**.
 
-This will obviously mean much less realism, but I *think* it doesn't change the important strengths and weaknesses of the model.
+This will obviously mean much less realism, but I *think* it doesn't change the important strengths and weaknesses of the model. (As long as we don't fuss about details.)
 
 Though if you think I'm being too fair (or more likely too unfair) to the model for this reason, say so!
 
@@ -137,40 +314,200 @@ square node/.style={rectangle,draw, inner sep = 1, fill = black}
 \node(0)[hollow node,label=right:{Nature}]{}
 child[grow=up]{node[solid node,label=above:{Worker}] {}
 child[grow=left]{node(1)[solid node]{}
-child{node[square node,label=left:{1,1}]{} edge from parent node [above]{G}}
-child{node[square node,label=left:{0,0}]{} edge from parent node [below]{P}}
+child{node[square node,label=left:{3,1}]{} edge from parent node [above]{G}}
+child{node[square node,label=left:{-1,0}]{} edge from parent node [below]{P}}
 edge from parent node [below]{C}
 }
 child[grow=right]{node(3)[solid node]{}
-child{node[square node,label=right:{0,0}]{} edge from parent node [below]{S}}
-child{node[square node,label=right:{1,1}]{} edge from parent node [above]{L}}
-edge from parent node [below]{2}
+child{node[square node,label=right:{0,0}]{} edge from parent node [below]{P}}
+child{node[square node,label=right:{4,1}]{} edge from parent node [above]{G}}
+edge from parent node [below]{B}
 }
-edge from parent node [left, align=center]{Land \\ 2/3}
+edge from parent node [left, align=center]{High \\ 0.4}
 }
-child[grow=down]{node[solid node,label=below:{Priest}] {}
+child[grow=down]{node[solid node,label=below:{Worker}] {}
 child[grow=left]{node(2)[solid node]{}
-child{node[square node,label=left:{0,0}]{} edge from parent node [above]{L}}
-child{node[square node,label=left:{1,1}]{} edge from parent node [below]{S}}
-edge from parent node [above]{1}
+child{node[square node,label=left:{-1,0}]{} edge from parent node [above]{G}}
+child{node[square node,label=left:{-5,1}]{} edge from parent node [below]{P}}
+edge from parent node [above]{C}
 }
 child[grow=right]{node(4)[solid node]{}
-child{node[square node,label=right:{1,1}]{} edge from parent node [below]{S}}
-child{node[square node,label=right:{0,0}]{} edge from parent node [above]{L}}
-edge from parent node [above]{2}
+child{node[square node,label=right:{0,1}]{} edge from parent node [below]{P}}
+child{node[square node,label=right:{4,0}]{} edge from parent node [above]{G}}
+edge from parent node [above]{B}
 }
-edge from parent node [left,align=center]{Sea \\ 1/3}
+edge from parent node [left,align=center]{Low \\ 0.6}
 };
 
 % information set
 \draw[dashed,rounded corners=10]($(1) + (-.45,.45)$)rectangle($(2) +(.45,-.45)$);
 \draw[dashed,rounded corners=10]($(3) + (-.45,.45)$)rectangle($(4) +(.45,-.45)$);
 % specify mover at 2nd information set
-\node at ($(1)!.5!(2)$) {Revere};
-\node at ($(3)!.5!(4)$) {Revere};
+\node at ($(1)!.5!(2)$) {Employ};
+\node at ($(3)!.5!(4)$) {Employ};
 \end{tikzpicture}
 ```
 
-<!--The graph isn't done-->
+## An Equilibria
 
+This tree has a separating equilibrium:
 
+- High workers go to College; Low workers go to Beach
+- Employers offer Good jobs to College; Poor jobs to Beach
+
+## Details
+
+The model is obviously silly in some ways.
+
+- If the percentage of High goes above 50%, the natural equilibrium is that all workers go to Beach, and employers offer Good to everyone.
+- But that problem goes away if you replace the binary variables with continuous ones.
+
+## Benefits of Model
+
+Solves all the problems of previous models:
+
+- Explains why finishing is rewarded; that shows you were willing to pay the (variable) price of going to college.
+- Shows why it doesn't matter what the content is, and why we don't restrict attendance: it's the degree that matters.
+
+## Downsides of Model
+
+1. Inefficient
+2. Wage premium for older workers
+3. Costs are too high
+4. Costs not correlated with skills
+
+## Inefficient
+
+It's really inefficient! The best workers in your workforce spending 4 years doing nothing useful just as a sorting device.
+
+- Even if this makes sense for all individuals, someone at the systemic level should do something about it.
+- Surprising that no country has solved this problem. (Though maybe the Nordics have.)
+
+## Age Profile
+
+Why does the college wage premium **rise** with age?
+
+- Model assumes employers can't tell that Workers are High or Low.
+- That's plausible for 25-34.
+- It's not that plausible for 45-54. Why is it still an information set for those workers?
+
+## Costs of Model
+
+The college wage premium is over one million dollars.
+
+- You have to think calculus classes are really really painful to think that they are not worth a million dollars.
+
+## Cost Correlation
+
+The model requires that college is more costly for Low workers than High workers.
+
+- In my experience, the people who liked college most were the professional students who loved reading, getting into dorm room debates about esoteric details, etc.
+- These were not the best employees!
+- Even careful model requires tight correlation between felt cost of being at college and value to employer.
+
+# Honest Signal
+
+## Honest Signals
+
+There's an annoying terminological point here. Different people use the phrase 'honest signal' in different ways. Some people use it for any situation where there is a separating equilibrium. I prefer using it for games like the following.
+
+## Revised Game
+
+Low **can't** go to college. At least, they can't finish it.
+
+Everything else in the graph is the same. So here's the revised tree.
+
+---
+
+```{r engine='tikz'}
+#| label: fig-honest-signal
+#| fig.cap: "Honest College or Beach game"
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=12mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=13mm,sibling distance=11mm]
+
+% The Tree
+\node(0)[hollow node,label=right:{Nature}]{}
+child[grow=up]{node[solid node,label=above:{Worker}] {}
+child[grow=left]{node(1)[solid node, label=above:{Employ}]{}
+child{node[square node,label=left:{3,1}]{} edge from parent node [above]{G}}
+child{node[square node,label=left:{-1,0}]{} edge from parent node [below]{P}}
+edge from parent node [below]{C}
+}
+child[grow=right]{node(3)[solid node]{}
+child{node[square node,label=right:{0,0}]{} edge from parent node [below]{P}}
+child{node[square node,label=right:{4,1}]{} edge from parent node [above]{G}}
+edge from parent node [below]{B}
+}
+edge from parent node [left, align=center]{High \\ 0.4}
+}
+child[grow=down]{node[solid node,label=below:{Worker}] {}
+%child[grow=left]{node(2)[solid node]{}
+%child{node[square node,label=left:{-1,0}]{} edge from parent node [above]{G}}
+%child{node[square node,label=left:{-5,1}]{} edge from parent node [below]{P}}
+%edge from parent node [above]{C}
+%}
+child[grow=right]{node(4)[solid node]{}
+child{node[square node,label=right:{0,1}]{} edge from parent node [below]{P}}
+child{node[square node,label=right:{4,0}]{} edge from parent node [above]{G}}
+edge from parent node [above]{B}
+}
+edge from parent node [left,align=center]{Low \\ 0.6}
+};
+
+% information set
+% \draw[dashed,rounded corners=10]($(1) + (-.45,.45)$)rectangle($(2) +(.45,-.45)$);
+\draw[dashed,rounded corners=10]($(3) + (-.45,.45)$)rectangle($(4) +(.45,-.45)$);
+% specify mover at 2nd information set
+% \node at ($(1)!.5!(2)$) {Employ};
+\node at ($(3)!.5!(4)$) {Employ};
+\end{tikzpicture}
+```
+
+## Biological Analogies
+
+If we have time (we probably won't) I'll talk through how these models are used in biology.
+
+The general idea is that sometimes it is worth doing something to signal, perfectly reliably, that you can do it.
+
+## Improvement?
+
+This gets rid of the third problem - it's not that Low refuses to take the million dollar bonus, it's that they can't.
+
+I'm not sure it helps with the other three, but on the other hand, I thought that was the biggest problem with the first model.
+
+## Selection
+
+This model has some features in common with the selection model.
+
+What makes someone get a Good job is the same thing that causes them to (be able to) finish college: namely, that they are a High.
+
+## Your View
+
+Which is most likely in your view to be **most** of the explanation of the college wage premium.
+
+A.  Human Capital
+B.  Selection
+C.  Signaling
+D.  Honest Signaling
+E.  None of the above/other
+
+## For Next Time
+
+We'll swing back to somewhat traditional epistemology, looking at how philosophers in the last decade or so have used some of the tools we've seen in this course to get a better understanding of 
