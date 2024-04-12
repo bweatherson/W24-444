@@ -9,7 +9,7 @@ require(tidyverse)
 
 
 #set.seed(4)
-set.seed(07041776)
+set.seed(4)
 
 # Building the tree
 
