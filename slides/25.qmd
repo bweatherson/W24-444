@@ -1,0 +1,25 @@
+# Testimony
+
+Indian stuff
+Basic vs non-basic
+Puzzle: Non-basic is very demanding
+Puzzle: Basic leads to gullibility
+
+# Models
+
+One-on-one conversation
+Announcement
+Network of people
+Line model, everyone hears people earlier
+Loop model, everyone talks to their neighbor
+Hub and spoke, but with hubs having constraint
+Reasons - technical limits; not listening to others
+
+# Cascades
+
+Describe the cascade
+After first two, easy to see how two bad draws could get everyone to fail
+
+# Zollman effect
+
+Find a photo of him
