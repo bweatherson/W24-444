@@ -216,6 +216,9 @@ Different policies the person in the middle might have lead to different results
 2. If heads, I put 7 red balls and 4 blue balls in the jar; if tails, I put in 6 blue and 5 red. (Again, this is hidden, but you know my policy.)
 3. I then invite each of you to come up one at a time.
 4. You can draw one ball from the urn, look at it, not show it to anyone or tell anyone about it, then return the ball to the urn.
+
+--- 
+
 5. Then I'll draw a ball.
 6. Before that, you can bet on whether I draw red or blue. If you're right, you get a prize.
 7. Your *bet* is public information, but not whether it won.
