@@ -1,0 +1,187 @@
+# Revision
+
+## Plan for Day
+
+A little bit of revision, then onto last bit of new material
+
+## Q1 - Group Belif
+
+1. Briefly describe the difference between what Lackey calls "inflationary" and "deflationary" accounts of group belief, and give an example of each.
+
+## Q1
+
+Deflationary accounts say that group beliefs are just a function of what individuals in the group believe. E.g., the group believes p just in case a majority of the members believe it.
+
+Inflationary accounts say that other things than the beliefs of the group can matter to belief. E.g., the group believes p just in case someone in the group has evidence e, and everyone in the group thinks e is excellent evidence for p.
+ 
+## Q2 - Groupthink
+
+2. Explain the Conditionalisation constraint in Russell, Hawthorne and Buchak's paper _Groupthink_.
+
+## Q2
+
+The constraint says that the following two operations should have the same result.
+
+A.  Combine two opinions into a group opinion, then update on some evidence.
+B.  Have each member of the group update on that evidence, then combine the two updated individual opinions into an updated group opinion.
+
+## Q2
+
+Here's a case where this doesn't happen. A and B each think that P and Q are independent.
+
+- A thinks that each has probability 0.8.
+- B thinks that each has probability 0.2.
+- The group probability for each proposition is a 50/50 mix of each.
+
+## Q2
+
+At this stage, A thinks p&q has probability 0.64, and B thinks it has probability 0.04, so the mix is 0.34.
+
+And the 50/50 mix of their probabilities for q is 0.5.
+
+So the mixed probability for q given p is 0.68.
+
+So if they merge the probabilities (by taking a 50/50 mix) and then learn q, they'll end with probability 0.68 for q.
+
+## Q2
+
+But what if they do things the other way around - first learn q then update?
+
+Well, they both think p and q are independent, so they will both have unchanged probability in p, so it's still 0.8 and 0.2, and the mix is 0.5.
+
+## Q2
+
+So that's the challenge: do these procedures lead to the same outcome.
+
+1. Merge then update.
+2. Update then merge. 
+
+## Q3 - Voting
+
+In a local election, with 100 voters, the voters have the following preferences. 45 people rank the candidates ADBC (i.e., A first, D second, B third, C fourth); 25 rank them BCDA; 20 rank them DABC; 10 rank them CDBA. Who would win if the voters vote sincerely, and the city uses first-past-the-post voting? Who would win if the voters vote sincerely, and the city uses ranked choice (i.e., alternate vote) voting? Very briefly (in a couple of sentences), which verdict do you think better reflects the will of the voters?
+
+## Q3
+
+In first-past-the-post, A gets 45, B gets 25, D gets 20, and C gets 10, so A wins because 45 is largest.
+
+## Q3
+
+In ranked choice, no one has a majority (i.e., 51 votes), so we eliminate the person with the fewest votes. That's C, and all 10 of their voters had D as second preference, so those 10 votes get added to D. Now it's A on 45, B on 25, and D on 30 (the 20 original, and 10 new). Still no one has a majority, so B gets eliminated. Each vote for B gets moved to the remaining candidate who was most preferred, and in all 25 cases that's D. So now D has 55 votes and is the winner.
+
+## Q3
+
+Either answer for the last question seems fine, since neither system here is great. D does not have wide support - only 30% of voters even have them in the top 2. On the other hand, a majority of the voters have A outright last, and it is odd to have the worst possible option for 55% win the election.
+
+## Q4 - Arrow
+
+State Arrow's **Independence of Irrelevant Alternatives** condition.
+
+## Q4
+
+A social choice function takes the preferences of the voters as input, and returns a social preference ordering as output.
+
+## Q4
+
+IIA says that if you change the voters' preferences, but do not change how any voter thinks about the relative position of A and B, then the social preference ordering of A and B should not change. That is, if originally A was ranked above B in the output, then the only way that can change is if some voter changes their mind about the relative ordering of A and B. It isn't enough if, for instance, some voters who always had B above A change their mind about whether B or C is outright best.
+
+## More Revisions
+
+We'll do much more of this next Tuesday!
+
+# Networks
+
+## Network Models
+
+Imagine a network with the following features.
+
+- All but one of the people are arranged in a circle.
+- Everyone can talk to their neighbor, and the other person, who is intuitively in the *middle* of the circle.
+- The person in the middle can talk to anyone, but makes choices about what they are going to say.
+
+## Studies
+
+There are two methods for trying to solve some problem, A and B. (For realism, the problem could be a disease and the methods could be drugs, but in general anything.)
+
+- A works with probability 0.5.
+- B works with probability a little above 0.5, say 0.53. 
+
+Crucially, no one in the group knows these numbers - in fact they are very interested in finding them out.
+
+## Studies
+
+Each person around the periphery runs the following test.
+
+1. Find 40 things with the problem.
+2. Apply method A to 20, and method B to 20, and announce the results
+
+Let's assume for now there are a lot of people around the edge, maybe 1000.
+
+## Summariser
+
+Here is one thing the person in the center could do.
+
+- Add up all the numbers from all the studies and announce the results.
+- If that happens, then almost certainly everyone will find out the truth.
+
+## Propagandist
+
+What if the person in the middle has the following rule.
+
+- Broadcast all results where A does better than B.
+- Soak up other results. 
+
+Then almost certainly everyone will think B is no better.
+
+## Propagandist
+
+Note that the following things all happen in this case.
+
+1. Everyone does a perfectly fair experiment.
+2. Everyone only tells people true things.
+3. The result is that everyone ends up with a false belief.
+
+## Journalist
+
+Here's a slightly different model.
+
+The person in the middle is a journalist who is committed to presenting both sides of every story.
+
+So they'll listen to all the scientists, and pick at random one of the reports where A does better, and one of the reports when B does better.
+
+## Journalist
+
+Now this will end up with on average people having slightly more pro-B attitudes. 
+
+That's because the studies that favor B will, on average, have slightly larger margins than the studies favoring A.
+
+But it will be very marginal, and it will be much much worse than if the journalist picked two studies at random.
+
+## Solutions
+
+1. More communication between scientists; none of these results would happen if all the scientists communicated. Of course, this would require reading a *lot* of incoming mail.
+2. Larger studies. This is the really interesting one.
+
+## Larger Studies
+
+Instead of 1000 studies with 20 tests per treatment, imagine that we have 20 studies with 1000 tests per treatment.
+
+Then none of the results go through.
+
+## Propagandist
+
+Even with B just at 53%, it isn't likely you'll have that many studies where A does better.
+
+And the ones that are, will have only a small benefit.
+
+Just looking at one's own studies and one's neighbor's studies will be enough to over-ride the propagandist.
+
+## Realism?
+
+Is this what propagandists really do?
+
+- In some cases they just lie.
+- In other cases they find approaches that tend to lead to better results.
+- In yet other cases the focus is saying true things about a third option that could explain (away) bad public information.
+
+But this does seem to have been part of the story, and it's interesting that it can in theory work. 
+  
