@@ -1,3 +1,23 @@
+---
+subtitle: "444 Lecture 26"
+title: "Networks"
+author: "Brian Weatherson"
+date: "April 18 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
 # Revision
 
 ## Plan for Day
@@ -35,19 +55,19 @@ Here's a case where this doesn't happen. A and B each think that P and Q are ind
 
 ## Q2
 
-At this stage, A thinks p&q has probability 0.64, and B thinks it has probability 0.04, so the mix is 0.34.
+At this stage, A thinks P&Q has probability 0.64, and B thinks it has probability 0.04, so the mix is 0.34.
 
-And the 50/50 mix of their probabilities for q is 0.5.
+And the 50/50 mix of their probabilities for Q is 0.5.
 
-So the mixed probability for q given p is 0.68.
+So the mixed probability for P given Q is 0.68.
 
-So if they merge the probabilities (by taking a 50/50 mix) and then learn q, they'll end with probability 0.68 for q.
+So if they merge the probabilities (by taking a 50/50 mix) and then learn Q, they'll end with probability 0.68 for P.
 
 ## Q2
 
-But what if they do things the other way around - first learn q then update?
+But what if they do things the other way around - first learn Q then update?
 
-Well, they both think p and q are independent, so they will both have unchanged probability in p, so it's still 0.8 and 0.2, and the mix is 0.5.
+Well, they both think P and Q are independent, so they will both have unchanged probability in P, so it's still 0.8 and 0.2, and the mix is 0.5.
 
 ## Q2
 

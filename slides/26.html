@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.525">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>quarto-inpute0f7f5b6</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="26_files/libs/clipboard/clipboard.min.js"></script>
+<script src="26_files/libs/quarto-html/quarto.js"></script>
+<script src="26_files/libs/quarto-html/popper.min.js"></script>
+<script src="26_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="26_files/libs/quarto-html/anchor.min.js"></script>
+<link href="26_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="26_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="26_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="26_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="26_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="revision" class="level1">
+<h1>Revision</h1>
+<section id="plan-for-day" class="level2">
+<h2 class="anchored" data-anchor-id="plan-for-day">Plan for Day</h2>
+<p>A little bit of revision, then onto last bit of new material</p>
+</section>
+<section id="q1---group-belif" class="level2">
+<h2 class="anchored" data-anchor-id="q1---group-belif">Q1 - Group Belif</h2>
+<ol type="1">
+<li>Briefly describe the difference between what Lackey calls “inflationary” and “deflationary” accounts of group belief, and give an example of each.</li>
+</ol>
+</section>
+<section id="q1" class="level2">
+<h2 class="anchored" data-anchor-id="q1">Q1</h2>
+<p>Deflationary accounts say that group beliefs are just a function of what individuals in the group believe. E.g., the group believes p just in case a majority of the members believe it.</p>
+<p>Inflationary accounts say that other things than the beliefs of the group can matter to belief. E.g., the group believes p just in case someone in the group has evidence e, and everyone in the group thinks e is excellent evidence for p.</p>
+</section>
+<section id="q2---groupthink" class="level2">
+<h2 class="anchored" data-anchor-id="q2---groupthink">Q2 - Groupthink</h2>
+<ol start="2" type="1">
+<li>Explain the Conditionalisation constraint in Russell, Hawthorne and Buchak’s paper <em>Groupthink</em>.</li>
+</ol>
+</section>
+<section id="q2" class="level2">
+<h2 class="anchored" data-anchor-id="q2">Q2</h2>
+<p>The constraint says that the following two operations should have the same result.</p>
+<ol type="A">
+<li>Combine two opinions into a group opinion, then update on some evidence.</li>
+<li>Have each member of the group update on that evidence, then combine the two updated individual opinions into an updated group opinion.</li>
+</ol>
+</section>
+<section id="q2-1" class="level2">
+<h2 class="anchored" data-anchor-id="q2-1">Q2</h2>
+<p>Here’s a case where this doesn’t happen. A and B each think that P and Q are independent.</p>
+<ul>
+<li>A thinks that each has probability 0.8.</li>
+<li>B thinks that each has probability 0.2.</li>
+<li>The group probability for each proposition is a 50/50 mix of each.</li>
+</ul>
+</section>
+<section id="q2-2" class="level2">
+<h2 class="anchored" data-anchor-id="q2-2">Q2</h2>
+<p>At this stage, A thinks P&amp;Q has probability 0.64, and B thinks it has probability 0.04, so the mix is 0.34.</p>
+<p>And the 50/50 mix of their probabilities for Q is 0.5.</p>
+<p>So the mixed probability for P given Q is 0.68.</p>
+<p>So if they merge the probabilities (by taking a 50/50 mix) and then learn Q, they’ll end with probability 0.68 for P.</p>
+</section>
+<section id="q2-3" class="level2">
+<h2 class="anchored" data-anchor-id="q2-3">Q2</h2>
+<p>But what if they do things the other way around - first learn Q then update?</p>
+<p>Well, they both think P and Q are independent, so they will both have unchanged probability in P, so it’s still 0.8 and 0.2, and the mix is 0.5.</p>
+</section>
+<section id="q2-4" class="level2">
+<h2 class="anchored" data-anchor-id="q2-4">Q2</h2>
+<p>So that’s the challenge: do these procedures lead to the same outcome.</p>
+<ol type="1">
+<li>Merge then update.</li>
+<li>Update then merge.</li>
+</ol>
+</section>
+<section id="q3---voting" class="level2">
+<h2 class="anchored" data-anchor-id="q3---voting">Q3 - Voting</h2>
+<p>In a local election, with 100 voters, the voters have the following preferences. 45 people rank the candidates ADBC (i.e., A first, D second, B third, C fourth); 25 rank them BCDA; 20 rank them DABC; 10 rank them CDBA. Who would win if the voters vote sincerely, and the city uses first-past-the-post voting? Who would win if the voters vote sincerely, and the city uses ranked choice (i.e., alternate vote) voting? Very briefly (in a couple of sentences), which verdict do you think better reflects the will of the voters?</p>
+</section>
+<section id="q3" class="level2">
+<h2 class="anchored" data-anchor-id="q3">Q3</h2>
+<p>In first-past-the-post, A gets 45, B gets 25, D gets 20, and C gets 10, so A wins because 45 is largest.</p>
+</section>
+<section id="q3-1" class="level2">
+<h2 class="anchored" data-anchor-id="q3-1">Q3</h2>
+<p>In ranked choice, no one has a majority (i.e., 51 votes), so we eliminate the person with the fewest votes. That’s C, and all 10 of their voters had D as second preference, so those 10 votes get added to D. Now it’s A on 45, B on 25, and D on 30 (the 20 original, and 10 new). Still no one has a majority, so B gets eliminated. Each vote for B gets moved to the remaining candidate who was most preferred, and in all 25 cases that’s D. So now D has 55 votes and is the winner.</p>
+</section>
+<section id="q3-2" class="level2">
+<h2 class="anchored" data-anchor-id="q3-2">Q3</h2>
+<p>Either answer for the last question seems fine, since neither system here is great. D does not have wide support - only 30% of voters even have them in the top 2. On the other hand, a majority of the voters have A outright last, and it is odd to have the worst possible option for 55% win the election.</p>
+</section>
+<section id="q4---arrow" class="level2">
+<h2 class="anchored" data-anchor-id="q4---arrow">Q4 - Arrow</h2>
+<p>State Arrow’s <strong>Independence of Irrelevant Alternatives</strong> condition.</p>
+</section>
+<section id="q4" class="level2">
+<h2 class="anchored" data-anchor-id="q4">Q4</h2>
+<p>A social choice function takes the preferences of the voters as input, and returns a social preference ordering as output.</p>
+</section>
+<section id="q4-1" class="level2">
+<h2 class="anchored" data-anchor-id="q4-1">Q4</h2>
+<p>IIA says that if you change the voters’ preferences, but do not change how any voter thinks about the relative position of A and B, then the social preference ordering of A and B should not change. That is, if originally A was ranked above B in the output, then the only way that can change is if some voter changes their mind about the relative ordering of A and B. It isn’t enough if, for instance, some voters who always had B above A change their mind about whether B or C is outright best.</p>
+</section>
+<section id="more-revisions" class="level2">
+<h2 class="anchored" data-anchor-id="more-revisions">More Revisions</h2>
+<p>We’ll do much more of this next Tuesday!</p>
+</section>
+</section>
+<section id="networks" class="level1">
+<h1>Networks</h1>
+<section id="network-models" class="level2">
+<h2 class="anchored" data-anchor-id="network-models">Network Models</h2>
+<p>Imagine a network with the following features.</p>
+<ul>
+<li>All but one of the people are arranged in a circle.</li>
+<li>Everyone can talk to their neighbor, and the other person, who is intuitively in the <em>middle</em> of the circle.</li>
+<li>The person in the middle can talk to anyone, but makes choices about what they are going to say.</li>
+</ul>
+</section>
+<section id="studies" class="level2">
+<h2 class="anchored" data-anchor-id="studies">Studies</h2>
+<p>There are two methods for trying to solve some problem, A and B. (For realism, the problem could be a disease and the methods could be drugs, but in general anything.)</p>
+<ul>
+<li>A works with probability 0.5.</li>
+<li>B works with probability a little above 0.5, say 0.53.</li>
+</ul>
+<p>Crucially, no one in the group knows these numbers - in fact they are very interested in finding them out.</p>
+</section>
+<section id="studies-1" class="level2">
+<h2 class="anchored" data-anchor-id="studies-1">Studies</h2>
+<p>Each person around the periphery runs the following test.</p>
+<ol type="1">
+<li>Find 40 things with the problem.</li>
+<li>Apply method A to 20, and method B to 20, and announce the results</li>
+</ol>
+<p>Let’s assume for now there are a lot of people around the edge, maybe 1000.</p>
+</section>
+<section id="summariser" class="level2">
+<h2 class="anchored" data-anchor-id="summariser">Summariser</h2>
+<p>Here is one thing the person in the center could do.</p>
+<ul>
+<li>Add up all the numbers from all the studies and announce the results.</li>
+<li>If that happens, then almost certainly everyone will find out the truth.</li>
+</ul>
+</section>
+<section id="propagandist" class="level2">
+<h2 class="anchored" data-anchor-id="propagandist">Propagandist</h2>
+<p>What if the person in the middle has the following rule.</p>
+<ul>
+<li>Broadcast all results where A does better than B.</li>
+<li>Soak up other results.</li>
+</ul>
+<p>Then almost certainly everyone will think B is no better.</p>
+</section>
+<section id="propagandist-1" class="level2">
+<h2 class="anchored" data-anchor-id="propagandist-1">Propagandist</h2>
+<p>Note that the following things all happen in this case.</p>
+<ol type="1">
+<li>Everyone does a perfectly fair experiment.</li>
+<li>Everyone only tells people true things.</li>
+<li>The result is that everyone ends up with a false belief.</li>
+</ol>
+</section>
+<section id="journalist" class="level2">
+<h2 class="anchored" data-anchor-id="journalist">Journalist</h2>
+<p>Here’s a slightly different model.</p>
+<p>The person in the middle is a journalist who is committed to presenting both sides of every story.</p>
+<p>So they’ll listen to all the scientists, and pick at random one of the reports where A does better, and one of the reports when B does better.</p>
+</section>
+<section id="journalist-1" class="level2">
+<h2 class="anchored" data-anchor-id="journalist-1">Journalist</h2>
+<p>Now this will end up with on average people having slightly more pro-B attitudes.</p>
+<p>That’s because the studies that favor B will, on average, have slightly larger margins than the studies favoring A.</p>
+<p>But it will be very marginal, and it will be much much worse than if the journalist picked two studies at random.</p>
+</section>
+<section id="solutions" class="level2">
+<h2 class="anchored" data-anchor-id="solutions">Solutions</h2>
+<ol type="1">
+<li>More communication between scientists; none of these results would happen if all the scientists communicated. Of course, this would require reading a <em>lot</em> of incoming mail.</li>
+<li>Larger studies. This is the really interesting one.</li>
+</ol>
+</section>
+<section id="larger-studies" class="level2">
+<h2 class="anchored" data-anchor-id="larger-studies">Larger Studies</h2>
+<p>Instead of 1000 studies with 20 tests per treatment, imagine that we have 20 studies with 1000 tests per treatment.</p>
+<p>Then none of the results go through.</p>
+</section>
+<section id="propagandist-2" class="level2">
+<h2 class="anchored" data-anchor-id="propagandist-2">Propagandist</h2>
+<p>Even with B just at 53%, it isn’t likely you’ll have that many studies where A does better.</p>
+<p>And the ones that are, will have only a small benefit.</p>
+<p>Just looking at one’s own studies and one’s neighbor’s studies will be enough to over-ride the propagandist.</p>
+</section>
+<section id="realism" class="level2">
+<h2 class="anchored" data-anchor-id="realism">Realism?</h2>
+<p>Is this what propagandists really do?</p>
+<ul>
+<li>In some cases they just lie.</li>
+<li>In other cases they find approaches that tend to lead to better results.</li>
+<li>In yet other cases the focus is saying true things about a third option that could explain (away) bad public information.</li>
+</ul>
+<p>But this does seem to have been part of the story, and it’s interesting that it can in theory work.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
