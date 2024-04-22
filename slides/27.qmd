@@ -1,0 +1,287 @@
+---
+subtitle: "444 Lecture 27"
+title: "Revision"
+author: "Brian Weatherson"
+date: "April 23 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
+
+
+5. Describe an example where Sen's Condition L (Liberalism) and Condition P (Pareto) conflict.
+
+A and B each have the following preferences about bedroom color.
+
+- The best outcome is that their bedroom is pink, and the other person's is blue.
+- The second best outcome is that both bedrooms are blue.
+- The third best outcome is that both bedrooms are pink.
+- The worst outcome is that their bedroom is blue, and the other bedroom is pink.
+
+Each person prefers having a pink bedroom to a blue bedroom, holding fixed what the other person does. So if L says that people choose their own bedroom color, that means they'll choose pink. But that means we'll end up with the third best outcome; they would both prefer a world where both bedrooms are blue.
+
+6. Consider an Axelrod-style Prisoners Dilemma tournament with just the following three strategies: Tit-for-Tat (i.e., C at move one, then do whatever the other person did last time); Grim Trigger (i.e., C until the other person plays D, then D forever); and a strategy that plays D until the other person plays D, then C forever. Each will play 100 rounds against the other two. The payoffs each round are (as normal), 5 points for playing D against C, 3 points for playing C against C, 1 point for playing D against D, 0 points for playing C against D. How many points over the 200 games (i.e., 100 rounds against 2 opponents) will each of them end up with?
+
+Call the strategies TFT, GT, and Test.
+
+TFT vs GT: Both get 300 points, since it's all C all the way.   
+TFT vs Test: Round 1, TFT plays C, Test plays D, so it's 0-5. Round 2, TFT plays D, Test plays D, so it's 1-1. Round 3, TFT plays D, Test plays C, so it's 5-0. So far the score is 6-6. After that they play C every round, so it ends up 297-297.   
+GT vs Test: Round 1, GT plays C, Test plays D, so it's 0-5. Round 2, GT plays D, Test plays D, so it's 1-1. After that, GT plays D, Test plays C, so it's 0-5 for 98 more rounds. So GT gets 491 points, and Test gets 6 points.
+
+Final scores: TFT 597, GT 791, Test 303.
+
+7. Describe an example of a **focal point** in Schelling's sense.
+
+A coordination game is a game where the highest priority of each player is to do what the other(s) do, i.e., to coordinate. A focal point of a game like this is a solution that jumps out at people as being one that others will naturally latch on to. For example, if a group knew just that we were all in Chicago, and wanted to meet up, heading to the Bean would make sense; it's a focal point meaning that it's a solution to a problem like this that people will naturally gravitate towards, and do so in the (rational) belief that others will do so too.
+
+8. What is the difference between weak dominance and strict dominance? Describe an example where the two notions come apart.
+
+Option A strictly dominates B if it has a higher return whatever the other player does.
+
+Option A weakly dominates B if it never has a lower return than B, and sometimes has a higher return.
+
+In the game below, Up weakly, but not strongly, dominates Down.
+
+|     |   Left   |    Right    |
+|:---:|:--------:|:-----------:|
+| Up  |   1,1    |     1,0     |
+| Down |  0,0    |     1,1     |
+
+9. In @tbl-dom, what will be the result if both players use iterated deletion of strictly dominated strategies to decide what to do? (In each cell, Row's payouts are first, and Column's are second.)
+
+|      |   L  |   C   |   R   |
+|:----:|:----:|:-----:|:-----:|
+|   U  | 1,1  | 2,0   | 2,2   |
+|   M  | 0,3  | 1,5   | 4,4   |
+|   D  |  2,4 | 3,6   | 3,0   |
+
+: Game table for Q9 {#tbl-dom}
+
+
+D strictly dominates U, resulting in @tbl-dom-r1.
+
+|      |   L  |   C   |   R   |
+|:----:|:----:|:-----:|:-----:|
+|   M  | 0,3  | 1,5   | 4,4   |
+|   D  |  2,4 | 3,6   | 3,0   |
+
+: After deleting U {#tbl-dom-r1}
+
+After that, C strictly dominates L and R, resulting in @tbl-dom-r2.
+
+|      |   C   |
+|:----:|:-----:|
+|   M  | 1,5   |
+|   D  | 3,6   |
+
+: After deleting L and R {#tbl-dom-r2}
+
+Now D strictly dominates M.
+
+So the result is Row plays D, Column plays C, and the result is Row gets 3, Column gets 6.
+
+You just need to state the previous sentence, what's above is working out which you can write out, but don't have to.
+
+10. In @fig-back, what will be the result if all players uses backward induction to solve the problem? (At each terminal node, the payouts are player 1's, then player 2's, then player 3's. Each player moves once; first player 1, then player 2, then player 3.)
+
+Every player will move L, and the result will be that P1 gets 3, P2 gets 1, and P3 gets 1.
+
+For exam purposes, the sentence above is all you need to say.
+
+For working out purposes, I've revised the diagram for this page so that it shows (with double lines) what move each player will make at each node where they could move.
+
+```{r engine="tikz"}
+#| fig-format: png
+#| echo: false
+#| label: fig-back
+#| fig.cap: "Tree for Q10"
+
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}
+  \tikzset{
+    % Three node styles for game trees: solid and hollow and square
+      solid node/.style={circle,draw,inner sep=1.5,fill=black},
+      hollow node/.style={circle,draw,inner sep=1.5},
+      square node/.style={rectangle,draw, inner sep = 1, fill = black}
+      }
+
+  % Specify spacing for each level of the tree
+  \tikzstyle{level 1}=[level distance=15mm,sibling distance=40mm]
+  \tikzstyle{level 2}=[level distance=15mm,sibling distance=20mm]
+  \tikzstyle{level 3}=[level distance=15mm,sibling distance=10mm]
+
+  \node[hollow node,label=above:{P1}]{}
+    child { node [solid node,label=left:{P2}] {}
+      child { node [solid node,label=left:{P3}] {}
+        child { node [] {3,1,1}
+            edge from parent[double]
+            node[left]{L}}
+        child { node [] {4,0,0}
+            edge from parent
+            node[right]{R}}
+        edge from parent[double]
+            node[left]{L}
+        }
+      child { node [solid node,label=right:{P3}] {}
+        child { node [] {1,3,0}
+            edge from parent
+            node[left]{L}}
+        child { node [] {1,0,1}
+            edge from parent[double]
+            node[right]{R}}
+        edge from parent
+            node[right]{R}
+        }        
+      edge from parent[double]
+        node[left]{L}
+    }
+    child { node [solid node,label=right:{P2}] {}
+      child { node [solid node,label=left:{P3}] {}
+        child { node [] {1,0,0}
+            edge from parent
+            node[left]{L}}
+        child { node [] {2,1,1}
+            edge from parent[double]
+            node[right]{R}}
+        edge from parent[double]
+            node[left]{L}
+        }
+      child { node [solid node,label=right:{P3}] {}
+        child { node [] {0,2,1}
+            edge from parent
+            node[left]{L}}
+        child { node [] {1,0,2}
+            edge from parent[double]
+            node[right]{R}}
+        edge from parent
+            node[right]{R}
+        }        
+      edge from parent
+        node[right]{R}
+    }
+    
+    ;
+    \end{tikzpicture}
+```
+
+\newpage
+
+11. In @fig-signal, describe a separating equilbrium of the game.
+
+
+```{r engine='tikz'}
+#| label: fig-signal
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.cap: "Tree for Q11"
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=12mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=18mm,sibling distance=11mm]
+
+% The Tree
+\node(0)[hollow node,label=right:{Nature}]{}
+child[grow=up]{node[solid node,label=above:{Proposer}] {}
+child[grow=left]{node(1)[solid node]{}
+child{node[square node,label=left:{1,2}]{} edge from parent node [above]{Up}}
+child{node[square node,label=left:{1,0}]{} edge from parent node [below]{Down}}
+edge from parent node [below]{L}
+}
+child[grow=right]{node(3)[solid node]{}
+child{node[square node,label=right:{0,0}]{} edge from parent node [below]{Down}}
+child{node[square node,label=right:{2,2}]{} edge from parent node [above]{Up}}
+edge from parent node [below]{R}
+}
+edge from parent node [left, align=center]{A \\ 2/3}
+}
+child[grow=down]{node[solid node,label=below:{Proposer}] {}
+child[grow=left]{node(2)[solid node]{}
+child{node[square node,label=left:{2,0}]{} edge from parent node [above]{Up}}
+child{node[square node,label=left:{0,2}]{} edge from parent node [below]{Down}}
+edge from parent node [above]{L}
+}
+child[grow=right]{node(4)[solid node]{}
+child{node[square node,label=right:{3,2}]{} edge from parent node [below]{Down}}
+child{node[square node,label=right:{1,0}]{} edge from parent node [above]{Up}}
+edge from parent node [above]{R}
+}
+edge from parent node [left,align=center]{B \\ 1/3}
+};
+
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.55,.45)$)rectangle($(2) +(.55,-.45)$);
+\draw[dashed,rounded corners=10]($(3) + (-.55,.45)$)rectangle($(4) +(.55,-.45)$);
+% specify mover at 2nd information set
+\node at ($(1)!.5!(2)$) {Respond};
+\node at ($(3)!.5!(4)$) {Respond};
+\end{tikzpicture}
+```
+
+
+Answer One
+:    Proposer plays Left if A; Right if B.
+:    Respond plays Up if L; Down if R.
+
+That's all you need to say, but to confirm it's a correct answer, ask yourself the following four questions, all of which should get the answer **No**.
+
+- Would Proposer do better by switching if A, in this case going from Left if A to Right if A?
+
+**No**. Respond plays Down if R, and if Proposer is A, plays R, and Respond plays Down, they get 0. As it stands, if A they get 1, and 0 is not greater than 1.
+
+- Would Proposer do better by switching if B, in this case going from Right if B to Left if B?
+
+**No**. Respond plays Up if Left, and if Proposer is B, plays L, and Respond plays Up, they get 2. As it stands, if B they get 3, and 2 is not greater than 3.
+
+- Would Respond do better by switching if L, in this case going from Up if L to Down if L?
+
+**No**. Proposer only plays L if they are A. So the only case to consider is the top left corner, i.e., A followed by L. In that case, Respond gets 2 if Up, and 0 if Down, and 0 is not greater than 2.
+
+- Would Respond do better by switching if R, in this case going from Down if R to Up if R?
+
+**No**. Proposer only plays R if they are B. So the only case to consider is the bottom right corner, i.e., B followed by R. In that case, Respond gets 2 if Down, and 0 if Up, and 0 is not greater than 2.
+
+Answer Two
+:    Proposer plays Right if A; Left if B.
+:    Respond plays Up no matter what.
+
+I won't go through the four questions, but you can check that the answer is **No** in every case.
+
+This is still a separating equilibrium, because what matters is that *Proposer* plays different things if A or if B.
+
+12. What is the human capital theory of the explanation of the college wage premium? Describe one objection to it. (You do not have to answer the objection.)
+
+According to the human capital theory of the college wage premium, college students acquire skills by going to college, and those skills are economically valuable. So employers pay them more because they expect that people with these skills will provide more value (i.e., increase profits by a greater amount) than workers without those skills.
+
+The slides go over three objections to this:
+
+- Hard to see causal story for some kinds of degrees
+- Colleges don't gatekeep courses
+- Workers with some college background don't get a notable wage premium.
+
+
+
