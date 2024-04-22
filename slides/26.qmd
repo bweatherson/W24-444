@@ -1,3 +1,23 @@
+---
+subtitle: "444 Lecture 26"
+title: "Networks"
+author: "Brian Weatherson"
+date: "April 18 2024"
+format:
+  revealjs:
+    theme:
+      - default
+      - robot-lung.scss
+    margin: 0.15
+    center: false
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+keep-md: false
+tbl-cap-location: bottom
+code-block-background: true
+---
+
 # Revision
 
 ## Plan for Day

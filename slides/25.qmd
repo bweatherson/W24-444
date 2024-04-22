@@ -2,7 +2,7 @@
 subtitle: "444 Lecture 25"
 title: "Networks"
 author: "Brian Weatherson"
-date: "April 11 2024"
+date: "April 16 2024"
 format:
   revealjs:
     theme:
