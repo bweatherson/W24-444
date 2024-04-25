@@ -217,7 +217,7 @@ For working out purposes, I've revised the diagram for this page so that it show
 
 \newpage
 
-11. In @fig-signal, describe a separating equilbrium of the game.
+11. In @fig-signal, describe a separating equilibrium of the game.
 
 
 ```{r engine='tikz'}

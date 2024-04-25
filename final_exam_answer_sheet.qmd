@@ -1,0 +1,243 @@
+---
+title: 'Final Exam'
+author: 'Phil 444'
+date: 'April 26, 2024'
+execute:
+  warning: false
+  message: false
+  cache: true
+format:
+    html:
+      toc: false
+      mainfont: SF Pro Rounded
+    pdf: 
+      format: letter
+      keep-tex: true
+      geometry:
+        - margin=25mm
+      mainfont: Scala Pro
+      sansfont: Scala Sans Pro
+      mainfontoptions: Scale = MatchLowercase
+      fontsize: 12pt
+      linkcolor: black
+      link-citations: true
+      linestretch: 1.2
+      include-in-header: 
+        text: |
+          \usepackage{fancyhdr}
+          \usepackage{titling}
+          \pagestyle{fancy}
+          \pagenumbering{gobble}
+          \fancyhf{}
+          \renewcommand\maketitle{
+            \fancyhead[C]{
+              \thetitle
+              \ifx \theauthor\empty  \else \ – \theauthor \fi
+              \ifx \thedate\empty  \else \ – \thedate \ \fi
+            }
+          }
+          \fancyfoot[C]{\thepage}
+---
+
+Name: \dotfill
+
+Q1 - Describe an example where Sen's Condition L (Liberalism) and Condition P (Pareto) conflict.
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\newpage
+
+Q2 - Describe an example of a **focal point** in Schelling's sense.
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\newpage
+
+Q3 - What is the difference between weak dominance and strict dominance? Describe an example where the two notions come apart.
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{1cm}
+
+|     |          **Left**          |             **Right**             |
+|:---:|:--:|:--:|
+| | | |
+| **Up** |  | | 
+| | | |
+| **Down** | | |
+| | | |
+
+\newpage
+
+Q4 - In this table, what will be the result if both players use iterated deletion of strictly dominated strategies to decide what to do? (In each cell, Row's payouts are first, and Column's are second.)
+
+|       |  **W**  |  **X**  |  **Y**  |  **Z**  |
+|:-----:|:---:|:---:|:---:|:---:|
+| **A** | 6,3 | 0,4 | 2,7 | 1,3 |
+| **B** | 5,5 | 5,6 | 2,3 | 5,8 |
+| **C** | 2,2 | 3,7 | 7,2 | 3,5 |
+| **D** | 4,7 | 0,4 | 1,6 | 2,2 |
+
+Row's move: \dotfill
+
+Column's move: \dotfill
+
+Use the space below for workings
+
+\newpage
+
+Q5 - In this tree, what will be the result if all players uses backward induction to solve the problem? (At each terminal node, the payouts are player 1's, then player 2's, then player 3's. Each player moves once; first player 1, then player 2, then player 3.)
+
+\vspace{1cm}
+
+![](fig-back-1.png){width="100%"}
+
+\vspace{1cm}
+
+P1's move: \dotfill
+
+P2's move: \dotfill
+
+P3's move: \dotfill
+
+P1's payout: \dotfill
+
+P2's payout: \dotfill
+
+P3's payout: \dotfill
+
+\newpage
+
+Q6 - What is the human capital theory of the explanation of the college wage premium? Describe one objection to it. (You do not have to answer the objection.)
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\vspace{0.3cm} \dotfill
+
+\newpage
+
+Blank page for extra writing, working out. Please be clear on earlier pages if part of your answer runs onto these pages.
